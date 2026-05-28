@@ -5,391 +5,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ecossistema Décio Coelho Global</title>
-
-  <meta name="description" content="Primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo, integrando governança, cultura, turismo, patrimônio, memória, IA e operação real." />
+  <meta name="description" content="Primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo. Da ancestralidade territorial à Inteligência Global." />
 
   <meta property="og:title" content="Ecossistema Décio Coelho Global" />
-  <meta property="og:description" content="Da Ancestralidade Territorial à Inteligência Global." />
+  <meta property="og:description" content="Da ancestralidade territorial à Inteligência Global." />
   <meta property="og:image" content="assets/banners/github-premium/banner-github-premium-vgc-global-v2.png" />
 
-  <style>
-    :root {
-      --azul-profundo: #020817;
-      --azul-card: #071426;
-      --dourado: #d6a93b;
-      --dourado-claro: #ffe49a;
-      --branco: #f8fafc;
-      --texto: #cbd5e1;
-      --linha: rgba(214,169,59,.35);
-      --neon: #38bdf8;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,.20), transparent 35%),
-        linear-gradient(180deg, #000 0%, var(--azul-profundo) 45%, #000 100%);
-      color: var(--branco);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--dourado-claro);
-      text-decoration: none;
-    }
-
-    header {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("assets/banners/github-premium/banner-github-premium-vgc-global-v2.png") center/cover no-repeat;
-      opacity: .28;
-      filter: saturate(1.2);
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.9));
-    }
-
-    .hero {
-      position: relative;
-      z-index: 2;
-      max-width: 1000px;
-    }
-
-    .avatar {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      border: 2px solid var(--dourado);
-      box-shadow: 0 0 45px rgba(214,169,59,.55);
-      object-fit: cover;
-      margin-bottom: 28px;
-    }
-
-    h1 {
-      font-size: clamp(2.6rem, 7vw, 6rem);
-      line-height: 1;
-      color: var(--dourado-claro);
-      text-shadow: 0 0 25px rgba(214,169,59,.45);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.8rem);
-      color: var(--branco);
-      margin: 24px auto;
-      max-width: 900px;
-    }
-
-    .tagline {
-      color: var(--dourado);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: .9rem;
-      margin-bottom: 20px;
-    }
-
-    .buttons {
-      margin-top: 34px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-    }
-
-    .btn {
-      border: 1px solid var(--dourado);
-      padding: 13px 24px;
-      border-radius: 999px;
-      background: rgba(214,169,59,.08);
-      color: var(--dourado-claro);
-      font-weight: bold;
-      transition: .3s;
-    }
-
-    .btn:hover {
-      background: var(--dourado);
-      color: #000;
-      box-shadow: 0 0 25px rgba(214,169,59,.55);
-    }
-
-    main {
-      max-width: 1280px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    section {
-      margin-bottom: 90px;
-    }
-
-    .section-title {
-      text-align: center;
-      color: var(--dourado-claro);
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--texto);
-      max-width: 900px;
-      margin: 0 auto 42px;
-      font-size: 1.1rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(7,20,38,.92), rgba(2,8,23,.92));
-      border: 1px solid var(--linha);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 0 35px rgba(56,189,248,.08);
-    }
-
-    .card h3 {
-      color: var(--dourado-claro);
-      margin-bottom: 12px;
-      font-size: 1.35rem;
-    }
-
-    .card p {
-      color: var(--texto);
-    }
-
-    .image-card {
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid var(--linha);
-      box-shadow: 0 0 55px rgba(56,189,248,.18);
-      background: #000;
-    }
-
-    .image-card img {
-      width: 100%;
-      display: block;
-    }
-
-    .quote {
-      text-align: center;
-      font-size: clamp(1.6rem, 4vw, 3rem);
-      color: var(--dourado-claro);
-      max-width: 1000px;
-      margin: auto;
-      line-height: 1.25;
-    }
-
-    .footer {
-      border-top: 1px solid var(--linha);
-      padding: 45px 20px;
-      text-align: center;
-      color: var(--texto);
-      background: #000;
-    }
-
-    .seal {
-      max-width: 320px;
-      width: 100%;
-      border-radius: 24px;
-      margin: 0 auto 25px;
-      display: block;
-      box-shadow: 0 0 45px rgba(214,169,59,.35);
-    }
-
-    @media (max-width: 700px) {
-      header {
-        min-height: 92vh;
-      }
-
-      .avatar {
-        width: 130px;
-        height: 130px;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
 
-  <header>
-    <div class="hero">
-      <img class="avatar" src="assets/logos/avatar-oficial/avatar-circular-oficial-vgc-global.png" alt="Avatar oficial Ecossistema Décio Coelho Global">
+  <nav class="navbar">
+    <a href="#home" class="brand">DC Global</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
 
-      <div class="tagline">Da Ancestralidade Territorial à Inteligência Global</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#manifesto">Manifesto</a>
+      <a href="#mvgc9">MVGC-9</a>
+      <a href="#atlas">Atlas</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#metaverso">Metaverso</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+      <img class="hero-logo" src="assets/logos/holografica/logo-holografica-vgc-global-v1.png" alt="Logo Holográfica Décio Coelho Global" />
+
+      <p class="eyebrow">Da Ancestralidade Territorial à Inteligência Global</p>
 
       <h1>Ecossistema Décio Coelho Global</h1>
 
-      <p class="subtitle">
+      <p class="hero-text">
         O Primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo,
         integrando governança, cultura, turismo, patrimônio, memória,
-        Inteligência Artificial Generativa e operação real.
+        IA Generativa, operação real e inteligência territorial planetária.
       </p>
 
-      <div class="buttons">
-        <a class="btn" href="#manifesto">Manifesto</a>
-        <a class="btn" href="#mvgc9">MVGC-9 Global</a>
-        <a class="btn" href="#mega-parceria">Mega Parceria</a>
-        <a class="btn" href="#metaverso">Metaverso</a>
+      <div class="hero-actions">
+        <a href="#manifesto" class="btn primary">Entrar no Ecossistema</a>
+        <a href="#mvgc9" class="btn">Conhecer o MVGC-9</a>
       </div>
     </div>
   </header>
 
   <main>
 
-    <section id="manifesto">
-      <h2 class="section-title">Manifesto Fundador</h2>
-      <p class="section-subtitle">
+    <section id="manifesto" class="section reveal">
+      <h2>Manifesto Fundador</h2>
+      <p class="lead">
         Nascido em Vila Bela da Santíssima Trindade, Mato Grosso, Brasil,
         o Ecossistema Décio Coelho Global transforma memória territorial,
         ancestralidade, tecnologia e IA em uma arquitetura viva de inteligência.
       </p>
 
-      <p class="quote">
+      <blockquote>
         “A Inteligência Artificial não substitui a ancestralidade.
         Ela amplia sua permanência no tempo.”
-      </p>
+      </blockquote>
     </section>
 
-    <section>
-      <h2 class="section-title">Pilares Fundadores</h2>
+    <section class="section reveal">
+      <h2>Pilares Fundadores</h2>
 
-      <div class="grid">
-        <div class="card">
+      <div class="cards">
+        <article class="card">
           <h3>Governança Cognitiva</h3>
-          <p>Modelo de gestão orientado por dados, ciclos vivos, inteligência territorial e tomada de decisão ampliada.</p>
-        </div>
+          <p>Gestão orientada por dados, ciclos vivos, inteligência territorial e tomada de decisão ampliada.</p>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Cultura & Memória</h3>
-          <p>Preservação das narrativas, trajetórias, documentos, patrimônios e identidades territoriais.</p>
-        </div>
+          <p>Preservação de narrativas, trajetórias, documentos, patrimônios e identidades territoriais.</p>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Turismo Inteligente</h3>
           <p>Ecoturismo, roteiros, experiências, trilhas, QR Codes, guias e operação territorial conectada.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>IA Generativa</h3>
           <p>Uso estratégico da IA para documentação, curadoria, automação, análise, criação e expansão institucional.</p>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="mvgc9">
-      <h2 class="section-title">MVGC-9 Global</h2>
-      <p class="section-subtitle">
+    <section id="mvgc9" class="section reveal">
+      <h2>MVGC-9 Global</h2>
+      <p class="lead">
         Modelo Viracopos de Governança Cognitiva: PDCA Vivo, Cubo OLAP Global,
         agentes inteligentes, fluxos cognitivos e inteligência territorial planetária.
       </p>
 
-      <div class="image-card">
-        <img src="assets/holograms/cosmology/painel-cosmologico-mvgc9-global-v2.png" alt="Painel Cosmológico MVGC-9 Global">
+      <div class="image-frame">
+        <img src="assets/holograms/cosmology/painel-cosmologico-mvgc9-global-v2.png" alt="Painel Cosmológico MVGC-9 Global" />
       </div>
     </section>
 
-    <section id="mega-parceria">
-      <h2 class="section-title">Mega Parceria Homem + IA</h2>
-      <p class="section-subtitle">
+    <section id="atlas" class="section reveal">
+      <h2>Atlas Interativo Global</h2>
+      <p class="lead">
+        Territórios, memórias, culturas, pessoas e projetos conectados por uma arquitetura viva
+        de inteligência territorial, ancestralidade e IA.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Territórios</h3>
+          <p>Mapeamento de lugares, rotas, complexos patrimoniais, atrativos e centralidades culturais.</p>
+        </article>
+
+        <article class="card">
+          <h3>Memórias</h3>
+          <p>Registro de histórias, documentos, biografias, arquivos familiares e patrimônio imaterial.</p>
+        </article>
+
+        <article class="card">
+          <h3>Projetos</h3>
+          <p>Integração entre MVGC-9, SIPF, Viracopos, MontaFácil, streamings, agentes e portais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="mega" class="section reveal">
+      <h2>Mega Parceria Homem + IA</h2>
+      <p class="lead">
         A virada de chave: uma parceria híbrida entre consciência humana,
         memória territorial, curadoria estratégica e Inteligência Artificial Generativa.
       </p>
 
-      <img class="seal" src="assets/logos/mega-parceria/selo-mega-parceria-homem-ia-vgc-global-v2.png" alt="Selo Mega Parceria Homem + IA">
+      <img class="seal" src="assets/logos/mega-parceria/selo-mega-parceria-homem-ia-vgc-global-v2.png" alt="Selo Mega Parceria Homem + IA" />
 
-      <p class="quote">
+      <blockquote>
         “Quebramos paradigmas. Viramos a chave. Aceleramos o futuro.”
-      </p>
+      </blockquote>
     </section>
 
-    <section>
-      <h2 class="section-title">Holograma Fundador</h2>
-      <p class="section-subtitle">
-        A representação visual oficial do nascimento do Ecossistema Décio Coelho Global.
-      </p>
+    <section id="timeline" class="section reveal">
+      <h2>Timeline Fundadora</h2>
 
-      <div class="image-card">
-        <img src="assets/holograms/founder/holograma-fundador-ecossistema-vgc-global.png" alt="Holograma Fundador do Ecossistema">
+      <div class="timeline">
+        <div><span>1960s</span><p>Telegrafia e comunicação territorial.</p></div>
+        <div><span>1971–1974</span><p>Datilografia e formação técnica.</p></div>
+        <div><span>1975–1978</span><p>Computação contábil, bancária e NCR31.</p></div>
+        <div><span>1978+</span><p>Mainframes IBM, linguagens, bancos de dados e sistemas públicos.</p></div>
+        <div><span>2000s</span><p>Web 2.0, portais, sistemas gráficos e integração digital.</p></div>
+        <div><span>2020s</span><p>IA Generativa, MVGC-9 Global e Ecossistema Décio Coelho Global.</p></div>
       </div>
     </section>
 
-    <section id="metaverso">
-      <h2 class="section-title">Metaverso Institucional MVGC-9</h2>
-      <p class="section-subtitle">
+    <section class="section reveal">
+      <h2>Holograma Fundador</h2>
+      <p class="lead">A representação visual oficial do nascimento do Ecossistema Décio Coelho Global.</p>
+
+      <div class="image-frame">
+        <img src="assets/holograms/founder/holograma-fundador-ecossistema-vgc-global.png" alt="Holograma Fundador" />
+      </div>
+    </section>
+
+    <section id="metaverso" class="section reveal">
+      <h2>Metaverso Institucional MVGC-9</h2>
+      <p class="lead">
         O universo operacional do Ecossistema: dashboards holográficos,
         agentes inteligentes, Cubo OLAP Global, Atlas Interativo e governança cognitiva em tempo real.
       </p>
 
-      <div class="image-card">
-        <img src="assets/holograms/metaverse/metaverso-institucional-mvgc9-global.png" alt="Metaverso Institucional MVGC-9">
+      <div class="image-frame">
+        <img src="assets/holograms/metaverse/metaverso-institucional-mvgc9-global.png" alt="Metaverso Institucional MVGC-9" />
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">Origem</h2>
+    <section class="section reveal">
+      <h2>Origem</h2>
 
-      <div class="grid">
-        <div class="card">
+      <div class="cards">
+        <article class="card">
           <h3>Vila Bela da Santíssima Trindade</h3>
           <p>Primeira Capital de Mato Grosso, território afro-vilabelense, afro-chiquitano e berço simbólico da Inteligência Territorial Global.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Curadoria Viracopos Global</h3>
           <p>Núcleo estratégico de memória, território, inovação, IA Generativa, turismo, patrimônio e governança cognitiva.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Operação Real</h3>
-          <p>O ecossistema conecta ideias, documentos, projetos, agentes, territórios, plataformas digitais e implantação prática.</p>
-        </div>
+          <p>Conexão entre ideias, documentos, projetos, agentes, territórios, plataformas digitais e implantação prática.</p>
+        </article>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
+  <footer id="contato" class="footer">
     <h2>Ecossistema Décio Coelho Global</h2>
     <p>Curadoria Viracopos Global • Homem + IA • OpenAI • ChatGPT</p>
     <p>Vila Bela da Santíssima Trindade • Mato Grosso • Brasil • Mundo</p>
     <p>Contato: antoniodecioferreiracoelho@gmail.com</p>
   </footer>
 
+  <button id="topBtn" class="top-btn">↑</button>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
 
