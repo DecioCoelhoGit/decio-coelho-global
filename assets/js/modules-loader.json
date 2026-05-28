@@ -1,1 +1,15 @@
+fetch("data/modulos.json")
+  .then(response => response.json())
+  .then(modulos => {
+    const grid = document.getElementById("modulesGrid");
+    if (!grid) return;
 
+    grid.innerHTML = modulos.map(modulo => `
+      <article class="card module-card">
+        <img src="${modulo.imagem}" alt="${modulo.titulo}">
+        <small>${modulo.categoria} • ${modulo.status}</small>
+        <h3>${modulo.titulo}</h3>
+        <p>${modulo.descricao}</p>
+      </article>
+    `).join("");
+  });
