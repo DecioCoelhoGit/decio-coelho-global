@@ -385,4 +385,46 @@ blockquote {
   }
 }
 
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  margin: 40px 0;
+}
 
+.dashboard-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(7,20,38,.95), rgba(0,0,0,.9));
+  box-shadow: 0 0 28px rgba(56,189,248,.12);
+}
+
+.dashboard-card strong {
+  display: block;
+  color: var(--gold2);
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.dashboard-card span {
+  color: var(--text);
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.module-card img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+}
+
+.module-card small {
+  display: block;
+  color: var(--gold);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
