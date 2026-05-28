@@ -1,1 +1,13 @@
+fetch("data/dashboards.json")
+  .then(response => response.json())
+  .then(data => {
+    const grid = document.getElementById("dashboardGrid");
+    if (!grid) return;
 
+    grid.innerHTML = data.indicadores.map(item => `
+      <div class="dashboard-card">
+        <strong>${item.valor}</strong>
+        <span>${item.titulo}</span>
+      </div>
+    `).join("");
+  });
