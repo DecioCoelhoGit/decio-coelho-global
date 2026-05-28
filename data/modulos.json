@@ -1,1 +1,30 @@
-
+[
+  {
+    "titulo": "MVGC-9 Global",
+    "categoria": "Governança Cognitiva",
+    "status": "Ativo",
+    "descricao": "Modelo Viracopos de Governança Cognitiva com PDCA Vivo, Cubo OLAP Global, agentes inteligentes e inteligência territorial.",
+    "imagem": "assets/holograms/cosmology/painel-cosmologico-mvgc9-global-v2.png"
+  },
+  {
+    "titulo": "Atlas Interativo Global",
+    "categoria": "Inteligência Territorial",
+    "status": "Em expansão",
+    "descricao": "Territórios, memórias, culturas, pessoas e projetos conectados por IA, curadoria e acervo vivo.",
+    "imagem": "assets/holograms/founder/holograma-fundador-ecossistema-vgc-global.png"
+  },
+  {
+    "titulo": "SIPF Global",
+    "categoria": "Perícia Financeira",
+    "status": "Planejado",
+    "descricao": "Sistema de Inteligência em Perícia Financeira com IA, laudos, cálculos, auditorias e análise documental.",
+    "imagem": "assets/logos/noir-cinematic/logo-noir-cinematic-vgc-global-v1.png"
+  },
+  {
+    "titulo": "MontaFácil Global",
+    "categoria": "Plataforma Operacional",
+    "status": "Em desenvolvimento",
+    "descricao": "Ecossistema inteligente de montagem, logística, marketplace, automação e operação real.",
+    "imagem": "assets/logos/monograma/monograma-dc-global-v1.png"
+  }
+]
