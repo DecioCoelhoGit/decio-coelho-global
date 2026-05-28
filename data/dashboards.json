@@ -1,1 +1,10 @@
-
+{
+  "indicadores": [
+    { "titulo": "Módulos", "valor": 4 },
+    { "titulo": "Agentes", "valor": 7 },
+    { "titulo": "Hologramas", "valor": 6 },
+    { "titulo": "Ecossistemas", "valor": 5 },
+    { "titulo": "Status Ativo", "valor": 2 },
+    { "titulo": "Em Expansão", "valor": 1 }
+  ]
+}
