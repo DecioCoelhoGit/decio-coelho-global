@@ -541,7 +541,7 @@ blockquote {
 }
 
 html {
-  scroll-padding-top: 30px;
+  scroll-padding-top: 5px;
 }
 
 section,
@@ -556,12 +556,12 @@ footer,
 }
 
 #contato {
-  padding-top: 30px;
+  padding-top: 5px;
 }
 
 @media (max-width: 820px) {
   html {
-    scroll-padding-top: 30px;
+    scroll-padding-top: 5px;
   }
 
   section,
@@ -576,6 +576,6 @@ footer,
   }
 
   #contato {
-    padding-top: 30px;
+    padding-top: 5px;
   }
 }
