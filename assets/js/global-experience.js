@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector(".global-experience")) return;y
   const panel = document.createElement("div");
   panel.className = "global-experience";
   panel.innerHTML = `
     <button id="themeToggle">🌙</button>
+    <button id="contrastToggle">HC</button>
     <button id="fontA">A</button>
     <button id="fontAPlus">A+</button>
     <button id="fontAPlusPlus">A++</button>
@@ -23,6 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const theme = document.body.classList.contains("light") ? "light" : "dark";
     localStorage.setItem("theme", theme);
   };
+
+  document.getElementById("contrastToggle").onclick = () => {
+    document.body.classList.toggle("high-contrast");
+    localStorage.setItem(
+      "contrast",
+      document.body.classList.contains("high-contrast") ? "on" : "off"
+    );
+  };
+
+  if (localStorage.getItem("contrast") === "on") {
+    document.body.classList.add("high-contrast");
+  }
 
   document.getElementById("fontA").onclick = () => {
     document.documentElement.style.fontSize = "100%";
