@@ -640,4 +640,42 @@ body.high-contrast .brand {
   text-shadow: 0 0 12px rgba(57,255,20,.8);
 }
 
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
 
+.brand-logo{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  filter:drop-shadow(0 0 10px rgba(214,177,90,.45));
+}
+
+.brand-text{
+  font-size:1.55rem;
+  font-weight:800;
+  letter-spacing:4px;
+  color:#f5d98f;
+  white-space:nowrap;
+}
+
+@media(max-width:480px){
+  .brand{
+    gap:10px;
+  }
+
+  .brand-logo{
+    width:42px;
+    height:42px;
+  }
+
+  .brand-text{
+    font-size:1.25rem;
+    letter-spacing:3px;
+  }
+}
