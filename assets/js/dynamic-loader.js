@@ -84,3 +84,27 @@ async function carregarModulos() {
   }
 }
 
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    const id = link.getAttribute("href");
+    const target = document.querySelector(id);
+
+    if (!target) return;
+
+    e.preventDefault();
+
+    const headerOffset = 90;
+    const position = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: position,
+      behavior: "smooth"
+    });
+
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks) navLinks.classList.remove("open");
+  });
+});
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
