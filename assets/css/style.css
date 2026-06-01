@@ -734,3 +734,68 @@ body.high-contrast .brand {
 html {
   scroll-behavior: smooth;
 }
+
+.access-panel{
+  position:fixed;
+  right:18px;
+  top:110px;
+  z-index:9998;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:10px;
+  border:1px solid rgba(214,177,90,.5);
+  border-radius:22px;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px);
+}
+
+.access-panel button{
+  min-width:64px;
+  min-height:42px;
+  border-radius:999px;
+  border:1px solid rgba(214,177,90,.55);
+  background:#02101f;
+  color:#f5d98f;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.theme-light{
+  background:#fff8df;
+  color:#06111f;
+}
+
+.theme-light .section,
+.theme-light .card,
+.theme-light .footer{
+  background:rgba(255,255,255,.86);
+  color:#06111f;
+}
+
+.theme-light h1,
+.theme-light h2,
+.theme-light h3{
+  color:#7a5a12;
+}
+
+.font-normal{
+  font-size:100%;
+}
+
+.font-large{
+  font-size:112%;
+}
+
+.font-xlarge{
+  font-size:124%;
+}
+
+@media(max-width:480px){
+  .access-panel{
+    right:10px;
+    top:92px;
+    transform:scale(.88);
+    transform-origin:top right;
+  }
+}
