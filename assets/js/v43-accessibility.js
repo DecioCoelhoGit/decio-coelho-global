@@ -81,22 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     atlas: "ATLAS INTERACTIVO GLOBAL",
     contato: "CONTACTO"
   }
-
-  pt: {
-    manifesto: "MANIFESTO FUNDADOR",
-    lead: "Nascido em Vila Bela da Santíssima Trindade, Mato Grosso, Brasil, o Ecossistema Décio Coelho Global transforma memória territorial, ancestralidade, tecnologia e IA em uma arquitetura viva de inteligência."
-  },
-
-  en: {
-    manifesto: "FOUNDING MANIFESTO",
-    lead: "Born in Vila Bela da Santíssima Trindade, Mato Grosso, Brazil, the Décio Coelho Global Ecosystem transforms territorial memory, ancestry, technology and AI into a living architecture of intelligence."
-  },
-
-  es: {
-    manifesto: "MANIFIESTO FUNDADOR",
-    lead: "Nacido en Vila Bela da Santíssima Trindade, Mato Grosso, Brasil, el Ecosistema Décio Coelho Global transforma memoria territorial, ancestralidad, tecnología e IA en una arquitectura viva de inteligencia."
-  }
-
 };
 
 function applyLang(lang) {
