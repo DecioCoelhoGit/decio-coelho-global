@@ -799,3 +799,22 @@ html {
     transform-origin:top right;
   }
 }
+
+.high-contrast {
+  background:#000 !important;
+  color:#fff !important;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3 {
+  color:#fff3a6 !important;
+  text-shadow:0 0 12px rgba(255,255,255,.35);
+}
+
+.high-contrast .card,
+.high-contrast .section,
+.high-contrast .premium-footer {
+  background:#000 !important;
+  border-color:#fff3a6 !important;
+}
