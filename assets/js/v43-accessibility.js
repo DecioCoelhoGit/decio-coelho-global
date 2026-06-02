@@ -50,8 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (btn.dataset.lang) {
-      localStorage.setItem("dc-lang", btn.dataset.lang);
-      alert("Idioma selecionado: " + btn.dataset.lang.toUpperCase());
+      const lang = btn.dataset.lang;
+      localStorage.setItem("dc-lang", lang);
+      applyLang(lang);
     }
   });
 
@@ -60,6 +61,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.classList.add(`theme-${savedTheme}`);
   document.body.classList.add(`font-${savedFont}`);
+
+  const translations = {
+  pt: {
+    manifesto: "MANIFESTO FUNDADOR",
+    mvgc9: "MVGC-9 GLOBAL",
+    atlas: "ATLAS INTERATIVO GLOBAL",
+    contato: "CONTATO"
+  },
+  en: {
+    manifesto: "FOUNDING MANIFESTO",
+    mvgc9: "MVGC-9 GLOBAL",
+    atlas: "GLOBAL INTERACTIVE ATLAS",
+    contato: "CONTACT"
+  },
+  es: {
+    manifesto: "MANIFIESTO FUNDADOR",
+    mvgc9: "MVGC-9 GLOBAL",
+    atlas: "ATLAS INTERACTIVO GLOBAL",
+    contato: "CONTACTO"
+  }
+};
+
+function applyLang(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+}
+
+const savedLang = localStorage.getItem("dc-lang") || "pt";
+applyLang(savedLang);
 });
 
 
