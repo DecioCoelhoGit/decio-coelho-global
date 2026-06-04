@@ -1,1 +1,10 @@
-
+{
+  "territorios": 9,
+  "projetos": 70,
+  "hologramas": 6,
+  "ecossistemas": 5,
+  "modulos": 30,
+  "documentos": 500,
+  "agentes": 12,
+  "status": "OPERACIONAL"
+}
