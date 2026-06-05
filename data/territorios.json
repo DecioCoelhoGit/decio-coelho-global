@@ -1,1 +1,58 @@
-
+{
+  "territorios": [
+    {
+      "nome": "Viracopos",
+      "tipo": "Reserva Natural Privada",
+      "status": "Ativo",
+      "atrativos": 14
+    },
+    {
+      "nome": "Formosa",
+      "tipo": "Complexo Patrimonial",
+      "status": "Ativo",
+      "atrativos": 5
+    },
+    {
+      "nome": "1ª Capital",
+      "tipo": "Complexo Histórico-Cultural",
+      "status": "Ativo",
+      "atrativos": 12
+    },
+    {
+      "nome": "Guará",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    },
+    {
+      "nome": "Capivary",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    },
+    {
+      "nome": "Jatobá",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    },
+    {
+      "nome": "Verde",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    },
+    {
+      "nome": "Namorados",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    },
+    {
+      "nome": "São Francisco Xavier",
+      "tipo": "Complexo Patrimonial",
+      "status": "Planejamento",
+      "atrativos": 0
+    }
+  ]
+}
