@@ -1,1 +1,10 @@
-
+{
+  "eventos":[
+    {
+      "id":"EV001",
+      "titulo":"Festança",
+      "categoria":"Cultural",
+      "status":"ativo"
+    }
+  ]
+}
