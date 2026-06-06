@@ -1,1 +1,16 @@
-
+{
+  "complexos":[
+    {
+      "id":"CP001",
+      "nome":"Viracopos",
+      "categoria":"Reserva Natural",
+      "status":"ativo"
+    },
+    {
+      "id":"CP002",
+      "nome":"1ª Capital",
+      "categoria":"Historico Cultural",
+      "status":"ativo"
+    }
+  ]
+}
