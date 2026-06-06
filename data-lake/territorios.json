@@ -1,1 +1,14 @@
-
+{
+  "territorios":[
+    {
+      "id":"VB001",
+      "nome":"Vila Bela da Santíssima Trindade",
+      "categoria":"Municipio",
+      "estado":"MT",
+      "pais":"Brasil",
+      "latitude":-15.006,
+      "longitude":-59.950,
+      "status":"ativo"
+    }
+  ]
+}
