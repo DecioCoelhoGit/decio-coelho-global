@@ -1,1 +1,7 @@
-
+{
+  "atlas":"ativo",
+  "monitoring360":"ativo",
+  "cubo_olap":"ativo",
+  "pdca_vivo":"ativo",
+  "agentes":"ativo"
+}
