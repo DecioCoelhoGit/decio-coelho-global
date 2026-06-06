@@ -1,1 +1,12 @@
-
+{
+  "indicadores":[
+    {
+      "nome":"Visitantes",
+      "valor":0
+    },
+    {
+      "nome":"Memorias Catalogadas",
+      "valor":0
+    }
+  ]
+}
