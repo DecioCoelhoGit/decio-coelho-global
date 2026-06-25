@@ -24,6 +24,48 @@
 
 <body>
 
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+    ☰
+  </button>
+
+  <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+
+  <aside class="offcanvas-menu" id="offcanvasMenu" aria-hidden="true">
+    <div class="offcanvas-header">
+      <h2>DC GLOBAL</h2>
+      <button id="closeMenu" aria-label="Fechar menu">×</button>
+    </div>
+
+  <nav class="offcanvas-nav">
+    <a href="#inicio">Início</a>
+    <a href="#decio-cognitivo">Décio Cognitivo</a>
+    <a href="#complexos">Complexos Patrimoniais</a>
+    <a href="#viracopos">Viracopos</a>
+    <a href="#atlas">Atlas Aves do Guaporé</a>
+    <a href="#fases">Fases do Legado</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="accessibility-panel">
+    <h3>Acessibilidade</h3>
+
+    <button id="contrastToggle">Alto Contraste</button>
+    <button id="fontIncrease">A+</button>
+    <button id="fontDecrease">A-</button>
+    <button id="themeToggle">Claro/Escuro</button>
+
+    <div class="language-buttons">
+      <button data-lang="pt">PT</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+    </div>
+  </div>
+</aside>
+
+<a class="whatsapp-float" href="https://wa.me/55SEUNUMERO" target="_blank" aria-label="WhatsApp">
+  WhatsApp
+</a>
+  
   <nav class="navbar">
     <a href="#home" class="brand" aria-label="DC Global - Início">
       <img src="assets/img/logo-dc-header-64.png" alt="Logo DC Global" class="brand-logo">
