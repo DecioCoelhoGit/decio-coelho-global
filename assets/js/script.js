@@ -42,4 +42,59 @@ topBtn.addEventListener("click", () => {
   });
 });
 
+const menuToggle = document.getElementById("menuToggle");
+const closeMenu = document.getElementById("closeMenu");
+const offcanvasMenu = document.getElementById("offcanvasMenu");
+const offcanvasOverlay = document.getElementById("offcanvasOverlay");
 
+function openOffcanvas() {
+  offcanvasMenu.classList.add("active");
+  offcanvasOverlay.classList.add("active");
+  offcanvasMenu.setAttribute("aria-hidden", "false");
+}
+
+function closeOffcanvas() {
+  offcanvasMenu.classList.remove("active");
+  offcanvasOverlay.classList.remove("active");
+  offcanvasMenu.setAttribute("aria-hidden", "true");
+}
+
+menuToggle?.addEventListener("click", openOffcanvas);
+closeMenu?.addEventListener("click", closeOffcanvas);
+offcanvasOverlay?.addEventListener("click", closeOffcanvas);
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeOffcanvas();
+  }
+});
+
+document.querySelectorAll(".offcanvas-nav a").forEach(link => {
+  link.addEventListener("click", closeOffcanvas);
+});
+
+document.getElementById("contrastToggle")?.addEventListener("click", () => {
+  document.body.classList.toggle("high-contrast");
+});
+
+document.getElementById("themeToggle")?.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});
+
+document.getElementById("fontIncrease")?.addEventListener("click", () => {
+  document.body.classList.remove("small-font");
+  document.body.classList.toggle("large-font");
+});
+
+document.getElementById("fontDecrease")?.addEventListener("click", () => {
+  document.body.classList.remove("large-font");
+  document.body.classList.toggle("small-font");
+});
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click", () => {
+    const lang = button.dataset.lang;
+    localStorage.setItem("dcglobal-lang", lang);
+    alert("Idioma selecionado: " + lang.toUpperCase());
+  });
+});
