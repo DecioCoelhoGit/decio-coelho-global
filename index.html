@@ -3,337 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Ecossistema Décio Coelho Global</title>
-  <meta name="description" content="Da ancestralidade territorial à inteligência global. O primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo." />
-
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo-dc-header-32.png">
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-  <meta property="og:title" content="Ecossistema Décio Coelho Global">
-  <meta property="og:description" content="Da ancestralidade territorial à inteligência global. O primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo.">
-  <meta property="og:image" content="https://deciocoelhogit.github.io/decio-coelho-global/assets/img/share-dc-global.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deciocoelhogit.github.io/decio-coelho-global/">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ecossistema Décio Coelho Global">
-  <meta name="twitter:description" content="Da ancestralidade territorial à inteligência global.">
-  <meta name="twitter:image" content="https://deciocoelhogit.github.io/decio-coelho-global/assets/img/share-dc-global.png">
+  <title>DC GLOBAL</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="theme-dark font-normal">
+  <header class="dc-header">
+    <button class="header-btn neon-btn" id="openMainMenu" aria-label="Abrir menu principal">☰</button>
 
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-    ☰
-  </button>
+    <a href="#inicio" class="dc-brand" aria-label="DC Global">DC GLOBAL</a>
 
-  <div class="offcanvas-overlay" id="offcanvasOverlay"></div>
+    <button class="header-btn access-btn" id="openAccessMenu" aria-label="Abrir menu de acessibilidade">♿</button>
+  </header>
 
-  <aside class="offcanvas-menu" id="offcanvasMenu" aria-hidden="true">
-    <div class="offcanvas-header">
-      <h2>DC GLOBAL</h2>
-      <button id="closeMenu" aria-label="Fechar menu">×</button>
-    </div>
+  <div class="overlay" id="overlay"></div>
 
-  <nav class="offcanvas-nav">
-    <a href="#inicio">Início</a>
-    <a href="#decio-cognitivo">Décio Cognitivo</a>
-    <a href="#complexos">Complexos Patrimoniais</a>
-    <a href="#viracopos">Viracopos</a>
-    <a href="#atlas">Atlas Aves do Guaporé</a>
-    <a href="#fases">Fases do Legado</a>
-    <a href="#contato">Contato</a>
-  </nav>
+  <aside class="offcanvas left" id="mainMenu" aria-hidden="true">
+    <button class="close-btn" data-close="mainMenu">×</button>
+    <h2>☰ NAVEGAÇÃO</h2>
 
-  <div class="accessibility-panel">
-    <h3>Acessibilidade</h3>
-
-    <button id="contrastToggle">Alto Contraste</button>
-    <button id="fontIncrease">A+</button>
-    <button id="fontDecrease">A-</button>
-    <button id="themeToggle">Claro/Escuro</button>
-
-    <div class="language-buttons">
-      <button data-lang="pt">PT</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="es">ES</button>
-    </div>
-  </div>
-</aside>
-
-<a class="whatsapp-float" href="https://wa.me/55SEUNUMERO" target="_blank" aria-label="WhatsApp">
-  WhatsApp
-</a>
-  
-  <nav class="navbar">
-    <a href="#home" class="brand" aria-label="DC Global - Início">
-      <img src="assets/img/logo-dc-header-64.png" alt="Logo DC Global" class="brand-logo">
-      <span class="brand-text">DC GLOBAL</span>
-    </a>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
-
-    <div class="nav-links" id="navLinks">
-      <a href="#home">🏠 Início</a>
-      <a href="pages/ecosystem.html">🌎 Ecossistema</a>
+    <nav class="menu-list">
+      <a href="#inicio">🏠 Início</a>
+      <a href="#ecossistema">🌎 Ecossistema</a>
       <a href="#manifesto">📜 Manifesto</a>
       <a href="#atlas">🌎 Atlas Global</a>
       <a href="#mvgc9">🏛️ MVGC-9</a>
       <a href="#cognicao">🧠 Cognição Híbrida</a>
-      <a href="#complexos">🗺️ Complexos Patrimoniais</a>
       <a href="#portfolio">📚 Portfólio</a>
       <a href="#biografia">👤 Biografia</a>
       <a href="#contato">📞 Contato</a>
+    </nav>
+  </aside>
+
+  <aside class="offcanvas right" id="accessMenu" aria-hidden="true">
+    <button class="close-btn" data-close="accessMenu">×</button>
+    <h2>♿ ACESSIBILIDADE</h2>
+
+    <div class="access-list">
+      <button data-theme="dark">🌙 Tema Escuro</button>
+      <button data-theme="light">☀️ Tema Claro</button>
+      <button id="highContrastBtn">HC Alto Contraste</button>
+
+      <button data-font="normal">A</button>
+      <button data-font="large">A+</button>
+      <button data-font="xlarge">A++</button>
+
+      <button data-lang="pt">🇧🇷 Português</button>
+      <button data-lang="en">🇺🇸 English</button>
+      <button data-lang="es">🇪🇸 Español</button>
+
+      <button disabled>🔊 Voz (futuro)</button>
+      <button disabled>🤟 Libras (futuro)</button>
     </div>
-  </nav>
-
-  <header id="home" class="hero">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content reveal">
-      <img class="hero-logo" src="assets/logos/holografica/logo-holografica-vgc-global-v1.png" alt="Logo Holográfica Décio Coelho Global">
-
-      <p class="eyebrow" data-i18n="eyebrow">Da Ancestralidade Territorial à Inteligência Global</p>
-
-      <h1 data-i18n="heroTitle">Ecossistema Décio Coelho Global</h1>
-
-      <p class="hero-text" data-i18n="heroText">
-        O Primeiro Ecossistema Territorial Híbrido Homem + IA do Mundo,
-        integrando governança, cultura, turismo, patrimônio, memória,
-        IA Generativa, operação real e inteligência territorial planetária.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#manifesto" class="btn primary" data-i18n="enterEcosystem">Entrar no Ecossistema</a>
-        <a href="#mvgc9" class="btn" data-i18n="knowMVGC9">Conhecer o MVGC-9</a>
-      </div>
-    </div>
-  </header>
+  </aside>
 
   <main>
-
-    <section id="manifesto" class="section reveal">
-      <h2 data-i18n="manifesto">MANIFESTO FUNDADOR</h2>
-
-      <p class="lead" data-i18n="lead">
-        Nascido em Vila Bela da Santíssima Trindade, Mato Grosso, Brasil,
-        o Ecossistema Décio Coelho Global transforma memória territorial,
-        ancestralidade, tecnologia e IA em uma arquitetura viva de inteligência.
-      </p>
-
-      <blockquote>
-        “A Inteligência Artificial não substitui a ancestralidade. Ela amplia sua permanência no tempo.”
-      </blockquote>
-    </section>
-
-    <section id="mvgc9" class="section reveal">
-      <h2 data-i18n="mvgc9">MVGC-9 GLOBAL</h2>
-
-      <p class="lead" data-i18n="mvgc9Lead">
-        Modelo Viracopos de Governança Cognitiva: PDCA Vivo, Cubo OLAP Global,
-        agentes inteligentes, fluxos cognitivos e inteligência territorial planetária.
-      </p>
-
-      <div class="image-frame">
-        <img src="assets/holograms/cosmology/painel-cosmologico-mvgc9-global-v2.png" alt="Painel Cosmológico MVGC-9 Global" loading="lazy">
-      </div>
-
-      <div class="cta-center">
-        <a href="#cognicao" class="btn-premium">Conhecer a Arquitetura Cognitiva</a>
+    <section id="inicio" class="hero">
+      <div class="hero-card">
+        <h1 data-i18n="title">ECOSSISTEMA DÉCIO COELHO GLOBAL</h1>
+        <p data-i18n="subtitle">
+          Da ancestralidade territorial à inteligência global.
+        </p>
+        <a href="#ecossistema" class="primary-btn" data-i18n="enter">
+          Entrar no Ecossistema
+        </a>
       </div>
     </section>
 
-    <section id="atlas" class="section reveal">
-      <h2 data-i18n="atlas">ATLAS INTERATIVO GLOBAL</h2>
-
-      <p class="lead" data-i18n="atlasLead">
-        Territórios, memórias, culturas, pessoas e projetos conectados por uma arquitetura viva
-        de inteligência territorial, ancestralidade e IA.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <h3 data-i18n="territorios">Territórios</h3>
-          <p data-i18n="territoriosTxt">
-            Mapeamento de lugares, rotas, complexos patrimoniais, atrativos e centralidades culturais.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="memorias">Memórias</h3>
-          <p data-i18n="memoriasTxt">
-            Registro de histórias, documentos, biografias, arquivos familiares e patrimônio imaterial.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3 data-i18n="projetos">Projetos</h3>
-          <p data-i18n="projetosTxt">
-            Integração entre MVGC-9, SIPF, Viracopos, MontaFácil, streamings, agentes e portais.
-          </p>
-        </article>
-      </div>
-
-      <div class="cta-center">
-        <a href="#complexos" class="btn-premium">Explorar os Complexos Patrimoniais</a>
-      </div>
+    <section id="ecossistema" class="section">
+      <h2>ECOSSISTEMA</h2>
+      <p>Arquitetura viva de memória, território, tecnologia, turismo, patrimônio e inteligência cognitiva.</p>
     </section>
 
-    <section id="cognicao" class="section reveal">
+    <section id="manifesto" class="section">
+      <h2>MANIFESTO FUNDADOR</h2>
+      <p>A Inteligência Artificial não substitui a ancestralidade: amplia sua permanência no tempo.</p>
+    </section>
+
+    <section id="atlas" class="section">
+      <h2>ATLAS GLOBAL</h2>
+      <p>Mapa vivo do conhecimento, dos complexos patrimoniais e da inteligência territorial.</p>
+    </section>
+
+    <section id="mvgc9" class="section">
+      <h2>MVGC-9</h2>
+      <p>Metaverso institucional do Ecossistema Décio Coelho Global.</p>
+    </section>
+
+    <section id="cognicao" class="section">
       <h2>COGNIÇÃO HÍBRIDA</h2>
-      <p class="lead">
-        Da experiência humana à inteligência ampliada pela IA Generativa, integrando memória,
-        território, governança, dados, cultura, turismo e operação real.
-      </p>
+      <p>A primeira grande parceria entre experiência humana, memória territorial e inteligência artificial.</p>
     </section>
 
-    <section id="complexos" class="section reveal">
-      <h2>COMPLEXOS PATRIMONIAIS</h2>
-      <p class="lead">
-        Viracopos, Formosa, 1ª Capital, Guaporé, Jatobá, Namorados, Verde, Capivary,
-        Guará e demais territórios conectados ao Atlas Digital Interativo Global.
-      </p>
-    </section>
-
-    <section id="portfolio" class="section reveal">
+    <section id="portfolio" class="section">
       <h2>PORTFÓLIO</h2>
-      <p class="lead">
-        Projetos, plataformas, documentos, agentes, hologramas, dashboards,
-        ecossistemas digitais e experiências institucionais.
-      </p>
+      <p>Projetos, fases, módulos, ativos digitais, turismo, patrimônio e inovação.</p>
     </section>
 
-    <section id="biografia" class="section reveal">
+    <section id="biografia" class="section">
       <h2>BIOGRAFIA</h2>
-      <p class="lead">
-        Trajetória profissional, memória territorial, gestão pública, tecnologia,
-        turismo, inovação e IA Generativa aplicada ao desenvolvimento territorial.
-      </p>
+      <p>Trajetória humana, técnica, territorial, turística e cognitiva.</p>
     </section>
 
-    <section id="timeline" class="section reveal">
-      <h2>TIMELINE FUNDADORA</h2>
-
-      <div class="timeline">
-        <div><span>1960s</span><p>Telegrafia e comunicação territorial.</p></div>
-        <div><span>1971–1974</span><p>Datilografia e formação técnica.</p></div>
-        <div><span>1975–1978</span><p>Computação contábil, bancária e NCR31.</p></div>
-        <div><span>1978+</span><p>Mainframes IBM, linguagens, bancos de dados e sistemas públicos.</p></div>
-        <div><span>2000s</span><p>Web 2.0, portais, sistemas gráficos e integração digital.</p></div>
-        <div><span>2020s</span><p>IA Generativa, MVGC-9 Global e Ecossistema Décio Coelho Global.</p></div>
-      </div>
+    <section id="contato" class="section">
+      <h2>CONTATO</h2>
+      <p>Canal institucional para conexões, parcerias e continuidade do legado.</p>
     </section>
-
-    <section id="metaverso" class="section reveal">
-      <h2>METAVERSO INSTITUCIONAL MVGC-9</h2>
-
-      <p class="lead">
-        O universo operacional do Ecossistema: dashboards holográficos,
-        agentes inteligentes, Cubo OLAP Global, Atlas Interativo e governança cognitiva em tempo real.
-      </p>
-
-      <div class="image-frame">
-        <img src="assets/holograms/metaverse/metaverso-institucional-mvgc9-global.png" alt="Metaverso Institucional MVGC-9" loading="lazy">
-      </div>
-    </section>
-
-    <section id="painel-vivo" class="section reveal">
-      <h2 data-i18n="painelVivo">Painel Vivo do Ecossistema</h2>
-
-      <p class="lead" data-i18n="painelVivoTxt">
-        Módulos, agentes, acervos, hologramas, dashboards e ecossistemas renderizados dinamicamente por dados.
-      </p>
-
-      <div id="dashboardGrid" class="dashboard-grid"></div>
-      <div id="modulesGrid" class="cards"></div>
-    </section>
-
-    <section id="dashboard" class="section reveal">
-      <h2>DASHBOARD COGNITIVO GLOBAL</h2>
-
-      <p class="lead">
-        Indicadores vivos do Ecossistema Décio Coelho Global,
-        integrando patrimônio, governança, inteligência territorial,
-        IA Generativa e operação real.
-      </p>
-
-      <div class="dashboard-grid">
-
-      <div class="numero" id="territorios">
-        0      
-        <p>Complexos Patrimoniais</p>
-      </div>
-
-      <div class="numero" id="projetos">
-        0
-        <p>Projetos Estratégicos</p>
-      </div>
-
-      <div class="numero" id="hologramas">
-        0
-        <p>Hologramas</p>
-      </div>
-
-      <div class="numero" id="ecossistemas">
-        0
-        <p>Ecossistemas Globais</p>
-      </div>
-
-       <div class="numero" id="agentes">
-         0
-         <p>Agentes</p>
-       </div>
-
-       <div class="status-box">
-          Status:
-          <span id="status">
-          CARREGANDO...
-          </span>
-        </div>
-
-        <div class="dashboard-card">
-          <span>∞</span>
-          <p>Possibilidades</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer id="contato" class="footer premium-footer">
-    <img src="assets/img/logo-dc-header-64.png" alt="DC Global" class="footer-logo">
+  <button class="floating-access" id="floatingAccess" aria-label="Abrir acessibilidade">📱</button>
 
-    <h2 data-i18n="contato">CONTATO</h2>
-
-    <h2 data-i18n="footerTitle">Ecossistema Décio Coelho Global</h2>
-
-    <p data-i18n="footerDesc">
-      Curadoria Viracopos Global • Homem + IA • OpenAI • ChatGPT
-    </p>
-
-    <p>Vila Bela da Santíssima Trindade • Mato Grosso • Brasil • Mundo</p>
-
-    <div class="footer-actions">
-      <a href="mailto:antoniodecioferreiracoelho@gmail.com">📧 E-mail</a>
-      <a href="https://wa.me/5565984091524" target="_blank" rel="noopener">📱 WhatsApp</a>
-    </div>
-
-    <p class="copyright">© <span id="year"></span> DC Global</p>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/5565984091524" target="_blank" rel="noopener" aria-label="WhatsApp">
-    📱
-  </a>
-
-  <script src="assets/js/dynamic-loader.js?v=4.2.1"></script>
-  <script src="assets/js/dashboard-loader.js?v=3.4"></script>
-  <script src="assets/js/global-experience.js?v=4.1"></script>
-  <script src="assets/js/v43-accessibility.js?v=4.4"></script>
-
-  <script src="assets/js/dashboard.js"></script>
-
-  <script src="js/atlas-vivo.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
 

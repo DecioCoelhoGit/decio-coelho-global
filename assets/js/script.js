@@ -1,100 +1,119 @@
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-const topBtn = document.getElementById("topBtn");
+const overlay = document.getElementById("overlay");
+const mainMenu = document.getElementById("mainMenu");
+const accessMenu = document.getElementById("accessMenu");
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+const openMainMenu = document.getElementById("openMainMenu");
+const openAccessMenu = document.getElementById("openAccessMenu");
+const floatingAccess = document.getElementById("floatingAccess");
+
+function openPanel(panel) {
+  closePanels();
+  panel.classList.add("active");
+  panel.setAttribute("aria-hidden", "false");
+  overlay.classList.add("active");
+}
+
+function closePanels() {
+  [mainMenu, accessMenu].forEach(panel => {
+    panel.classList.remove("active");
+    panel.setAttribute("aria-hidden", "true");
+  });
+  overlay.classList.remove("active");
+}
+
+openMainMenu.addEventListener("click", () => openPanel(mainMenu));
+openAccessMenu.addEventListener("click", () => openPanel(accessMenu));
+floatingAccess.addEventListener("click", () => openPanel(accessMenu));
+overlay.addEventListener("click", closePanels);
+
+document.querySelectorAll("[data-close]").forEach(btn => {
+  btn.addEventListener("click", closePanels);
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
+document.querySelectorAll(".menu-list a").forEach(link => {
+  link.addEventListener("click", closePanels);
+});
+
+/* TEMA */
+
+document.querySelectorAll("[data-theme]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.body.classList.remove("theme-dark", "theme-light");
+    document.body.classList.add(`theme-${btn.dataset.theme}`);
+    localStorage.setItem("dc-theme", btn.dataset.theme);
   });
 });
 
-const revealElements = document.querySelectorAll(".reveal");
+document.getElementById("highContrastBtn").addEventListener("click", () => {
+  document.body.classList.toggle("high-contrast");
+  localStorage.setItem(
+    "dc-contrast",
+    document.body.classList.contains("high-contrast") ? "on" : "off"
+  );
+});
 
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
+/* FONTE */
 
-  revealElements.forEach(element => {
-    const elementTop = element.getBoundingClientRect().top;
+document.querySelectorAll("[data-font]").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.body.classList.remove("font-normal", "font-large", "font-xlarge");
+    document.body.classList.add(`font-${btn.dataset.font}`);
+    localStorage.setItem("dc-font", btn.dataset.font);
+  });
+});
 
-    if (elementTop < windowHeight - 90) {
-      element.classList.add("active");
+/* IDIOMAS SIMPLES */
+
+const translations = {
+  pt: {
+    title: "ECOSSISTEMA DÉCIO COELHO GLOBAL",
+    subtitle: "Da ancestralidade territorial à inteligência global.",
+    enter: "Entrar no Ecossistema"
+  },
+  en: {
+    title: "DÉCIO COELHO GLOBAL ECOSYSTEM",
+    subtitle: "From territorial ancestry to global intelligence.",
+    enter: "Enter the Ecosystem"
+  },
+  es: {
+    title: "ECOSISTEMA DÉCIO COELHO GLOBAL",
+    subtitle: "De la ancestralidad territorial a la inteligencia global.",
+    enter: "Entrar al Ecosistema"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
     }
   });
+  localStorage.setItem("dc-lang", lang);
+}
 
-  if (window.scrollY > 500) {
-    topBtn.classList.add("show");
-  } else {
-    topBtn.classList.remove("show");
+document.querySelectorAll("[data-lang]").forEach(btn => {
+  btn.addEventListener("click", () => setLang(btn.dataset.lang));
+});
+
+/* RESTAURAR PREFERÊNCIAS */
+
+window.addEventListener("DOMContentLoaded", () => {
+  const theme = localStorage.getItem("dc-theme") || "dark";
+  const font = localStorage.getItem("dc-font") || "normal";
+  const contrast = localStorage.getItem("dc-contrast");
+  const lang = localStorage.getItem("dc-lang") || "pt";
+
+  document.body.classList.remove("theme-dark", "theme-light");
+  document.body.classList.add(`theme-${theme}`);
+
+  document.body.classList.remove("font-normal", "font-large", "font-xlarge");
+  document.body.classList.add(`font-${font}`);
+
+  if (contrast === "on") {
+    document.body.classList.add("high-contrast");
   }
-}
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-topBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  setLang(lang);
 });
 
-const menuToggle = document.getElementById("menuToggle");
-const closeMenu = document.getElementById("closeMenu");
-const offcanvasMenu = document.getElementById("offcanvasMenu");
-const offcanvasOverlay = document.getElementById("offcanvasOverlay");
-
-function openOffcanvas() {
-  offcanvasMenu.classList.add("active");
-  offcanvasOverlay.classList.add("active");
-  offcanvasMenu.setAttribute("aria-hidden", "false");
-}
-
-function closeOffcanvas() {
-  offcanvasMenu.classList.remove("active");
-  offcanvasOverlay.classList.remove("active");
-  offcanvasMenu.setAttribute("aria-hidden", "true");
-}
-
-menuToggle?.addEventListener("click", openOffcanvas);
-closeMenu?.addEventListener("click", closeOffcanvas);
-offcanvasOverlay?.addEventListener("click", closeOffcanvas);
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeOffcanvas();
-  }
-});
-
-document.querySelectorAll(".offcanvas-nav a").forEach(link => {
-  link.addEventListener("click", closeOffcanvas);
-});
-
-document.getElementById("contrastToggle")?.addEventListener("click", () => {
-  document.body.classList.toggle("high-contrast");
-});
-
-document.getElementById("themeToggle")?.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-});
-
-document.getElementById("fontIncrease")?.addEventListener("click", () => {
-  document.body.classList.remove("small-font");
-  document.body.classList.toggle("large-font");
-});
-
-document.getElementById("fontDecrease")?.addEventListener("click", () => {
-  document.body.classList.remove("large-font");
-  document.body.classList.toggle("small-font");
-});
-
-document.querySelectorAll("[data-lang]").forEach(button => {
-  button.addEventListener("click", () => {
-    const lang = button.dataset.lang;
-    localStorage.setItem("dcglobal-lang", lang);
-    alert("Idioma selecionado: " + lang.toUpperCase());
-  });
-});
