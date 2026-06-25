@@ -888,3 +888,132 @@ html {
     0 0 10px #00ff44;
 
 }
+
+.menu-toggle {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1002;
+  background: #050b12;
+  color: #39ff14;
+  border: 1px solid #39ff14;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.offcanvas-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.72);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: .3s ease;
+}
+
+.offcanvas-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  left: -330px;
+  width: 300px;
+  height: 100vh;
+  background: #03070d;
+  color: #ffffff;
+  z-index: 1001;
+  padding: 22px;
+  border-right: 1px solid #39ff14;
+  transition: .35s ease;
+  overflow-y: auto;
+}
+
+.offcanvas-menu.active {
+  left: 0;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #39ff14;
+}
+
+.offcanvas-header button {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.offcanvas-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.offcanvas-nav a {
+  color: #f5d76e;
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-bottom: 8px;
+}
+
+.accessibility-panel {
+  margin-top: 32px;
+}
+
+.accessibility-panel h3 {
+  color: #39ff14;
+}
+
+.accessibility-panel button,
+.language-buttons button {
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #39ff14;
+  background: #07111f;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 999;
+  background: #25d366;
+  color: #001b0d;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body.high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+body.light-mode {
+  background: #f5f5f5;
+  color: #111;
+}
+
+body.large-font {
+  font-size: 118%;
+}
+
+body.small-font {
+  font-size: 92%;
+}
