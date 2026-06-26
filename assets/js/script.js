@@ -1,119 +1,104 @@
-const overlay = document.getElementById("overlay");
-const mainMenu = document.getElementById("mainMenu");
+const navMenu = document.getElementById("navMenu");
 const accessMenu = document.getElementById("accessMenu");
 
-const openMainMenu = document.getElementById("openMainMenu");
-const openAccessMenu = document.getElementById("openAccessMenu");
-const floatingAccess = document.getElementById("floatingAccess");
+document.getElementById("openNav").onclick = () => navMenu.classList.add("open");
+document.getElementById("closeNav").onclick = () => navMenu.classList.remove("open");
 
-function openPanel(panel) {
-  closePanels();
-  panel.classList.add("active");
-  panel.setAttribute("aria-hidden", "false");
-  overlay.classList.add("active");
-}
+document.getElementById("openAccess").onclick = () => accessMenu.classList.add("open");
+document.getElementById("openAccessFloat").onclick = () => accessMenu.classList.add("open");
+document.getElementById("closeAccess").onclick = () => accessMenu.classList.remove("open");
 
-function closePanels() {
-  [mainMenu, accessMenu].forEach(panel => {
-    panel.classList.remove("active");
-    panel.setAttribute("aria-hidden", "true");
-  });
-  overlay.classList.remove("active");
-}
-
-openMainMenu.addEventListener("click", () => openPanel(mainMenu));
-openAccessMenu.addEventListener("click", () => openPanel(accessMenu));
-floatingAccess.addEventListener("click", () => openPanel(accessMenu));
-overlay.addEventListener("click", closePanels);
-
-document.querySelectorAll("[data-close]").forEach(btn => {
-  btn.addEventListener("click", closePanels);
-});
-
-document.querySelectorAll(".menu-list a").forEach(link => {
-  link.addEventListener("click", closePanels);
-});
-
-/* TEMA */
-
-document.querySelectorAll("[data-theme]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.body.classList.remove("theme-dark", "theme-light");
-    document.body.classList.add(`theme-${btn.dataset.theme}`);
-    localStorage.setItem("dc-theme", btn.dataset.theme);
+document.querySelectorAll(".offcanvas a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+    accessMenu.classList.remove("open");
   });
 });
 
-document.getElementById("highContrastBtn").addEventListener("click", () => {
+function setTheme(theme) {
+  document.body.classList.remove("light");
+  if (theme === "light") document.body.classList.add("light");
+}
+
+function toggleContrast() {
   document.body.classList.toggle("high-contrast");
-  localStorage.setItem(
-    "dc-contrast",
-    document.body.classList.contains("high-contrast") ? "on" : "off"
-  );
-});
+}
 
-/* FONTE */
-
-document.querySelectorAll("[data-font]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.body.classList.remove("font-normal", "font-large", "font-xlarge");
-    document.body.classList.add(`font-${btn.dataset.font}`);
-    localStorage.setItem("dc-font", btn.dataset.font);
-  });
-});
-
-/* IDIOMAS SIMPLES */
-
-const translations = {
-  pt: {
-    title: "ECOSSISTEMA DÉCIO COELHO GLOBAL",
-    subtitle: "Da ancestralidade territorial à inteligência global.",
-    enter: "Entrar no Ecossistema"
-  },
-  en: {
-    title: "DÉCIO COELHO GLOBAL ECOSYSTEM",
-    subtitle: "From territorial ancestry to global intelligence.",
-    enter: "Enter the Ecosystem"
-  },
-  es: {
-    title: "ECOSISTEMA DÉCIO COELHO GLOBAL",
-    subtitle: "De la ancestralidad territorial a la inteligencia global.",
-    enter: "Entrar al Ecosistema"
-  }
-};
+function setFontSize(size) {
+  document.body.classList.remove("font-large", "font-xlarge");
+  if (size === "large") document.body.classList.add("font-large");
+  if (size === "xlarge") document.body.classList.add("font-xlarge");
+}
 
 function setLang(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
+  document.querySelectorAll("[data-pt]").forEach(el => {
+    el.textContent = el.dataset[lang] || el.dataset.pt;
   });
-  localStorage.setItem("dc-lang", lang);
 }
 
-document.querySelectorAll("[data-lang]").forEach(btn => {
-  btn.addEventListener("click", () => setLang(btn.dataset.lang));
-});
+const revealItems = document.querySelectorAll(".reveal");
 
-/* RESTAURAR PREFERÊNCIAS */
+function revealOnScroll() {
+  revealItems.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) {
+      item.classList.add("active");
+    }
+  });
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-  const theme = localStorage.getItem("dc-theme") || "dark";
-  const font = localStorage.getItem("dc-font") || "normal";
-  const contrast = localStorage.getItem("dc-contrast");
-  const lang = localStorage.getItem("dc-lang") || "pt";
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-  document.body.classList.remove("theme-dark", "theme-light");
-  document.body.classList.add(`theme-${theme}`);
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
 
-  document.body.classList.remove("font-normal", "font-large", "font-xlarge");
-  document.body.classList.add(`font-${font}`);
+let particles = [];
 
-  if (contrast === "on") {
-    document.body.classList.add("high-contrast");
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+function createParticles() {
+  particles = [];
+  const total = Math.min(80, Math.floor(window.innerWidth / 8));
+
+  for (let i = 0; i < total; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.5,
+      dx: (Math.random() - 0.5) * 0.35,
+      dy: (Math.random() - 0.5) * 0.35
+    });
   }
+}
 
-  setLang(lang);
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0, 255, 65, 0.7)";
+    ctx.fill();
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+window.addEventListener("resize", () => {
+  resizeCanvas();
+  createParticles();
 });
 
+resizeCanvas();
+createParticles();
+animateParticles();
