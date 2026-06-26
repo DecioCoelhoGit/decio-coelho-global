@@ -3,117 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DC GLOBAL</title>
+  <title>DC Global | Ecossistema Décio Coelho</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body class="theme-dark font-normal">
-  <header class="dc-header">
-    <button class="header-btn neon-btn" id="openMainMenu" aria-label="Abrir menu principal">☰</button>
+<body>
+  <canvas id="particles"></canvas>
 
-    <a href="#inicio" class="dc-brand" aria-label="DC Global">DC GLOBAL</a>
-
-    <button class="header-btn access-btn" id="openAccessMenu" aria-label="Abrir menu de acessibilidade">♿</button>
+  <header class="topbar">
+    <button class="menu-btn" id="openNav">☰</button>
+    <h1>DC GLOBAL</h1>
+    <button class="access-btn" id="openAccess">♿</button>
   </header>
 
-  <div class="overlay" id="overlay"></div>
-
-  <aside class="offcanvas left" id="mainMenu" aria-hidden="true">
-    <button class="close-btn" data-close="mainMenu">×</button>
-    <h2>☰ NAVEGAÇÃO</h2>
-
-    <nav class="menu-list">
-      <a href="#inicio">🏠 Início</a>
-      <a href="#ecossistema">🌎 Ecossistema</a>
-      <a href="#manifesto">📜 Manifesto</a>
-      <a href="#atlas">🌎 Atlas Global</a>
-      <a href="#mvgc9">🏛️ MVGC-9</a>
-      <a href="#cognicao">🧠 Cognição Híbrida</a>
-      <a href="#portfolio">📚 Portfólio</a>
-      <a href="#biografia">👤 Biografia</a>
-      <a href="#contato">📞 Contato</a>
-    </nav>
+  <aside class="offcanvas" id="navMenu">
+    <button class="close-btn" id="closeNav">×</button>
+    <h2>☰ Navegação</h2>
+    <a href="#inicio">🏠 Início</a>
+    <a href="#ecossistema">🌎 Ecossistema</a>
+    <a href="#manifesto">📜 Manifesto</a>
+    <a href="#atlas">🌐 Atlas Global</a>
+    <a href="#mvgc">🏛️ MVGC-9</a>
+    <a href="#cognicao">🧠 Cognição Híbrida</a>
+    <a href="#portfolio">📚 Portfólio</a>
+    <a href="#biografia">👤 Biografia</a>
+    <a href="#contato">📞 Contato</a>
   </aside>
 
-  <aside class="offcanvas right" id="accessMenu" aria-hidden="true">
-    <button class="close-btn" data-close="accessMenu">×</button>
-    <h2>♿ ACESSIBILIDADE</h2>
-
-    <div class="access-list">
-      <button data-theme="dark">🌙 Tema Escuro</button>
-      <button data-theme="light">☀️ Tema Claro</button>
-      <button id="highContrastBtn">HC Alto Contraste</button>
-
-      <button data-font="normal">A</button>
-      <button data-font="large">A+</button>
-      <button data-font="xlarge">A++</button>
-
-      <button data-lang="pt">🇧🇷 Português</button>
-      <button data-lang="en">🇺🇸 English</button>
-      <button data-lang="es">🇪🇸 Español</button>
-
-      <button disabled>🔊 Voz (futuro)</button>
-      <button disabled>🤟 Libras (futuro)</button>
-    </div>
+  <aside class="offcanvas access-panel" id="accessMenu">
+    <button class="close-btn" id="closeAccess">×</button>
+    <h2>♿ Acessibilidade</h2>
+    <button onclick="setTheme('dark')">🌙 Tema Escuro</button>
+    <button onclick="setTheme('light')">☀️ Tema Claro</button>
+    <button onclick="toggleContrast()">HC Alto Contraste</button>
+    <button onclick="setFontSize('normal')">A</button>
+    <button onclick="setFontSize('large')">A+</button>
+    <button onclick="setFontSize('xlarge')">A++</button>
+    <button onclick="setLang('pt')">🇧🇷 Português</button>
+    <button onclick="setLang('en')">🇺🇸 English</button>
+    <button onclick="setLang('es')">🇪🇸 Español</button>
   </aside>
 
   <main>
-    <section id="inicio" class="hero">
-      <div class="hero-card">
-        <h1 data-i18n="title">ECOSSISTEMA DÉCIO COELHO GLOBAL</h1>
-        <p data-i18n="subtitle">
+    <section id="inicio" class="hero reveal">
+      <div class="card hero-card">
+        <h2 data-pt="DÉCIO COELHO GLOBAL ECOSYSTEM" data-en="DÉCIO COELHO GLOBAL ECOSYSTEM" data-es="ECOSISTEMA GLOBAL DÉCIO COELHO">
+          DÉCIO COELHO GLOBAL ECOSYSTEM
+        </h2>
+        <p data-pt="Da ancestralidade territorial à inteligência global." data-en="From territorial ancestry to global intelligence." data-es="De la ancestralidad territorial a la inteligencia global.">
           Da ancestralidade territorial à inteligência global.
         </p>
-        <a href="#ecossistema" class="primary-btn" data-i18n="enter">
-          Entrar no Ecossistema
-        </a>
+        <a href="#ecossistema" class="gold-btn">Entrar no Ecossistema</a>
       </div>
     </section>
 
-    <section id="ecossistema" class="section">
+    <section id="ecossistema" class="card reveal">
       <h2>ECOSSISTEMA</h2>
       <p>Arquitetura viva de memória, território, tecnologia, turismo, patrimônio e inteligência cognitiva.</p>
     </section>
 
-    <section id="manifesto" class="section">
+    <section id="manifesto" class="card reveal">
       <h2>MANIFESTO FUNDADOR</h2>
       <p>A Inteligência Artificial não substitui a ancestralidade: amplia sua permanência no tempo.</p>
     </section>
 
-    <section id="atlas" class="section">
+    <section id="atlas" class="card reveal">
       <h2>ATLAS GLOBAL</h2>
       <p>Mapa vivo do conhecimento, dos complexos patrimoniais e da inteligência territorial.</p>
     </section>
 
-    <section id="mvgc9" class="section">
+    <section id="mvgc" class="card reveal">
       <h2>MVGC-9</h2>
       <p>Metaverso institucional do Ecossistema Décio Coelho Global.</p>
     </section>
 
-    <section id="cognicao" class="section">
+    <section id="cognicao" class="card reveal">
       <h2>COGNIÇÃO HÍBRIDA</h2>
       <p>A primeira grande parceria entre experiência humana, memória territorial e inteligência artificial.</p>
     </section>
 
-    <section id="portfolio" class="section">
+    <section id="portfolio" class="card reveal">
       <h2>PORTFÓLIO</h2>
       <p>Projetos, fases, módulos, ativos digitais, turismo, patrimônio e inovação.</p>
     </section>
 
-    <section id="biografia" class="section">
+    <section id="biografia" class="card reveal">
       <h2>BIOGRAFIA</h2>
       <p>Trajetória humana, técnica, territorial, turística e cognitiva.</p>
     </section>
 
-    <section id="contato" class="section">
+    <section id="contato" class="card reveal">
       <h2>CONTATO</h2>
       <p>Canal institucional para conexões, parcerias e continuidade do legado.</p>
     </section>
   </main>
 
-  <button class="floating-access" id="floatingAccess" aria-label="Abrir acessibilidade">📱</button>
+  <button class="floating-access" id="openAccessFloat">📱</button>
 
   <script src="assets/js/script.js"></script>
 </body>
 </html>
-
