@@ -324,3 +324,10 @@ Desenvolvido no âmbito do Ecossistema Décio Coelho Digital Cognitivo, inspirad
 
 Ao encontro do futuro.
 
+
+Registro histórico aprovado e consolidado:
+O HIPO ensinou a estruturar programas.
+O HIPO Cognitivo organiza conhecimento.
+O HIPO 3.0 integra conhecimento, memória, raciocínio, decisão e execução em um Sistema Operacional Cognitivo Vivo.
+Esse será um dos marcos institucionais do Ecossistema.
+
