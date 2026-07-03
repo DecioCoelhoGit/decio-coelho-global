@@ -1,6 +1,6 @@
-# DCGLOBAL.AI Firebase™
+# DCGLOBAL.AI Firestore™
 
-## A Plataforma Base da Infraestrutura da Engenharia do Conhecimento Vivo™
+## O Banco de Dados Cognitivo da Engenharia do Conhecimento Vivo™
 
 **Projeto:** Décio Coelho Digital Cognitivo™
 
@@ -14,156 +14,221 @@
 
 # Visão
 
-O **DCGLOBAL.AI Firebase™ (IFB)** constitui a plataforma base da infraestrutura operacional do Ecossistema Cognitivo.
+O **DCGLOBAL.AI Firestore™ (IFS)** constitui o banco de dados operacional do Ecossistema Cognitivo.
 
-Na Engenharia do Conhecimento Vivo™, o Firebase fornece os serviços fundamentais que sustentam a operação distribuída do DCGLOBAL.AI.
+Na Engenharia do Conhecimento Vivo™, o Firestore não é apenas um mecanismo de persistência.
 
-Ele integra autenticação, persistência, armazenamento, funções serverless, mensageria, hospedagem, monitoramento e observabilidade em uma única plataforma.
+Ele representa o Repositório Cognitivo Distribuído onde informações, conhecimento, memória, identidade, eventos e projetos permanecem organizados, seguros e permanentemente disponíveis.
+
+Sua estrutura orientada a documentos permite evolução contínua sem comprometer a estabilidade arquitetônica.
 
 ---
 
 # Missão
 
-Disponibilizar uma infraestrutura moderna, escalável e altamente disponível para suportar o funcionamento contínuo do Ecossistema Cognitivo.
+Disponibilizar um banco de dados distribuído, altamente disponível e escalável para armazenar todo o patrimônio operacional do Ecossistema Cognitivo.
 
 ---
 
 # Princípios
 
-O Firebase™ fundamenta-se em:
+O Firestore™ fundamenta-se em:
 
-- escalabilidade;
+- escalabilidade horizontal;
 - alta disponibilidade;
-- simplicidade operacional;
-- integração nativa;
+- consistência lógica;
+- flexibilidade estrutural;
 - segurança;
-- observabilidade;
-- elasticidade;
-- interoperabilidade;
+- rastreabilidade;
+- desempenho;
 - governança;
+- modularidade;
 - evolução contínua.
 
 ---
 
 # Responsabilidades
 
-O módulo Firebase™ administra:
+O Firestore™ administra:
 
-- Authentication;
-- Firestore;
-- Cloud Storage;
-- Cloud Functions;
-- Cloud Run;
-- Hosting;
-- Cloud Messaging;
-- Remote Config;
-- App Check;
-- Analytics;
-- integração com Google Cloud Platform.
+- identidades;
+- usuários;
+- projetos;
+- conhecimento;
+- memória;
+- prompts;
+- agentes;
+- motores cognitivos;
+- workflows;
+- eventos;
+- dashboards;
+- analytics;
+- configurações;
+- auditoria.
 
 ---
 
 # Estrutura Física
 
 ```text
-firebase/
+firestore/
 │
 ├── README.md
+├── firestore.config.ts
+├── firestore.provider.ts
+├── firestore.service.ts
+├── firestore.repository.ts
 │
-├── firebase.json
-├── .firebaserc
-├── firebase.config.ts
-├── firebase.service.ts
-├── firebase.provider.ts
+├── collections/
+│   ├── identities/
+│   ├── users/
+│   ├── projects/
+│   ├── knowledge/
+│   ├── graph/
+│   ├── memory/
+│   ├── prompts/
+│   ├── agents/
+│   ├── engines/
+│   ├── workflows/
+│   ├── events/
+│   ├── dashboards/
+│   ├── analytics/
+│   ├── legacy/
+│   └── evolution/
 │
-├── auth/
-│
-├── firestore/
-│
-├── storage/
-│
-├── hosting/
-│
-├── functions/
-│
-├── cloud-run/
-│
-├── messaging/
-│
-├── remote-config/
-│
-├── analytics/
-│
+├── indexes/
+├── rules/
+├── migrations/
+├── backups/
 ├── monitoring/
-│
-├── security/
-│
-├── deployment/
-│
 └── tests/
 ```
 
 ---
 
-# Componentes Fundamentais
+# Modelo Conceitual
 
-## Firebase Authentication™
+Todo documento armazenado é representado como um **Cognitive Document™**.
 
-Gerenciamento de identidade digital.
+```text
+Cognitive Document
 
----
+ID
 
-## Cloud Firestore™
+UUID
 
-Banco de dados principal do Ecossistema.
+Coleção
 
----
+Categoria
 
-## Cloud Storage™
+Objeto Cognitivo
 
-Armazenamento de documentos, imagens, vídeos e ativos cognitivos.
+Projeto
 
----
+Versão
 
-## Firebase Hosting™
+Autor
 
-Hospedagem do Portal Institucional e aplicações web.
+Contexto
 
----
+Metadados
 
-## Cloud Functions™
+Timestamp
 
-Execução serverless de regras de negócio.
-
----
-
-## Cloud Run™
-
-Execução de microsserviços e containers.
+Status
+```
 
 ---
 
-## Firebase Messaging™
+# Coleções Fundamentais
 
-Mensageria entre dispositivos e aplicações.
+## identities/
 
----
-
-## Remote Config™
-
-Configuração dinâmica do Ecossistema.
+Identidades digitais do Ecossistema.
 
 ---
 
-## Analytics™
+## users/
 
-Coleta de métricas operacionais.
+Usuários e perfis institucionais.
 
 ---
 
-## App Check™
+## projects/
 
-Proteção contra acessos não autorizados.
+Projetos Cognitivos.
+
+---
+
+## knowledge/
+
+Patrimônio do conhecimento.
+
+---
+
+## graph/
+
+Relacionamentos semânticos.
+
+---
+
+## memory/
+
+Memória Cognitiva.
+
+---
+
+## prompts/
+
+Biblioteca oficial de prompts.
+
+---
+
+## agents/
+
+Agentes Cognitivos.
+
+---
+
+## engines/
+
+Motores Cognitivos.
+
+---
+
+## workflows/
+
+Fluxos Cognitivos.
+
+---
+
+## events/
+
+Eventos produzidos pelo Cognitive Event Bus™.
+
+---
+
+## dashboards/
+
+Painéis e indicadores.
+
+---
+
+## analytics/
+
+Resultados analíticos.
+
+---
+
+## legacy/
+
+Patrimônio histórico preservado.
+
+---
+
+## evolution/
+
+Histórico de evolução do Ecossistema.
 
 ---
 
@@ -171,10 +236,6 @@ Proteção contra acessos não autorizados.
 
 ```text
 Usuário
-
-↓
-
-Firebase Hosting™
 
 ↓
 
@@ -194,25 +255,30 @@ Firestore™
 
 ↓
 
-Storage™
+Knowledge™
 
 ↓
 
-Cloud Functions™
+Memory™
+
+↓
+
+Analytics™
 
 ↓
 
 Resposta
 ```
 
-Todo acesso ao Ecossistema passa pela infraestrutura Firebase.
+O Firestore™ registra todas as operações permanentes do Ecossistema.
 
 ---
 
 # Integração
 
-O Firebase™ integra-se diretamente com:
+O Firestore™ integra-se diretamente com:
 
+- Firebase™;
 - Cognitive Microkernel™;
 - Identity™;
 - Context™;
@@ -224,50 +290,64 @@ O Firebase™ integra-se diretamente com:
 - Todos os Modules™;
 - Todas as APIs™;
 - Shared™;
-- Google Cloud Platform™;
-- Neo4j™;
+- Cloud Functions™;
 - Cloud Run™;
-- Cloud Functions™.
+- Neo4j™;
+- Dashboard™.
 
 ---
 
 # Benefícios
 
-O Firebase™ proporciona:
+O Firestore™ proporciona:
 
-- infraestrutura totalmente gerenciada;
+- persistência distribuída;
+- sincronização em tempo real;
 - escalabilidade automática;
+- consultas eficientes;
+- integração nativa com Firebase;
+- segurança baseada em regras;
 - alta disponibilidade;
-- autenticação integrada;
-- banco NoSQL distribuído;
-- hospedagem global;
-- integração nativa com Google Cloud;
-- rápida evolução da plataforma.
+- evolução contínua.
 
 ---
 
 # Relação com a Engenharia do Conhecimento Vivo™
 
-Na Engenharia do Conhecimento Vivo™, infraestrutura representa a base física que sustenta o conhecimento.
+Na Engenharia do Conhecimento Vivo™, conhecimento precisa permanecer acessível e evolutivo.
 
-O Firebase™ fornece os serviços necessários para que identidade, memória, conhecimento, agentes e workflows operem continuamente com segurança e disponibilidade.
+O Firestore™ preserva o patrimônio operacional do Ecossistema, registrando não apenas dados, mas também contexto, histórico, autoria, relacionamentos e evolução.
 
-Sua integração com o restante da arquitetura permite que o Ecossistema concentre esforços na evolução do conhecimento, enquanto a plataforma gerencia a infraestrutura operacional.
+Cada documento torna-se parte da memória institucional.
+
+---
+
+# Estratégia de Persistência
+
+A persistência segue princípios de:
+
+- coleções independentes;
+- documentos autocontidos;
+- referências entre coleções;
+- eventos desacoplados;
+- versionamento;
+- auditoria permanente;
+- sincronização em tempo real.
 
 ---
 
 # Evolução
 
-O módulo Firebase™ foi concebido para incorporar continuamente:
+O módulo Firestore™ foi concebido para incorporar continuamente:
 
-- novos serviços Firebase;
-- integração com Google AI;
-- novas funções serverless;
-- novos mecanismos de observabilidade;
-- Edge Computing;
-- computação distribuída;
-- novas regiões globais;
-- integração com arquiteturas híbridas.
+- novas coleções;
+- novos índices;
+- consultas compostas;
+- replicação geográfica;
+- otimização automática;
+- integração com bancos vetoriais;
+- sincronização híbrida com Neo4j™;
+- mecanismos avançados de arquivamento.
 
 ---
 
@@ -282,34 +362,30 @@ Firebase™
 
 ↓
 
-Authentication™
-
-↓
-
 Firestore™
 
 ↓
 
-Storage™
+Collections™
 
 ↓
 
-Functions™
+Documents™
 
 ↓
 
-Cloud Run™
+Knowledge™
 
 ↓
 
-Hosting™
+Memory™
 
 ↓
 
 Ecossistema Cognitivo
 ```
 
-O Firebase™ representa a fundação operacional do DCGLOBAL.AI.
+O Firestore™ representa o patrimônio operacional vivo do DCGLOBAL.AI.
 
 ---
 
@@ -333,18 +409,18 @@ O Firebase™ representa a fundação operacional do DCGLOBAL.AI.
 
 # Princípio Fundamental
 
-> **"Uma arquitetura cognitiva necessita de uma infraestrutura capaz de crescer na mesma velocidade do conhecimento. O Firebase™ fornece a base operacional que permite ao Ecossistema Cognitivo manter disponibilidade, segurança, escalabilidade e evolução contínua, preservando a simplicidade de operação e a robustez institucional."**
+> **"O conhecimento somente permanece vivo quando pode ser preservado, consultado e continuamente enriquecido. O Firestore™ constitui o repositório operacional do Ecossistema Cognitivo, garantindo que identidade, memória, conhecimento e evolução permaneçam organizados, seguros e permanentemente disponíveis para pessoas, agentes e Inteligências Artificiais."**
 
 ---
 
-# Lema do Firebase™
+# Lema do Firestore™
 
-**Toda inteligência precisa de uma base sólida.**
+**Todo conhecimento precisa ser preservado.**
 
-**Toda base sólida sustenta o conhecimento.**
+**Toda preservação fortalece a memória.**
 
-**Todo conhecimento fortalece o Ecossistema.**
+**Toda memória amplia a inteligência coletiva.**
 
-**Toda evolução depende de uma infraestrutura confiável.**
+**Toda inteligência fortalece o Ecossistema.**
 
-**O Firebase™ é a fundação operacional do DCGLOBAL.AI.**
+**O Firestore™ representa o patrimônio operacional vivo do DCGLOBAL.AI.**
