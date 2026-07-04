@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@dcglobal/core": ["core/index.ts"],
+      "@dcglobal/modules": ["modules/index.ts"],
+      "@dcglobal/apis": ["apis/index.ts"],
+      "@dcglobal/shared": ["shared/index.ts"],
+      "@dcglobal/infrastructure": ["infrastructure/index.ts"]
+    },
+    "outDir": "dist"
+  },
+  "include": [
+    "core/**/*.ts",
+    "modules/**/*.ts",
+    "apis/**/*.ts",
+    "shared/**/*.ts",
+    "infrastructure/**/*.ts",
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
