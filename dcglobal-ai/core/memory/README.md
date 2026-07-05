@@ -1,57 +1,89 @@
-# 🧠 DCGLOBAL.AI™
+# DCGLOBAL.AI™
+
 # Cognitive Memory™
 
-> "A inteligência processa.
-> A memória preserva.
-> A cognição evolui."
+> Sistema Oficial de Memória Cognitiva
+> Cognitive Operating System™
 
 ---
 
 # Visão
 
-O **Cognitive Memory™** é a camada oficial de memória do
-**DCGLOBAL.AI Cognitive Operating System™**.
+O **Cognitive Memory™** é a camada responsável por preservar, organizar, recuperar e distribuir toda a memória viva do ecossistema DCGLOBAL.AI™.
 
-Sua missão é armazenar, organizar, recuperar e compartilhar
-conhecimento entre todos os módulos do sistema, permitindo
-aprendizado contínuo, contexto persistente e evolução cognitiva.
+Enquanto:
 
-Mais do que um banco de dados, representa a memória viva do
-Sistema Operacional Cognitivo.
+- **Kernel™** orquestra;
+- **Events™** comunica;
+- **Identity™** identifica;
+- **Governance™** governa;
+
+o **Memory™** responde:
+
+> "O que o sistema sabe, lembra, aprendeu e precisa preservar?"
+
+Toda decisão produz memória.
+
+Toda interação gera conhecimento.
+
+Toda operação deixa rastros.
+
+Nada relevante deve ser perdido.
 
 ---
 
 # Missão
 
-Fornecer memória cognitiva distribuída para:
+Garantir que toda informação importante do ecossistema seja:
 
-- Objetos Cognitivos
-- Agentes
-- Workflows
-- Eventos
-- Kernel
-- Graph
-- Knowledge Base
-- Analytics
-- Evolution Engine
+- registrada;
+- organizada;
+- indexada;
+- pesquisável;
+- persistida;
+- auditável;
+- versionada;
+- recuperável;
+- reutilizável.
+
+---
+
+# Responsabilidades
+
+A camada Memory™ é responsável por:
+
+- Memória Operacional
+- Memória Institucional
+- Memória Organizacional
+- Memória dos Agentes
+- Memória Conversacional
+- Memória Temporal
+- Memória de Sessão
+- Memória Permanente
+- Memória Histórica
+- Memória Contextual
+- Memória Estratégica
+- Memória Executiva
 
 ---
 
 # Estrutura Física
 
 ```text
-memory/
+core/memory/
 ├── README.md
 ├── memory.types.ts
 ├── memory.config.ts
 ├── memory.registry.ts
 ├── memory.lifecycle.ts
 ├── memory.store.ts
-├── memory.index.ts
 ├── memory.search.ts
+├── memory.index.ts
 ├── memory.cache.ts
+├── memory.persistence.ts
 ├── memory.snapshot.ts
-├── memory.metrics.ts
+├── memory.audit.ts
+├── memory.monitor.ts
 ├── memory.health.ts
 ├── memory.bootstrap.ts
 └── index.ts
@@ -61,87 +93,24 @@ memory/
 
 # Modelo Conceitual
 
-```
-Application
-      │
-      ▼
-Cognitive Memory™
-      │
- ┌────┼──────────────────────┐
- │    │      │      │        │
- ▼    ▼      ▼      ▼        ▼
-Working Long  Episodic Semantic Cache
-Memory Memory Memory Memory
-      │
-      ▼
- Knowledge Repository
-      │
-      ▼
- Retrieval Engine
-      │
-      ▼
- Context Provider
-```
+A memória cognitiva será composta por:
 
----
-
-# Fluxo Cognitivo
-
-```
-Evento
-   │
-   ▼
-Memory Store
-   │
-   ▼
-Indexação
-   │
-   ▼
-Contextualização
-   │
-   ▼
-Persistência
-   │
-   ▼
-Busca Inteligente
-   │
-   ▼
-Compartilhamento
-```
-
----
-
-# Estados da Memória
-
-- created
-- initializing
-- ready
-- indexing
-- learning
-- updating
-- snapshotting
-- restoring
-- stopping
-- stopped
-- failed
-
----
-
-# Responsabilidades
-
-- armazenar conhecimento
-- preservar contexto
-- memória de curto prazo
-- memória de longo prazo
-- memória semântica
-- memória episódica
-- snapshots
-- versionamento
-- indexação
-- cache
-- recuperação inteligente
-- auditoria
-- integração entre módulos
+- Short-Term Memory
+- Long-Term Memory
+- Working Memory
+- Semantic Memory
+- Episodic Memory
+- Procedural Memory
+- Institutional Memory
+- Organizational Memory
+- Executive Memory
+- Historical Memory
+- Context Memory
+- Agent Memory
+- User Memory
+- Session Memory
+- Event Memory
+- Knowledge Memory
 
 ---
 
@@ -149,86 +118,56 @@ Compartilhamento
 
 Integra-se diretamente com:
 
-- Kernel™
-- Cognitive Events™
-- Cognitive Objects™
-- Agents™
+- Governance™
+- Events™
+- Identity™
+- Context™
 - Knowledge™
-- Graph™
-- Workflows™
-- Evolution™
-- Analytics™
+- Kernel™
+- Agents™
+- Intelligence™
 
 ---
 
 # Benefícios
 
-- contexto persistente
-- aprendizado contínuo
-- reutilização de conhecimento
-- redução de processamento
-- memória compartilhada
-- alta rastreabilidade
-- recuperação rápida
-- escalabilidade
-- evolução cognitiva
+- Continuidade operacional
+- Aprendizado permanente
+- Reutilização de conhecimento
+- Histórico completo
+- Alta rastreabilidade
+- Pesquisa instantânea
+- Memória distribuída
+- Observabilidade
+- Escalabilidade
+- Inteligência acumulativa
 
 ---
 
-# Princípios Fundamentais
+# Princípios
 
-Toda informação possui contexto.
+Uma memória cognitiva deve ser:
 
-Toda memória possui origem.
-
-Todo conhecimento possui versão.
-
-Todo aprendizado pode evoluir.
-
-Nada deve ser perdido sem rastreabilidade.
+- persistente;
+- consistente;
+- segura;
+- auditável;
+- pesquisável;
+- escalável;
+- distribuída;
+- resiliente;
+- contextual;
+- inteligente.
 
 ---
 
 # Lema do Cognitive Memory™
 
-> "Lembrar é preservar.
->
-> Preservar é aprender.
->
-> Aprender é evoluir."
+> "O conhecimento só produz inteligência quando pode ser lembrado."
 
 ---
 
-# Roadmap
+# DCGLOBAL.AI™
 
-Phase IV.2
-
-- Cognitive Memory™
-- Working Memory
-- Long-Term Memory
-- Semantic Memory
-- Episodic Memory
-- Snapshot Engine
-- Search Engine
-- Context Provider
-- Memory Cache
-- Memory Health
-- Memory Metrics
-
----
-
-## Status
-
-**Status:** Foundation Phase
-
-**Versão:** 1.0.0
-
-**Módulo Oficial do DCGLOBAL.AI Cognitive Operating System™**
-
----
-
-> **DCGLOBAL.AI™**
->
-> **Cognitive Memory™**
->
-> *The Living Memory of the Cognitive Operating System.*
+A Base Oficial de Memória Viva do
+**Cognitive Operating System™**
