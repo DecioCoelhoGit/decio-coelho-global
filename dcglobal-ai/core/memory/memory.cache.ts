@@ -2,82 +2,79 @@
  * DCGLOBAL.AI™
  * Cognitive Memory™
  *
- * Cache Cognitivo oficial.
- * Responsável por acelerar consultas,
- * controlar TTL e otimizar acesso
- * aos registros de memória.
+ * Cache oficial da Camada
+ * de Memória Cognitiva.
  */
 
-import { MemoryRecord } from "./memory.types";
+import {
+  MemoryCacheEntry,
+  MemoryRecord,
+} from "./memory.types";
 
-interface CacheEntry {
-  record: MemoryRecord;
-  expiresAt: number;
+const memoryCache = new Map<string, MemoryCacheEntry>();
+
+export function cacheMemory(
+  record: MemoryRecord,
+  ttl: number = 3600
+): MemoryCacheEntry {
+  const entry: MemoryCacheEntry = {
+    key: record.id,
+    record,
+    expiresAt: Date.now() + ttl * 1000,
+  };
+
+  memoryCache.set(entry.key, entry);
+
+  return entry;
 }
 
-export class MemoryCache {
-  private readonly cache =
-    new Map<string, CacheEntry>();
+export function getCachedMemory(
+  key: string
+): MemoryRecord | undefined {
+  const entry = memoryCache.get(key);
 
-  set(
-    key: string,
-    record: MemoryRecord,
-    ttlSeconds = 3600
-  ): void {
-    this.cache.set(key, {
-      record,
-      expiresAt: Date.now() + ttlSeconds * 1000,
-    });
+  if (!entry) {
+    return undefined;
   }
 
-  get(key: string): MemoryRecord | undefined {
-    const entry = this.cache.get(key);
-
-    if (!entry) {
-      return undefined;
-    }
-
-    if (Date.now() > entry.expiresAt) {
-      this.cache.delete(key);
-      return undefined;
-    }
-
-    return entry.record;
+  if (Date.now() > entry.expiresAt) {
+    memoryCache.delete(key);
+    return undefined;
   }
 
-  has(key: string): boolean {
-    return this.get(key) !== undefined;
-  }
-
-  delete(key: string): boolean {
-    return this.cache.delete(key);
-  }
-
-  clear(): void {
-    this.cache.clear();
-  }
-
-  count(): number {
-    return this.cache.size;
-  }
-
-  keys(): string[] {
-    return [...this.cache.keys()];
-  }
-
-  cleanup(): number {
-    let removed = 0;
-
-    for (const [key, entry] of this.cache.entries()) {
-      if (Date.now() > entry.expiresAt) {
-        this.cache.delete(key);
-        removed++;
-      }
-    }
-
-    return removed;
-  }
+  return entry.record;
 }
 
-export const memoryCache =
-  new MemoryCache();
+export function removeCachedMemory(
+  key: string
+): boolean {
+  return memoryCache.delete(key);
+}
+
+export function clearMemoryCache(): void {
+  memoryCache.clear();
+}
+
+export function listCachedMemories(): MemoryCacheEntry[] {
+  return Array.from(memoryCache.values());
+}
+
+export function cacheExists(
+  key: string
+): boolean {
+  return getCachedMemory(key) !== undefined;
+}
+
+export function countCachedMemories(): number {
+  return memoryCache.size;
+}
+
+export function purgeExpiredCache(): void {
+  const now = Date.now();
+
+  for (const [key, entry] of memoryCache.entries()) {
+    if (entry.expiresAt <= now) {
+      memoryCache.delete(key);
+    }
+  }
+}
