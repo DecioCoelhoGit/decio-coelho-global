@@ -2,84 +2,82 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Cache oficial da Camada de Consciência Contextual.
- * Responsável por acelerar consultas,
- * controlar TTL e reduzir acessos ao Store.
+ * Cache oficial da Camada
+ * de Contexto Cognitivo.
  */
 
-import { ContextRecord } from "./context.types";
+import {
+  ContextCacheEntry,
+  ContextRecord,
+} from "./context.types";
 
-interface ContextCacheEntry {
-  record: ContextRecord;
-  expiresAt: number;
+const contextCache =
+  new Map<string, ContextCacheEntry>();
+
+export function cacheContext(
+  record: ContextRecord,
+  ttl: number = 300
+): ContextCacheEntry {
+  const entry: ContextCacheEntry = {
+    key: record.id,
+    record,
+    ttl,
+    expiresAt: Date.now() + ttl * 1000,
+  };
+
+  contextCache.set(entry.key, entry);
+
+  return entry;
 }
 
-export class ContextCache {
-  private readonly cache =
-    new Map<string, ContextCacheEntry>();
+export function getCachedContext(
+  key: string
+): ContextRecord | undefined {
+  const entry = contextCache.get(key);
 
-  set(
-    key: string,
-    record: ContextRecord,
-    ttlSeconds = 300
-  ): void {
-    this.cache.set(key, {
-      record,
-      expiresAt:
-        Date.now() + ttlSeconds * 1000,
-    });
+  if (!entry) {
+    return undefined;
   }
 
-  get(
-    key: string
-  ): ContextRecord | undefined {
-    const entry = this.cache.get(key);
-
-    if (!entry) {
-      return undefined;
-    }
-
-    if (Date.now() > entry.expiresAt) {
-      this.cache.delete(key);
-      return undefined;
-    }
-
-    return entry.record;
+  if (Date.now() > entry.expiresAt) {
+    contextCache.delete(key);
+    return undefined;
   }
 
-  has(key: string): boolean {
-    return this.get(key) !== undefined;
-  }
-
-  delete(key: string): boolean {
-    return this.cache.delete(key);
-  }
-
-  clear(): void {
-    this.cache.clear();
-  }
-
-  count(): number {
-    return this.cache.size;
-  }
-
-  keys(): string[] {
-    return [...this.cache.keys()];
-  }
-
-  cleanup(): number {
-    let removed = 0;
-
-    for (const [key, value] of this.cache) {
-      if (Date.now() > value.expiresAt) {
-        this.cache.delete(key);
-        removed++;
-      }
-    }
-
-    return removed;
-  }
+  return entry.record;
 }
 
-export const contextCache =
-  new ContextCache();
+export function removeCachedContext(
+  key: string
+): boolean {
+  return contextCache.delete(key);
+}
+
+export function clearContextCache(): void {
+  contextCache.clear();
+}
+
+export function listCachedContexts():
+  ContextCacheEntry[] {
+  return Array.from(contextCache.values());
+}
+
+export function contextCacheExists(
+  key: string
+): boolean {
+  return getCachedContext(key) !== undefined;
+}
+
+export function countCachedContexts(): number {
+  return contextCache.size;
+}
+
+export function purgeExpiredContextCache(): void {
+  const now = Date.now();
+
+  for (const [key, entry] of contextCache.entries()) {
+    if (entry.expiresAt <= now) {
+      contextCache.delete(key);
+    }
+  }
+}
