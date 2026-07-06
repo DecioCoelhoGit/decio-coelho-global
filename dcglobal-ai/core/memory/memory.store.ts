@@ -2,132 +2,90 @@
  * DCGLOBAL.AI™
  * Cognitive Memory™
  *
- * Store oficial da Memória Cognitiva.
- * Responsável pelo armazenamento,
- * consulta, atualização e remoção
- * dos registros cognitivos.
+ * Store oficial da Camada
+ * de Memória Cognitiva.
  */
 
-import {
-  MemoryRecord,
-  MemoryCategory,
-} from "./memory.types";
+import { MemoryRecord } from "./memory.types";
 
 export class MemoryStore {
+  private records = new Map<string, MemoryRecord>();
 
-  private readonly records: MemoryRecord[] = [];
-
-  /**
-   * Adiciona um registro.
-   */
-  add(record: MemoryRecord): void {
-    this.records.push(record);
+  add(record: MemoryRecord): MemoryRecord {
+    this.records.set(record.id, record);
+    return record;
   }
 
-  /**
-   * Localiza um registro.
-   */
   get(id: string): MemoryRecord | undefined {
-    return this.records.find(
-      item => item.id === id
-    );
+    return this.records.get(id);
   }
 
-  /**
-   * Atualiza um registro.
-   */
   update(
     id: string,
     changes: Partial<MemoryRecord>
-  ): boolean {
+  ): MemoryRecord | undefined {
+    const current = this.records.get(id);
 
-    const record = this.get(id);
-
-    if (!record) {
-      return false;
+    if (!current) {
+      return undefined;
     }
 
-    Object.assign(record, changes);
+    const updated: MemoryRecord = {
+      ...current,
+      ...changes,
+      updatedAt: new Date().toISOString(),
+    };
 
-    return true;
+    this.records.set(id, updated);
+
+    return updated;
   }
 
-  /**
-   * Remove um registro.
-   */
+  archive(id: string): MemoryRecord | undefined {
+    return this.update(id, {
+      status: "archived",
+    });
+  }
+
   remove(id: string): boolean {
-
-    const index = this.records.findIndex(
-      item => item.id === id
-    );
-
-    if (index < 0) {
-      return false;
-    }
-
-    this.records.splice(index, 1);
-
-    return true;
+    return this.records.delete(id);
   }
 
-  /**
-   * Lista todos os registros.
-   */
   list(): MemoryRecord[] {
-    return [...this.records];
+    return Array.from(this.records.values());
   }
 
-  /**
-   * Filtra por categoria.
-   */
-  byCategory(
-    category: MemoryCategory
+  listActive(): MemoryRecord[] {
+    return this.list().filter(
+      record => record.status === "active"
+    );
+  }
+
+  findByType(
+    type: MemoryRecord["type"]
   ): MemoryRecord[] {
-
-    return this.records.filter(
-      item => item.category === category
+    return this.list().filter(
+      record => record.type === type
     );
   }
 
-  /**
-   * Pesquisa textual.
-   */
-  search(text: string): MemoryRecord[] {
-
-    const value = text.toLowerCase();
-
-    return this.records.filter(record =>
-      record.title.toLowerCase().includes(value) ||
-      record.content.toLowerCase().includes(value)
+  findByTag(tag: string): MemoryRecord[] {
+    return this.list().filter(
+      record => record.tags.includes(tag)
     );
   }
 
-  /**
-   * Quantidade de registros.
-   */
-  count(): number {
-    return this.records.length;
-  }
-
-  /**
-   * Limpa toda a memória.
-   */
-  clear(): void {
-    this.records.length = 0;
-  }
-
-  /**
-   * Verifica existência.
-   */
   exists(id: string): boolean {
-    return this.records.some(
-      item => item.id === id
-    );
+    return this.records.has(id);
+  }
+
+  count(): number {
+    return this.records.size;
+  }
+
+  clear(): void {
+    this.records.clear();
   }
 }
 
-/**
- * Instância singleton oficial.
- */
-export const memoryStore =
-  new MemoryStore();
+export const memoryStore = new MemoryStore();
