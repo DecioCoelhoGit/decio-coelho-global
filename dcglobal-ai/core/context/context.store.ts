@@ -2,22 +2,18 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Store oficial da Camada de Consciência Contextual.
- * Responsável por armazenar, atualizar,
- * recuperar e remover registros de contexto.
+ * Store oficial da Camada
+ * de Contexto Cognitivo.
  */
 
-import {
-  ContextRecord,
-  ContextScope,
-} from "./context.types";
+import { ContextRecord } from "./context.types";
 
 export class ContextStore {
-  private readonly records =
-    new Map<string, ContextRecord>();
+  private records = new Map<string, ContextRecord>();
 
-  set(record: ContextRecord): void {
+  add(record: ContextRecord): ContextRecord {
     this.records.set(record.id, record);
+    return record;
   }
 
   get(id: string): ContextRecord | undefined {
@@ -27,20 +23,28 @@ export class ContextStore {
   update(
     id: string,
     changes: Partial<ContextRecord>
-  ): boolean {
-    const record = this.get(id);
+  ): ContextRecord | undefined {
+    const current = this.records.get(id);
 
-    if (!record) {
-      return false;
+    if (!current) {
+      return undefined;
     }
 
-    this.records.set(id, {
-      ...record,
+    const updated: ContextRecord = {
+      ...current,
       ...changes,
       updatedAt: new Date().toISOString(),
-    });
+    };
 
-    return true;
+    this.records.set(id, updated);
+
+    return updated;
+  }
+
+  archive(id: string): ContextRecord | undefined {
+    return this.update(id, {
+      status: "archived",
+    });
   }
 
   remove(id: string): boolean {
@@ -48,18 +52,26 @@ export class ContextStore {
   }
 
   list(): ContextRecord[] {
-    return [...this.records.values()];
+    return Array.from(this.records.values());
   }
 
-  byScope(scope: ContextScope): ContextRecord[] {
+  listActive(): ContextRecord[] {
     return this.list().filter(
-      record => record.scope === scope
+      record => record.status === "active"
     );
   }
 
-  findByKey(key: string): ContextRecord | undefined {
-    return this.list().find(
-      record => record.key === key
+  findByType(
+    type: ContextRecord["type"]
+  ): ContextRecord[] {
+    return this.list().filter(
+      record => record.type === type
+    );
+  }
+
+  findByActor(actor: string): ContextRecord[] {
+    return this.list().filter(
+      record => record.actor === actor
     );
   }
 
@@ -76,5 +88,4 @@ export class ContextStore {
   }
 }
 
-export const contextStore =
-  new ContextStore();
+export const contextStore = new ContextStore();
