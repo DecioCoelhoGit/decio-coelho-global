@@ -2,148 +2,79 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Registry oficial da Camada de
- * Consciência Contextual.
- * Responsável por registrar,
- * localizar e catalogar todos os
- * contextos do Sistema Cognitivo.
+ * Registry oficial da
+ * Camada de Contexto Cognitivo.
  */
 
 import {
-  ContextScope,
-  ContextStatus,
-} from "./context.types";
+  CONTEXT_ID,
+  CONTEXT_NAME,
+  CONTEXT_VERSION,
+  contextConfig,
+} from "./context.config";
 
-export interface ContextRegistryEntry {
-  id: string;
-  name: string;
-  scope: ContextScope;
-  description: string;
-  version: string;
-  enabled: boolean;
-  status: ContextStatus;
-  searchable: boolean;
-  cacheable: boolean;
-  persistent: boolean;
-}
+export const contextRegistry = {
+  id: CONTEXT_ID,
 
-export const contextRegistry: ContextRegistryEntry[] = [
-  {
-    id: "system",
-    name: "System Context",
-    scope: "system",
-    description: "Estado geral do sistema.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: true,
-    persistent: true,
-  },
-  {
-    id: "user",
-    name: "User Context",
-    scope: "user",
-    description: "Contexto do usuário.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: true,
-    persistent: true,
-  },
-  {
-    id: "session",
-    name: "Session Context",
-    scope: "session",
-    description: "Sessão cognitiva ativa.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: true,
-    persistent: false,
-  },
-  {
-    id: "operational",
-    name: "Operational Context",
-    scope: "operational",
-    description: "Estado operacional.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: true,
-    persistent: true,
-  },
-  {
-    id: "temporal",
-    name: "Temporal Context",
-    scope: "temporal",
-    description: "Informações temporais.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: false,
-    persistent: false,
-  },
-  {
-    id: "cognitive",
-    name: "Cognitive Context",
-    scope: "cognitive",
-    description: "Estado cognitivo atual.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: true,
-    persistent: true,
-  },
-  {
-    id: "security",
-    name: "Security Context",
-    scope: "security",
-    description: "Contexto de segurança.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: false,
-    cacheable: false,
-    persistent: true,
-  },
-  {
-    id: "governance",
-    name: "Governance Context",
-    scope: "governance",
-    description: "Governança e auditoria.",
-    version: "1.0.0",
-    enabled: true,
-    status: "active",
-    searchable: true,
-    cacheable: false,
-    persistent: true,
-  },
-];
+  name: CONTEXT_NAME,
 
-export function getContextRegistry(): ContextRegistryEntry[] {
+  version: CONTEXT_VERSION,
+
+  description:
+    "Official Cognitive Context Registry.",
+
+  initialized: true,
+
+  createdAt: new Date().toISOString(),
+
+  config: contextConfig,
+
+  modules: [
+    "types",
+    "config",
+    "registry",
+    "lifecycle",
+    "store",
+    "cache",
+    "search",
+    "index",
+    "audit",
+    "monitor",
+    "health",
+    "bootstrap",
+  ],
+
+  integrations: [
+    "memory",
+    "knowledge",
+    "identity",
+    "governance",
+    "events",
+    "kernel",
+    "agents",
+    "workflows",
+    "intelligence",
+  ],
+
+  capabilities: [
+    "context-awareness",
+    "context-storage",
+    "context-search",
+    "context-cache",
+    "context-synchronization",
+    "context-monitoring",
+    "context-health",
+    "context-governance",
+  ],
+
+  metadata: {
+    organization: "DCGLOBAL.AI",
+    layer: "Context",
+    runtime: "Cognitive Operating System™",
+    status: "active",
+  },
+} as const;
+
+export function getContextRegistry() {
   return contextRegistry;
-}
-
-export function findContext(
-  id: string
-): ContextRegistryEntry | undefined {
-  return contextRegistry.find(
-    context => context.id === id
-  );
-}
-
-export function listEnabledContexts(): ContextRegistryEntry[] {
-  return contextRegistry.filter(
-    context => context.enabled
-  );
-}
-
-export function countContexts(): number {
-  return contextRegistry.length;
 }
