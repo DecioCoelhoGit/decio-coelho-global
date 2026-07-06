@@ -2,101 +2,88 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Sistema oficial de Pesquisa Contextual.
- * Responsável por localizar Contextos
- * através de chave, escopo, conteúdo
- * e similaridade.
+ * Search oficial da Camada
+ * de Contexto Cognitivo.
  */
 
 import {
   ContextRecord,
-  ContextScope,
+  ContextSearchQuery,
+  ContextSearchResult,
 } from "./context.types";
 
 import { contextStore } from "./context.store";
 
-export class ContextSearch {
+export function searchContext(
+  query: ContextSearchQuery
+): ContextSearchResult[] {
+  const results: ContextSearchResult[] = [];
 
-  searchByKey(
-    key: string
-  ): ContextRecord | undefined {
-    return contextStore.findByKey(key);
+  for (const record of contextStore.list()) {
+    let score = 0;
+
+    if (query.type && record.type === query.type) {
+      score += 3;
+    }
+
+    if (query.status && record.status === query.status) {
+      score += 2;
+    }
+
+    if (query.priority && record.priority === query.priority) {
+      score += 2;
+    }
+
+    if (query.actor && record.actor === query.actor) {
+      score += 2;
+    }
+
+    if (
+      query.location &&
+      record.location === query.location
+    ) {
+      score += 2;
+    }
+
+    if (
+      query.organization &&
+      record.organization === query.organization
+    ) {
+      score += 2;
+    }
+
+    if (query.text) {
+      const text = query.text.toLowerCase();
+
+      if (record.name.toLowerCase().includes(text)) {
+        score += 4;
+      }
+
+      if (
+        record.description
+          .toLowerCase()
+          .includes(text)
+      ) {
+        score += 4;
+      }
+    }
+
+    if (score > 0) {
+      results.push({ record, score });
+    }
   }
 
-  searchByScope(
-    scope: ContextScope
-  ): ContextRecord[] {
-    return contextStore.byScope(scope);
-  }
-
-  searchByText(
-    text: string
-  ): ContextRecord[] {
-
-    const query = text.toLowerCase();
-
-    return contextStore
-      .list()
-      .filter(record => {
-
-        const keyScore =
-          record.key
-            .toLowerCase()
-            .includes(query);
-
-        const valueScore =
-          JSON.stringify(record.value)
-            .toLowerCase()
-            .includes(query);
-
-        return keyScore || valueScore;
-      });
-  }
-
-  searchByMetadata(
-    field: string,
-    value: string
-  ): ContextRecord[] {
-
-    return contextStore
-      .list()
-      .filter(record => {
-
-        const metadata =
-          JSON.stringify(record.metadata ?? {})
-            .toLowerCase();
-
-        return metadata.includes(
-          `${field.toLowerCase()}":"${value.toLowerCase()}`
-        );
-      });
-  }
-
-  searchRecent(
-    limit = 10
-  ): ContextRecord[] {
-
-    return contextStore
-      .list()
-      .sort((a, b) =>
-        b.updatedAt.localeCompare(a.updatedAt)
-      )
-      .slice(0, limit);
-  }
-
-  searchActive(): ContextRecord[] {
-
-    return contextStore
-      .list()
-      .filter(
-        record => record.status === "active"
-      );
-  }
-
-  count(): number {
-    return contextStore.count();
-  }
+  return results.sort((a, b) => b.score - a.score);
 }
 
-export const contextSearch =
-  new ContextSearch();
+export function findContextById(
+  id: string
+): ContextRecord | undefined {
+  return contextStore.get(id);
+}
+
+export function findContextByActor(
+  actor: string
+): ContextRecord[] {
+  return contextStore.findByActor(actor);
+}
