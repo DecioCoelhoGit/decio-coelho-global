@@ -1,15 +1,3 @@
-Ele terá a função de transformar a Constituição da Memória em padrão técnico, com:
-identificadores
-metadados
-classificação
-fontes
-validação
-relações
-inferências
-auditoria
-controle de acesso
-versionamento
-Estrutura recomendada do arquivo
 # 🧠 DÉCIO COELHO DIGITAL COGNITIVO™
 # Memory Schema™
 
