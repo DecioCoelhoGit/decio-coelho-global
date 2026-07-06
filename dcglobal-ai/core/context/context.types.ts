@@ -2,101 +2,103 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Tipagens oficiais da Camada de Consciência Contextual
- * do Sistema Operacional Cognitivo Vivo.
+ * Tipos oficiais da Camada
+ * de Contexto Cognitivo.
  */
 
 export type ContextStatus =
-  | "initializing"
-  | "loading"
   | "active"
-  | "updating"
-  | "synchronized"
-  | "degraded"
-  | "paused"
+  | "inactive"
+  | "expired"
+  | "archived"
   | "failed";
 
-export type ContextScope =
-  | "system"
+export type ContextType =
   | "user"
   | "session"
-  | "operational"
+  | "conversation"
+  | "environment"
+  | "organization"
+  | "location"
   | "temporal"
-  | "cognitive"
-  | "security"
-  | "governance";
+  | "execution"
+  | "agent"
+  | "system";
 
-export interface SystemContext {
-  version: string;
-  environment: string;
-  runtimeStatus: string;
-  uptime?: number;
-  health?: string;
-}
+export type ContextPriority =
+  | "low"
+  | "normal"
+  | "high"
+  | "critical";
 
-export interface UserContext {
-  id?: string;
-  name?: string;
-  role?: string;
-  permissions?: string[];
-  preferences?: Record<string, unknown>;
-}
-
-export interface SessionContext {
+export interface ContextRecord {
   id: string;
-  startedAt: string;
-  lastActivityAt?: string;
-  activeGoal?: string;
-  recentEvents?: string[];
-}
-
-export interface OperationalContext {
-  activeModule?: string;
-  activeWorkflow?: string;
-  activeAgent?: string;
-  currentTask?: string;
-  priority?: "low" | "normal" | "high" | "critical";
-}
-
-export interface TemporalContext {
-  timestamp: string;
-  timezone?: string;
-  date?: string;
-  time?: string;
-}
-
-export interface CognitiveContext {
-  intent?: string;
-  focus?: string;
-  relatedMemories?: string[];
-  relatedEvents?: string[];
-  objectives?: string[];
-}
-
-export interface ContextRecord<T = unknown> {
-  id: string;
-  scope: ContextScope;
+  type: ContextType;
   status: ContextStatus;
-  key: string;
-  value: T;
-  version: string;
+  priority: ContextPriority;
+
+  name: string;
+  description: string;
+
+  actor?: string;
+  sessionId?: string;
+  organization?: string;
+  location?: string;
+
+  metadata: Record<string, unknown>;
+
   createdAt: string;
-  updatedAt?: string;
-  metadata?: Record<string, unknown>;
+  updatedAt: string;
+  expiresAt?: string;
 }
 
-export interface ContextRuntime {
+export interface ContextIndex {
   id: string;
-  version: string;
-  status: ContextStatus;
-  initializedAt?: string;
-  records: number;
+  recordId: string;
+  keywords: string[];
+  tags: string[];
+  score: number;
+  indexedAt: string;
 }
 
-export interface ContextHealth {
+export interface ContextCacheEntry {
+  key: string;
+  record: ContextRecord;
+  expiresAt: number;
+  ttl: number;
+}
+
+export interface ContextSnapshot {
+  timestamp: string;
+  totalContexts: number;
+  activeContexts: number;
+  archivedContexts: number;
+  indexedContexts: number;
+  failedContexts: number;
   status: "healthy" | "degraded" | "failed";
-  runtimeStatus: ContextStatus;
-  totalRecords: number;
-  issues: string[];
-  checkedAt: string;
+}
+
+export interface ContextAudit {
+  id: string;
+  action: string;
+  contextId: string;
+  actor: string;
+  success: boolean;
+  timestamp: string;
+  metadata: Record<string, unknown>;
+}
+
+export interface ContextSearchQuery {
+  text?: string;
+  type?: ContextType;
+  status?: ContextStatus;
+  priority?: ContextPriority;
+  actor?: string;
+  location?: string;
+  organization?: string;
+}
+
+export interface ContextSearchResult {
+  record: ContextRecord;
+  score: number;
 }
