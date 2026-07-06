@@ -2,98 +2,50 @@
  * DCGLOBAL.AI™
  * Cognitive Memory™
  *
- * Configuração oficial da Camada de Memória
- * do Sistema Operacional Cognitivo Vivo.
+ * Configurações oficiais da
+ * Camada de Memória Cognitiva.
  */
 
 export const memoryConfig = {
-  id: "dcglobal-memory",
 
-  name: "DCGLOBAL.AI Cognitive Memory™",
+  id: "dcglobalai-memory",
+
+  name: "DCGLOBAL.AI™ Cognitive Memory™",
 
   version: "1.0.0",
 
   enabled: true,
 
-  autostart: true,
+  autoStart: true,
 
-  /**
-   * Memória de trabalho.
-   */
-  workingMemory: {
+  persistence: {
     enabled: true,
-    maxRecords: 1000,
-    maxAgeMinutes: 60,
+    provider: "local",
+    autoSave: true,
+    backup: true,
+    compression: true,
   },
 
-  /**
-   * Memória de longo prazo.
-   */
-  longTermMemory: {
-    enabled: true,
-    maxRecords: 100000,
-    persistent: true,
-  },
-
-  /**
-   * Cache cognitivo.
-   */
   cache: {
     enabled: true,
-    maxEntries: 5000,
-    ttlSeconds: 3600,
+    maxEntries: 10000,
+    ttl: 3600,
+    cleanupInterval: 300,
   },
 
-  /**
-   * Indexação.
-   */
   indexing: {
     enabled: true,
     realtime: true,
-    rebuildOnStartup: false,
+    fullTextSearch: true,
+    rebuildOnStart: true,
   },
 
-  /**
-   * Busca.
-   */
-  search: {
-    enabled: true,
-    fuzzy: true,
-    maxResults: 100,
-  },
-
-  /**
-   * Snapshots.
-   */
   snapshots: {
     enabled: true,
-    autoSave: true,
-    intervalMinutes: 30,
-    keepLast: 50,
+    interval: 300,
+    keepHistory: true,
   },
 
-  /**
-   * Persistência.
-   */
-  persistence: {
-    enabled: true,
-    provider: "filesystem",
-    compression: true,
-    encryption: false,
-  },
-
-  /**
-   * Segurança.
-   */
-  security: {
-    validateRecords: true,
-    validateContext: true,
-    checksum: true,
-  },
-
-  /**
-   * Monitoramento.
-   */
   monitoring: {
     enabled: true,
     metrics: true,
@@ -101,31 +53,27 @@ export const memoryConfig = {
     audit: true,
   },
 
-  /**
-   * Governança.
-   */
-  governance: {
-    versioning: true,
-    compatibility: true,
-    history: true,
+  performance: {
+    enabled: true,
+    maxSearchResults: 100,
+    optimizeQueries: true,
+    preloadIndexes: true,
+  },
+
+  security: {
+    enabled: true,
+    encryptStorage: true,
+    validateAccess: true,
+    auditOperations: true,
   },
 
 } as const;
 
-/**
- * Nome oficial.
- */
 export const MEMORY_NAME =
-  "DCGLOBAL.AI Cognitive Memory™";
+  "DCGLOBAL.AI™ Cognitive Memory™";
 
-/**
- * Identificador.
- */
 export const MEMORY_ID =
-  "dcglobal-memory";
+  "dcglobalai-memory";
 
-/**
- * Versão.
- */
 export const MEMORY_VERSION =
   "1.0.0";
