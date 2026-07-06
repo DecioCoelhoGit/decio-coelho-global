@@ -2,159 +2,106 @@
  * DCGLOBAL.AI™
  * Cognitive Memory™
  *
- * Tipagens oficiais da Camada de Memória
- * do Sistema Operacional Cognitivo Vivo.
+ * Tipos oficiais da Camada
+ * de Memória Cognitiva.
  */
 
-/**
- * Estados da memória.
- */
 export type MemoryStatus =
   | "created"
-  | "initializing"
-  | "ready"
-  | "indexing"
-  | "learning"
-  | "updating"
-  | "snapshotting"
-  | "restoring"
-  | "stopping"
-  | "stopped"
+  | "active"
+  | "indexed"
+  | "archived"
+  | "deleted"
   | "failed";
 
-/**
- * Tipos de memória.
- */
 export type MemoryType =
-  | "working"
+  | "short-term"
   | "long-term"
+  | "working"
   | "semantic"
   | "episodic"
-  | "cache";
+  | "procedural"
+  | "institutional"
+  | "organizational"
+  | "executive"
+  | "historical"
+  | "context"
+  | "agent"
+  | "user"
+  | "session"
+  | "event"
+  | "knowledge";
 
-/**
- * Prioridade.
- */
 export type MemoryPriority =
   | "low"
   | "normal"
   | "high"
   | "critical";
 
-/**
- * Categoria.
- */
-export type MemoryCategory =
-  | "knowledge"
-  | "event"
-  | "agent"
-  | "object"
-  | "workflow"
-  | "kernel"
-  | "system"
-  | "analytics"
-  | "user"
-  | "custom";
-
-/**
- * Contexto.
- */
-export interface MemoryContext {
-  origin?: string;
-  module?: string;
-  agent?: string;
-  workflow?: string;
-  session?: string;
-  correlationId?: string;
-  environment?: string;
-  metadata?: Record<string, unknown>;
-}
-
-/**
- * Registro de memória.
- */
-export interface MemoryRecord<T = unknown> {
+export interface MemoryRecord {
   id: string;
   type: MemoryType;
-  category: MemoryCategory;
+  status: MemoryStatus;
   priority: MemoryPriority;
-
   title: string;
-  description?: string;
-
-  data: T;
-
-  tags?: string[];
-
-  context?: MemoryContext;
-
-  version: string;
-
+  content: string;
+  source?: string;
+  actor?: string;
+  contextId?: string;
+  eventId?: string;
+  tags: string[];
+  metadata?: Record<string, unknown>;
   createdAt: string;
-  updatedAt?: string;
+  updatedAt: string;
   expiresAt?: string;
 }
 
-/**
- * Snapshot.
- */
+export interface MemoryIndex {
+  id: string;
+  recordId: string;
+  keywords: string[];
+  tags: string[];
+  score: number;
+  indexedAt: string;
+}
+
+export interface MemoryCacheEntry {
+  key: string;
+  record: MemoryRecord;
+  expiresAt: number;
+}
+
 export interface MemorySnapshot {
-  id: string;
-  createdAt: string;
-  version: string;
-
-  records: number;
-
-  checksum?: string;
-}
-
-/**
- * Estatísticas.
- */
-export interface MemoryMetrics {
+  timestamp: string;
   totalRecords: number;
-  workingMemory: number;
-  longTermMemory: number;
-  semanticMemory: number;
-  episodicMemory: number;
-  cacheEntries: number;
-
-  snapshots: number;
-
-  searches: number;
-  hits: number;
-  misses: number;
+  activeRecords: number;
+  archivedRecords: number;
+  indexedRecords: number;
+  failedRecords: number;
+  status: "healthy" | "degraded" | "failed";
 }
 
-/**
- * Runtime.
- */
-export interface MemoryRuntime {
+export interface MemoryAudit {
   id: string;
-
-  version: string;
-
-  status: MemoryStatus;
-
-  initializedAt?: string;
-
-  metrics: MemoryMetrics;
+  action: string;
+  recordId: string;
+  actor: string;
+  success: boolean;
+  timestamp: string;
+  metadata?: Record<string, unknown>;
 }
 
-/**
- * Saúde.
- */
-export interface MemoryHealth {
-  status:
-    | "healthy"
-    | "degraded"
-    | "failed";
+export interface MemorySearchQuery {
+  text?: string;
+  type?: MemoryType;
+  status?: MemoryStatus;
+  priority?: MemoryPriority;
+  tag?: string;
+  actor?: string;
+  source?: string;
+}
 
-  runtimeStatus: MemoryStatus;
-
-  totalRecords: number;
-
-  issues: string[];
-
-  checkedAt: string;
+export interface MemorySearchResult {
+  record: MemoryRecord;
+  score: number;
 }
