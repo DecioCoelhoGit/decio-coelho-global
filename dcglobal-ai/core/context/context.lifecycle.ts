@@ -2,71 +2,80 @@
  * DCGLOBAL.AI™
  * Cognitive Context™
  *
- * Lifecycle oficial da Camada
- * de Consciência Contextual.
- * Responsável pelo ciclo de vida
- * do Context Manager.
+ * Lifecycle oficial da
+ * Camada de Contexto Cognitivo.
  */
 
-import { CONTEXT_VERSION } from "./context.config";
-import { ContextRuntime } from "./context.types";
+import { getContextRegistry } from "./context.registry";
 
-let contextRuntime: ContextRuntime = {
-  id: "context-runtime",
-  version: CONTEXT_VERSION,
-  status: "initializing",
-  initializedAt: undefined,
-  records: 0,
-};
+let initialized = false;
+let active = false;
 
-export function initializeContext(): ContextRuntime {
-  contextRuntime.status = "loading";
-  contextRuntime.initializedAt = new Date().toISOString();
-  return contextRuntime;
+let startedAt: string | null = null;
+let stoppedAt: string | null = null;
+
+export function initializeContext(): boolean {
+  if (initialized) {
+    return true;
+  }
+
+  getContextRegistry();
+
+  initialized = true;
+
+  return true;
 }
 
-export function loadContext(): ContextRuntime {
-  contextRuntime.status = "active";
-  return contextRuntime;
+export function activateContext(): boolean {
+  if (!initialized) {
+    initializeContext();
+  }
+
+  active = true;
+  startedAt = new Date().toISOString();
+
+  return true;
 }
 
-export function updateContext(): ContextRuntime {
-  contextRuntime.status = "updating";
-  return contextRuntime;
+export function deactivateContext(): boolean {
+  active = false;
+  stoppedAt = new Date().toISOString();
+
+  return true;
 }
 
-export function synchronizeContext(): ContextRuntime {
-  contextRuntime.status = "synchronized";
-  return contextRuntime;
+export function restartContext(): boolean {
+  deactivateContext();
+  activateContext();
+
+  return true;
 }
 
-export function degradeContext(): ContextRuntime {
-  contextRuntime.status = "degraded";
-  return contextRuntime;
+export function isContextInitialized(): boolean {
+  return initialized;
 }
 
-export function pauseContext(): ContextRuntime {
-  contextRuntime.status = "paused";
-  return contextRuntime;
+export function isContextActive(): boolean {
+  return active;
 }
 
-export function failContext(): ContextRuntime {
-  contextRuntime.status = "failed";
-  return contextRuntime;
-}
-
-export function getContextRuntime(): ContextRuntime {
-  return contextRuntime;
-}
-
-export function resetContextRuntime(): ContextRuntime {
-  contextRuntime = {
-    id: "context-runtime",
-    version: CONTEXT_VERSION,
-    status: "initializing",
-    initializedAt: undefined,
-    records: 0,
+export function getContextRuntime() {
+  return {
+    initialized,
+    active,
+    startedAt,
+    stoppedAt,
+    uptime:
+      active && startedAt
+        ? Date.now() - new Date(startedAt).getTime()
+        : 0,
+    registry: getContextRegistry(),
   };
+}
 
-  return contextRuntime;
+export function resetContextLifecycle(): void {
+  initialized = false;
+  active = false;
+  startedAt = null;
+  stoppedAt = null;
 }
