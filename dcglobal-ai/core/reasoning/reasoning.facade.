@@ -1,0 +1,121 @@
+/**
+ * DCGLOBAL.AI™
+ * Cognitive Reasoning™
+ *
+ * Facade oficial da Camada
+ * de Raciocínio Cognitivo.
+ */
+
+import {
+  ReasoningRecord,
+} from "./reasoning.types";
+
+import {
+  reasoningPublic,
+} from "./reasoning.public";
+
+/**
+ * Contrato oficial da Facade.
+ */
+export interface ReasoningFacade {
+  create(
+    record: ReasoningRecord
+  ): ReturnType<typeof reasoningPublic.create>;
+
+  process(
+    record: ReasoningRecord
+  ): ReturnType<typeof reasoningPublic.process>;
+
+  execute(
+    record: ReasoningRecord
+  ): ReturnType<typeof reasoningPublic.process>;
+
+  find(
+    id: string
+  ): ReturnType<typeof reasoningPublic.find>;
+
+  list():
+    ReturnType<typeof reasoningPublic.list>;
+
+  search(
+    query: Parameters<
+      typeof reasoningPublic.search
+    >[0]
+  ): ReturnType<typeof reasoningPublic.search>;
+
+  archive(
+    id: string
+  ): ReturnType<typeof reasoningPublic.archive>;
+
+  report():
+    ReturnType<typeof reasoningPublic.report>;
+}
+
+/**
+ * Executa o fluxo simplificado:
+ *
+ * create
+ *   ↓
+ * process
+ */
+function executeReasoning(
+  record: ReasoningRecord
+): ReturnType<typeof reasoningPublic.process> {
+  reasoningPublic.create(record);
+
+  return reasoningPublic.process(record);
+}
+
+/**
+ * Facade oficial imutável.
+ */
+export const reasoningFacade:
+  Readonly<ReasoningFacade> =
+  Object.freeze({
+    create:
+      reasoningPublic.create.bind(
+        reasoningPublic
+      ),
+
+    process:
+      reasoningPublic.process.bind(
+        reasoningPublic
+      ),
+
+    execute:
+      executeReasoning,
+
+    find:
+      reasoningPublic.find.bind(
+        reasoningPublic
+      ),
+
+    list:
+      reasoningPublic.list.bind(
+        reasoningPublic
+      ),
+
+    search:
+      reasoningPublic.search.bind(
+        reasoningPublic
+      ),
+
+    archive:
+      reasoningPublic.archive.bind(
+        reasoningPublic
+      ),
+
+    report:
+      reasoningPublic.report.bind(
+        reasoningPublic
+      ),
+  });
+
+/**
+ * Retorna a Facade oficial
+ * da Camada de Raciocínio Cognitivo.
+ */
+export function getReasoningFacade():
+  Readonly<ReasoningFacade> {
+  return reasoningFacade;
+}
