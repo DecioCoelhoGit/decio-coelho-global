@@ -6,7 +6,7 @@
 **Aplicação:** Landing Page Festança 2026  
 **Localidade:** Vila Bela da Santíssima Trindade — Mato Grosso — Brasil  
 **Período oficial do evento:** 15 a 27 de julho de 2026  
-**Coordenador-Geral da Festança 2026:** Nazári Frazão de Almeida  
+**Coordenador-Geral da Festança 2026:** Nazário Frazão de Almeida  
 **Status:** Estrutura de dados em preparação  
 **Versão:** 1.0.0  
 
