@@ -1,0 +1,1644 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventId": "festanca-vila-bela-2026",
+  "eventName": "Festança de Vila Bela 2026",
+  "eventTagline": "Cultura, arte e legado que fazem parte de quem somos, todos os dias.",
+  "location": {
+    "city": "Vila Bela da Santíssima Trindade",
+    "state": "Mato Grosso",
+    "country": "Brasil"
+  },
+  "coordination": {
+    "role": "Coordenador-Geral",
+    "name": "Nazário Frazão de Almeida"
+  },
+  "mainPeriod": {
+    "start": "2026-07-15",
+    "end": "2026-07-27"
+  },
+  "preparatoryPeriod": {
+    "start": "2026-04-05",
+    "end": "2026-05-31"
+  },
+  "lastUpdated": "2026-07-11",
+  "source": {
+    "id": "programacao-oficial-festanca-2026",
+    "type": "programacao-oficial",
+    "providedBy": "Coordenação-Geral da Festança 2026",
+    "status": "documentado",
+    "validationStatus": "aguardando-conferencia-institucional-final"
+  },
+  "locationPolicy": {
+    "googleMapsEnabled": true,
+    "coordinatesMustBeVerified": true,
+    "privateResidenceExactPinRequiresAuthorization": true,
+    "publicPlacesMayUseVerifiedCoordinates": true,
+    "fallbackMode": "google-maps-search-query"
+  },
+  "activities": [
+    {
+      "id": "festanca-2026-001",
+      "phase": "preparatoria",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-04-05",
+      "startTime": "17:00",
+      "endTime": null,
+      "title": "Reunião do Consistório da Irmandade do Glorioso São Benedito",
+      "description": null,
+      "categories": [
+        "reuniao",
+        "religiosa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "local-a-confirmar",
+        "name": "Local a confirmar",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "local-a-confirmar"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-002",
+      "phase": "preparatoria",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-05-21",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Capitão do Mastro",
+      "description": "Reza preparatória na residência do Capitão do Mastro do Senhor Divino Espírito Santo.",
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Capitão do Mastro",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Capitão do Mastro",
+          "name": "Cleonei Geraldes de Paula"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-003",
+      "phase": "preparatoria",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-05-23",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Imperatriz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Imperatriz",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperatriz",
+          "name": "Evelyn Juliane Frazão de Almeida"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-004",
+      "phase": "preparatoria",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-05-23",
+      "startTime": "21:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Imperador",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Imperador",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperador",
+          "name": "Berchaman Leite Ribeiro"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-005",
+      "phase": "preparatoria",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-05-24",
+      "startTime": "19:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Rainha",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Rainha",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Rainha",
+          "name": "Gigliane Gomes Leite"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-006",
+      "phase": "preparatoria",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-05-24",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Rei",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Rei",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Rei",
+          "name": "Rubney Cano de Brito"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-007",
+      "phase": "preparatoria",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-05-24",
+      "startTime": "21:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Juíza",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Juíza",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Ana Karoline dos Santos Leite"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-008",
+      "phase": "preparatoria",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-05-24",
+      "startTime": "22:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Juiz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Juiz",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juiz",
+          "name": "Leandro Martins Silvério de Almeida"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-009",
+      "phase": "preparatoria",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-05-30",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Juíza e do Juiz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Juíza e do Juiz",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "endereco-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Nadir da Costa Marques"
+        },
+        {
+          "role": "Juiz",
+          "name": "Marcio José da Cruz Silva Filho"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-010",
+      "phase": "preparatoria",
+      "celebration": "programacao-integrada",
+      "date": "2026-05-31",
+      "startTime": "21:00",
+      "endTime": null,
+      "title": "Missa e entrega das joias",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "missa",
+        "entrega-das-joias",
+        "tradicional"
+      ],
+      "location": {
+        "type": "igreja",
+        "name": "Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "O material complementar informa missa da entrega das joias às 19h. Requer conferência institucional para verificar se corresponde a esta atividade ou a outra cerimônia."
+    },
+    {
+      "id": "festanca-2026-011",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-15",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Capitão do Mastro",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Capitão do Mastro Cleonei Geraldes de Paula",
+        "street": "Travessa do Palácio",
+        "district": "Centro",
+        "reference": "Próximo ao Cartório",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Travessa+do+Palacio+Centro+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Capitão do Mastro",
+          "name": "Cleonei Geraldes de Paula"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-012",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-16",
+      "startTime": "17:00",
+      "endTime": null,
+      "title": "Levantamento dos mastros",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "levantamento-dos-mastros",
+        "tradicional"
+      ],
+      "location": {
+        "type": "espaco-publico",
+        "name": "Em frente à Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": "Igreja Matriz",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-013",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-17",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Noite Cultural",
+      "description": null,
+      "categories": [
+        "cultural",
+        "noite-cultural",
+        "apresentacao-cultural"
+      ],
+      "location": {
+        "type": "equipamento-cultural",
+        "name": "Praça Cultural — Palácio dos Capitães Generais",
+        "street": "Rua Vereador Enio Fernandes Leite",
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Palacio+dos+Capitaes+Generais+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-014",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-18",
+      "startTime": "00:00",
+      "endTime": null,
+      "title": "Alvorada",
+      "description": "Saída em frente à Igreja Matriz.",
+      "categories": [
+        "alvorada",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "ponto-de-saida",
+        "name": "Em frente à Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": "Igreja Matriz",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": "Em frente à Igreja Matriz",
+        "destinations": [],
+        "description": "Percurso tradicional a confirmar."
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-015",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-18",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Imperatriz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Imperatriz Evelyn Frazão de Almeida",
+        "street": "Rua Projetada",
+        "district": "Cohab Nova",
+        "reference": "Próximo à Igreja Santo Antônio",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Santo+Antonio+Cohab+Nova+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperatriz",
+          "name": "Evelyn Juliane Frazão de Almeida"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-016",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-18",
+      "startTime": "21:00",
+      "endTime": null,
+      "title": "Reza cantada na casa do Imperador",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Imperador Berchaman Leite Ribeiro",
+        "street": "Rua Conde Azambuja",
+        "district": "Centro",
+        "reference": "Em frente à Rádio Primeira Capital FM",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Radio+Primeira+Capital+FM+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperador",
+          "name": "Berchaman Leite Ribeiro"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-017",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-19",
+      "startTime": "09:00",
+      "endTime": null,
+      "title": "Missa em honra ao Divino Espírito Santo",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "missa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "equipamento-publico",
+        "name": "Anexo ao Ginásio Melânio de Assunção",
+        "street": null,
+        "district": null,
+        "reference": "Ginásio Melânio de Assunção",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-018",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-19",
+      "startTime": "10:30",
+      "endTime": null,
+      "title": "Sorteio de novos festeiros 2027",
+      "description": null,
+      "categories": [
+        "sorteio",
+        "tradicional",
+        "social"
+      ],
+      "location": {
+        "type": "equipamento-publico",
+        "name": "Anexo ao Ginásio Melânio de Assunção",
+        "street": null,
+        "district": null,
+        "reference": "Ginásio Melânio de Assunção",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-019",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-19",
+      "startTime": "12:00",
+      "endTime": null,
+      "title": "Almoço oferecido pelo Imperador",
+      "description": null,
+      "categories": [
+        "almoco",
+        "gastronomia",
+        "social",
+        "tradicional"
+      ],
+      "location": {
+        "type": "equipamento-publico",
+        "name": "Ginásio Melânio de Assunção",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperador",
+          "name": "Berchaman Leite Ribeiro"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-020",
+      "phase": "festa-principal",
+      "celebration": "senhor-divino-espirito-santo",
+      "date": "2026-07-19",
+      "startTime": "19:00",
+      "endTime": null,
+      "title": "Jantar oferecido pela Imperatriz",
+      "description": null,
+      "categories": [
+        "jantar",
+        "gastronomia",
+        "social",
+        "tradicional"
+      ],
+      "location": {
+        "type": "equipamento-publico",
+        "name": "Ginásio Melânio de Assunção",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Imperatriz",
+          "name": "Evelyn Juliane Frazão de Almeida"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-021",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-19",
+      "startTime": "18:30",
+      "endTime": null,
+      "title": "Apresentação da Dança do Congo e solicitação simbólica da chave da cidade",
+      "description": null,
+      "categories": [
+        "congo",
+        "apresentacao-cultural",
+        "solicitacao-chave-cidade",
+        "tradicional"
+      ],
+      "location": {
+        "type": "espaco-publico",
+        "name": "Local a confirmar",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "local-a-confirmar"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Grupo tradicional",
+          "name": "Dança do Congo"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-022",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-19",
+      "startTime": "19:30",
+      "endTime": null,
+      "title": "Reza cantada na casa da Rainha",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Rainha Gigliane Gomes Leite",
+        "street": "Rua Conde Azambuja",
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Conde+Azambuja+Centro+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Rainha",
+          "name": "Gigliane Gomes Leite"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-023",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-19",
+      "startTime": "20:30",
+      "endTime": null,
+      "title": "Reza cantada na casa do Rei",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Rei Rubney Cano de Brito",
+        "street": "Rua Pouso Alegre",
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Pouso+Alegre+Centro+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Rei",
+          "name": "Rubney Cano de Brito"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-024",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-19",
+      "startTime": "21:30",
+      "endTime": null,
+      "title": "Reza cantada na casa da Juíza",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Juíza Ana Karoline dos Santos Leite",
+        "street": "Rua Pouso Alegre",
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Pouso+Alegre+Centro+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Ana Karoline dos Santos Leite"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-025",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-19",
+      "startTime": "22:30",
+      "endTime": null,
+      "title": "Reza cantada na casa do Juiz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa do Juiz Leandro Martins Silvério de Almeida",
+        "street": "Rua Marechal Rondon",
+        "district": "Centro",
+        "reference": "Próximo à Igualdade Racial",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Marechal+Rondon+Centro+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juiz",
+          "name": "Leandro Martins Silvério de Almeida"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-026",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-20",
+      "startTime": "05:00",
+      "endTime": null,
+      "title": "Saída da Dança do Congo para buscar autoridades e festeiros",
+      "description": "A Dança do Congo buscará autoridades do Congo e festeiros, conduzindo-os ao local da celebração.",
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Percurso tradicional da Dança do Congo",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Residências das autoridades do Congo",
+          "Residências dos festeiros",
+          "Local da celebração"
+        ],
+        "description": "Percurso tradicional conforme organização da Dança do Congo."
+      },
+      "participants": [
+        {
+          "role": "Grupo tradicional",
+          "name": "Dança do Congo"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-027",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-20",
+      "startTime": "11:00",
+      "endTime": null,
+      "title": "Cortejo levando festeiros às casas",
+      "description": "Rei e Rainha serão conduzidos primeiro.",
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Ruas de Vila Bela da Santíssima Trindade",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Casa do Rei",
+          "Casa da Rainha",
+          "Residências dos demais festeiros"
+        ],
+        "description": "Cortejo tradicional levando os festeiros às suas residências."
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-028",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-20",
+      "startTime": "15:00",
+      "endTime": null,
+      "title": "Retorno do cortejo",
+      "description": "Retorno do cortejo levando a Juíza e o Juiz às suas residências.",
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Ruas de Vila Bela da Santíssima Trindade",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Casa da Juíza",
+          "Casa do Juiz"
+        ],
+        "description": "Retorno do cortejo tradicional."
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-029",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-20",
+      "startTime": "19:00",
+      "endTime": null,
+      "title": "Saída para buscar autoridades e festeiros",
+      "description": null,
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Percurso tradicional",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Residências das autoridades",
+          "Residências dos festeiros"
+        ],
+        "description": null
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-030",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-21",
+      "startTime": "05:00",
+      "endTime": null,
+      "title": "Saída para buscar festeiros novos e atuais",
+      "description": null,
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Percurso tradicional",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Residências dos festeiros novos",
+          "Residências dos festeiros atuais"
+        ],
+        "description": null
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-031",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-21",
+      "startTime": "10:30",
+      "endTime": null,
+      "title": "Cortejo pelas ruas levando os festeiros novos às casas",
+      "description": "Os festeiros novos serão conduzidos primeiro.",
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Ruas de Vila Bela da Santíssima Trindade",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Residências dos festeiros novos"
+        ],
+        "description": null
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-032",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-21",
+      "startTime": "15:00",
+      "endTime": null,
+      "title": "Cortejo levando festeiros atuais às casas",
+      "description": "Despedida dos festeiros atuais.",
+      "categories": [
+        "congo",
+        "cortejo",
+        "tradicional",
+        "itinerante",
+        "despedida"
+      ],
+      "location": {
+        "type": "percurso",
+        "name": "Ruas de Vila Bela da Santíssima Trindade",
+        "street": null,
+        "district": "Centro",
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": null,
+        "verificationStatus": "rota-a-confirmar"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": null,
+        "destinations": [
+          "Residências dos festeiros atuais"
+        ],
+        "description": null
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-033",
+      "phase": "festa-principal",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-21",
+      "startTime": "18:30",
+      "endTime": null,
+      "title": "Encerramento da Dança do Congo",
+      "description": "Homenagens às festeiras Ramalhetes.",
+      "categories": [
+        "congo",
+        "encerramento",
+        "homenagem",
+        "tradicional"
+      ],
+      "location": {
+        "type": "espaco-publico",
+        "name": "Em frente à Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": "Igreja Matriz",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Grupo tradicional",
+          "name": "Dança do Congo"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-034",
+      "phase": "festa-principal",
+      "celebration": "gloriosa-mae-de-deus",
+      "date": "2026-07-22",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Juíza e do Juiz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Juíza Aedir Vitória Pinto dos Santos de Miranda e do Juiz Hélio da Silva",
+        "street": "Avenida São Luiz",
+        "district": "Centro",
+        "reference": "Próximo à Câmara de Vereadores",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Camara+Municipal+de+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Aedir Vitória Pinto dos Santos de Miranda"
+        },
+        {
+          "role": "Juiz",
+          "name": "Hélio da Silva"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-035",
+      "phase": "festa-principal",
+      "celebration": "gloriosa-mae-de-deus",
+      "date": "2026-07-23",
+      "startTime": "19:30",
+      "endTime": null,
+      "title": "Missa em homenagem à Nossa Senhora Mãe de Deus",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "missa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "centro-paroquial",
+        "name": "Centro Paroquial São Francisco de Assis",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Centro+Paroquial+Sao+Francisco+de+Assis+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-036",
+      "phase": "festa-principal",
+      "celebration": "gloriosa-mae-de-deus",
+      "date": "2026-07-23",
+      "startTime": "20:30",
+      "endTime": null,
+      "title": "Posse dos novos festeiros 2027",
+      "description": null,
+      "categories": [
+        "posse",
+        "tradicional",
+        "social"
+      ],
+      "location": {
+        "type": "centro-paroquial",
+        "name": "Centro Paroquial São Francisco de Assis",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Centro+Paroquial+Sao+Francisco+de+Assis+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-037",
+      "phase": "festa-principal",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-07-25",
+      "startTime": "00:00",
+      "endTime": null,
+      "title": "Alvorada",
+      "description": "Saída em frente à Igreja Matriz.",
+      "categories": [
+        "alvorada",
+        "tradicional",
+        "itinerante"
+      ],
+      "location": {
+        "type": "ponto-de-saida",
+        "name": "Em frente à Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": "Igreja Matriz",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": {
+        "isItinerant": true,
+        "departure": "Em frente à Igreja Matriz",
+        "destinations": [],
+        "description": "Percurso tradicional a confirmar."
+      },
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-038",
+      "phase": "festa-principal",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-07-25",
+      "startTime": "20:00",
+      "endTime": null,
+      "title": "Reza cantada na casa da Juíza e do Juiz",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "reza-cantada",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Juíza Nadir da Costa Marques e do Juiz Marcio José da Cruz Silva Filho",
+        "street": "Rua Conde Azambuja",
+        "district": "Centro",
+        "reference": "Em frente ao Ministério Público",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ministerio+Publico+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Nadir da Costa Marques"
+        },
+        {
+          "role": "Juiz",
+          "name": "Marcio José da Cruz Silva Filho"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "A publicação de ponto residencial exato depende de validação e autorização."
+    },
+    {
+      "id": "festanca-2026-039",
+      "phase": "festa-principal",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-07-26",
+      "startTime": "09:00",
+      "endTime": null,
+      "title": "Missa em homenagem à Santíssima Trindade",
+      "description": null,
+      "categories": [
+        "religiosa",
+        "missa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "centro-paroquial",
+        "name": "Centro Paroquial São Francisco de Assis",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Centro+Paroquial+Sao+Francisco+de+Assis+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-040",
+      "phase": "festa-principal",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-07-26",
+      "startTime": "12:00",
+      "endTime": null,
+      "title": "Almoço oferecido pela Juíza e pelo Juiz",
+      "description": null,
+      "categories": [
+        "almoco",
+        "gastronomia",
+        "social",
+        "tradicional"
+      ],
+      "location": {
+        "type": "equipamento-publico",
+        "name": "Ginásio Melânio de Assunção",
+        "street": null,
+        "district": null,
+        "reference": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Juíza",
+          "name": "Nadir da Costa Marques"
+        },
+        {
+          "role": "Juiz",
+          "name": "Marcio José da Cruz Silva Filho"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-041",
+      "phase": "festa-principal",
+      "celebration": "tres-pessoas-santissima-trindade",
+      "date": "2026-07-26",
+      "startTime": "17:00",
+      "endTime": null,
+      "title": "Encerramento das festividades e descida dos mastros",
+      "description": null,
+      "categories": [
+        "encerramento",
+        "descida-dos-mastros",
+        "religiosa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "espaco-publico",
+        "name": "Em frente à Igreja Matriz",
+        "street": null,
+        "district": "Centro",
+        "reference": "Igreja Matriz",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "pesquisa-google-gerada"
+      },
+      "route": null,
+      "participants": [],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": null
+    },
+    {
+      "id": "festanca-2026-042",
+      "phase": "encerramento",
+      "celebration": "glorioso-sao-benedito",
+      "date": "2026-07-27",
+      "startTime": "19:30",
+      "endTime": null,
+      "title": "Encerramento final com entrega da imagem do Glorioso São Benedito",
+      "description": "Entrega da imagem do Glorioso São Benedito na casa da Rainha.",
+      "categories": [
+        "encerramento",
+        "entrega-de-imagem",
+        "religiosa",
+        "tradicional"
+      ],
+      "location": {
+        "type": "residencia",
+        "name": "Casa da Rainha Gleyde Carneiro Geraldes",
+        "street": "Rua Pouso Alegre",
+        "district": "Centro",
+        "reference": "Próximo à Secretaria de Educação",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "coordinates": null,
+        "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Secretaria+de+Educacao+Vila+Bela+da+Santissima+Trindade+MT",
+        "verificationStatus": "endereco-documentado-pin-exato-pendente"
+      },
+      "route": null,
+      "participants": [
+        {
+          "role": "Rainha",
+          "name": "Gleyde Carneiro Geraldes"
+        }
+      ],
+      "status": "documentado",
+      "sourceId": "programacao-oficial-festanca-2026",
+      "notes": "Confirmar se Gleyde Carneiro Geraldes corresponde à Rainha de ciclo anterior, futura ou responsável pela guarda da imagem. A publicação de ponto residencial exato depende de validação e autorização."
+    }
+  ]
+    }
