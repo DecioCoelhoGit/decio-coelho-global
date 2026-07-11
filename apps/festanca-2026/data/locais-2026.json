@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventId": "festanca-vila-bela-2026",
+  "eventName": "Festança de Vila Bela 2026",
+  "inventoryName": "Inventário Georreferenciado de Locais da Festança 2026",
+  "coordination": {
+    "role": "Coordenador-Geral",
+    "name": "Nazário Frazão de Almeida"
+  },
+  "lastUpdated": "2026-07-11",
+  "locationPolicy": {
+    "principle": "Nenhuma coordenada deve ser inventada, estimada ou publicada sem conferência.",
+    "publicPlaces": "Podem receber ponto exato após validação no Google Maps e pela Coordenação-Geral.",
+    "privateResidences": "O ponto exato somente poderá ser publicado mediante autorização e confirmação institucional.",
+    "routes": "Percursos itinerantes devem ser validados com ponto de saída, pontos intermediários e destino.",
+    "fallback": "Enquanto não houver ponto exato validado, utilizar pesquisa dirigida no Google Maps."
+  },
+  "verificationStatuses": [
+    "nao-verificado",
+    "pesquisa-google-gerada",
+    "endereco-documentado",
+    "pin-exato-pendente",
+    "rota-a-confirmar",
+    "confirmado-pela-coordenacao",
+    "autorizado-para-publicacao"
+  ],
+  "places": [
+    {
+      "id": "loc-igreja-matriz",
+      "name": "Igreja Matriz",
+      "type": "igreja",
+      "privacy": "publico",
+      "address": {
+        "street": null,
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Igreja Matriz Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Igreja+Matriz+Vila+Bela+da+Santissima+Trindade+MT"
+      },
+      "verificationStatus": "pesquisa-google-gerada",
+      "publicationStatus": "ponto-exato-pendente",
+      "activityIds": [
+        "festanca-2026-010",
+        "festanca-2026-012",
+        "festanca-2026-014",
+        "festanca-2026-033",
+        "festanca-2026-037",
+        "festanca-2026-041"
+      ],
+      "notes": "Confirmar o nome oficial da igreja e o pin exato."
+    },
+    {
+      "id": "loc-palacio-capitaes-generais",
+      "name": "Praça Cultural — Palácio dos Capitães Generais",
+      "type": "equipamento-cultural",
+      "privacy": "publico",
+      "address": {
+        "street": "Rua Vereador Enio Fernandes Leite",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Palácio dos Capitães Generais Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Palacio+dos+Capitaes+Generais+Vila+Bela+da+Santissima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "ponto-exato-pendente",
+      "activityIds": ["festanca-2026-013"],
+      "notes": null
+    },
+    {
+      "id": "loc-ginasio-melanio-assuncao",
+      "name": "Ginásio Melânio de Assunção",
+      "type": "equipamento-publico",
+      "privacy": "publico",
+      "address": {
+        "street": null,
+        "number": null,
+        "district": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Ginásio Melânio de Assunção Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Ginasio+Melanio+de+Assuncao+Vila+Bela+da+Santissima+Trindade+MT"
+      },
+      "verificationStatus": "pesquisa-google-gerada",
+      "publicationStatus": "ponto-exato-pendente",
+      "activityIds": [
+        "festanca-2026-017",
+        "festanca-2026-018",
+        "festanca-2026-019",
+        "festanca-2026-020",
+        "festanca-2026-040"
+      ],
+      "notes": "Confirmar se o anexo ao ginásio utiliza o mesmo pin."
+    },
+    {
+      "id": "loc-centro-paroquial-sao-francisco",
+      "name": "Centro Paroquial São Francisco de Assis",
+      "type": "centro-paroquial",
+      "privacy": "publico",
+      "address": {
+        "street": null,
+        "number": null,
+        "district": null,
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Centro Paroquial São Francisco de Assis Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Centro+Paroquial+Sao+Francisco+de+Assis+Vila+Bela+da+Santissima+Trindade+MT"
+      },
+      "verificationStatus": "pesquisa-google-gerada",
+      "publicationStatus": "ponto-exato-pendente",
+      "activityIds": [
+        "festanca-2026-035",
+        "festanca-2026-036",
+        "festanca-2026-039"
+      ],
+      "notes": null
+    },
+    {
+      "id": "loc-casa-capitao-mastro",
+      "name": "Casa do Capitão do Mastro Cleonei Geraldes de Paula",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Travessa do Palácio",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Próximo ao Cartório"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Travessa do Palácio Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Travessa+do+Palácio+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-002", "festanca-2026-011"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-imperatriz",
+      "name": "Casa da Imperatriz Evelyn Juliane Frazão de Almeida",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Projetada",
+        "number": null,
+        "district": "Cohab Nova",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Próximo à Igreja Santo Antônio"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Projetada Cohab Nova Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Projetada+Cohab+Nova+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-003", "festanca-2026-015"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-imperador",
+      "name": "Casa do Imperador Berchaman Leite Ribeiro",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Conde Azambuja",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Em frente à Rádio Primeira Capital FM"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Conde Azambuja Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Conde+Azambuja+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-004", "festanca-2026-016"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-rainha-sao-benedito",
+      "name": "Casa da Rainha Gigliane Gomes Leite",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Conde Azambuja",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Conde Azambuja Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Conde+Azambuja+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-005", "festanca-2026-022"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-rei-sao-benedito",
+      "name": "Casa do Rei Rubney Cano de Brito",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Pouso Alegre",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Pouso Alegre Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Pouso+Alegre+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-006", "festanca-2026-023"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-juiza-sao-benedito",
+      "name": "Casa da Juíza Ana Karoline dos Santos Leite",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Pouso Alegre",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Pouso Alegre Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Pouso+Alegre+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-007", "festanca-2026-024"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-juiz-sao-benedito",
+      "name": "Casa do Juiz Leandro Martins Silvério de Almeida",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Marechal Rondon",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Próximo à Igualdade Racial"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Marechal Rondon Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Marechal+Rondon+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-008", "festanca-2026-025"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-juizes-mae-de-deus",
+      "name": "Casa da Juíza Aedir Vitória Pinto dos Santos de Miranda e do Juiz Hélio da Silva",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Avenida São Luiz",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Próximo à Câmara de Vereadores"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Avenida São Luiz Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Avenida+São+Luiz+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-034"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-juizes-santissima-trindade",
+      "name": "Casa da Juíza Nadir da Costa Marques e do Juiz Marcio José da Cruz Silva Filho",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Conde Azambuja",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Em frente ao Ministério Público"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Conde Azambuja Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Conde+Azambuja+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-009", "festanca-2026-038"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "loc-casa-rainha-entrega-imagem",
+      "name": "Casa da Rainha Gleyde Carneiro Geraldes",
+      "type": "residencia",
+      "privacy": "privado-com-acesso-eventual",
+      "address": {
+        "street": "Rua Pouso Alegre",
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": "Próximo à Secretaria de Educação"
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": "Rua Pouso Alegre Centro Vila Bela da Santíssima Trindade MT",
+        "searchUrl": "https://www.google.com/maps/search/?api=1&query=Rua+Pouso+Alegre+Centro+Vila+Bela+da+Santíssima+Trindade+MT"
+      },
+      "verificationStatus": "endereco-documentado",
+      "publicationStatus": "autorizacao-e-pin-pendentes",
+      "activityIds": ["festanca-2026-042"],
+      "notes": "Não publicar coordenadas residenciais sem autorização."
+    },
+    {
+      "id": "rota-danca-do-congo",
+      "name": "Percursos tradicionais da Dança do Congo",
+      "type": "rota-itinerante",
+      "privacy": "publico-itinerante",
+      "address": {
+        "street": null,
+        "number": null,
+        "district": "Centro",
+        "city": "Vila Bela da Santíssima Trindade",
+        "state": "MT",
+        "country": "Brasil",
+        "reference": null
+      },
+      "coordinates": null,
+      "googleMaps": {
+        "placeId": null,
+        "officialUrl": null,
+        "searchQuery": null,
+        "searchUrl": null
+      },
+      "route": {
+        "departure": null,
+        "waypoints": [],
+        "destinations": [],
+        "polyline": null,
+        "googleMapsDirectionsUrl": null
+      },
+      "verificationStatus": "rota-a-confirmar",
+      "publicationStatus": "aguardando-mapeamento",
+      "activityIds": [
+        "festanca-2026-026",
+        "festanca-2026-027",
+        "festanca-2026-028",
+        "festanca-2026-029",
+        "festanca-2026-030",
+        "festanca-2026-031",
+        "festanca-2026-032"
+      ],
+      "notes": "Mapear com representantes da Dança do Congo e validar com a Coordenação-Geral."
+    }
+  ],
+  "pendingActions": [
+    "Obter links oficiais compartilhados pelo Google Maps para os locais públicos.",
+    "Registrar latitude, longitude e placeId somente após conferência.",
+    "Solicitar autorização para divulgação de pins de residências.",
+    "Mapear os percursos da Dança do Congo e das Alvoradas.",
+    "Relacionar os IDs deste inventário ao campo locationId de programacao-2026.json.",
+    "Validar o inventário com o Coordenador-Geral Nazário Frazão de Almeida."
+  ]
+}
