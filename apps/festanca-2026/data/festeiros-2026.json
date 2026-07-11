@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventId": "festanca-vila-bela-2026",
+  "eventName": "Festança de Vila Bela 2026",
+  "coordination": {
+    "role": "Coordenador-Geral",
+    "name": "Nazário Frazão de Almeida"
+  },
+  "source": {
+    "id": "programacao-oficial-festanca-2026",
+    "type": "material-oficial",
+    "providedBy": "Coordenação-Geral da Festança 2026",
+    "status": "documentado",
+    "validationStatus": "aguardando-conferencia-institucional-final"
+  },
+  "lastUpdated": "2026-07-11",
+  "groups": [
+    {
+      "celebration": "senhor-divino-espirito-santo",
+      "title": "Festeiros do Senhor Divino Espírito Santo",
+      "members": [
+        {
+          "role": "Imperador",
+          "name": "Berchaman Leite Ribeiro",
+          "status": "documentado"
+        },
+        {
+          "role": "Imperatriz",
+          "name": "Evelyn Juliane Frazão de Almeida",
+          "status": "documentado"
+        },
+        {
+          "role": "Capitão do Mastro",
+          "name": "Cleonei Geraldes de Paula",
+          "status": "documentado"
+        },
+        {
+          "role": "Alferes da Bandeira",
+          "name": "Manoel Neto Maciel Aranha",
+          "status": "documentado"
+        },
+        {
+          "role": "Procurador",
+          "name": "Jean Kenedes Fernandes Leite",
+          "status": "documentado"
+        },
+        {
+          "role": "Procuradora",
+          "name": "Flaviane Francisco da Silva",
+          "status": "documentado"
+        },
+        {
+          "role": "Mordomo",
+          "name": "Edclay Lopes Coelho",
+          "status": "documentado"
+        },
+        {
+          "role": "Mordomo",
+          "name": "Arthur Felipe Brito Ourique",
+          "status": "documentado"
+        },
+        {
+          "role": "Mordomo",
+          "name": "Luiz Guilherme Geraldes",
+          "status": "documentado"
+        },
+        {
+          "role": "Mordomo",
+          "name": "Matheus Henrique Taques",
+          "status": "documentado"
+        }
+      ]
+    },
+    {
+      "celebration": "glorioso-sao-benedito",
+      "title": "Festeiros de São Benedito 2026",
+      "members": [
+        {
+          "role": "Rei",
+          "name": "Rubney Cano de Brito",
+          "status": "documentado"
+        },
+        {
+          "role": "Rainha",
+          "name": "Gigliane Gomes Leite",
+          "status": "documentado"
+        },
+        {
+          "role": "Juiz",
+          "name": "Leandro Martins Silvério de Almeida",
+          "status": "documentado"
+        },
+        {
+          "role": "Juíza",
+          "name": "Ana Karoline dos Santos Leite",
+          "status": "documentado"
+        },
+        {
+          "role": "Ramalhete",
+          "name": "Nauara Coelho Souza",
+          "status": "documentado"
+        },
+        {
+          "role": "Ramalhete",
+          "name": "Roseni Evangelista França Coelho",
+          "status": "documentado"
+        },
+        {
+          "role": "Ramalhete",
+          "name": "Sofia da Silva Chaves",
+          "status": "documentado"
+        },
+        {
+          "role": "Ramalhete",
+          "name": "Anna Cecília Trindade Oliveira",
+          "status": "documentado"
+        },
+        {
+          "role": "Promesseira",
+          "name": "Vanessa da Cruz Fonseca",
+          "status": "documentado"
+        }
+      ]
+    },
+    {
+      "celebration": "gloriosa-mae-de-deus",
+      "title": "Festeiros da Gloriosa Mãe de Deus",
+      "members": [
+        {
+          "role": "Juiz",
+          "name": "Hélio da Silva",
+          "status": "documentado"
+        },
+        {
+          "role": "Juíza",
+          "name": "Aedir Vitória Pinto dos Santos de Miranda",
+          "status": "documentado"
+        },
+        {
+          "role": "Procuradora",
+          "name": "Chérrida Ferreira Coelho Barros",
+          "status": "documentado"
+        }
+      ]
+    },
+    {
+      "celebration": "tres-pessoas-santissima-trindade",
+      "title": "Festeiros das Três Pessoas da Santíssima Trindade",
+      "members": [
+        {
+          "role": "Juiz",
+          "name": "Marcio José da Cruz Silva Filho",
+          "status": "documentado"
+        },
+        {
+          "role": "Juíza",
+          "name": "Nadir da Costa Marques",
+          "status": "documentado"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "As grafias dos nomes foram transcritas do material oficial recebido.",
+    "Antes da publicação definitiva, recomenda-se conferência institucional de acentuação, nomes civis completos e funções tradicionais.",
+    "Dados pessoais adicionais não devem ser incluídos sem necessidade, autorização e finalidade pública definida."
+  ]
+}
