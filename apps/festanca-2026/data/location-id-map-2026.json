@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventId": "festanca-vila-bela-2026",
+  "eventName": "Festança de Vila Bela 2026",
+  "description": "Mapa operacional de ligação entre as atividades da Programação Cultural Inteligente e o Inventário Georreferenciado de Locais da Festança 2026.",
+  "coordination": {
+    "role": "Coordenador-Geral",
+    "name": "Nazário Frazão de Almeida"
+  },
+  "status": "operacional-com-duas-vinculacoes-pendentes",
+  "locationPolicy": {
+    "googleMapsEnabled": true,
+    "coordinatesMustBeVerified": true,
+    "privateResidenceExactPinRequiresAuthorization": true,
+    "publicPlacesMayUseVerifiedCoordinates": true,
+    "fallbackMode": "google-maps-search-query"
+  },
+  "visitationPolicy": {
+    "privateResidences": "Visitas, romarias, recebimentos e entregas oficiais nas residências devem observar os atos e horários previstos na Programação Oficial da Festança 2026.",
+    "visitorGuidance": "O visitante deverá consultar previamente a Programação Oficial, a agenda e os canais de contato disponíveis antes de se dirigir às residências dos festeiros.",
+    "exactPinPublication": "A publicação de localização residencial precisa depende de validação institucional e autorização.",
+    "purpose": "Preservar a organização cerimonial, a privacidade dos residentes, a segurança dos participantes e a integridade das tradições da Festança."
+  },
+  "pendingClarifications": {
+    "festanca-2026-001": {
+      "title": "Reunião do Consistório da Irmandade do Glorioso São Benedito",
+      "knownContext": "A reunião ocorre na residência do Presidente das Irmandades, Nazário Frazão de Almeida.",
+      "institutionalContext": "Nazário Frazão de Almeida exerce a Presidência das Irmandades, cargo vitalício transmitido tradicionalmente de pai para filho. O cargo foi transmitido por seu saudoso pai, Manoel Frazão de Almeida.",
+      "pending": [
+        "Confirmar endereço oficial.",
+        "Criar registro correspondente em locais-2026.json.",
+        "Definir política de publicação da localização.",
+        "Obter autorização antes da publicação de pin residencial exato."
+      ],
+      "locationId": null
+    },
+    "festanca-2026-021": {
+      "title": "Apresentação da Dança do Congo e solicitação simbólica da chave da cidade",
+      "knownContext": "A atividade envolve trajeto pelo Centro Histórico e adjacências e culmina na residência do Prefeito Municipal, onde ocorre a entrega simbólica das Chaves da Cidade.",
+      "institutionalContext": "O detalhamento preliminar indica um trâmite cerimonial envolvendo instituições públicas e autoridades. A Associação do Grupo do Congo deverá fornecer informações complementares sobre o percurso e a cerimônia.",
+      "institutionsToConfirm": [
+        "Polícia Civil",
+        "Polícia Militar",
+        "Corpo de Bombeiros",
+        "Fórum",
+        "Prefeitura Municipal"
+      ],
+      "pending": [
+        "Confirmar o trâmite cerimonial completo.",
+        "Confirmar a ordem das visitas institucionais.",
+        "Confirmar os pontos oficiais de passagem.",
+        "Confirmar horários e duração das etapas.",
+        "Confirmar o ponto de partida.",
+        "Confirmar a residência do Prefeito Municipal como destino final.",
+        "Criar ou atualizar os locais correspondentes em locais-2026.json.",
+        "Modelar futuramente a rota oficial da cerimônia."
+      ],
+      "locationId": null
+    }
+  },
+  "locationByActivity": {
+    "festanca-2026-001": null,
+    "festanca-2026-002": "loc-casa-capitao-mastro",
+    "festanca-2026-003": "loc-casa-imperatriz",
+    "festanca-2026-004": "loc-casa-imperador",
+    "festanca-2026-005": "loc-casa-rainha-sao-benedito",
+    "festanca-2026-006": "loc-casa-rei-sao-benedito",
+    "festanca-2026-007": "loc-casa-juiza-sao-benedito",
+    "festanca-2026-008": "loc-casa-juiz-sao-benedito",
+    "festanca-2026-009": "loc-casa-juizes-santissima-trindade",
+    "festanca-2026-010": "loc-igreja-matriz",
+    "festanca-2026-011": "loc-casa-capitao-mastro",
+    "festanca-2026-012": "loc-igreja-matriz",
+    "festanca-2026-013": "loc-palacio-capitaes-generais",
+    "festanca-2026-014": "loc-igreja-matriz",
+    "festanca-2026-015": "loc-casa-imperatriz",
+    "festanca-2026-016": "loc-casa-imperador",
+    "festanca-2026-017": "loc-ginasio-melanio-assuncao",
+    "festanca-2026-018": "loc-ginasio-melanio-assuncao",
+    "festanca-2026-019": "loc-ginasio-melanio-assuncao",
+    "festanca-2026-020": "loc-ginasio-melanio-assuncao",
+    "festanca-2026-021": null,
+    "festanca-2026-022": "loc-casa-rainha-sao-benedito",
+    "festanca-2026-023": "loc-casa-rei-sao-benedito",
+    "festanca-2026-024": "loc-casa-juiza-sao-benedito",
+    "festanca-2026-025": "loc-casa-juiz-sao-benedito",
+    "festanca-2026-026": "rota-danca-do-congo",
+    "festanca-2026-027": "rota-danca-do-congo",
+    "festanca-2026-028": "rota-danca-do-congo",
+    "festanca-2026-029": "rota-danca-do-congo",
+    "festanca-2026-030": "rota-danca-do-congo",
+    "festanca-2026-031": "rota-danca-do-congo",
+    "festanca-2026-032": "rota-danca-do-congo",
+    "festanca-2026-033": "loc-igreja-matriz",
+    "festanca-2026-034": "loc-casa-juizes-mae-de-deus",
+    "festanca-2026-035": "loc-centro-paroquial-sao-francisco",
+    "festanca-2026-036": "loc-centro-paroquial-sao-francisco",
+    "festanca-2026-037": "loc-igreja-matriz",
+    "festanca-2026-038": "loc-casa-juizes-santissima-trindade",
+    "festanca-2026-039": "loc-centro-paroquial-sao-francisco",
+    "festanca-2026-040": "loc-ginasio-melanio-assuncao",
+    "festanca-2026-041": "loc-igreja-matriz",
+    "festanca-2026-042": "loc-casa-rainha-entrega-imagem"
+  }
+}
