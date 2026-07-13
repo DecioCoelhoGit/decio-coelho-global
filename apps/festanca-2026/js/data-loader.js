@@ -99,6 +99,9 @@ const festancaDataState = {
 
     locationMap: null
 
+     traditionalGroups: [],
+     traditionalGroupsDocument: null,
+
   },
 
   indexes: {
