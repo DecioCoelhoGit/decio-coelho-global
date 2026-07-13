@@ -57,7 +57,12 @@ const FESTANCA_DATA_CONFIG = Object.freeze({
 
     locais: "locais-2026.json",
 
+     traditionalGroups:
+       "./data/grupos-tradicionais-2026.json"
+    
     locationMap: "location-id-map-2026.json"
+
+     
 
   }),
 
