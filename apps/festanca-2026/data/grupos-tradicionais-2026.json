@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "eventId": "festanca-vila-bela-2026",
+  "lastUpdated": "2026-07-12",
+  "sourceStatus": "informacao-cultural-documentada",
+  "groups": [
+    {
+      "id": "grupo-do-congo",
+      "name": "Grupo do Congo",
+      "shortName": "Congo",
+      "type": "grupo-tradicional",
+      "participationStatus": "oficial",
+      "description": "Grupo tradicional participante da Festança de Vila Bela.",
+      "association": null,
+      "president": null,
+      "activities": [],
+      "media": {
+        "images": [],
+        "videos": [],
+        "socialLinks": []
+      },
+      "validationStatus": "aguardando-detalhamento-institucional"
+    },
+    {
+      "id": "conguinho",
+      "name": "Conguinho",
+      "shortName": "Conguinho",
+      "type": "grupo-tradicional",
+      "participationStatus": "oficial",
+      "description": "Expressão tradicional participante da Festança de Vila Bela.",
+      "association": null,
+      "president": null,
+      "activities": [],
+      "media": {
+        "images": [],
+        "videos": [],
+        "socialLinks": []
+      },
+      "validationStatus": "aguardando-detalhamento-institucional"
+    },
+    {
+      "id": "chorado",
+      "name": "Chorado",
+      "shortName": "Chorado",
+      "type": "manifestacao-tradicional",
+      "participationStatus": "oficial",
+      "description": "Manifestação cultural tradicional participante da Festança de Vila Bela.",
+      "association": null,
+      "responsaveis": [],
+      "activities": [],
+      "media": {
+        "images": [],
+        "videos": [],
+        "socialLinks": []
+      },
+      "validationStatus": "aguardando-detalhamento-institucional"
+    },
+    {
+      "id": "choradinho",
+      "name": "Choradinho",
+      "shortName": "Choradinho",
+      "type": "manifestacao-tradicional",
+      "participationStatus": "oficial",
+      "description": "Manifestação cultural tradicional participante da Festança de Vila Bela.",
+      "association": null,
+      "responsaveis": [],
+      "activities": [],
+      "media": {
+        "images": [],
+        "videos": [],
+        "socialLinks": []
+      },
+      "validationStatus": "aguardando-detalhamento-institucional"
+    }
+  ]
+}
