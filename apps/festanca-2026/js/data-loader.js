@@ -3,1978 +3,1879 @@
 /**
  * ============================================================
  * FESTANÇA DE VILA BELA 2026
- * PROGRAMAÇÃO CULTURAL INTELIGENTE
+ * PROGRAMAÇÃO CULTURAL INTELIGENTE
+ * DATA LOADER OFICIAL
  * ============================================================
  *
  * Arquivo:
  * apps/festanca-2026/js/data-loader.js
  *
- * Responsabilidade:
- * - carregar as bases JSON da Festança 2026;
- * - validar minimamente suas estruturas;
- * - integrar programação, locais e festeiros;
- * - disponibilizar consultas para o script.js;
- * - preservar funcionamento em hospedagem estática;
- * - emitir evento quando os dados estiverem prontos.
+ * Responsabilidades:
+ * - carregar a programação oficial;
+ * - carregar o inventário de locais;
+ * - carregar os festeiros;
+ * - carregar os grupos tradicionais;
+ * - relacionar atividades e locais por locationId;
+ * - proteger dados residenciais;
+ * - oferecer filtros e consultas públicas;
+ * - calcular programação de hoje;
+ * - calcular próximo evento;
+ * - produzir estatísticas;
+ * - funcionar em servidor local e GitHub Pages.
  *
- * Bases consumidas:
- * - data/programacao-2026.json
- * - data/festeiros-2026.json
- * - data/locais-2026.json
- * - data/location-id-map-2026.json
+ * Grupos tradicionais oficiais:
+ * - Grupo do Congo;
+ * - Conguinho;
+ * - Chorado;
+ * - Choradinho.
  *
  * Coordenação-Geral:
  * Nazário Frazão de Almeida
- *
- * Projeto:
- * DCGLOBAL.AI
- * Festança de Vila Bela 2026
  */
 
+(() => {
+  /* ==========================================================
+     CONFIGURAÇÃO
+  ========================================================== */
 
-/* ============================================================
-   NAMESPACE GLOBAL
-============================================================ */
+  const CONFIG = Object.freeze({
+    version: "2.0.0",
 
-window.FestancaData = window.FestancaData || {};
+    files: Object.freeze({
+      programacao:
+        "./data/programacao-2026.json",
 
+      locais:
+        "./data/locais-2026.json",
 
-/* ============================================================
-   CONFIGURAÇÃO
-============================================================ */
+      festeiros:
+        "./data/festeiros-2026.json",
 
-const FESTANCA_DATA_CONFIG = Object.freeze({
+      gruposTradicionais:
+        "./data/grupos-tradicionais-2026.json"
+    }),
 
-  version: "1.0.0",
+    timezone:
+      "America/Cuiaba",
 
-  basePath: "./data",
+    locale:
+      "pt-BR",
 
-  files: Object.freeze({
+    cacheMode:
+      "no-store",
 
-    programacao: "programacao-2026.json",
+    requestTimeout:
+      15000
+  });
 
-    festeiros: "festeiros-2026.json",
+  /* ==========================================================
+     ESTADO INTERNO
+  ========================================================== */
 
-    locais: "locais-2026.json",
+  const state = {
+    loaded: false,
+    loading: false,
+    error: null,
+    loadingPromise: null,
+    loadedAt: null,
 
-     traditionalGroups:
-       "./data/grupos-tradicionais-2026.json"
-    
-    locationMap: "location-id-map-2026.json"
+    programacaoDocument: null,
+    locaisDocument: null,
+    festeirosDocument: null,
+    gruposTradicionaisDocument: null,
 
-     
-
-  }),
-
-  requestTimeout: 15000,
-
-  cache: "no-store",
-
-  expectedActivities: 42
-
-});
-
-
-/* ============================================================
-   ESTADO INTERNO
-============================================================ */
-
-const festancaDataState = {
-
-  loading: false,
-
-  loaded: false,
-
-  error: null,
-
-  loadedAt: null,
-
-  raw: {
-
-    programacao: null,
-
-    festeiros: null,
-
-    locais: null,
-
-    locationMap: null
-
-     traditionalGroups: [],
-     traditionalGroupsDocument: null,
-
-  },
-
-  indexes: {
+    activities: [],
+    places: [],
+    festivalPeople: [],
+    traditionalGroups: [],
 
     activitiesById: new Map(),
-
     placesById: new Map(),
-
-    celebrations: new Map(),
-
-    activitiesByDate: new Map(),
-
-    activitiesByCelebration: new Map(),
-
-    activitiesByLocation: new Map()
-
-  },
-
-  enrichedActivities: []
-
-};
-
-
-/* ============================================================
-   ERROS PERSONALIZADOS
-============================================================ */
-
-class FestancaDataError extends Error {
-
-  constructor(message, details = null) {
-
-    super(message);
-
-    this.name = "FestancaDataError";
-
-    this.details = details;
-
-  }
-
-}
-
-
-/* ============================================================
-   UTILITÁRIOS
-============================================================ */
-
-function buildDataUrl(fileName) {
-
-  return `${FESTANCA_DATA_CONFIG.basePath}/${fileName}`;
-
-}
-
-
-function isObject(value) {
-
-  return (
-    value !== null &&
-    typeof value === "object" &&
-    !Array.isArray(value)
-  );
-
-}
-
-
-function normalizeText(value) {
-
-  return String(value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
-
-}
-
-
-function cloneData(value) {
-
-  if (
-    typeof structuredClone === "function"
-  ) {
-
-    return structuredClone(value);
-
-  }
-
-  return JSON.parse(
-    JSON.stringify(value)
-  );
-
-}
-
-
-function uniqueValues(values) {
-
-  return Array.from(
-    new Set(values)
-  );
-
-}
-
-
-function sortActivities(activities) {
-
-  return [...activities].sort((a, b) => {
-
-    const dateA =
-      `${a.date || ""}T${a.startTime || "00:00"}`;
-
-    const dateB =
-      `${b.date || ""}T${b.startTime || "00:00"}`;
-
-    return dateA.localeCompare(dateB);
-
-  });
-
-}
-
-
-/* ============================================================
-   FORMATAÇÃO DE DATA E HORÁRIO
-============================================================ */
-
-function formatDateBR(dateValue) {
-
-  if (!dateValue) {
-
-    return "";
-
-  }
-
-  const [year, month, day] =
-    dateValue.split("-");
-
-  if (!year || !month || !day) {
-
-    return dateValue;
-
-  }
-
-  return `${day}/${month}/${year}`;
-
-}
-
-
-function formatTimeBR(timeValue) {
-
-  if (!timeValue) {
-
-    return "";
-
-  }
-
-  return timeValue.slice(0, 5);
-
-}
-
-
-function getWeekdayBR(dateValue) {
-
-  if (!dateValue) {
-
-    return "";
-
-  }
-
-  const date =
-    new Date(`${dateValue}T12:00:00`);
-
-  if (Number.isNaN(date.getTime())) {
-
-    return "";
-
-  }
-
-  return new Intl.DateTimeFormat(
-    "pt-BR",
-    {
-      weekday: "long"
+    traditionalGroupsById: new Map()
+  };
+
+  /* ==========================================================
+     UTILITÁRIOS BÁSICOS
+  ========================================================== */
+
+  function cloneValue(value) {
+    if (value === undefined) {
+      return undefined;
     }
-  ).format(date);
 
-}
-
-
-function formatFullDateBR(dateValue) {
-
-  if (!dateValue) {
-
-    return "";
-
-  }
-
-  const date =
-    new Date(`${dateValue}T12:00:00`);
-
-  if (Number.isNaN(date.getTime())) {
-
-    return formatDateBR(dateValue);
-
-  }
-
-  return new Intl.DateTimeFormat(
-    "pt-BR",
-    {
-      weekday: "long",
-      day: "2-digit",
-      month: "long",
-      year: "numeric"
+    if (
+      typeof structuredClone ===
+      "function"
+    ) {
+      return structuredClone(value);
     }
-  ).format(date);
 
-}
+    return JSON.parse(
+      JSON.stringify(value)
+    );
+  }
 
+  function normalizeText(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+  }
 
-/* ============================================================
-   REQUISIÇÃO COM TIMEOUT
-============================================================ */
+  function slugify(value) {
+    return normalizeText(value)
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
 
-async function fetchJson(fileName) {
+  function ensureArray(value) {
+    return Array.isArray(value)
+      ? value
+      : [];
+  }
 
-  const url = buildDataUrl(fileName);
+  function isObject(value) {
+    return Boolean(
+      value &&
+      typeof value === "object" &&
+      !Array.isArray(value)
+    );
+  }
 
-  const controller =
-    new AbortController();
+  function safeString(value) {
+    return value == null
+      ? ""
+      : String(value).trim();
+  }
 
-  const timeoutId = setTimeout(
+  function firstDefined(...values) {
+    return values.find(
+      value =>
+        value !== undefined &&
+        value !== null &&
+        value !== ""
+    );
+  }
 
-    () => controller.abort(),
+  /* ==========================================================
+     DATAS E HORÁRIOS
+  ========================================================== */
 
-    FESTANCA_DATA_CONFIG.requestTimeout
+  function parseLocalDate(dateValue) {
+    if (!dateValue) {
+      return null;
+    }
 
-  );
-
-  try {
-
-    const response = await fetch(
-
-      url,
-
-      {
-        method: "GET",
-
-        headers: {
-
-          Accept: "application/json"
-
-        },
-
-        cache: FESTANCA_DATA_CONFIG.cache,
-
-        signal: controller.signal
-
-      }
-
+    const match = String(dateValue).match(
+      /^(\d{4})-(\d{2})-(\d{2})$/
     );
 
-    if (!response.ok) {
+    if (!match) {
+      return null;
+    }
 
-      throw new FestancaDataError(
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
 
-        `Falha ao carregar ${fileName}.`,
+    return new Date(
+      year,
+      month - 1,
+      day,
+      12,
+      0,
+      0,
+      0
+    );
+  }
 
+  function parseActivityDateTime(activity) {
+    if (!activity?.date) {
+      return null;
+    }
+
+    const dateParts = String(
+      activity.date
+    ).match(
+      /^(\d{4})-(\d{2})-(\d{2})$/
+    );
+
+    if (!dateParts) {
+      return null;
+    }
+
+    const timeParts = String(
+      activity.startTime || "00:00"
+    ).match(
+      /^(\d{2}):(\d{2})$/
+    );
+
+    const hour = timeParts
+      ? Number(timeParts[1])
+      : 0;
+
+    const minute = timeParts
+      ? Number(timeParts[2])
+      : 0;
+
+    return new Date(
+      Number(dateParts[1]),
+      Number(dateParts[2]) - 1,
+      Number(dateParts[3]),
+      hour,
+      minute,
+      0,
+      0
+    );
+  }
+
+  function formatDateBR(dateValue) {
+    const date =
+      parseLocalDate(dateValue);
+
+    if (!date) {
+      return safeString(dateValue);
+    }
+
+    return new Intl.DateTimeFormat(
+      CONFIG.locale,
+      {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+      }
+    ).format(date);
+  }
+
+  function formatFullDateBR(dateValue) {
+    const date =
+      parseLocalDate(dateValue);
+
+    if (!date) {
+      return safeString(dateValue);
+    }
+
+    return new Intl.DateTimeFormat(
+      CONFIG.locale,
+      {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      }
+    ).format(date);
+  }
+
+  function formatShortDateBR(dateValue) {
+    const date =
+      parseLocalDate(dateValue);
+
+    if (!date) {
+      return safeString(dateValue);
+    }
+
+    return new Intl.DateTimeFormat(
+      CONFIG.locale,
+      {
+        day: "2-digit",
+        month: "short"
+      }
+    ).format(date);
+  }
+
+  function formatTimeBR(timeValue) {
+    if (!timeValue) {
+      return "";
+    }
+
+    const match = String(timeValue).match(
+      /^(\d{2}):(\d{2})$/
+    );
+
+    if (!match) {
+      return String(timeValue);
+    }
+
+    return `${match[1]}:${match[2]}`;
+  }
+
+  function getTodayIsoDate() {
+    const parts =
+      new Intl.DateTimeFormat(
+        "en-CA",
         {
-          status: response.status,
-          statusText: response.statusText,
-          url
+          timeZone: CONFIG.timezone,
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
         }
+      ).formatToParts(new Date());
 
-      );
+    const values = {};
 
-    }
-
-    const contentType =
-      response.headers.get("content-type") || "";
-
-    if (
-      !contentType.includes("application/json") &&
-      !contentType.includes("text/plain")
-    ) {
-
-      console.warn(
-
-        `[Festança 2026] Tipo de conteúdo inesperado em ${fileName}:`,
-
-        contentType
-
-      );
-
-    }
-
-    return await response.json();
-
-  } catch (error) {
-
-    if (error.name === "AbortError") {
-
-      throw new FestancaDataError(
-
-        `Tempo limite excedido ao carregar ${fileName}.`,
-
-        {
-          url,
-          timeout:
-            FESTANCA_DATA_CONFIG.requestTimeout
-        }
-
-      );
-
-    }
-
-    if (
-      error instanceof FestancaDataError
-    ) {
-
-      throw error;
-
-    }
-
-    throw new FestancaDataError(
-
-      `Erro ao processar ${fileName}: ${error.message}`,
-
-      {
-        url,
-        originalError: error
-      }
-
-    );
-
-  } finally {
-
-    clearTimeout(timeoutId);
-
-  }
-
-}
-
-
-/* ============================================================
-   VALIDAÇÃO DA PROGRAMAÇÃO
-============================================================ */
-
-function validateProgramacao(data) {
-
-  if (!isObject(data)) {
-
-    throw new FestancaDataError(
-
-      "programacao-2026.json não possui objeto raiz válido."
-
-    );
-
-  }
-
-  if (!Array.isArray(data.activities)) {
-
-    throw new FestancaDataError(
-
-      "Campo activities ausente ou inválido em programacao-2026.json."
-
-    );
-
-  }
-
-  const ids =
-    data.activities.map(
-      activity => activity.id
-    );
-
-  const duplicateIds =
-    ids.filter(
-      (id, index) =>
-        ids.indexOf(id) !== index
-    );
-
-  if (duplicateIds.length > 0) {
-
-    throw new FestancaDataError(
-
-      "Foram encontrados IDs duplicados na programação.",
-
-      {
-        duplicateIds:
-          uniqueValues(duplicateIds)
-      }
-
-    );
-
-  }
-
-  const activitiesWithoutId =
-    data.activities.filter(
-      activity => !activity.id
-    );
-
-  if (activitiesWithoutId.length > 0) {
-
-    throw new FestancaDataError(
-
-      "Existem atividades sem identificador."
-
-    );
-
-  }
-
-  if (
-    data.activities.length !==
-    FESTANCA_DATA_CONFIG.expectedActivities
-  ) {
-
-    console.warn(
-
-      `[Festança 2026] Esperadas ${FESTANCA_DATA_CONFIG.expectedActivities} atividades, ` +
-      `mas foram encontradas ${data.activities.length}.`
-
-    );
-
-  }
-
-  return true;
-
-}
-
-
-/* ============================================================
-   VALIDAÇÃO DOS LOCAIS
-============================================================ */
-
-function validateLocais(data) {
-
-  if (!isObject(data)) {
-
-    throw new FestancaDataError(
-
-      "locais-2026.json não possui objeto raiz válido."
-
-    );
-
-  }
-
-  if (!Array.isArray(data.places)) {
-
-    throw new FestancaDataError(
-
-      "Campo places ausente ou inválido em locais-2026.json."
-
-    );
-
-  }
-
-  const ids =
-    data.places.map(
-      place => place.id
-    );
-
-  const duplicateIds =
-    ids.filter(
-      (id, index) =>
-        ids.indexOf(id) !== index
-    );
-
-  if (duplicateIds.length > 0) {
-
-    throw new FestancaDataError(
-
-      "Foram encontrados IDs duplicados no inventário de locais.",
-
-      {
-        duplicateIds:
-          uniqueValues(duplicateIds)
-      }
-
-    );
-
-  }
-
-  return true;
-
-}
-
-
-/* ============================================================
-   VALIDAÇÃO DOS FESTEIROS
-============================================================ */
-
-function validateFesteiros(data) {
-
-  if (!isObject(data)) {
-
-    throw new FestancaDataError(
-
-      "festeiros-2026.json não possui objeto raiz válido."
-
-    );
-
-  }
-
-  if (!Array.isArray(data.groups)) {
-
-    throw new FestancaDataError(
-
-      "Campo groups ausente ou inválido em festeiros-2026.json."
-
-    );
-
-  }
-
-  return true;
-
-}
-
-
-/* ============================================================
-   VALIDAÇÃO DO MAPA DE LOCALIZAÇÕES
-============================================================ */
-
-function validateLocationMap(data) {
-
-  if (!isObject(data)) {
-
-    throw new FestancaDataError(
-
-      "location-id-map-2026.json não possui objeto raiz válido."
-
-    );
-
-  }
-
-  if (!isObject(data.locationByActivity)) {
-
-    throw new FestancaDataError(
-
-      "Campo locationByActivity ausente ou inválido."
-
-    );
-
-  }
-
-  return true;
-
-}
-
-
-/* ============================================================
-   ÍNDICE DE LOCAIS
-============================================================ */
-
-function buildPlacesIndex() {
-
-  const places =
-    festancaDataState.raw.locais.places;
-
-  festancaDataState.indexes.placesById.clear();
-
-  places.forEach(place => {
-
-    festancaDataState.indexes.placesById.set(
-
-      place.id,
-
-      place
-
-    );
-
-  });
-
-}
-
-
-/* ============================================================
-   ÍNDICE DE ATIVIDADES
-============================================================ */
-
-function buildActivitiesIndex() {
-
-  const activities =
-    festancaDataState.raw.programacao.activities;
-
-  const indexes =
-    festancaDataState.indexes;
-
-  indexes.activitiesById.clear();
-
-  indexes.activitiesByDate.clear();
-
-  indexes.activitiesByCelebration.clear();
-
-  indexes.activitiesByLocation.clear();
-
-  activities.forEach(activity => {
-
-    indexes.activitiesById.set(
-
-      activity.id,
-
-      activity
-
-    );
-
-
-    if (!indexes.activitiesByDate.has(activity.date)) {
-
-      indexes.activitiesByDate.set(
-
-        activity.date,
-
-        []
-
-      );
-
-    }
-
-    indexes.activitiesByDate
-      .get(activity.date)
-      .push(activity);
-
-
-    if (
-      !indexes.activitiesByCelebration.has(
-        activity.celebration
-      )
-    ) {
-
-      indexes.activitiesByCelebration.set(
-
-        activity.celebration,
-
-        []
-
-      );
-
-    }
-
-    indexes.activitiesByCelebration
-      .get(activity.celebration)
-      .push(activity);
-
-
-    const locationId =
-      activity.locationId || null;
-
-    if (
-      !indexes.activitiesByLocation.has(
-        locationId
-      )
-    ) {
-
-      indexes.activitiesByLocation.set(
-
-        locationId,
-
-        []
-
-      );
-
-    }
-
-    indexes.activitiesByLocation
-      .get(locationId)
-      .push(activity);
-
-  });
-
-}
-
-
-/* ============================================================
-   ÍNDICE DE CELEBRAÇÕES E FESTEIROS
-============================================================ */
-
-function buildCelebrationsIndex() {
-
-  const groups =
-    festancaDataState.raw.festeiros.groups;
-
-  festancaDataState.indexes.celebrations.clear();
-
-  groups.forEach(group => {
-
-    festancaDataState.indexes.celebrations.set(
-
-      group.celebration,
-
-      group
-
-    );
-
-  });
-
-}
-
-
-/* ============================================================
-   ENRIQUECIMENTO DAS ATIVIDADES
-============================================================ */
-
-function enrichActivities() {
-
-  const activities =
-    festancaDataState.raw.programacao.activities;
-
-  const placesIndex =
-    festancaDataState.indexes.placesById;
-
-  const celebrationsIndex =
-    festancaDataState.indexes.celebrations;
-
-  festancaDataState.enrichedActivities =
-    sortActivities(
-
-      activities.map(activity => {
-
-        const place = activity.locationId
-          ? placesIndex.get(activity.locationId) || null
-          : null;
-
-        const celebrationData =
-          celebrationsIndex.get(
-            activity.celebration
-          ) || null;
-
-        return {
-
-          ...activity,
-
-          formattedDate:
-            formatDateBR(activity.date),
-
-          formattedFullDate:
-            formatFullDateBR(activity.date),
-
-          weekday:
-            getWeekdayBR(activity.date),
-
-          formattedStartTime:
-            formatTimeBR(activity.startTime),
-
-          formattedEndTime:
-            formatTimeBR(activity.endTime),
-
-          place,
-
-          celebrationData,
-
-          hasVerifiedLocation:
-            Boolean(
-              place &&
-              (
-                place.verificationStatus ===
-                  "confirmado-pela-coordenacao" ||
-                place.verificationStatus ===
-                  "autorizado-para-publicacao"
-              )
-            ),
-
-          hasGoogleMaps:
-            Boolean(
-              place &&
-              place.googleMaps &&
-              (
-                place.googleMaps.officialUrl ||
-                place.googleMaps.searchUrl
-              )
-            ),
-
-          googleMapsUrl:
-            place &&
-            place.googleMaps
-              ? (
-                  place.googleMaps.officialUrl ||
-                  place.googleMaps.searchUrl ||
-                  null
-                )
-              : (
-                  activity.location &&
-                  activity.location.googleMapsUrl
-                    ? activity.location.googleMapsUrl
-                    : null
-                )
-
-        };
-
-      })
-
-    );
-
-}
-
-
-/* ============================================================
-   VALIDAÇÃO REFERENCIAL
-============================================================ */
-
-function validateRelationships() {
-
-  const placesById =
-    festancaDataState.indexes.placesById;
-
-  const activities =
-    festancaDataState.raw.programacao.activities;
-
-  const invalidReferences = [];
-
-  activities.forEach(activity => {
-
-    if (
-      activity.locationId &&
-      !placesById.has(activity.locationId)
-    ) {
-
-      invalidReferences.push({
-
-        activityId: activity.id,
-
-        locationId: activity.locationId
-
-      });
-
-    }
-
-  });
-
-  if (invalidReferences.length > 0) {
-
-    throw new FestancaDataError(
-
-      "Existem atividades ligadas a locais inexistentes.",
-
-      {
-        invalidReferences
-      }
-
-    );
-
-  }
-
-  return true;
-
-}
-
-
-/* ============================================================
-   CONSTRUÇÃO DOS ÍNDICES
-============================================================ */
-
-function buildIndexes() {
-
-  buildPlacesIndex();
-
-  buildActivitiesIndex();
-
-  buildCelebrationsIndex();
-
-  validateRelationships();
-
-  enrichActivities();
-
-}
-
-
-/* ============================================================
-   EVENTOS DO SISTEMA
-============================================================ */
-
-function dispatchDataEvent(eventName, detail = {}) {
-
-  window.dispatchEvent(
-
-    new CustomEvent(
-
-      eventName,
-
-      {
-        detail
-      }
-
-    )
-
-  );
-
-}
-
-
-/* ============================================================
-   CARREGAMENTO PRINCIPAL
-============================================================ */
-
-async function loadAllData(options = {}) {
-
-  const forceReload =
-    Boolean(options.forceReload);
-
-  if (
-    festancaDataState.loaded &&
-    !forceReload
-  ) {
-
-    return getSnapshot();
-
-  }
-
-  if (festancaDataState.loading) {
-
-    return new Promise((resolve, reject) => {
-
-      const onReady = event => {
-
-        cleanup();
-
-        resolve(event.detail);
-
-      };
-
-      const onError = event => {
-
-        cleanup();
-
-        reject(event.detail.error);
-
-      };
-
-      const cleanup = () => {
-
-        window.removeEventListener(
-
-          "festanca:data-ready",
-
-          onReady
-
-        );
-
-        window.removeEventListener(
-
-          "festanca:data-error",
-
-          onError
-
-        );
-
-      };
-
-      window.addEventListener(
-
-        "festanca:data-ready",
-
-        onReady,
-
-        {
-          once: true
-        }
-
-      );
-
-      window.addEventListener(
-
-        "festanca:data-error",
-
-        onError,
-
-        {
-          once: true
-        }
-
-      );
-
+    parts.forEach(part => {
+      values[part.type] = part.value;
     });
 
+    return (
+      `${values.year}-` +
+      `${values.month}-` +
+      `${values.day}`
+    );
   }
 
-  festancaDataState.loading = true;
+  function compareActivities(a, b) {
+    const first =
+      parseActivityDateTime(a);
 
-  festancaDataState.error = null;
+    const second =
+      parseActivityDateTime(b);
 
-  dispatchDataEvent(
-
-    "festanca:data-loading",
-
-    {
-      message:
-        "Carregando Programação Cultural Inteligente..."
+    if (!first && !second) {
+      return 0;
     }
 
-  );
+    if (!first) {
+      return 1;
+    }
 
-  try {
+    if (!second) {
+      return -1;
+    }
 
-    const [
-
-      programacao,
-
-      festeiros,
-
-      locais,
-
-      locationMap
-
-    ] = await Promise.all([
-
-      fetchJson(
-        FESTANCA_DATA_CONFIG.files.programacao
-      ),
-
-      fetchJson(
-        FESTANCA_DATA_CONFIG.files.festeiros
-      ),
-
-      fetchJson(
-        FESTANCA_DATA_CONFIG.files.locais
-      ),
-
-      fetchJson(
-        FESTANCA_DATA_CONFIG.files.locationMap
-      )
-
-    ]);
-
-
-    validateProgramacao(programacao);
-
-    validateFesteiros(festeiros);
-
-    validateLocais(locais);
-
-    validateLocationMap(locationMap);
-
-
-    festancaDataState.raw.programacao =
-      programacao;
-
-    festancaDataState.raw.festeiros =
-      festeiros;
-
-    festancaDataState.raw.locais =
-      locais;
-
-    festancaDataState.raw.locationMap =
-      locationMap;
-
-
-    buildIndexes();
-
-
-    festancaDataState.loading = false;
-
-    festancaDataState.loaded = true;
-
-    festancaDataState.loadedAt =
-      new Date().toISOString();
-
-
-    const snapshot =
-      getSnapshot();
-
-
-    dispatchDataEvent(
-
-      "festanca:data-ready",
-
-      snapshot
-
+    return (
+      first.getTime() -
+      second.getTime()
     );
-
-
-    console.info(
-
-      "[Festança 2026] Bases carregadas com sucesso.",
-
-      {
-        activities:
-          festancaDataState.enrichedActivities.length,
-
-        places:
-          festancaDataState.raw.locais.places.length,
-
-        groups:
-          festancaDataState.raw.festeiros.groups.length,
-
-        loadedAt:
-          festancaDataState.loadedAt
-      }
-
-    );
-
-
-    return snapshot;
-
-  } catch (error) {
-
-    festancaDataState.loading = false;
-
-    festancaDataState.loaded = false;
-
-    festancaDataState.error = error;
-
-
-    dispatchDataEvent(
-
-      "festanca:data-error",
-
-      {
-        error,
-        message: error.message
-      }
-
-    );
-
-
-    console.error(
-
-      "[Festança 2026] Falha no carregamento dos dados.",
-
-      error
-
-    );
-
-
-    throw error;
-
   }
 
-}
+  /* ==========================================================
+     CARREGAMENTO HTTP
+  ========================================================== */
 
+  async function fetchJson(
+    url,
+    options = {}
+  ) {
+    const controller =
+      new AbortController();
 
-/* ============================================================
-   CONSULTAS PÚBLICAS
-============================================================ */
-
-function getAllActivities() {
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities
-
-  );
-
-}
-
-
-function getActivityById(activityId) {
-
-  const activity =
-    festancaDataState.enrichedActivities.find(
-
-      item => item.id === activityId
-
+    const timeout = setTimeout(
+      () => controller.abort(),
+      CONFIG.requestTimeout
     );
 
-  return activity
-    ? cloneData(activity)
-    : null;
-
-}
-
-
-function getActivitiesByDate(dateValue) {
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity =>
-        activity.date === dateValue
-
-    )
-
-  );
-
-}
-
-
-function getActivitiesByCelebration(celebrationId) {
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity =>
-        activity.celebration === celebrationId
-
-    )
-
-  );
-
-}
-
-
-function getActivitiesByCategory(category) {
-
-  const normalizedCategory =
-    normalizeText(category);
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity =>
-
-        Array.isArray(activity.categories) &&
-
-        activity.categories.some(
-
-          item =>
-            normalizeText(item) ===
-            normalizedCategory
-
-        )
-
-    )
-
-  );
-
-}
-
-
-function getActivitiesByPhase(phase) {
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity =>
-        activity.phase === phase
-
-    )
-
-  );
-
-}
-
-
-function getActivitiesByLocation(locationId) {
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity =>
-        activity.locationId === locationId
-
-    )
-
-  );
-
-}
-
-
-function getPlaceById(locationId) {
-
-  const place =
-    festancaDataState.indexes.placesById.get(
-      locationId
-    );
-
-  return place
-    ? cloneData(place)
-    : null;
-
-}
-
-
-function getAllPlaces() {
-
-  return cloneData(
-
-    festancaDataState.raw.locais
-      ? festancaDataState.raw.locais.places
-      : []
-
-  );
-
-}
-
-
-function getCelebrationById(celebrationId) {
-
-  const celebration =
-    festancaDataState.indexes.celebrations.get(
-      celebrationId
-    );
-
-  return celebration
-    ? cloneData(celebration)
-    : null;
-
-}
-
-
-function getAllCelebrations() {
-
-  return cloneData(
-
-    festancaDataState.raw.festeiros
-      ? festancaDataState.raw.festeiros.groups
-      : []
-
-  );
-
-}
-
-
-function getTodayActivities(referenceDate = new Date()) {
-
-  const year =
-    referenceDate.getFullYear();
-
-  const month =
-    String(
-      referenceDate.getMonth() + 1
-    ).padStart(2, "0");
-
-  const day =
-    String(
-      referenceDate.getDate()
-    ).padStart(2, "0");
-
-  return getActivitiesByDate(
-
-    `${year}-${month}-${day}`
-
-  );
-
-}
-
-
-function getUpcomingActivities(
-  referenceDate = new Date()
-) {
-
-  const referenceTime =
-    referenceDate.getTime();
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity => {
-
-        const activityDate =
-          new Date(
-
-            `${activity.date}T${activity.startTime || "00:00"}:00`
-
-          );
-
-        return (
-          !Number.isNaN(activityDate.getTime()) &&
-          activityDate.getTime() >= referenceTime
-        );
-
-      }
-
-    )
-
-  );
-
-}
-
-
-function getNextActivity(
-  referenceDate = new Date()
-) {
-
-  const upcoming =
-    getUpcomingActivities(referenceDate);
-
-  return upcoming.length > 0
-    ? upcoming[0]
-    : null;
-
-}
-
-
-/* ============================================================
-   PESQUISA TEXTUAL
-============================================================ */
-
-function searchActivities(searchTerm) {
-
-  const term =
-    normalizeText(searchTerm);
-
-  if (!term) {
-
-    return getAllActivities();
-
-  }
-
-  return cloneData(
-
-    festancaDataState.enrichedActivities.filter(
-
-      activity => {
-
-        const searchableContent = [
-
-          activity.id,
-
-          activity.title,
-
-          activity.description,
-
-          activity.phase,
-
-          activity.celebration,
-
-          activity.date,
-
-          activity.startTime,
-
-          activity.location &&
-            activity.location.name,
-
-          activity.location &&
-            activity.location.street,
-
-          activity.location &&
-            activity.location.district,
-
-          activity.location &&
-            activity.location.reference,
-
-          activity.place &&
-            activity.place.name,
-
-          ...(activity.categories || []),
-
-          ...(activity.participants || [])
-            .flatMap(
-              participant => [
-
-                participant.role,
-
-                participant.name
-
-              ]
-            )
-
-        ]
-          .filter(Boolean)
-          .join(" ");
-
-        return normalizeText(
-          searchableContent
-        ).includes(term);
-
-      }
-
-    )
-
-  );
-
-}
-
-
-/* ============================================================
-   FILTRO COMBINADO
-============================================================ */
-
-function filterActivities(filters = {}) {
-
-  const {
-
-    celebration = null,
-
-    category = null,
-
-    phase = null,
-
-    date = null,
-
-    locationId = null,
-
-    search = null,
-
-    onlyWithMaps = false
-
-  } = filters;
-
-
-  let result =
-    [...festancaDataState.enrichedActivities];
-
-
-  if (celebration) {
-
-    result = result.filter(
-
-      activity =>
-        activity.celebration === celebration
-
-    );
-
-  }
-
-
-  if (category) {
-
-    const normalizedCategory =
-      normalizeText(category);
-
-    result = result.filter(
-
-      activity =>
-
-        Array.isArray(activity.categories) &&
-
-        activity.categories.some(
-
-          item =>
-            normalizeText(item) ===
-            normalizedCategory
-
-        )
-
-    );
-
-  }
-
-
-  if (phase) {
-
-    result = result.filter(
-
-      activity =>
-        activity.phase === phase
-
-    );
-
-  }
-
-
-  if (date) {
-
-    result = result.filter(
-
-      activity =>
-        activity.date === date
-
-    );
-
-  }
-
-
-  if (locationId) {
-
-    result = result.filter(
-
-      activity =>
-        activity.locationId === locationId
-
-    );
-
-  }
-
-
-  if (onlyWithMaps) {
-
-    result = result.filter(
-
-      activity =>
-        activity.hasGoogleMaps
-
-    );
-
-  }
-
-
-  if (search) {
-
-    const matchingIds =
-      new Set(
-
-        searchActivities(search).map(
-          activity => activity.id
-        )
-
+    try {
+      const response = await fetch(
+        url,
+        {
+          cache:
+            options.cache ||
+            CONFIG.cacheMode,
+
+          headers: {
+            Accept: "application/json"
+          },
+
+          signal: controller.signal
+        }
       );
 
-    result = result.filter(
+      if (!response.ok) {
+        throw new Error(
+          `Falha ao carregar ${url}: HTTP ${response.status}`
+        );
+      }
 
-      activity =>
-        matchingIds.has(activity.id)
+      const text =
+        await response.text();
 
-    );
+      try {
+        return JSON.parse(text);
+      } catch {
+        throw new Error(
+          `JSON inválido em ${url}`
+        );
+      }
+    } catch (error) {
+      if (
+        error.name ===
+        "AbortError"
+      ) {
+        throw new Error(
+          `Tempo esgotado ao carregar ${url}`
+        );
+      }
 
+      throw error;
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
+  /* ==========================================================
+     LEITURA FLEXÍVEL DOS DOCUMENTOS
+  ========================================================== */
 
-  return cloneData(
+  function extractActivities(document) {
+    return ensureArray(
+      firstDefined(
+        document?.activities,
+        document?.programacao,
+        document?.events,
+        document?.items
+      )
+    );
+  }
 
-    sortActivities(result)
+  function extractPlaces(document) {
+    return ensureArray(
+      firstDefined(
+        document?.places,
+        document?.locations,
+        document?.locais,
+        document?.items
+      )
+    );
+  }
 
-  );
+  function extractFestivalPeople(
+    document
+  ) {
+    return ensureArray(
+      firstDefined(
+        document?.festeiros,
+        document?.festivalPeople,
+        document?.people,
+        document?.participants,
+        document?.items
+      )
+    );
+  }
 
-}
+  function extractTraditionalGroups(
+    document
+  ) {
+    return ensureArray(
+      firstDefined(
+        document?.groups,
+        document?.traditionalGroups,
+        document?.grupos,
+        document?.items
+      )
+    );
+  }
 
+  /* ==========================================================
+     IDENTIFICADORES
+  ========================================================== */
 
-/* ============================================================
-   ESTATÍSTICAS
-============================================================ */
+  function getPlaceId(place) {
+    return firstDefined(
+      place?.id,
+      place?.locationId,
+      place?.placeId,
+      place?.slug
+    );
+  }
 
-function getStatistics() {
+  function getGroupId(group) {
+    return firstDefined(
+      group?.id,
+      group?.groupId,
+      group?.slug,
+      slugify(group?.name)
+    );
+  }
 
-  const activities =
-    festancaDataState.enrichedActivities;
+  /* ==========================================================
+     PRIVACIDADE E POLÍTICA CULTURAL
+  ========================================================== */
 
-  const pendingLocation =
-    activities.filter(
-
-      activity =>
-        !activity.locationId
-
+  function isPrivateResidenceLocation(
+    location
+  ) {
+    const type = normalizeText(
+      location?.type
     );
 
-  const withMaps =
-    activities.filter(
-
-      activity =>
-        activity.hasGoogleMaps
-
+    return (
+      type.includes("residencia") ||
+      type.includes("casa-de-festeiro") ||
+      type.includes(
+        "residencia-de-festeiro"
+      )
     );
+  }
 
-  return {
+  function isRezaCantada(activity) {
+    const categories =
+      ensureArray(activity?.categories)
+        .map(normalizeText);
 
-    totalActivities:
-      activities.length,
+    const title =
+      normalizeText(activity?.title);
 
-    totalPlaces:
-      festancaDataState.raw.locais
-        ? festancaDataState.raw.locais.places.length
-        : 0,
+    return (
+      categories.includes(
+        "reza-cantada"
+      ) ||
+      title.includes(
+        "reza cantada"
+      )
+    );
+  }
 
-    totalCelebrations:
-      festancaDataState.raw.festeiros
-        ? festancaDataState.raw.festeiros.groups.length
-        : 0,
+  function isMapPublicationAuthorized(
+    activity,
+    place
+  ) {
+    if (
+      !isPrivateResidenceLocation(
+        activity?.location
+      ) &&
+      !isPrivateResidenceLocation(
+        place
+      )
+    ) {
+      return true;
+    }
 
-    totalDates:
-      uniqueValues(
-        activities.map(
-          activity => activity.date
+    const combinedStatus =
+      normalizeText(
+        [
+          place?.publicationStatus,
+          place?.verificationStatus,
+          place?.publication?.status,
+          place?.privacy?.publicationStatus,
+          activity?.location
+            ?.verificationStatus
+        ]
+          .filter(Boolean)
+          .join(" ")
+      );
+
+    return (
+      combinedStatus.includes(
+        "autorizado"
+      ) ||
+      combinedStatus.includes(
+        "publicavel"
+      ) ||
+      combinedStatus.includes(
+        "publicável"
+      )
+    );
+  }
+
+  function applyCulturalRules(
+    activity
+  ) {
+    const output =
+      cloneValue(activity);
+
+    output.categories =
+      ensureArray(output.categories);
+
+    output.participants =
+      ensureArray(output.participants);
+
+    if (isRezaCantada(output)) {
+      output.location =
+        isObject(output.location)
+          ? output.location
+          : {};
+
+      output.location.type =
+        "residencia-de-festeiro";
+
+      output.location.accessPolicy = {
+        accessType:
+          "programacao-oficial",
+
+        publicOpenVisit:
+          false,
+
+        guidance:
+          "A visita ocorre somente durante o recebimento ou a entrega oficial do festeiro ou da festeira, conforme a programação e as orientações da organização."
+      };
+    }
+
+    if (
+      output.id ===
+      "festanca-2026-021"
+    ) {
+      output.locationId =
+        "local-prefeitura-municipal";
+    }
+
+    return output;
+  }
+
+  /* ==========================================================
+     RELACIONAMENTO COM LOCAIS
+  ========================================================== */
+
+  function buildPlaceIndex() {
+    state.placesById.clear();
+
+    state.places.forEach(place => {
+      const placeId =
+        getPlaceId(place);
+
+      if (placeId) {
+        state.placesById.set(
+          String(placeId),
+          place
+        );
+      }
+    });
+  }
+
+  function enrichActivity(
+    rawActivity
+  ) {
+    const activity =
+      applyCulturalRules(
+        rawActivity
+      );
+
+    const place =
+      activity.locationId
+        ? state.placesById.get(
+            String(
+              activity.locationId
+            )
+          ) || null
+        : null;
+
+    const originalLocation =
+      isObject(activity.location)
+        ? activity.location
+        : {};
+
+    const mergedLocation = {
+      ...(isObject(place)
+        ? place
+        : {}),
+
+      ...originalLocation
+    };
+
+    const placeName =
+      firstDefined(
+        originalLocation.name,
+        place?.name,
+        place?.title,
+        "Local a confirmar"
+      );
+
+    mergedLocation.name =
+      placeName;
+
+    const mapsUrl =
+      firstDefined(
+        originalLocation.googleMapsUrl,
+        place?.googleMapsUrl,
+        place?.mapsUrl,
+        place?.links?.googleMaps
+      );
+
+    const mapAuthorized =
+      isMapPublicationAuthorized(
+        activity,
+        mergedLocation
+      );
+
+    if (mapAuthorized) {
+      mergedLocation.googleMapsUrl =
+        mapsUrl || null;
+    } else {
+      mergedLocation.googleMapsUrl =
+        null;
+    }
+
+    activity.location =
+      mergedLocation;
+
+    activity.place =
+      place
+        ? cloneValue(place)
+        : null;
+
+    activity.googleMapsUrl =
+      mapAuthorized
+        ? mapsUrl || null
+        : null;
+
+    activity.formattedDate =
+      formatDateBR(activity.date);
+
+    activity.formattedShortDate =
+      formatShortDateBR(
+        activity.date
+      );
+
+    activity.formattedFullDate =
+      formatFullDateBR(
+        activity.date
+      );
+
+    activity.formattedStartTime =
+      formatTimeBR(
+        activity.startTime
+      );
+
+    activity.formattedEndTime =
+      formatTimeBR(
+        activity.endTime
+      );
+
+    activity.dateTime =
+      parseActivityDateTime(
+        activity
+      );
+
+    activity.isPrivateResidence =
+      isPrivateResidenceLocation(
+        activity.location
+      );
+
+    activity.isRezaCantada =
+      isRezaCantada(activity);
+
+    activity.isItinerant =
+      Boolean(
+        activity.route
+          ?.isItinerant ||
+        activity.location?.type ===
+          "percurso" ||
+        activity.categories.includes(
+          "itinerante"
         )
-      ).length,
-
-    activitiesWithMaps:
-      withMaps.length,
-
-    activitiesPendingLocation:
-      pendingLocation.length,
-
-    pendingLocationIds:
-      pendingLocation.map(
-        activity => activity.id
-      ),
-
-    preparatoryActivities:
-      activities.filter(
-        activity =>
-          activity.phase === "preparatoria"
-      ).length,
-
-    mainActivities:
-      activities.filter(
-        activity =>
-          activity.phase === "festa-principal"
-      ).length,
-
-    closingActivities:
-      activities.filter(
-        activity =>
-          activity.phase === "encerramento"
-      ).length
-
-  };
-
-}
-
-
-/* ============================================================
-   SNAPSHOT DO SISTEMA
-============================================================ */
-
-function getSnapshot() {
-
-  return {
-
-    version:
-      FESTANCA_DATA_CONFIG.version,
-
-    loaded:
-      festancaDataState.loaded,
-
-    loading:
-      festancaDataState.loading,
-
-    loadedAt:
-      festancaDataState.loadedAt,
-
-    event:
-      festancaDataState.raw.programacao
-        ? {
-            eventId:
-              festancaDataState.raw.programacao.eventId,
-
-            eventName:
-              festancaDataState.raw.programacao.eventName,
-
-            eventTagline:
-              festancaDataState.raw.programacao.eventTagline,
-
-            mainPeriod:
-              cloneData(
-                festancaDataState.raw.programacao.mainPeriod
-              ),
-
-            coordination:
-              cloneData(
-                festancaDataState.raw.programacao.coordination
-              )
-          }
-        : null,
-
-    activities:
-      getAllActivities(),
-
-    places:
-      getAllPlaces(),
-
-    celebrations:
-      getAllCelebrations(),
-
-    statistics:
-      getStatistics()
-
-  };
-
-}
-
-
-/* ============================================================
-   ESTADO DE CARREGAMENTO
-============================================================ */
-
-function isLoaded() {
-
-  return festancaDataState.loaded;
-
-}
-
-
-function isLoading() {
-
-  return festancaDataState.loading;
-
-}
-
-
-function getLastError() {
-
-  return festancaDataState.error;
-
-}
-
-
-/* ============================================================
-   API PÚBLICA
-============================================================ */
-
-Object.assign(
-
-  window.FestancaData,
-
-  {
-
-    config:
-      FESTANCA_DATA_CONFIG,
-
-    load:
-      loadAllData,
-
-    reload() {
-
-      return loadAllData({
-
-        forceReload: true
-
-      });
-
-    },
-
-    isLoaded,
-
-    isLoading,
-
-    getLastError,
-
-    getSnapshot,
-
-    getStatistics,
-
-    getAllActivities,
-
-    getActivityById,
-
-    getActivitiesByDate,
-
-    getActivitiesByCelebration,
-
-    getActivitiesByCategory,
-
-    getActivitiesByPhase,
-
-    getActivitiesByLocation,
-
-    getTodayActivities,
-
-    getUpcomingActivities,
-
-    getNextActivity,
-
-    getAllPlaces,
-
-    getPlaceById,
-
-    getAllCelebrations,
-
-    getCelebrationById,
-
-    searchActivities,
-
-    filterActivities,
-
-    formatDateBR,
-
-    formatFullDateBR,
-
-    formatTimeBR,
-
-    getWeekdayBR
-
+      );
+
+    activity.searchText =
+      normalizeText(
+        [
+          activity.id,
+          activity.title,
+          activity.description,
+          activity.celebration,
+          activity.phase,
+          activity.date,
+          activity.startTime,
+          ...activity.categories,
+          activity.location?.name,
+          activity.location?.street,
+          activity.location?.district,
+          activity.location?.reference,
+          ...activity.participants.map(
+            participant =>
+              `${participant.role || ""} ${participant.name || ""}`
+          )
+        ]
+          .filter(Boolean)
+          .join(" ")
+      );
+
+    return activity;
   }
 
-);
+  function buildActivityIndex() {
+    state.activitiesById.clear();
 
+    state.activities.forEach(activity => {
+      if (activity.id) {
+        state.activitiesById.set(
+          String(activity.id),
+          activity
+        );
+      }
+    });
+  }
 
-/* ============================================================
-   INICIALIZAÇÃO AUTOMÁTICA
-============================================================ */
+  function buildTraditionalGroupIndex() {
+    state.traditionalGroupsById
+      .clear();
 
-document.addEventListener(
+    state.traditionalGroups.forEach(
+      group => {
+        const groupId =
+          getGroupId(group);
 
-  "DOMContentLoaded",
+        if (groupId) {
+          state.traditionalGroupsById.set(
+            String(groupId),
+            group
+          );
+        }
+      }
+    );
+  }
 
-  () => {
+  /* ==========================================================
+     VALIDAÇÃO DOS DOCUMENTOS
+  ========================================================== */
 
-    window.FestancaData
-      .load()
-      .catch(error => {
+  function validateProgramDocument(
+    document
+  ) {
+    if (!isObject(document)) {
+      throw new Error(
+        "Documento de programação inválido."
+      );
+    }
 
-        console.error(
+    const activities =
+      extractActivities(document);
 
-          "[Festança 2026] Não foi possível inicializar os dados.",
+    if (activities.length === 0) {
+      throw new Error(
+        "Nenhuma atividade foi encontrada em programacao-2026.json."
+      );
+    }
 
-          error
+    const ids = new Set();
 
+    activities.forEach(
+      (activity, index) => {
+        if (!activity?.id) {
+          throw new Error(
+            `Atividade sem ID na posição ${index}.`
+          );
+        }
+
+        if (ids.has(activity.id)) {
+          throw new Error(
+            `ID de atividade duplicado: ${activity.id}`
+          );
+        }
+
+        ids.add(activity.id);
+      }
+    );
+  }
+
+  function validateTraditionalGroups(
+    groups
+  ) {
+    const expected = [
+      "grupo-do-congo",
+      "conguinho",
+      "chorado",
+      "choradinho"
+    ];
+
+    const actual = new Set(
+      groups.map(group =>
+        String(getGroupId(group))
+      )
+    );
+
+    expected.forEach(groupId => {
+      if (!actual.has(groupId)) {
+        console.warn(
+          `[Festança 2026] Grupo tradicional não encontrado: ${groupId}`
+        );
+      }
+    });
+  }
+
+  /* ==========================================================
+     CARREGAMENTO PRINCIPAL
+  ========================================================== */
+
+  async function performLoad() {
+    state.loading = true;
+    state.error = null;
+
+    try {
+      const [
+        programacaoDocument,
+        locaisDocument,
+        festeirosDocument,
+        gruposTradicionaisDocument
+      ] = await Promise.all([
+        fetchJson(
+          CONFIG.files.programacao
+        ),
+
+        fetchJson(
+          CONFIG.files.locais
+        ),
+
+        fetchJson(
+          CONFIG.files.festeiros
+        ),
+
+        fetchJson(
+          CONFIG.files
+            .gruposTradicionais
+        )
+      ]);
+
+      validateProgramDocument(
+        programacaoDocument
+      );
+
+      state.programacaoDocument =
+        programacaoDocument;
+
+      state.locaisDocument =
+        locaisDocument;
+
+      state.festeirosDocument =
+        festeirosDocument;
+
+      state.gruposTradicionaisDocument =
+        gruposTradicionaisDocument;
+
+      state.places =
+        extractPlaces(
+          locaisDocument
         );
 
-      });
+      state.festivalPeople =
+        extractFestivalPeople(
+          festeirosDocument
+        );
 
-  },
+      state.traditionalGroups =
+        extractTraditionalGroups(
+          gruposTradicionaisDocument
+        );
 
-  {
-    once: true
+      validateTraditionalGroups(
+        state.traditionalGroups
+      );
+
+      buildPlaceIndex();
+
+      state.activities =
+        extractActivities(
+          programacaoDocument
+        )
+          .map(enrichActivity)
+          .sort(compareActivities);
+
+      buildActivityIndex();
+
+      buildTraditionalGroupIndex();
+
+      state.loaded = true;
+      state.loadedAt =
+        new Date().toISOString();
+
+      const snapshot =
+        getSnapshot();
+
+      window.dispatchEvent(
+        new CustomEvent(
+          "festanca:data-ready",
+          {
+            detail: snapshot
+          }
+        )
+      );
+
+      console.info(
+        "[Festança 2026] Dados carregados com sucesso.",
+        getStatistics()
+      );
+
+      return snapshot;
+    } catch (error) {
+      state.loaded = false;
+      state.error = error;
+
+      const detail = {
+        message:
+          error?.message ||
+          "Erro desconhecido ao carregar os dados.",
+
+        error
+      };
+
+      window.dispatchEvent(
+        new CustomEvent(
+          "festanca:data-error",
+          {
+            detail
+          }
+        )
+      );
+
+      console.error(
+        "[Festança 2026] Erro no carregamento:",
+        error
+      );
+
+      throw error;
+    } finally {
+      state.loading = false;
+      state.loadingPromise = null;
+    }
   }
 
-);
+  function load() {
+    if (state.loaded) {
+      return Promise.resolve(
+        getSnapshot()
+      );
+    }
+
+    if (
+      state.loadingPromise
+    ) {
+      return state.loadingPromise;
+    }
+
+    state.loadingPromise =
+      performLoad();
+
+    return state.loadingPromise;
+  }
+
+  function reload() {
+    state.loaded = false;
+    state.loadingPromise = null;
+
+    return performLoad();
+  }
+
+  function isLoaded() {
+    return state.loaded;
+  }
+
+  function isLoading() {
+    return state.loading;
+  }
+
+  function getLastError() {
+    return state.error
+      ? {
+          message:
+            state.error.message
+        }
+      : null;
+  }
+
+  /* ==========================================================
+     SNAPSHOT
+  ========================================================== */
+
+  function getSnapshot() {
+    return {
+      version: CONFIG.version,
+
+      loaded:
+        state.loaded,
+
+      loadedAt:
+        state.loadedAt,
+
+      event:
+        state.programacaoDocument
+          ? {
+              eventId:
+                state.programacaoDocument
+                  .eventId,
+
+              eventName:
+                state.programacaoDocument
+                  .eventName,
+
+              eventTagline:
+                state.programacaoDocument
+                  .eventTagline,
+
+              coordination:
+                cloneValue(
+                  state.programacaoDocument
+                    .coordination
+                ),
+
+              mainPeriod:
+                cloneValue(
+                  state.programacaoDocument
+                    .mainPeriod
+                ),
+
+              preparatoryPeriod:
+                cloneValue(
+                  state.programacaoDocument
+                    .preparatoryPeriod
+                )
+            }
+          : null,
+
+      activities:
+        cloneValue(
+          state.activities
+        ),
+
+      places:
+        cloneValue(
+          state.places
+        ),
+
+      festivalPeople:
+        cloneValue(
+          state.festivalPeople
+        ),
+
+      traditionalGroups:
+        cloneValue(
+          state.traditionalGroups
+        ),
+
+      programacaoDocument:
+        cloneValue(
+          state.programacaoDocument
+        ),
+
+      locaisDocument:
+        cloneValue(
+          state.locaisDocument
+        ),
+
+      festeirosDocument:
+        cloneValue(
+          state.festeirosDocument
+        ),
+
+      traditionalGroupsDocument:
+        cloneValue(
+          state.gruposTradicionaisDocument
+        ),
+
+      statistics:
+        getStatistics()
+    };
+  }
+
+  /* ==========================================================
+     CONSULTAS DE ATIVIDADES
+  ========================================================== */
+
+  function getActivities() {
+    return cloneValue(
+      state.activities
+    );
+  }
+
+  function getActivityById(
+    activityId
+  ) {
+    const activity =
+      state.activitiesById.get(
+        String(activityId)
+      );
+
+    return activity
+      ? cloneValue(activity)
+      : null;
+  }
+
+  function getActivitiesByDate(
+    date
+  ) {
+    return cloneValue(
+      state.activities.filter(
+        activity =>
+          activity.date === date
+      )
+    );
+  }
+
+  function getActivitiesByCelebration(
+    celebration
+  ) {
+    const normalized =
+      normalizeText(celebration);
+
+    return cloneValue(
+      state.activities.filter(
+        activity =>
+          normalizeText(
+            activity.celebration
+          ) === normalized
+      )
+    );
+  }
+
+  function getActivitiesByCategory(
+    category
+  ) {
+    const normalized =
+      normalizeText(category);
+
+    return cloneValue(
+      state.activities.filter(
+        activity =>
+          activity.categories
+            .map(normalizeText)
+            .includes(normalized)
+      )
+    );
+  }
+
+  function getActivitiesByLocationId(
+    locationId
+  ) {
+    return cloneValue(
+      state.activities.filter(
+        activity =>
+          String(
+            activity.locationId || ""
+          ) === String(locationId)
+      )
+    );
+  }
+
+  function getTodayActivities() {
+    const today =
+      getTodayIsoDate();
+
+    return getActivitiesByDate(
+      today
+    );
+  }
+
+  function getNextActivity(
+    referenceDate = new Date()
+  ) {
+    const referenceTime =
+      referenceDate instanceof Date
+        ? referenceDate.getTime()
+        : new Date(
+            referenceDate
+          ).getTime();
+
+    const next =
+      state.activities.find(
+        activity => {
+          const activityDate =
+            parseActivityDateTime(
+              activity
+            );
+
+          return (
+            activityDate &&
+            activityDate.getTime() >=
+              referenceTime
+          );
+        }
+      );
+
+    return next
+      ? cloneValue(next)
+      : null;
+  }
+
+  function getUpcomingActivities(
+    limit = 10,
+    referenceDate = new Date()
+  ) {
+    const referenceTime =
+      referenceDate instanceof Date
+        ? referenceDate.getTime()
+        : new Date(
+            referenceDate
+          ).getTime();
+
+    return cloneValue(
+      state.activities
+        .filter(activity => {
+          const date =
+            parseActivityDateTime(
+              activity
+            );
+
+          return (
+            date &&
+            date.getTime() >=
+              referenceTime
+          );
+        })
+        .slice(
+          0,
+          Math.max(
+            0,
+            Number(limit) || 10
+          )
+        )
+    );
+  }
+
+  /* ==========================================================
+     FILTROS
+  ========================================================== */
+
+  function filterActivities(
+    filters = {}
+  ) {
+    const celebration =
+      normalizeText(
+        filters.celebration
+      );
+
+    const category =
+      normalizeText(
+        filters.category
+      );
+
+    const phase =
+      normalizeText(
+        filters.phase
+      );
+
+    const date =
+      safeString(filters.date);
+
+    const locationId =
+      safeString(
+        filters.locationId
+      );
+
+    const search =
+      normalizeText(
+        filters.search
+      );
+
+    const onlyItinerant =
+      filters.onlyItinerant === true;
+
+    const onlyPrivateResidences =
+      filters.onlyPrivateResidences ===
+      true;
+
+    const results =
+      state.activities.filter(
+        activity => {
+          if (
+            celebration &&
+            normalizeText(
+              activity.celebration
+            ) !== celebration
+          ) {
+            return false;
+          }
+
+          if (
+            category &&
+            !activity.categories
+              .map(normalizeText)
+              .includes(category)
+          ) {
+            return false;
+          }
+
+          if (
+            phase &&
+            normalizeText(
+              activity.phase
+            ) !== phase
+          ) {
+            return false;
+          }
+
+          if (
+            date &&
+            activity.date !== date
+          ) {
+            return false;
+          }
+
+          if (
+            locationId &&
+            String(
+              activity.locationId || ""
+            ) !== locationId
+          ) {
+            return false;
+          }
+
+          if (
+            search &&
+            !activity.searchText.includes(
+              search
+            )
+          ) {
+            return false;
+          }
+
+          if (
+            onlyItinerant &&
+            !activity.isItinerant
+          ) {
+            return false;
+          }
+
+          if (
+            onlyPrivateResidences &&
+            !activity
+              .isPrivateResidence
+          ) {
+            return false;
+          }
+
+          return true;
+        }
+      );
+
+    return cloneValue(results);
+  }
+
+  function searchActivities(
+    query
+  ) {
+    return filterActivities({
+      search: query
+    });
+  }
+
+  /* ==========================================================
+     CONSULTAS DE LOCAIS
+  ========================================================== */
+
+  function getPlaces() {
+    return cloneValue(
+      state.places
+    );
+  }
+
+  function getPlaceById(placeId) {
+    const place =
+      state.placesById.get(
+        String(placeId)
+      );
+
+    return place
+      ? cloneValue(place)
+      : null;
+  }
+
+  function getPublicPlaces() {
+    return cloneValue(
+      state.places.filter(place =>
+        !isPrivateResidenceLocation(
+          place
+        )
+      )
+    );
+  }
+
+  /* ==========================================================
+     FESTEIROS
+  ========================================================== */
+
+  function getFestivalPeople() {
+    return cloneValue(
+      state.festivalPeople
+    );
+  }
+
+  function searchFestivalPeople(
+    query
+  ) {
+    const normalized =
+      normalizeText(query);
+
+    if (!normalized) {
+      return getFestivalPeople();
+    }
+
+    return cloneValue(
+      state.festivalPeople.filter(
+        person =>
+          normalizeText(
+            JSON.stringify(person)
+          ).includes(normalized)
+      )
+    );
+  }
+
+  /* ==========================================================
+     GRUPOS TRADICIONAIS
+  ========================================================== */
+
+  function getTraditionalGroups() {
+    return cloneValue(
+      state.traditionalGroups
+    );
+  }
+
+  function getTraditionalGroupById(
+    groupId
+  ) {
+    const group =
+      state.traditionalGroupsById.get(
+        String(groupId)
+      );
+
+    return group
+      ? cloneValue(group)
+      : null;
+  }
+
+  function getOfficialTraditionalGroups() {
+    return cloneValue(
+      state.traditionalGroups.filter(
+        group =>
+          normalizeText(
+            group.participationStatus
+          ) === "oficial"
+      )
+    );
+  }
+
+  function searchTraditionalGroups(
+    query
+  ) {
+    const normalized =
+      normalizeText(query);
+
+    if (!normalized) {
+      return getTraditionalGroups();
+    }
+
+    return cloneValue(
+      state.traditionalGroups.filter(
+        group =>
+          normalizeText(
+            JSON.stringify(group)
+          ).includes(normalized)
+      )
+    );
+  }
+
+  /* ==========================================================
+     AGRUPAMENTOS
+  ========================================================== */
+
+  function groupActivitiesByDate(
+    activities = state.activities
+  ) {
+    const groups = {};
+
+    ensureArray(activities).forEach(
+      activity => {
+        const key =
+          activity.date ||
+          "sem-data";
+
+        groups[key] ??= [];
+
+        groups[key].push(
+          cloneValue(activity)
+        );
+      }
+    );
+
+    return groups;
+  }
+
+  function groupActivitiesByCelebration(
+    activities = state.activities
+  ) {
+    const groups = {};
+
+    ensureArray(activities).forEach(
+      activity => {
+        const key =
+          activity.celebration ||
+          "programacao-integrada";
+
+        groups[key] ??= [];
+
+        groups[key].push(
+          cloneValue(activity)
+        );
+      }
+    );
+
+    return groups;
+  }
+
+  /* ==========================================================
+     ESTATÍSTICAS
+  ========================================================== */
+
+  function countBy(
+    items,
+    property
+  ) {
+    return items.reduce(
+      (result, item) => {
+        const key =
+          typeof property ===
+          "function"
+            ? property(item)
+            : item?.[property];
+
+        const normalizedKey =
+          key || "nao-informado";
+
+        result[normalizedKey] =
+          (result[normalizedKey] || 0) +
+          1;
+
+        return result;
+      },
+      {}
+    );
+  }
+
+  function getStatistics() {
+    const rezas =
+      state.activities.filter(
+        activity =>
+          activity.isRezaCantada
+      );
+
+    const itinerant =
+      state.activities.filter(
+        activity =>
+          activity.isItinerant
+      );
+
+    const residences =
+      state.activities.filter(
+        activity =>
+          activity
+            .isPrivateResidence
+      );
+
+    const officialGroups =
+      state.traditionalGroups.filter(
+        group =>
+          normalizeText(
+            group.participationStatus
+          ) === "oficial"
+      );
+
+    return {
+      totalActivities:
+        state.activities.length,
+
+      totalPlaces:
+        state.places.length,
+
+      totalFestivalPeople:
+        state.festivalPeople.length,
+
+      traditionalGroups:
+        state.traditionalGroups.length,
+
+      officialTraditionalGroups:
+        officialGroups.length,
+
+      totalRezasCantadas:
+        rezas.length,
+
+      totalItinerantActivities:
+        itinerant.length,
+
+      totalPrivateResidenceActivities:
+        residences.length,
+
+      activitiesByPhase:
+        countBy(
+          state.activities,
+          "phase"
+        ),
+
+      activitiesByCelebration:
+        countBy(
+          state.activities,
+          "celebration"
+        ),
+
+      activitiesByDate:
+        countBy(
+          state.activities,
+          "date"
+        ),
+
+      loaded:
+        state.loaded,
+
+      loadedAt:
+        state.loadedAt
+    };
+  }
+
+  /* ==========================================================
+     DIAGNÓSTICO
+  ========================================================== */
+
+  function validateRelationships() {
+    const missingPlaces = [];
+
+    state.activities.forEach(
+      activity => {
+        if (
+          activity.locationId &&
+          !state.placesById.has(
+            String(
+              activity.locationId
+            )
+          )
+        ) {
+          missingPlaces.push({
+            activityId:
+              activity.id,
+
+            locationId:
+              activity.locationId
+          });
+        }
+      }
+    );
+
+    return {
+      valid:
+        missingPlaces.length === 0,
+
+      missingPlaces,
+
+      totalActivities:
+        state.activities.length,
+
+      totalPlaces:
+        state.places.length
+    };
+  }
+
+  function getDiagnostics() {
+    return {
+      config:
+        cloneValue(CONFIG),
+
+      loaded:
+        state.loaded,
+
+      loading:
+        state.loading,
+
+      error:
+        getLastError(),
+
+      statistics:
+        getStatistics(),
+
+      relationships:
+        validateRelationships(),
+
+      expectedTraditionalGroups: [
+        "grupo-do-congo",
+        "conguinho",
+        "chorado",
+        "choradinho"
+      ],
+
+      foundTraditionalGroups:
+        state.traditionalGroups.map(
+          group => ({
+            id:
+              getGroupId(group),
+
+            name:
+              group.name,
+
+            participationStatus:
+              group
+                .participationStatus
+          })
+        )
+    };
+  }
+
+  /* ==========================================================
+     API PÚBLICA
+  ========================================================== */
+
+  window.FestancaData =
+    Object.freeze({
+      version:
+        CONFIG.version,
+
+      load,
+      reload,
+      isLoaded,
+      isLoading,
+      getLastError,
+
+      getSnapshot,
+      getStatistics,
+      getDiagnostics,
+      validateRelationships,
+
+      getActivities,
+      getActivityById,
+      getActivitiesByDate,
+      getActivitiesByCelebration,
+      getActivitiesByCategory,
+      getActivitiesByLocationId,
+      getTodayActivities,
+      getNextActivity,
+      getUpcomingActivities,
+
+      filterActivities,
+      searchActivities,
+
+      getPlaces,
+      getPlaceById,
+      getPublicPlaces,
+
+      getFestivalPeople,
+      searchFestivalPeople,
+
+      getTraditionalGroups,
+      getTraditionalGroupById,
+      getOfficialTraditionalGroups,
+      searchTraditionalGroups,
+
+      groupActivitiesByDate,
+      groupActivitiesByCelebration,
+
+      formatDateBR,
+      formatFullDateBR,
+      formatShortDateBR,
+      formatTimeBR,
+      getTodayIsoDate,
+      normalizeText,
+      slugify
+    });
+
+  /* ==========================================================
+     CARREGAMENTO AUTOMÁTICO
+  ========================================================== */
+
+  function autoLoad() {
+    load().catch(() => {
+      /*
+       * O erro já é enviado pelo evento festanca:data-error
+       * e será tratado pelo script.js.
+       */
+    });
+  }
+
+  if (
+    document.readyState ===
+    "loading"
+  ) {
+    document.addEventListener(
+      "DOMContentLoaded",
+      autoLoad,
+      {
+        once: true
+      }
+    );
+  } else {
+    autoLoad();
+  }
+})();
