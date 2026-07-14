@@ -1,0 +1,452 @@
+{
+  "schemaVersion": "1.0.0",
+  "schemaId": "festanca-2026-location-schema",
+  "title": "FESTANÇA 2026 — Location Schema",
+  "description": "Taxonomia territorial oficial para representação de locais, rotas, espaços religiosos, residências protegidas, cortejos, serenatas, apresentações tradicionais e futuras integrações cartográficas e cognitivas.",
+  "project": "FESTANÇA 2026",
+  "ecosystem": "Décio Coelho Digital Cognitivo",
+  "lastUpdated": "2026-07-14",
+
+  "normativeReference": {
+    "document": "route-and-venue-policy.md",
+    "path": "apps/festanca-2026/data/route-and-venue-policy.md",
+    "status": "official"
+  },
+
+  "principles": [
+    "fidelidade-cultural",
+    "nao-invencao",
+    "privacidade-residencial",
+    "geolocalizacao-responsavel",
+    "dinamica-cultural-viva",
+    "participacao-comunitaria",
+    "rastreabilidade",
+    "orientacao-ao-visitante"
+  ],
+
+  "locationTypes": {
+    "public-space": {
+      "label": "Espaço público",
+      "description": "Local público oficialmente identificado.",
+      "privacyLevel": "public",
+      "coordinatesAllowed": true,
+      "exactAddressAllowed": true,
+      "mapIntegrationAllowed": true
+    },
+
+    "municipal-building": {
+      "label": "Equipamento público municipal",
+      "description": "Edificação ou espaço institucional vinculado ao Município.",
+      "privacyLevel": "public",
+      "coordinatesAllowed": true,
+      "exactAddressAllowed": true,
+      "mapIntegrationAllowed": true
+    },
+
+    "religious-space": {
+      "label": "Espaço religioso",
+      "description": "Igreja, paróquia, capela ou outro espaço religioso oficialmente confirmado.",
+      "privacyLevel": "public",
+      "coordinatesAllowed": true,
+      "exactAddressAllowed": true,
+      "mapIntegrationAllowed": true
+    },
+
+    "religious-external-area": {
+      "label": "Extensão externa do espaço religioso",
+      "description": "Área externa, extensão ou entorno imediato do espaço religioso, utilizada para apresentações culturais tradicionais.",
+      "privacyLevel": "public",
+      "coordinatesAllowed": true,
+      "exactAddressAllowed": true,
+      "mapIntegrationAllowed": true
+    },
+
+    "protected-residence": {
+      "label": "Residência protegida",
+      "description": "Residência particular vinculada a festeiros, juízes, juízas, responsáveis ou participantes das celebrações.",
+      "privacyLevel": "protected",
+      "coordinatesAllowed": false,
+      "exactAddressAllowed": false,
+      "mapIntegrationAllowed": false
+    },
+
+    "cultural-reference": {
+      "label": "Referência territorial cultural",
+      "description": "Área ou local cultural cuja representação territorial pode ser contextual, aproximada ou dinâmica.",
+      "privacyLevel": "contextual",
+      "coordinatesAllowed": false,
+      "exactAddressAllowed": false,
+      "mapIntegrationAllowed": true
+    },
+
+    "dynamic-route": {
+      "label": "Percurso dinâmico",
+      "description": "Percurso definido conforme a dinâmica cultural da atividade.",
+      "privacyLevel": "contextual",
+      "coordinatesAllowed": false,
+      "exactAddressAllowed": false,
+      "mapIntegrationAllowed": true
+    },
+
+    "participatory-route": {
+      "label": "Percurso participativo",
+      "description": "Percurso desenvolvido durante a atividade com participação da comunidade.",
+      "privacyLevel": "contextual",
+      "coordinatesAllowed": false,
+      "exactAddressAllowed": false,
+      "mapIntegrationAllowed": true
+    },
+
+    "to-confirm": {
+      "label": "Localização a confirmar",
+      "description": "Informação territorial ainda não oficialmente confirmada.",
+      "privacyLevel": "unknown",
+      "coordinatesAllowed": false,
+      "exactAddressAllowed": false,
+      "mapIntegrationAllowed": false
+    }
+  },
+
+  "venueTypes": {
+    "prefeitura-municipal": {
+      "label": "Prefeitura Municipal",
+      "locationType": "municipal-building"
+    },
+
+    "igreja": {
+      "label": "Igreja",
+      "locationType": "religious-space"
+    },
+
+    "paroquia": {
+      "label": "Paróquia",
+      "locationType": "religious-space"
+    },
+
+    "capela": {
+      "label": "Capela",
+      "locationType": "religious-space"
+    },
+
+    "extensao-espaco-religioso": {
+      "label": "Extensão externa do espaço religioso",
+      "locationType": "religious-external-area"
+    },
+
+    "casa-do-festeiro": {
+      "label": "Casa do Festeiro",
+      "locationType": "protected-residence"
+    },
+
+    "casa-da-festeira": {
+      "label": "Casa da Festeira",
+      "locationType": "protected-residence"
+    },
+
+    "casa-do-juiz": {
+      "label": "Casa do Juiz",
+      "locationType": "protected-residence"
+    },
+
+    "casa-da-juiza": {
+      "label": "Casa da Juíza",
+      "locationType": "protected-residence"
+    },
+
+    "casa-da-juiza-e-do-juiz": {
+      "label": "Casa da Juíza e do Juiz",
+      "locationType": "protected-residence"
+    },
+
+    "residencia-dos-responsaveis": {
+      "label": "Residência dos responsáveis pela celebração",
+      "locationType": "protected-residence"
+    },
+
+    "local-a-confirmar": {
+      "label": "Localização a confirmar",
+      "locationType": "to-confirm"
+    }
+  },
+
+  "routeModes": {
+    "fixed": {
+      "label": "Rota fixa",
+      "description": "Percurso oficialmente definido e documentado.",
+      "requiresConfirmedRoute": true,
+      "allowsCommunityParticipation": false
+    },
+
+    "dynamic": {
+      "label": "Rota dinâmica",
+      "description": "Percurso definido conforme a dinâmica cultural da atividade.",
+      "requiresConfirmedRoute": false,
+      "allowsCommunityParticipation": false
+    },
+
+    "participatory": {
+      "label": "Rota participativa",
+      "description": "Percurso que pode ser desenvolvido com participação comunitária.",
+      "requiresConfirmedRoute": false,
+      "allowsCommunityParticipation": true
+    },
+
+    "not-applicable": {
+      "label": "Rota não aplicável",
+      "description": "Atividade realizada em local determinado sem necessidade de percurso.",
+      "requiresConfirmedRoute": false,
+      "allowsCommunityParticipation": false
+    },
+
+    "to-confirm": {
+      "label": "Rota a confirmar",
+      "description": "Informação de percurso ainda não oficialmente confirmada.",
+      "requiresConfirmedRoute": false,
+      "allowsCommunityParticipation": false
+    }
+  },
+
+  "privacyLevels": {
+    "public": {
+      "label": "Público",
+      "publishExactLocation": true,
+      "publishCoordinates": true
+    },
+
+    "contextual": {
+      "label": "Contextual",
+      "publishExactLocation": false,
+      "publishCoordinates": false
+    },
+
+    "protected": {
+      "label": "Protegido",
+      "publishExactLocation": false,
+      "publishCoordinates": false
+    },
+
+    "unknown": {
+      "label": "Não confirmado",
+      "publishExactLocation": false,
+      "publishCoordinates": false
+    }
+  },
+
+  "geolocationLevels": {
+    "level-1-public-confirmed": {
+      "label": "Localização Pública Confirmada",
+      "precision": "exact",
+      "coordinatesAllowed": true,
+      "examples": [
+        "Prefeitura Municipal",
+        "igrejas",
+        "paróquias",
+        "praças",
+        "espaços públicos",
+        "equipamentos culturais"
+      ]
+    },
+
+    "level-2-cultural-reference": {
+      "label": "Referência Territorial Cultural",
+      "precision": "contextual",
+      "coordinatesAllowed": false,
+      "examples": [
+        "áreas de cortejo",
+        "espaços tradicionais",
+        "pontos de encontro",
+        "percursos dinâmicos"
+      ]
+    },
+
+    "level-3-protected-residence": {
+      "label": "Localização Residencial Protegida",
+      "precision": "protected",
+      "coordinatesAllowed": false,
+      "examples": [
+        "Casa do Festeiro",
+        "Casa da Festeira",
+        "Casa do Juiz",
+        "Casa da Juíza",
+        "residências particulares"
+      ]
+    }
+  },
+
+  "activityLocationRules": {
+    "missa": {
+      "allowedLocationTypes": [
+        "religious-space"
+      ],
+      "defaultRouteMode": "not-applicable",
+      "requiresConfirmedVenue": true
+    },
+
+    "reza-cantada": {
+      "allowedLocationTypes": [
+        "protected-residence"
+      ],
+      "defaultRouteMode": "not-applicable",
+      "requiresConfirmedVenue": false,
+      "privacyRequired": true
+    },
+
+    "cortejo": {
+      "allowedLocationTypes": [
+        "dynamic-route",
+        "cultural-reference",
+        "to-confirm"
+      ],
+      "defaultRouteMode": "dynamic",
+      "requiresConfirmedVenue": false
+    },
+
+    "serenata": {
+      "allowedLocationTypes": [
+        "participatory-route",
+        "dynamic-route",
+        "cultural-reference"
+      ],
+      "defaultRouteMode": "participatory",
+      "requiresConfirmedVenue": false,
+      "communityParticipationAllowed": true
+    },
+
+    "apresentacao-grupo-tradicional": {
+      "allowedLocationTypes": [
+        "religious-external-area"
+      ],
+      "defaultRouteMode": "not-applicable",
+      "requiresConfirmedVenue": true,
+      "linkedToReligiousCelebration": true
+    },
+
+    "recebimento-das-chaves": {
+      "allowedLocationTypes": [
+        "municipal-building"
+      ],
+      "defaultVenueType": "prefeitura-municipal",
+      "defaultRouteMode": "not-applicable",
+      "requiresConfirmedVenue": true
+    }
+  },
+
+  "traditionalGroups": {
+    "grupo-do-congo": {
+      "label": "Grupo do Congo",
+      "officialParticipation": true,
+      "defaultPresentationLocationType": "religious-external-area"
+    },
+
+    "conguinho": {
+      "label": "Conguinho",
+      "officialParticipation": true,
+      "defaultPresentationLocationType": "religious-external-area"
+    },
+
+    "chorado": {
+      "label": "Chorado",
+      "officialParticipation": true,
+      "defaultPresentationLocationType": "religious-external-area"
+    },
+
+    "choradinho": {
+      "label": "Choradinho",
+      "officialParticipation": true,
+      "defaultPresentationLocationType": "religious-external-area"
+    }
+  },
+
+  "visitorGuidance": {
+    "dynamicRoute": "Esta atividade possui percurso dinâmico. Consulte a programação e as orientações da organização no dia da realização.",
+
+    "participatoryRoute": "Esta atividade possui percurso participativo e flexível, desenvolvido conforme a tradição, a condução dos responsáveis e a participação da comunidade.",
+
+    "protectedResidence": "Visita oficial somente no horário e ato previstos na programação. Consulte a agenda e os canais oficiais de orientação.",
+
+    "locationToConfirm": "A localização desta atividade ainda está em processo de confirmação oficial.",
+
+    "religiousExternalArea": "A apresentação cultural ocorre na extensão externa ou entorno imediato do espaço religioso relacionado à celebração."
+  },
+
+  "validationRules": {
+    "neverInventCoordinates": true,
+    "neverInventAddresses": true,
+    "neverInventRoutes": true,
+    "neverConvertProtectedResidenceToPublicLocation": true,
+    "neverAssumeReligiousVenueForRezaCantada": true,
+    "neverAssumeFixedRouteForCortejo": true,
+    "neverAssumeFixedRouteForSerenata": true,
+    "requireValidationBeforePublishingCoordinates": true,
+    "preserveCulturalContext": true,
+    "preserveSourceTraceability": true
+  },
+
+  "publicationStatuses": {
+    "confirmed": {
+      "label": "Confirmado",
+      "publishable": true
+    },
+
+    "documented": {
+      "label": "Documentado",
+      "publishable": true
+    },
+
+    "culturally-validated": {
+      "label": "Validado culturalmente",
+      "publishable": true
+    },
+
+    "pending-confirmation": {
+      "label": "Aguardando confirmação",
+      "publishable": true,
+      "requiresPendingNotice": true
+    },
+
+    "unknown": {
+      "label": "Informação desconhecida",
+      "publishable": false
+    }
+  },
+
+  "futureIntegrations": {
+    "maps": {
+      "enabled": false,
+      "schemaReady": true
+    },
+
+    "culturalRoutes": {
+      "enabled": false,
+      "schemaReady": true
+    },
+
+    "heritageAtlas": {
+      "enabled": false,
+      "schemaReady": true
+    },
+
+    "knowledgeGraph": {
+      "enabled": false,
+      "schemaReady": true
+    },
+
+    "cognitiveAI": {
+      "enabled": false,
+      "schemaReady": true
+    },
+
+    "visitorGuidanceSystem": {
+      "enabled": false,
+      "schemaReady": true
+    }
+  },
+
+  "governance": {
+    "sourceRequired": true,
+    "validationStatusRequired": true,
+    "lastUpdatedRequired": true,
+    "changeHistoryRecommended": true,
+    "responsiblePartyRecommended": true
+  }
+}
