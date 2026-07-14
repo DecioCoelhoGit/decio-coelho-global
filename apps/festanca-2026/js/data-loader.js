@@ -1879,3 +1879,690 @@
     autoLoad();
   }
 })();
+
+cat >> apps/festanca-2026/js/data-loader.js <<'EOF'
+
+/**
+ * ============================================================================
+ * FESTANÇA 2026
+ * INTEGRAÇÃO ENTRE DATA-LOADER E LOCATION-ENGINE
+ * ============================================================================
+ *
+ * Esta camada:
+ * - preserva os dados originais;
+ * - cruza atividades e inventário de locais;
+ * - aplica inteligência territorial;
+ * - protege residências particulares;
+ * - reconhece rotas culturais dinâmicas;
+ * - prepara os dados para cards, mapas e roteiros;
+ * - mantém compatibilidade com o carregador existente.
+ * ============================================================================
+ */
+
+(function initializeTerritorialDataBridge(globalScope) {
+  "use strict";
+
+  const BRIDGE_NAME = "FestancaDataLocationBridge";
+  const BRIDGE_VERSION = "1.0.0";
+
+  const STATE = {
+    initialized: false,
+    processing: false,
+    completed: false,
+    attempts: 0,
+    maximumAttempts: 20,
+    lastResult: null,
+    lastError: null
+  };
+
+  /**
+   * Retorna a API pública do location-engine.js.
+   */
+  function getLocationEngineApi() {
+    return globalScope.FestancaLocationEngine || null;
+  }
+
+  /**
+   * Confirma se o motor territorial está disponível.
+   */
+  function isLocationEngineAvailable() {
+    const api = getLocationEngineApi();
+
+    return Boolean(
+      api &&
+      typeof api.loadSchema === "function" &&
+      typeof api.enrichActivities === "function"
+    );
+  }
+
+  /**
+   * Normaliza diferentes formatos possíveis de programação.
+   */
+  function extractActivities(source) {
+    if (!source) {
+      return [];
+    }
+
+    if (Array.isArray(source)) {
+      return source;
+    }
+
+    const candidates = [
+      source.activities,
+      source.atividades,
+      source.programacao,
+      source.programação,
+      source.data?.activities,
+      source.data?.atividades,
+      source.data?.programacao,
+      source.data?.programação,
+      source.programacaoData?.activities,
+      source.programacaoData?.atividades
+    ];
+
+    for (const candidate of candidates) {
+      if (Array.isArray(candidate)) {
+        return candidate;
+      }
+    }
+
+    return [];
+  }
+
+  /**
+   * Normaliza diferentes formatos possíveis do inventário de locais.
+   */
+  function extractLocations(source) {
+    if (!source) {
+      return [];
+    }
+
+    if (Array.isArray(source)) {
+      return source;
+    }
+
+    const candidates = [
+      source.locations,
+      source.locais,
+      source.venues,
+      source.data?.locations,
+      source.data?.locais,
+      source.data?.venues,
+      source.locaisData?.locations,
+      source.locaisData?.locais
+    ];
+
+    for (const candidate of candidates) {
+      if (Array.isArray(candidate)) {
+        return candidate;
+      }
+    }
+
+    return [];
+  }
+
+  /**
+   * Procura a programação nos objetos globais já utilizados pelo projeto.
+   */
+  function discoverProgramData() {
+    const candidates = [
+      globalScope.FestancaDataLoader?.data?.programacao,
+      globalScope.FestancaDataLoader?.data?.programação,
+      globalScope.FestancaDataLoader?.programacao,
+      globalScope.FestancaDataLoader?.programação,
+      globalScope.FestancaDataLoader?.state?.programacao,
+      globalScope.FestancaDataLoader?.state?.programação,
+      globalScope.festancaData?.programacao,
+      globalScope.festancaData?.programação,
+      globalScope.FESTANCA_DATA?.programacao,
+      globalScope.FESTANCA_DATA?.programação,
+      globalScope.programacao2026,
+      globalScope.programacaoData,
+      globalScope.festancaProgramacao,
+      globalScope.__FESTANCA_PROGRAMACAO__
+    ];
+
+    for (const candidate of candidates) {
+      if (extractActivities(candidate).length > 0) {
+        return candidate;
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Procura o inventário territorial nos objetos globais existentes.
+   */
+  function discoverLocationData() {
+    const candidates = [
+      globalScope.FestancaDataLoader?.data?.locais,
+      globalScope.FestancaDataLoader?.data?.locations,
+      globalScope.FestancaDataLoader?.locais,
+      globalScope.FestancaDataLoader?.locations,
+      globalScope.FestancaDataLoader?.state?.locais,
+      globalScope.FestancaDataLoader?.state?.locations,
+      globalScope.festancaData?.locais,
+      globalScope.festancaData?.locations,
+      globalScope.FESTANCA_DATA?.locais,
+      globalScope.FESTANCA_DATA?.locations,
+      globalScope.locais2026,
+      globalScope.locaisData,
+      globalScope.festancaLocais,
+      globalScope.__FESTANCA_LOCAIS__
+    ];
+
+    for (const candidate of candidates) {
+      if (extractLocations(candidate).length > 0) {
+        return candidate;
+      }
+    }
+
+    return null;
+  }
+
+  /**
+   * Atualiza a coleção original sem romper referências utilizadas pela interface.
+   */
+  function replaceCollectionContents(originalCollection, enrichedCollection) {
+    if (!Array.isArray(originalCollection)) {
+      return enrichedCollection;
+    }
+
+    originalCollection.splice(
+      0,
+      originalCollection.length,
+      ...enrichedCollection
+    );
+
+    return originalCollection;
+  }
+
+  /**
+   * Cria o ViewModel territorial usado pelos cards.
+   */
+  function attachLocationViewModels(
+    enrichedActivities,
+    originalActivities,
+    locations
+  ) {
+    const engineApi = getLocationEngineApi();
+
+    if (
+      !engineApi ||
+      typeof engineApi.createLocationViewModel !== "function"
+    ) {
+      return enrichedActivities;
+    }
+
+    const locationIndex = new Map();
+
+    locations.forEach((location) => {
+      if (location?.id) {
+        locationIndex.set(location.id, location);
+      }
+    });
+
+    return enrichedActivities.map((enrichedActivity, index) => {
+      const originalActivity =
+        originalActivities[index] || enrichedActivity;
+
+      const locationRecord = originalActivity.locationId
+        ? locationIndex.get(originalActivity.locationId) || null
+        : null;
+
+      let locationViewModel = null;
+
+      try {
+        locationViewModel = engineApi.createLocationViewModel(
+          originalActivity,
+          locationRecord
+        );
+      } catch (error) {
+        console.warn(
+          `[${BRIDGE_NAME}] Não foi possível criar o ViewModel territorial de ${originalActivity.id || "atividade sem ID"}.`,
+          error
+        );
+      }
+
+      return {
+        ...enrichedActivity,
+        locationViewModel
+      };
+    });
+  }
+
+  /**
+   * Registra os dados processados nos objetos globais conhecidos.
+   */
+  function publishIntegratedData(result) {
+    globalScope.FESTANCA_TERRITORIAL_DATA = result;
+    globalScope.festancaTerritorialData = result;
+
+    if (
+      globalScope.FestancaDataLoader &&
+      typeof globalScope.FestancaDataLoader === "object"
+    ) {
+      globalScope.FestancaDataLoader.territorialData = result;
+
+      if (
+        globalScope.FestancaDataLoader.data &&
+        typeof globalScope.FestancaDataLoader.data === "object"
+      ) {
+        globalScope.FestancaDataLoader.data.territorial = result;
+      }
+
+      if (
+        globalScope.FestancaDataLoader.state &&
+        typeof globalScope.FestancaDataLoader.state === "object"
+      ) {
+        globalScope.FestancaDataLoader.state.territorial = result;
+      }
+    }
+  }
+
+  /**
+   * Emite o evento oficial de conclusão.
+   */
+  function dispatchReadyEvent(result) {
+    globalScope.dispatchEvent(
+      new CustomEvent("festanca:data-territorial-ready", {
+        detail: result
+      })
+    );
+
+    document.dispatchEvent(
+      new CustomEvent("festanca:data-territorial-ready", {
+        detail: result
+      })
+    );
+  }
+
+  /**
+   * Realiza a integração principal.
+   */
+  async function integrateData(programSource, locationSource) {
+    if (STATE.processing) {
+      return STATE.lastResult;
+    }
+
+    STATE.processing = true;
+    STATE.lastError = null;
+
+    try {
+      const engineApi = getLocationEngineApi();
+
+      if (!engineApi) {
+        throw new Error(
+          "FestancaLocationEngine não está disponível."
+        );
+      }
+
+      await engineApi.loadSchema();
+
+      const originalActivities = extractActivities(programSource);
+      const locations = extractLocations(locationSource);
+
+      if (!originalActivities.length) {
+        throw new Error(
+          "Nenhuma atividade foi encontrada para integração territorial."
+        );
+      }
+
+      const enrichedBase = engineApi.enrichActivities(
+        originalActivities,
+        locations
+      );
+
+      const enrichedActivities = attachLocationViewModels(
+        enrichedBase,
+        originalActivities,
+        locations
+      );
+
+      const validationReport =
+        typeof engineApi.createValidationReport === "function"
+          ? engineApi.createValidationReport(
+              originalActivities,
+              locations
+            )
+          : null;
+
+      const result = {
+        bridge: {
+          name: BRIDGE_NAME,
+          version: BRIDGE_VERSION
+        },
+
+        engine:
+          typeof engineApi.getEngineInfo === "function"
+            ? engineApi.getEngineInfo()
+            : {
+                name: engineApi.name || "FestancaLocationEngine",
+                version: engineApi.version || null
+              },
+
+        processedAt: new Date().toISOString(),
+
+        totals: {
+          activities: enrichedActivities.length,
+          locations: locations.length,
+          protectedResidences: enrichedActivities.filter(
+            (activity) =>
+              activity.territorialIntelligence?.privacyLevel ===
+              "protected"
+          ).length,
+          dynamicRoutes: enrichedActivities.filter(
+            (activity) =>
+              activity.territorialIntelligence?.routeMode ===
+              "dynamic"
+          ).length,
+          participatoryRoutes: enrichedActivities.filter(
+            (activity) =>
+              activity.territorialIntelligence?.routeMode ===
+              "participatory"
+          ).length,
+          publicMapLinks: enrichedActivities.filter(
+            (activity) =>
+              activity.territorialIntelligence?.mapAccess?.allowed ===
+              true
+          ).length
+        },
+
+        activities: enrichedActivities,
+        locations,
+        validationReport
+      };
+
+      replaceCollectionContents(
+        originalActivities,
+        enrichedActivities
+      );
+
+      publishIntegratedData(result);
+
+      STATE.completed = true;
+      STATE.lastResult = result;
+
+      dispatchReadyEvent(result);
+
+      console.group(
+        `%c${BRIDGE_NAME} ${BRIDGE_VERSION}`,
+        "font-weight:bold;color:#f5c518;"
+      );
+
+      console.info(
+        `✅ ${result.totals.activities} atividades territorialmente enriquecidas.`
+      );
+
+      console.info(
+        `🏠 ${result.totals.protectedResidences} residências protegidas.`
+      );
+
+      console.info(
+        `🥁 ${result.totals.dynamicRoutes} percursos dinâmicos.`
+      );
+
+      console.info(
+        `🎶 ${result.totals.participatoryRoutes} percursos participativos.`
+      );
+
+      console.info(
+        `🗺️ ${result.totals.publicMapLinks} links públicos de mapa liberados.`
+      );
+
+      if (validationReport?.summary) {
+        console.table(validationReport.summary);
+      }
+
+      console.groupEnd();
+
+      return result;
+    } catch (error) {
+      STATE.lastError = error;
+
+      console.error(
+        `[${BRIDGE_NAME}] Falha na integração territorial.`,
+        error
+      );
+
+      throw error;
+    } finally {
+      STATE.processing = false;
+    }
+  }
+
+  /**
+   * Tentativa automática de localizar os dados já carregados.
+   */
+  async function attemptAutomaticIntegration() {
+    if (STATE.completed || STATE.processing) {
+      return STATE.lastResult;
+    }
+
+    STATE.attempts += 1;
+
+    if (!isLocationEngineAvailable()) {
+      if (STATE.attempts < STATE.maximumAttempts) {
+        globalScope.setTimeout(
+          attemptAutomaticIntegration,
+          300
+        );
+      }
+
+      return null;
+    }
+
+    const programSource = discoverProgramData();
+    const locationSource = discoverLocationData();
+
+    if (!programSource) {
+      if (STATE.attempts < STATE.maximumAttempts) {
+        globalScope.setTimeout(
+          attemptAutomaticIntegration,
+          300
+        );
+      } else {
+        console.warn(
+          `[${BRIDGE_NAME}] A programação ainda não foi encontrada automaticamente. A integração poderá ser chamada manualmente.`
+        );
+      }
+
+      return null;
+    }
+
+    try {
+      return await integrateData(
+        programSource,
+        locationSource || []
+      );
+    } catch (error) {
+      if (STATE.attempts < STATE.maximumAttempts) {
+        globalScope.setTimeout(
+          attemptAutomaticIntegration,
+          500
+        );
+      }
+
+      return null;
+    }
+  }
+
+  /**
+   * Recebe dados enviados por eventos do carregador.
+   */
+  function handleDataLoadedEvent(event) {
+    if (STATE.completed || STATE.processing) {
+      return;
+    }
+
+    const detail = event?.detail || {};
+
+    const programSource =
+      detail.programacao ||
+      detail.programação ||
+      detail.programData ||
+      detail.data ||
+      detail;
+
+    const locationSource =
+      detail.locais ||
+      detail.locations ||
+      detail.locationData ||
+      discoverLocationData() ||
+      [];
+
+    const activities = extractActivities(programSource);
+
+    if (!activities.length) {
+      return;
+    }
+
+    integrateData(programSource, locationSource).catch(
+      (error) => {
+        console.error(
+          `[${BRIDGE_NAME}] Erro ao processar evento de dados.`,
+          error
+        );
+      }
+    );
+  }
+
+  /**
+   * Reprocessamento manual após alguma atualização dos JSON.
+   */
+  async function reprocess() {
+    STATE.completed = false;
+    STATE.processing = false;
+    STATE.attempts = 0;
+    STATE.lastResult = null;
+    STATE.lastError = null;
+
+    return attemptAutomaticIntegration();
+  }
+
+  /**
+   * Consulta rápida de uma atividade integrada.
+   */
+  function getActivityById(activityId) {
+    if (!activityId || !STATE.lastResult?.activities) {
+      return null;
+    }
+
+    return (
+      STATE.lastResult.activities.find(
+        (activity) => activity.id === activityId
+      ) || null
+    );
+  }
+
+  /**
+   * Consulta todas as atividades de uma categoria territorial.
+   */
+  function getActivitiesByLocationType(locationType) {
+    if (!STATE.lastResult?.activities) {
+      return [];
+    }
+
+    return STATE.lastResult.activities.filter(
+      (activity) =>
+        activity.territorialIntelligence?.locationType ===
+        locationType
+    );
+  }
+
+  /**
+   * Consulta atividades cujos mapas públicos foram autorizados.
+   */
+  function getActivitiesWithPublicMap() {
+    if (!STATE.lastResult?.activities) {
+      return [];
+    }
+
+    return STATE.lastResult.activities.filter(
+      (activity) =>
+        activity.territorialIntelligence?.mapAccess?.allowed ===
+        true
+    );
+  }
+
+  /**
+   * API pública da integração.
+   */
+  const publicApi = {
+    name: BRIDGE_NAME,
+    version: BRIDGE_VERSION,
+    state: STATE,
+
+    integrate: integrateData,
+    reprocess,
+    attemptAutomaticIntegration,
+
+    discoverProgramData,
+    discoverLocationData,
+
+    getResult: () => STATE.lastResult,
+    getActivityById,
+    getActivitiesByLocationType,
+    getActivitiesWithPublicMap
+  };
+
+  globalScope.FestancaDataLocationBridge = publicApi;
+
+  /**
+   * Eventos compatíveis com diferentes implementações do loader.
+   */
+  const supportedEvents = [
+    "festanca:data-loaded",
+    "festanca:programacao-loaded",
+    "festanca:programação-loaded",
+    "festanca:loader-ready",
+    "festanca:data-ready",
+    "festanca:all-data-loaded"
+  ];
+
+  supportedEvents.forEach((eventName) => {
+    globalScope.addEventListener(
+      eventName,
+      handleDataLoadedEvent
+    );
+
+    document.addEventListener(
+      eventName,
+      handleDataLoadedEvent
+    );
+  });
+
+  globalScope.addEventListener(
+    "festanca:location-engine-ready",
+    () => {
+      attemptAutomaticIntegration();
+    }
+  );
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      attemptAutomaticIntegration,
+      {
+        once: true
+      }
+    );
+  } else {
+    attemptAutomaticIntegration();
+  }
+
+  STATE.initialized = true;
+
+  globalScope.dispatchEvent(
+    new CustomEvent("festanca:data-location-bridge-ready", {
+      detail: {
+        name: BRIDGE_NAME,
+        version: BRIDGE_VERSION,
+        api: publicApi
+      }
+    })
+  );
+})(window);
+
+EOF
