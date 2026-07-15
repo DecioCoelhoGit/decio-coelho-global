@@ -1,0 +1,512 @@
+{
+  "schemaVersion": "1.0.0",
+  "repositoryId": "festanca-2026-curation-records",
+  "repositoryName": "Registros Históricos Curatoriais da FESTANÇA 2026",
+  "eventId": "festanca-vila-bela-2026",
+  "eventName": "Festança de Vila Bela 2026",
+  "description": "Repositório oficial das instâncias de Registros Históricos Curatoriais produzidas conforme o Protocolo de Curadoria Histórica e o curation-record-schema.json.",
+  "location": {
+    "city": "Vila Bela da Santíssima Trindade",
+    "state": "Mato Grosso",
+    "country": "Brasil"
+  },
+  "coordination": {
+    "generalCoordinator": {
+      "role": "Coordenador-Geral da Festança 2026",
+      "name": "Nazário Frazão de Almeida"
+    },
+    "traditionalAuthority": {
+      "role": "Presidente Vitalício das Irmandades",
+      "name": "Nazário Frazão de Almeida",
+      "succession": {
+        "type": "familiar-hereditaria",
+        "predecessor": "Manoel Frazão de Almeida",
+        "notes": "Cargo tradicional vitalício transmitido de pai para filho, conforme informação oral registrada no desenvolvimento do projeto."
+      }
+    }
+  },
+  "curation": {
+    "institutionalProject": "FESTANÇA 2026 — Memória Histórica Permanente",
+    "curatorialProtocol": "apps/festanca-2026/docs/curation/historical-curation-workflow.md",
+    "recordSchema": "apps/festanca-2026/data/curation-record-schema.json",
+    "fieldObservationSchema": "apps/festanca-2026/data/field-observation-schema.json",
+    "fieldObservationsRepository": "apps/festanca-2026/data/field-observations-2026.json",
+    "dailyLogDirectory": "apps/festanca-2026/data/daily-log/",
+    "chronicleStyleGuide": "apps/festanca-2026/data/daily-log/chronicle-style-guide.md",
+    "routeAndVenuePolicy": "apps/festanca-2026/data/route-and-venue-policy.md",
+    "locationSchema": "apps/festanca-2026/data/location-schema.json",
+    "curatorialPrinciples": [
+      "fidelidade-aos-fatos",
+      "separacao-entre-fato-memoria-e-interpretacao",
+      "proveniencia-obrigatoria",
+      "respeito-a-comunidade",
+      "protecao-de-residencias",
+      "consentimento-e-autorizacao",
+      "preservacao-da-oralidade",
+      "validacao-comunitaria",
+      "validacao-institucional",
+      "preservacao-digital",
+      "acessibilidade",
+      "memoria-historica-permanente"
+    ]
+  },
+  "repositoryStatus": {
+    "status": "ativo",
+    "curationStage": "registro-primario",
+    "validationStatus": "estrutura-validada-registros-em-construcao",
+    "publicationStatus": "uso-interno",
+    "preservationStatus": "repositorio-inicializado",
+    "recordsOpenForCreation": true,
+    "recordsOpenForRevision": true
+  },
+  "period": {
+    "preparatoryStart": "2026-04-05",
+    "preparatoryEnd": "2026-05-31",
+    "mainEventStart": "2026-07-15",
+    "mainEventEnd": "2026-07-27"
+  },
+  "sourceRepositories": {
+    "officialProgram": "apps/festanca-2026/data/programacao-2026.json",
+    "participants": "apps/festanca-2026/data/festeiros-2026.json",
+    "traditionalGroups": "apps/festanca-2026/data/grupos-tradicionais-2026.json",
+    "locations": "apps/festanca-2026/data/locais-2026.json",
+    "fieldObservations": "apps/festanca-2026/data/field-observations-2026.json",
+    "dailyLogs": "apps/festanca-2026/data/daily-log/",
+    "mediaDirectory": "apps/festanca-2026/assets/",
+    "documentsDirectory": "apps/festanca-2026/docs/"
+  },
+  "recordIdPolicy": {
+    "prefix": "festanca-2026-curation-",
+    "numericLength": 4,
+    "firstId": "festanca-2026-curation-0001",
+    "generationMode": "sequencial",
+    "reuseDeletedIds": false,
+    "idIsPermanent": true
+  },
+  "knowledgePolicy": {
+    "allowedClassifications": [
+      "fato-observado",
+      "fato-documentado",
+      "informacao-institucional",
+      "relato-de-participante",
+      "memoria-oral",
+      "memoria-pessoal",
+      "contexto-historico",
+      "interpretacao-curatorial",
+      "hipotese",
+      "informacao-pendente",
+      "informacao-contestada"
+    ],
+    "factsMustBeSeparatedFromInterpretations": true,
+    "oralAccountsRequireAttribution": true,
+    "uncertaintiesMustBePreserved": true,
+    "conflictingVersionsMustNotBeSilentlyRemoved": true,
+    "unverifiedInformationMayBeStored": true,
+    "unverifiedInformationMayBePublishedAsFact": false
+  },
+  "privacyPolicy": {
+    "privateResidencesProtected": true,
+    "exactResidentialCoordinatesPublicByDefault": false,
+    "residentialVisitsOnlyDuringOfficialProgram": true,
+    "visitorGuidanceRequiredForResidentialActivities": true,
+    "childrenRequireEnhancedProtection": true,
+    "restrictedKnowledgeMayBeStoredInternally": true,
+    "restrictedKnowledgeMayBePublishedWithoutAuthorization": false,
+    "defaultResidentialGuidance": "Visita oficial somente no horário e ato previstos na programação. Consulte a agenda e os contatos da organização.",
+    "defaultExactLocationPolicy": "nao-publicar-sem-autorizacao"
+  },
+  "routePolicy": {
+    "dynamicRoutesSupported": true,
+    "communityGuidedRoutesSupported": true,
+    "routesMayBeDecidedDuringEvent": true,
+    "exactRouteRequired": false,
+    "exactRoutePublicationRequired": false,
+    "cortejosMayChangeAccordingToContext": true,
+    "serenatasMayReceiveCommunitySuggestions": true,
+    "defaultRouteClassification": "dynamic",
+    "defaultRouteGuidance": "O percurso poderá ser definido ou ajustado durante a realização da atividade, conforme a dinâmica cultural, os participantes e a organização."
+  },
+  "traditionalGroupsPolicy": {
+    "officialGroups": [
+      {
+        "id": "grupo-do-congo",
+        "name": "Grupo do Congo",
+        "shortName": "Congo",
+        "status": "oficial"
+      },
+      {
+        "id": "conguinho",
+        "name": "Conguinho",
+        "shortName": "Conguinho",
+        "status": "oficial"
+      },
+      {
+        "id": "chorado",
+        "name": "Chorado",
+        "shortName": "Chorado",
+        "status": "oficial"
+      },
+      {
+        "id": "choradinho",
+        "name": "Choradinho",
+        "shortName": "Choradinho",
+        "status": "oficial"
+      }
+    ],
+    "presentationVenueRule": "As apresentações dos grupos tradicionais ocorrem no espaço religioso ou em sua extensão, onde são celebradas as missas do Glorioso São Benedito, salvo informação oficial específica em sentido diferente.",
+    "groupDetailsStatus": "aguardando-detalhamento-institucional"
+  },
+  "workflow": {
+    "stages": [
+      {
+        "order": 1,
+        "id": "observacao",
+        "name": "Observação",
+        "description": "Percepção inicial do acontecimento em campo."
+      },
+      {
+        "order": 2,
+        "id": "registro-primario",
+        "name": "Registro primário",
+        "description": "Anotação inicial no Diário de Campo ou no repositório de observações."
+      },
+      {
+        "order": 3,
+        "id": "triagem",
+        "name": "Triagem",
+        "description": "Avaliação de relevância histórica, cultural e documental."
+      },
+      {
+        "order": 4,
+        "id": "organizacao",
+        "name": "Organização",
+        "description": "Estruturação dos dados, pessoas, locais, mídias e fontes."
+      },
+      {
+        "order": 5,
+        "id": "verificacao",
+        "name": "Verificação",
+        "description": "Conferência dos fatos e cruzamento de fontes."
+      },
+      {
+        "order": 6,
+        "id": "enriquecimento-historico",
+        "name": "Enriquecimento histórico",
+        "description": "Inclusão de contexto histórico, cultural e territorial."
+      },
+      {
+        "order": 7,
+        "id": "classificacao-de-privacidade",
+        "name": "Classificação de privacidade",
+        "description": "Avaliação de dados pessoais, residências, crianças, autorizações e conhecimentos restritos."
+      },
+      {
+        "order": 8,
+        "id": "validacao",
+        "name": "Validação",
+        "description": "Submissão do registro a pessoas, grupos ou instituições competentes."
+      },
+      {
+        "order": 9,
+        "id": "preparacao-para-publicacao",
+        "name": "Preparação para publicação",
+        "description": "Produção da versão pública, acessível e autorizada."
+      },
+      {
+        "order": 10,
+        "id": "publicado",
+        "name": "Publicado",
+        "description": "Registro disponibilizado em canal público autorizado."
+      },
+      {
+        "order": 11,
+        "id": "preservacao-permanente",
+        "name": "Preservação permanente",
+        "description": "Elevação do registro à condição de Memória Histórica Permanente."
+      },
+      {
+        "order": 12,
+        "id": "arquivado",
+        "name": "Arquivado",
+        "description": "Registro mantido no acervo, sem processamento ativo."
+      }
+    ]
+  },
+  "qualityControl": {
+    "requiredChecks": [
+      "id-unico",
+      "titulo-preenchido",
+      "data-do-acontecimento",
+      "descricao-factual",
+      "classificacao-epistemologica",
+      "fonte-ou-origem-identificada",
+      "pessoas-revisadas",
+      "grupos-revisados",
+      "local-classificado",
+      "privacidade-revisada",
+      "consentimento-revisado",
+      "midias-creditadas",
+      "incertezas-registradas",
+      "conflitos-preservados",
+      "proveniencia-preenchida",
+      "status-de-validacao",
+      "decisao-de-publicacao",
+      "plano-de-preservacao"
+    ],
+    "publicationRequiresPrivacyReview": true,
+    "publicationRequiresConsentReview": true,
+    "publicationRequiresAccessibilityReview": true,
+    "permanentMemoryRequiresValidation": true,
+    "permanentMemoryRequiresPreservationPackage": true
+  },
+  "statistics": {
+    "totalRecords": 0,
+    "draftRecords": 0,
+    "recordsInCuration": 0,
+    "recordsInValidation": 0,
+    "validatedRecords": 0,
+    "publishedRecords": 0,
+    "restrictedRecords": 0,
+    "permanentMemoryRecords": 0,
+    "archivedRecords": 0,
+    "recordsWithMedia": 0,
+    "recordsWithTestimonies": 0,
+    "recordsWithLivingHeritage": 0,
+    "recordsWithConflictingSources": 0,
+    "recordsAwaitingAuthorization": 0,
+    "lastCalculatedAt": null
+  },
+  "indexes": {
+    "byDate": {},
+    "byActivityId": {},
+    "byRecordType": {},
+    "byCurationStage": {},
+    "byStatus": {},
+    "byKnowledgeClassification": {},
+    "byCategory": {},
+    "byPerson": {},
+    "byGroup": {},
+    "byLocationId": {},
+    "byPrivacyLevel": {},
+    "byValidationStatus": {},
+    "byPublicationStatus": {},
+    "byDailyLog": {},
+    "byObservationId": {},
+    "byMediaId": {}
+  },
+  "pendingInstitutionalInformation": [
+    {
+      "id": "pending-001",
+      "subject": "Residência do Presidente Vitalício das Irmandades",
+      "relatedActivityId": "festanca-2026-001",
+      "requestedFrom": "Nazário Frazão de Almeida",
+      "informationNeeded": [
+        "endereco-de-referencia",
+        "autorizacao-de-publicacao",
+        "localizacao-google-se-autorizada"
+      ],
+      "status": "aguardando-informacao",
+      "notes": "A Reunião do Consistório ocorre na residência do Presidente Vitalício das Irmandades."
+    },
+    {
+      "id": "pending-002",
+      "subject": "Trâmite oficial do recebimento das Chaves da Cidade",
+      "relatedActivityId": "festanca-2026-021",
+      "requestedFrom": "Associação do Grupo do Congo",
+      "informationNeeded": [
+        "trajeto-cerimonial",
+        "participacao-da-policia-civil",
+        "participacao-da-policia-militar",
+        "participacao-do-corpo-de-bombeiros",
+        "participacao-do-forum",
+        "participacao-da-prefeitura",
+        "sequencia-dos-atos",
+        "autoridades-envolvidas"
+      ],
+      "status": "aguardando-detalhamento",
+      "notes": "O recebimento simbólico das Chaves da Cidade culmina na Prefeitura Municipal e é realizado pelo Prefeito."
+    },
+    {
+      "id": "pending-003",
+      "subject": "Detalhamento institucional dos grupos tradicionais",
+      "relatedActivityId": null,
+      "requestedFrom": "Representantes dos grupos tradicionais",
+      "informationNeeded": [
+        "presidentes",
+        "integrantes",
+        "funcoes",
+        "atividades",
+        "horarios",
+        "locais",
+        "rituais",
+        "midias-autorizadas",
+        "formas-de-transmissao-cultural"
+      ],
+      "status": "aguardando-detalhamento",
+      "notes": "Abrange Congo, Conguinho, Chorado e Choradinho."
+    }
+  ],
+  "initialRecordTemplate": {
+    "schemaVersion": "1.0.0",
+    "id": "festanca-2026-curation-0001",
+    "eventId": "festanca-vila-bela-2026",
+    "activityId": null,
+    "observationIds": [],
+    "dailyLogReferences": [],
+    "title": "Título provisório do Registro Histórico Curatorial",
+    "subtitle": null,
+    "recordType": "outro",
+    "curationStage": "observacao",
+    "eventDate": "2026-07-15",
+    "startTime": null,
+    "endTime": null,
+    "timePrecision": "nao-informado",
+    "summary": null,
+    "factualDescription": "Descrever objetivamente o que foi observado ou documentado.",
+    "historicalContext": null,
+    "communityMeaning": null,
+    "curatorialInterpretation": null,
+    "knowledgeClassification": [
+      "fato-observado"
+    ],
+    "categories": [],
+    "keywords": [],
+    "sources": [],
+    "people": [],
+    "groups": [],
+    "locations": [],
+    "route": null,
+    "media": [],
+    "testimonies": [],
+    "livingHeritage": {
+      "isPresent": false,
+      "domains": [],
+      "knowledgeHolders": [],
+      "transmissionMode": null,
+      "communityMeaning": null,
+      "observedChanges": [],
+      "continuityIndicators": [],
+      "safeguardingNeeds": [],
+      "sensitiveOrRestrictedKnowledge": false,
+      "publicationRestrictions": []
+    },
+    "privacy": {
+      "level": "interno",
+      "containsPersonalData": false,
+      "containsChildren": false,
+      "containsPrivateResidence": false,
+      "containsSacredOrRestrictedKnowledge": false,
+      "exactLocationMayBePublished": false,
+      "requiresAnonymization": false,
+      "restrictions": [],
+      "reviewStatus": "not-reviewed",
+      "reviewedBy": null,
+      "reviewedAt": null
+    },
+    "consent": {
+      "status": "nao-solicitado",
+      "scope": [
+        "registro",
+        "arquivo-interno"
+      ],
+      "restrictions": [],
+      "evidence": [],
+      "grantedBy": null,
+      "grantedAt": null,
+      "expiresAt": null,
+      "notes": null
+    },
+    "validation": {
+      "status": "rascunho",
+      "level": "nao-verificado",
+      "validators": [],
+      "conflictingInformation": [],
+      "pendingQuestions": [],
+      "lastValidatedAt": null
+    },
+    "publication": {
+      "decision": "decisao-pendente",
+      "status": "not-prepared",
+      "channels": [
+        "acervo-interno"
+      ],
+      "publicVersion": null,
+      "publicSummary": null,
+      "publicUrl": null,
+      "publishedAt": null,
+      "publishedBy": null,
+      "embargoUntil": null,
+      "accessibility": {
+        "plainLanguageReviewed": false,
+        "imagesHaveAltText": false,
+        "videosHaveCaptions": false,
+        "audioHasTranscription": false,
+        "additionalResources": []
+      },
+      "notes": null
+    },
+    "provenance": {
+      "origin": "registro-de-campo",
+      "createdFrom": [
+        "apps/festanca-2026/data/daily-log/2026-07-15.md"
+      ],
+      "createdBy": "Antonio Décio Ferreira Coelho",
+      "createdAt": "2026-07-15T00:00:00-04:00",
+      "updatedBy": null,
+      "updatedAt": null,
+      "revision": 1,
+      "repositoryPath": "apps/festanca-2026/data/curation-records-2026.json",
+      "commitHash": null
+    },
+    "preservation": {
+      "status": "em-processamento",
+      "permanentMemoryEligible": false,
+      "eligibilityReasons": [],
+      "backupStatus": "pendente",
+      "integrityStatus": "not-checked",
+      "checksum": null,
+      "checksumAlgorithm": null,
+      "retentionPolicy": "revisao-necessaria",
+      "preservationPackage": {
+        "structuredRecordIncluded": true,
+        "curatorialTextIncluded": false,
+        "sourcesIncluded": false,
+        "mediaIncluded": false,
+        "consentEvidenceIncluded": false,
+        "validationHistoryIncluded": false,
+        "revisionHistoryIncluded": false,
+        "accessibilityResourcesIncluded": false
+      },
+      "lastIntegrityCheck": null,
+      "nextReviewDate": null,
+      "notes": null
+    },
+    "revisionHistory": [],
+    "relatedRecords": [],
+    "pendingActions": [],
+    "status": "rascunho",
+    "notes": null
+  },
+  "records": [],
+  "repositoryProvenance": {
+    "origin": "protocolo-de-curadoria-historica",
+    "createdBy": "Antonio Décio Ferreira Coelho",
+    "createdAt": "2026-07-15T00:00:00-04:00",
+    "updatedBy": null,
+    "updatedAt": null,
+    "revision": 1,
+    "repositoryPath": "apps/festanca-2026/data/curation-records-2026.json"
+  },
+  "preservation": {
+    "retentionPolicy": "permanente",
+    "originalRecordsMustBePreserved": true,
+    "silentDeletionForbidden": true,
+    "revisionHistoryRequired": true,
+    "backupsRequired": true,
+    "checksumRecommended": true,
+    "repositoryIntegrityStatus": "nao-verificado",
+    "lastIntegrityCheck": null,
+    "nextIntegrityCheck": null
+  },
+  "lastUpdated": "2026-07-15"
+}
