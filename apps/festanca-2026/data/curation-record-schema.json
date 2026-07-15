@@ -1,0 +1,2262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://deciocoelho.com.br/schemas/festanca-2026/curation-record-schema.json",
+  "title": "Registro Histórico Curatorial da FESTANÇA 2026",
+  "description": "Modelo técnico executável para criação, validação, enriquecimento, publicação e preservação dos Registros Históricos Curatoriais da FESTANÇA de Vila Bela 2026.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "eventId",
+    "title",
+    "recordType",
+    "curationStage",
+    "eventDate",
+    "factualDescription",
+    "knowledgeClassification",
+    "sources",
+    "people",
+    "groups",
+    "locations",
+    "media",
+    "livingHeritage",
+    "privacy",
+    "consent",
+    "validation",
+    "publication",
+    "provenance",
+    "preservation",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Versão do esquema técnico utilizado."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^festanca-2026-curation-[0-9]{4,}$",
+      "examples": [
+        "festanca-2026-curation-0001"
+      ],
+      "description": "Identificador permanente e exclusivo do Registro Histórico Curatorial."
+    },
+    "eventId": {
+      "type": "string",
+      "const": "festanca-vila-bela-2026",
+      "description": "Identificador oficial da FESTANÇA 2026."
+    },
+    "activityId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^festanca-2026-[0-9]{3}$",
+      "description": "Identificador da atividade correspondente em programacao-2026.json, quando aplicável."
+    },
+    "observationIds": {
+      "type": "array",
+      "description": "Observações de campo utilizadas na formação do registro.",
+      "items": {
+        "type": "string",
+        "pattern": "^festanca-2026-observation-[0-9]{4,}$"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "dailyLogReferences": {
+      "type": "array",
+      "description": "Arquivos do Diário de Campo Digital relacionados ao registro.",
+      "items": {
+        "type": "string",
+        "pattern": "^apps/festanca-2026/data/daily-log/2026-07-(1[5-9]|2[0-7])\\.md$"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 220,
+      "description": "Título objetivo e identificável do registro."
+    },
+    "subtitle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 300,
+      "description": "Complemento editorial opcional."
+    },
+    "recordType": {
+      "type": "string",
+      "enum": [
+        "atividade-programada",
+        "atividade-nao-programada",
+        "acontecimento-espontaneo",
+        "desdobramento-da-programacao",
+        "alteracao-de-roteiro",
+        "celebracao-religiosa",
+        "manifestacao-cultural",
+        "cortejo",
+        "serenata",
+        "reza-cantada",
+        "missa",
+        "apresentacao-cultural",
+        "cerimonia",
+        "rito",
+        "grupo-tradicional",
+        "pessoa-em-funcao-cultural",
+        "objeto-cultural",
+        "indumentaria",
+        "paramento",
+        "instrumento",
+        "musica",
+        "canto",
+        "oralidade",
+        "pratica-gastronomica",
+        "local-cultural",
+        "documento",
+        "fotografia",
+        "video",
+        "audio",
+        "depoimento",
+        "memoria-oral",
+        "memoria-pessoal",
+        "decisao-organizacional",
+        "transformacao-cultural",
+        "outro"
+      ],
+      "description": "Natureza principal do Registro Histórico Curatorial."
+    },
+    "curationStage": {
+      "type": "string",
+      "enum": [
+        "observacao",
+        "registro-primario",
+        "triagem",
+        "organizacao",
+        "verificacao",
+        "enriquecimento-historico",
+        "classificacao-de-privacidade",
+        "validacao",
+        "preparacao-para-publicacao",
+        "publicado",
+        "preservacao-permanente",
+        "arquivado"
+      ],
+      "description": "Etapa atual do ciclo de vida curatorial."
+    },
+    "eventDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Data principal do acontecimento registrado."
+    },
+    "startTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+      "description": "Horário inicial confirmado ou documentado."
+    },
+    "endTime": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$",
+      "description": "Horário final, quando conhecido."
+    },
+    "timePrecision": {
+      "type": "string",
+      "enum": [
+        "exato",
+        "aproximado",
+        "estimado",
+        "nao-informado"
+      ],
+      "default": "nao-informado",
+      "description": "Precisão do horário registrado."
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000,
+      "description": "Resumo curatorial do registro."
+    },
+    "factualDescription": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Descrição objetiva dos fatos observados ou documentados, sem mistura com interpretações."
+    },
+    "historicalContext": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Contextualização histórica, cultural ou territorial claramente separada da descrição factual."
+    },
+    "communityMeaning": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Significado atribuído ao acontecimento pelos integrantes ou detentores da tradição."
+    },
+    "curatorialInterpretation": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Interpretação editorial identificada explicitamente como produção da curadoria."
+    },
+    "knowledgeClassification": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "fato-observado",
+          "fato-documentado",
+          "informacao-institucional",
+          "relato-de-participante",
+          "memoria-oral",
+          "memoria-pessoal",
+          "contexto-historico",
+          "interpretacao-curatorial",
+          "hipotese",
+          "informacao-pendente",
+          "informacao-contestada"
+        ]
+      },
+      "description": "Classificação epistemológica das informações presentes no registro."
+    },
+    "categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "default": [],
+      "items": {
+        "type": "string",
+        "enum": [
+          "religiosidade",
+          "patrimonio-imaterial",
+          "memoria-oral",
+          "congo",
+          "conguinho",
+          "chorado",
+          "choradinho",
+          "reza-cantada",
+          "missa",
+          "cortejo",
+          "serenata",
+          "festeiros",
+          "irmandades",
+          "musica",
+          "danca",
+          "indumentaria",
+          "paramentos",
+          "instrumentos",
+          "gastronomia",
+          "territorio",
+          "arquitetura",
+          "organizacao",
+          "comunidade",
+          "oralidade",
+          "educacao-patrimonial",
+          "historia-local",
+          "fotografia",
+          "video",
+          "audio",
+          "documento",
+          "depoimento",
+          "transformacao-cultural",
+          "turismo-cultural",
+          "acessibilidade",
+          "outro"
+        ]
+      },
+      "description": "Categorias temáticas relacionadas ao registro."
+    },
+    "keywords": {
+      "type": "array",
+      "uniqueItems": true,
+      "default": [],
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 80
+      },
+      "description": "Palavras-chave livres para pesquisa e indexação."
+    },
+    "sources": {
+      "type": "array",
+      "description": "Fontes que sustentam o registro.",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "default": []
+    },
+    "people": {
+      "type": "array",
+      "description": "Pessoas relacionadas ao registro.",
+      "items": {
+        "$ref": "#/$defs/person"
+      },
+      "default": []
+    },
+    "groups": {
+      "type": "array",
+      "description": "Grupos tradicionais, instituições ou organizações vinculadas.",
+      "items": {
+        "$ref": "#/$defs/group"
+      },
+      "default": []
+    },
+    "locations": {
+      "type": "array",
+      "description": "Locais relacionados ao registro, respeitando a política territorial e de privacidade.",
+      "items": {
+        "$ref": "#/$defs/location"
+      },
+      "default": []
+    },
+    "route": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/route"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Informações sobre percurso, quando o registro envolver cortejo, romaria, serenata ou deslocamento."
+    },
+    "media": {
+      "type": "array",
+      "description": "Fotografias, vídeos, áudios e documentos vinculados.",
+      "items": {
+        "$ref": "#/$defs/media"
+      },
+      "default": []
+    },
+    "testimonies": {
+      "type": "array",
+      "description": "Depoimentos ou narrativas orais associados.",
+      "items": {
+        "$ref": "#/$defs/testimony"
+      },
+      "default": []
+    },
+    "livingHeritage": {
+      "$ref": "#/$defs/livingHeritage"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "consent": {
+      "$ref": "#/$defs/consent"
+    },
+    "validation": {
+      "$ref": "#/$defs/validation"
+    },
+    "publication": {
+      "$ref": "#/$defs/publication"
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    },
+    "preservation": {
+      "$ref": "#/$defs/preservation"
+    },
+    "revisionHistory": {
+      "type": "array",
+      "description": "Histórico completo de alterações, preservando a não eliminação silenciosa de versões.",
+      "items": {
+        "$ref": "#/$defs/revision"
+      },
+      "default": []
+    },
+    "relatedRecords": {
+      "type": "array",
+      "description": "Registros Históricos Curatoriais relacionados.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "recordId",
+          "relationshipType"
+        ],
+        "properties": {
+          "recordId": {
+            "type": "string",
+            "pattern": "^festanca-2026-curation-[0-9]{4,}$"
+          },
+          "relationshipType": {
+            "type": "string",
+            "enum": [
+              "complementa",
+              "continua",
+              "antecede",
+              "sucede",
+              "documenta",
+              "contextualiza",
+              "diverge",
+              "duplica",
+              "mesmo-acontecimento",
+              "mesma-pessoa",
+              "mesmo-grupo",
+              "mesmo-local",
+              "mesma-tradicao",
+              "outro"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "default": []
+    },
+    "pendingActions": {
+      "type": "array",
+      "description": "Providências curatoriais ainda necessárias.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "status"
+        ],
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 3
+          },
+          "responsible": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dueDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pendente",
+              "em-andamento",
+              "concluida",
+              "cancelada"
+            ]
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "default": []
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "rascunho",
+        "ativo",
+        "em-curadoria",
+        "em-validacao",
+        "validado",
+        "publicado",
+        "restrito",
+        "memoria-historica-permanente",
+        "arquivado",
+        "rejeitado"
+      ],
+      "description": "Estado geral do Registro Histórico Curatorial."
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Observações gerais que não se enquadram nos demais campos."
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceType",
+        "title",
+        "origin",
+        "confidenceLevel",
+        "verificationStatus"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "observacao-direta",
+            "documento-oficial",
+            "informacao-da-organizacao",
+            "entrevista-autorizada",
+            "relato-oral",
+            "memoria-pessoal",
+            "publicacao-institucional",
+            "registro-audiovisual",
+            "contribuicao-comunitaria",
+            "fonte-secundaria",
+            "origem-nao-identificada"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2
+        },
+        "origin": {
+          "type": "string",
+          "minLength": 2
+        },
+        "authorOrInformant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "institution": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "fileReference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "excerptOrSummary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidenceLevel": {
+          "type": "string",
+          "enum": [
+            "nao-avaliado",
+            "baixo",
+            "moderado",
+            "alto",
+            "documentado"
+          ]
+        },
+        "verificationStatus": {
+          "type": "string",
+          "enum": [
+            "nao-verificada",
+            "em-verificacao",
+            "verificada",
+            "conflitante",
+            "inconclusiva"
+          ]
+        },
+        "accessLevel": {
+          "type": "string",
+          "enum": [
+            "publico",
+            "interno",
+            "restrito",
+            "confidencial"
+          ],
+          "default": "interno"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "relationshipToRecord",
+        "identificationStatus",
+        "publicationAuthorization"
+      ],
+      "properties": {
+        "personId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2
+        },
+        "preferredName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "institutionOrGroup": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relationshipToRecord": {
+          "type": "string",
+          "enum": [
+            "participante",
+            "festeiro",
+            "autoridade-tradicional",
+            "integrante-de-grupo",
+            "organizador",
+            "representante-religioso",
+            "autoridade-publica",
+            "depoente",
+            "observador",
+            "fotografo",
+            "cinegrafista",
+            "pesquisador",
+            "detentor-da-memoria",
+            "outro"
+          ]
+        },
+        "identificationStatus": {
+          "type": "string",
+          "enum": [
+            "identificado",
+            "parcialmente-identificado",
+            "nao-identificado",
+            "anonimizado"
+          ]
+        },
+        "isMinor": {
+          "type": "boolean",
+          "default": false
+        },
+        "publicationAuthorization": {
+          "type": "string",
+          "enum": [
+            "autorizada",
+            "autorizada-com-restricoes",
+            "aguardando-autorizacao",
+            "nao-autorizada",
+            "revogada",
+            "nao-aplicavel"
+          ]
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "groupType",
+        "relationshipToRecord"
+      ],
+      "properties": {
+        "groupId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2
+        },
+        "shortName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "groupType": {
+          "type": "string",
+          "enum": [
+            "congo",
+            "conguinho",
+            "chorado",
+            "choradinho",
+            "irmandade",
+            "associacao",
+            "organizacao-religiosa",
+            "instituicao-publica",
+            "grupo-comunitario",
+            "familia",
+            "outro"
+          ]
+        },
+        "relationshipToRecord": {
+          "type": "string",
+          "enum": [
+            "protagonista",
+            "participante",
+            "organizador",
+            "apoiador",
+            "fonte",
+            "validador",
+            "homenageado",
+            "documentado",
+            "outro"
+          ]
+        },
+        "representatives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locationId",
+        "name",
+        "locationType",
+        "privacyLevel",
+        "verificationStatus",
+        "mapAccess"
+      ],
+      "properties": {
+        "locationId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2
+        },
+        "locationType": {
+          "type": "string",
+          "enum": [
+            "religious-venue",
+            "church-surroundings",
+            "parish-center",
+            "municipal-building",
+            "public-building",
+            "cultural-venue",
+            "public-square",
+            "sports-venue",
+            "public-street",
+            "protected-residence",
+            "authorized-residence",
+            "dynamic-route",
+            "meeting-point",
+            "general-area",
+            "location-to-confirm",
+            "restricted-place",
+            "other"
+          ]
+        },
+        "relationshipToRecord": {
+          "type": "string",
+          "enum": [
+            "local-principal",
+            "ponto-de-saida",
+            "ponto-de-chegada",
+            "entorno",
+            "percurso",
+            "referencia",
+            "residencia-de-festeiro",
+            "local-de-celebracao",
+            "outro"
+          ],
+          "default": "local-principal"
+        },
+        "street": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "district": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": "string",
+          "const": "Vila Bela da Santíssima Trindade"
+        },
+        "state": {
+          "type": "string",
+          "const": "MT"
+        },
+        "country": {
+          "type": "string",
+          "const": "Brasil"
+        },
+        "coordinates": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "latitude",
+                "longitude"
+              ],
+              "properties": {
+                "latitude": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "longitude": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "privacyLevel": {
+          "type": "string",
+          "enum": [
+            "public",
+            "public-with-restrictions",
+            "community",
+            "internal",
+            "protected",
+            "restricted",
+            "confidential"
+          ]
+        },
+        "verificationStatus": {
+          "type": "string",
+          "enum": [
+            "verified",
+            "documented",
+            "search-query-generated",
+            "exact-pin-pending",
+            "authorization-pending",
+            "route-to-confirm",
+            "location-to-confirm",
+            "restricted"
+          ]
+        },
+        "mapAccess": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "allowed",
+            "mode"
+          ],
+          "properties": {
+            "allowed": {
+              "type": "boolean"
+            },
+            "mode": {
+              "type": "string",
+              "enum": [
+                "exact-pin",
+                "verified-public-place",
+                "general-reference",
+                "search-query",
+                "dynamic-route",
+                "organization-guidance",
+                "not-allowed"
+              ]
+            },
+            "googleMapsUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "authorizationStatus": {
+              "type": "string",
+              "enum": [
+                "authorized",
+                "not-required",
+                "pending",
+                "denied",
+                "restricted"
+              ],
+              "default": "pending"
+            }
+          }
+        },
+        "visitorGuidance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isItinerant",
+        "routeType",
+        "routeBehavior",
+        "exactRouteMayBePublished"
+      ],
+      "properties": {
+        "isItinerant": {
+          "type": "boolean"
+        },
+        "routeType": {
+          "type": "string",
+          "enum": [
+            "cortejo",
+            "serenata",
+            "romaria",
+            "alvorada",
+            "deslocamento-cerimonial",
+            "visitas-a-festeiros",
+            "outro"
+          ]
+        },
+        "routeBehavior": {
+          "type": "string",
+          "enum": [
+            "fixed",
+            "partially-defined",
+            "dynamic",
+            "community-guided",
+            "decided-during-event",
+            "not-applicable"
+          ]
+        },
+        "departure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "destinations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exactRouteMayBePublished": {
+          "type": "boolean"
+        },
+        "publicationGuidance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mediaId",
+        "type",
+        "title",
+        "authorizationStatus",
+        "publicationStatus",
+        "creditLine"
+      ],
+      "properties": {
+        "mediaId": {
+          "type": "string",
+          "pattern": "^festanca-2026-(photo|video|audio|document)-[0-9]{4,}$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "photo",
+            "video",
+            "audio",
+            "document"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2
+        },
+        "filename": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "originalFilePreserved": {
+          "type": "boolean",
+          "default": false
+        },
+        "captureDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "captureTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        "author": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rightsHolder": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "accessibilityDescription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "peopleDepicted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "groupsDepicted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "containsChildren": {
+          "type": "boolean",
+          "default": false
+        },
+        "containsPrivateResidence": {
+          "type": "boolean",
+          "default": false
+        },
+        "containsSensitiveKnowledge": {
+          "type": "boolean",
+          "default": false
+        },
+        "authorizationStatus": {
+          "type": "string",
+          "enum": [
+            "authorized",
+            "authorized-with-restrictions",
+            "pending",
+            "denied",
+            "revoked",
+            "not-applicable"
+          ]
+        },
+        "publicationStatus": {
+          "type": "string",
+          "enum": [
+            "unpublished",
+            "approved",
+            "published",
+            "restricted",
+            "embargoed",
+            "archived"
+          ]
+        },
+        "creditLine": {
+          "type": "string",
+          "minLength": 1
+        },
+        "checksum": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "testimony": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "testimonyId",
+        "format",
+        "consentStatus",
+        "publicationStatus"
+      ],
+      "properties": {
+        "testimonyId": {
+          "type": "string",
+          "pattern": "^festanca-2026-testimony-[0-9]{4,}$"
+        },
+        "deponentName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deponentRole": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recordedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "audio",
+            "video",
+            "written",
+            "oral-not-recorded",
+            "transcription"
+          ]
+        },
+        "literalTranscription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "readingVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "editorialContext": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "consentStatus": {
+          "type": "string",
+          "enum": [
+            "express-written",
+            "express-verbal-documented",
+            "institutional",
+            "collective-community",
+            "pending",
+            "denied",
+            "revoked",
+            "not-applicable"
+          ]
+        },
+        "publicationStatus": {
+          "type": "string",
+          "enum": [
+            "public",
+            "public-with-restrictions",
+            "anonymous",
+            "internal",
+            "restricted",
+            "not-publishable"
+          ]
+        },
+        "restrictedExcerpts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "livingHeritage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "isPresent",
+        "domains",
+        "knowledgeHolders",
+        "observedChanges",
+        "continuityIndicators",
+        "safeguardingNeeds"
+      ],
+      "properties": {
+        "isPresent": {
+          "type": "boolean"
+        },
+        "domains": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "tradicoes-e-expressoes-orais",
+              "artes-do-espetaculo",
+              "praticas-sociais-rituais-e-atos-festivos",
+              "conhecimentos-sobre-a-natureza-e-o-universo",
+              "tecnicas-artesanais-tradicionais",
+              "religiosidade",
+              "musica",
+              "danca",
+              "gastronomia",
+              "organizacao-comunitaria",
+              "memoria-coletiva",
+              "territorialidade",
+              "outro"
+            ]
+          }
+        },
+        "knowledgeHolders": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transmissionMode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "oral",
+            "familiar",
+            "comunitaria",
+            "geracional",
+            "observacao-e-pratica",
+            "formacao-interna",
+            "ritual",
+            "documental",
+            "mista",
+            null
+          ]
+        },
+        "communityMeaning": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observedChanges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "continuityIndicators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "safeguardingNeeds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sensitiveOrRestrictedKnowledge": {
+          "type": "boolean",
+          "default": false
+        },
+        "publicationRestrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "containsPersonalData",
+        "containsChildren",
+        "containsPrivateResidence",
+        "containsSacredOrRestrictedKnowledge",
+        "exactLocationMayBePublished",
+        "reviewStatus"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "publico",
+            "publico-com-restricoes",
+            "comunitario",
+            "interno",
+            "restrito",
+            "confidencial",
+            "sagrado-ou-nao-publicavel"
+          ]
+        },
+        "containsPersonalData": {
+          "type": "boolean"
+        },
+        "containsChildren": {
+          "type": "boolean"
+        },
+        "containsPrivateResidence": {
+          "type": "boolean"
+        },
+        "containsSacredOrRestrictedKnowledge": {
+          "type": "boolean"
+        },
+        "exactLocationMayBePublished": {
+          "type": "boolean"
+        },
+        "requiresAnonymization": {
+          "type": "boolean",
+          "default": false
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "reviewStatus": {
+          "type": "string",
+          "enum": [
+            "not-reviewed",
+            "under-review",
+            "approved",
+            "approved-with-restrictions",
+            "rejected"
+          ]
+        },
+        "reviewedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "scope",
+        "restrictions",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "expresso-escrito",
+            "expresso-verbal-documentado",
+            "institucional",
+            "coletivo-comunitario",
+            "presumido-em-evento-publico",
+            "nao-solicitado",
+            "aguardando-autorizacao",
+            "negado",
+            "revogado",
+            "nao-aplicavel"
+          ]
+        },
+        "scope": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "registro",
+              "arquivo-interno",
+              "publicacao-na-landing-page",
+              "redes-sociais",
+              "material-educativo",
+              "exposicao",
+              "pesquisa",
+              "preservacao-permanente",
+              "uso-institucional",
+              "outro"
+            ]
+          }
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "grantedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "grantedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "level",
+        "validators",
+        "conflictingInformation",
+        "pendingQuestions"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "rascunho",
+            "nao-verificado",
+            "em-verificacao",
+            "parcialmente-verificado",
+            "verificado",
+            "documentado",
+            "validado-pela-comunidade",
+            "validado-institucionalmente",
+            "conflito-de-fontes",
+            "rejeitado",
+            "arquivado"
+          ]
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "nao-verificado",
+            "preliminar",
+            "moderado",
+            "alto",
+            "institucional",
+            "comunitario-e-institucional"
+          ]
+        },
+        "validators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "validationType",
+              "decision"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "institution": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "validationType": {
+                "type": "string",
+                "enum": [
+                  "comunitaria",
+                  "institucional",
+                  "religiosa",
+                  "historica",
+                  "documental",
+                  "tecnica",
+                  "territorial",
+                  "autoral"
+                ]
+              },
+              "decision": {
+                "type": "string",
+                "enum": [
+                  "approved",
+                  "approved-with-restrictions",
+                  "pending",
+                  "rejected",
+                  "inconclusive"
+                ]
+              },
+              "validatedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "method": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "comments": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "restrictions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": []
+              }
+            }
+          }
+        },
+        "conflictingInformation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "field",
+              "versions"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "versions": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "sourceId",
+                    "value"
+                  ],
+                  "properties": {
+                    "sourceId": {
+                      "type": "string"
+                    },
+                    "value": {}
+                  }
+                }
+              },
+              "resolutionStatus": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "resolved",
+                  "unresolved",
+                  "multiple-legitimate-versions"
+                ],
+                "default": "pending"
+              },
+              "resolutionNotes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "pendingQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lastValidatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "status",
+        "channels",
+        "publicVersion",
+        "accessibility"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": [
+            "publicar-integralmente",
+            "publicar-com-resumo",
+            "publicar-com-anonimizacao",
+            "publicar-sem-localizacao",
+            "publicar-sem-imagem",
+            "publicar-apos-evento",
+            "manter-em-acervo-interno",
+            "manter-restrito",
+            "nao-publicar",
+            "decisao-pendente"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "not-prepared",
+            "in-review",
+            "approved",
+            "published",
+            "restricted",
+            "embargoed",
+            "withdrawn"
+          ]
+        },
+        "channels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "landing-page",
+              "portal-cultural",
+              "arquivo-digital",
+              "redes-sociais",
+              "material-educativo",
+              "exposicao",
+              "documentario",
+              "publicacao-academica",
+              "acervo-interno",
+              "outro"
+            ]
+          }
+        },
+        "publicVersion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicSummary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "publishedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "publishedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "embargoUntil": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "accessibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "plainLanguageReviewed",
+            "imagesHaveAltText",
+            "videosHaveCaptions",
+            "audioHasTranscription"
+          ],
+          "properties": {
+            "plainLanguageReviewed": {
+              "type": "boolean"
+            },
+            "imagesHaveAltText": {
+              "type": "boolean"
+            },
+            "videosHaveCaptions": {
+              "type": "boolean"
+            },
+            "audioHasTranscription": {
+              "type": "boolean"
+            },
+            "additionalResources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "default": []
+            }
+          }
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin",
+        "createdFrom",
+        "createdBy",
+        "createdAt",
+        "revision"
+      ],
+      "properties": {
+        "origin": {
+          "type": "string",
+          "enum": [
+            "registro-de-campo",
+            "diario-de-campo",
+            "programacao-oficial",
+            "documento-institucional",
+            "depoimento",
+            "acervo-fotografico",
+            "acervo-audiovisual",
+            "memoria-oral",
+            "compilacao-curatorial",
+            "outra"
+          ]
+        },
+        "createdFrom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "createdBy": {
+          "type": "string",
+          "minLength": 2
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "repositoryPath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commitHash": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "preservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "permanentMemoryEligible",
+        "backupStatus",
+        "integrityStatus",
+        "retentionPolicy"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "em-processamento",
+            "organizado",
+            "preservado",
+            "memoria-historica-permanente",
+            "restrito",
+            "arquivado",
+            "descartado-com-justificativa"
+          ]
+        },
+        "permanentMemoryEligible": {
+          "type": "boolean"
+        },
+        "eligibilityReasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "backupStatus": {
+          "type": "string",
+          "enum": [
+            "pendente",
+            "copia-local",
+            "copia-repositorio",
+            "multiplas-copias",
+            "verificado",
+            "falha"
+          ]
+        },
+        "integrityStatus": {
+          "type": "string",
+          "enum": [
+            "not-checked",
+            "valid",
+            "warning",
+            "corrupted",
+            "missing-files"
+          ]
+        },
+        "checksum": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "checksumAlgorithm": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "SHA-256",
+            "SHA-512",
+            "MD5",
+            null
+          ]
+        },
+        "retentionPolicy": {
+          "type": "string",
+          "enum": [
+            "permanente",
+            "longo-prazo",
+            "temporaria",
+            "revisao-necessaria"
+          ]
+        },
+        "preservationPackage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "structuredRecordIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "curatorialTextIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "sourcesIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "mediaIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "consentEvidenceIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "validationHistoryIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "revisionHistoryIncluded": {
+              "type": "boolean",
+              "default": false
+            },
+            "accessibilityResourcesIncluded": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "lastIntegrityCheck": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "nextReviewDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "revision",
+        "changedAt",
+        "changedBy",
+        "changeReason",
+        "changedFields"
+      ],
+      "properties": {
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "changedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "changedBy": {
+          "type": "string",
+          "minLength": 2
+        },
+        "changeReason": {
+          "type": "string",
+          "minLength": 2
+        },
+        "changedFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "previousVersionReference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "privacy": {
+            "properties": {
+              "containsPrivateResidence": {
+                "const": true
+              }
+            },
+            "required": [
+              "containsPrivateResidence"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "privacy": {
+            "properties": {
+              "exactLocationMayBePublished": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "privacy": {
+            "properties": {
+              "containsSacredOrRestrictedKnowledge": {
+                "const": true
+              }
+            },
+            "required": [
+              "containsSacredOrRestrictedKnowledge"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "privacy": {
+            "properties": {
+              "level": {
+                "enum": [
+                  "restrito",
+                  "confidencial",
+                  "sagrado-ou-nao-publicavel"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "memoria-historica-permanente"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "preservation": {
+            "properties": {
+              "status": {
+                "const": "memoria-historica-permanente"
+              },
+              "permanentMemoryEligible": {
+                "const": true
+              },
+              "retentionPolicy": {
+                "const": "permanente"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "publication": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "publication": {
+            "required": [
+              "publishedAt",
+              "publishedBy"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "recordType": {
+            "enum": [
+              "cortejo",
+              "serenata"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "route"
+        ]
+      }
+    }
+  ]
+      }
