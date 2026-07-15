@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "id": "festanca-2026-field-observation-schema",
+  "title": "FESTANÇA 2026 - Field Observation Schema",
+  "description": "Estrutura oficial para registro de observações de campo da FESTANÇA 2026.",
+
+  "version": "1.0.0",
+
+  "metadata": {
+    "project": "FESTANÇA 2026",
+    "maintainer": "Décio Coelho Digital Cognitivo",
+    "status": "official",
+    "lastUpdate": "2026-07-15"
+  },
+
+  "recordStructure": {
+
+    "recordId": null,
+
+    "activityId": null,
+
+    "activityName": null,
+
+    "observationType": null,
+
+    "collectionMethod": null,
+
+    "timestamp": null,
+
+    "observer": {
+      "name": null,
+      "organization": null,
+      "contact": null
+    },
+
+    "source": {
+      "type": null,
+      "name": null,
+      "confidence": "medium"
+    },
+
+    "location": {
+
+      "locationType": null,
+
+      "publicMap": false,
+
+      "protectedResidence": false,
+
+      "description": null,
+
+      "coordinates": null
+    },
+
+    "participants": {
+
+      "groups": [],
+
+      "authorities": [],
+
+      "festeiros": [],
+
+      "community": []
+    },
+
+    "media": {
+
+      "photos": [],
+
+      "videos": [],
+
+      "audio": [],
+
+      "documents": []
+    },
+
+    "fieldNotes": {
+
+      "summary": null,
+
+      "detailedDescription": null,
+
+      "importantFacts": [],
+
+      "changesFromOfficialProgram": [],
+
+      "visitorRecommendations": []
+    },
+
+    "validation": {
+
+      "status": "pending",
+
+      "validatedBy": null,
+
+      "validationDate": null,
+
+      "notes": null
+    },
+
+    "publication": {
+
+      "canPublish": false,
+
+      "requiresReview": true,
+
+      "privacyLevel": "protected"
+    },
+
+    "tags": [],
+
+    "history": []
+  },
+
+  "enumerations": {
+
+    "observationTypes": [
+
+      "official-event",
+
+      "religious",
+
+      "cultural",
+
+      "community",
+
+      "heritage",
+
+      "route",
+
+      "territory",
+
+      "tradition",
+
+      "interview",
+
+      "field-note"
+    ],
+
+    "collectionMethods": [
+
+      "direct-observation",
+
+      "participant-report",
+
+      "organization",
+
+      "official-document",
+
+      "photographic-record",
+
+      "audio-record",
+
+      "video-record"
+    ],
+
+    "validationStatus": [
+
+      "pending",
+
+      "confirmed",
+
+      "partially-confirmed",
+
+      "rejected"
+    ],
+
+    "privacyLevels": [
+
+      "public",
+
+      "restricted",
+
+      "protected",
+
+      "confidential"
+    ]
+  }
+}
