@@ -1,181 +1,1803 @@
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "manifestType": "festanca-brand-design-system",
-
-  "project": {
-    "id": "festanca-2026",
-    "name": "FESTANÇA 2026",
-    "officialName": "FESTANÇA 2026 - Vila Bela da Santíssima Trindade",
-    "city": "Vila Bela da Santíssima Trindade",
-    "state": "Mato Grosso",
-    "country": "Brasil",
-    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
-  },
-
-  "manifest": {
+"catalog": {
     "version": "1.0.0",
     "status": "official",
     "language": "pt-BR",
-    "repositoryPath": "assets/brand/brand-manifest.json",
-    "reference": "assets/brand/README.md"
+    "createdAt": "2026-07-17",
+    "updatedAt": "2026-07-17",
+    "repositoryPath": "assets/brand/brand-assets-catalog.json",
+    "manifestReference": "assets/brand/brand-manifest.json",
+    "normativeReference": "assets/brand/README.md"
   },
 
-  "brand": {
-
-    "logos": {
-      "path": "assets/brand/logos/master",
-      "default": "festanca-logo-master-2026.png",
-      "variants": [
-        "festanca-logo-master-dark.png",
-        "festanca-logo-master-light.png",
-        "festanca-logo-master-gold.png",
-        "festanca-logo-master-white.png",
-        "festanca-logo-master-neon.png",
-        "festanca-logo-master-flat.svg",
-        "festanca-logo-master-monochrome.png"
-      ]
+  "rules": {
+    "fileNames": {
+      "lowercaseRequired": true,
+      "hyphenSeparatorRequired": true,
+      "spacesForbidden": true,
+      "specialCharactersForbidden": true
     },
 
-    "favicon": {
-      "path": "assets/brand/favicon",
-      "files": [
-        "favicon.ico",
-        "favicon-16.png",
-        "apple-touch-icon.png",
-        "android-chrome-512.png"
-      ]
+    "versioning": {
+      "strategy": "semantic-versioning",
+      "format": "MAJOR.MINOR.PATCH",
+      "silentReplacementForbidden": true,
+      "historicalVersionsMustBePreserved": true
     },
 
-    "icons": {
-      "path": "assets/brand/icons",
-      "files": [
-
-        "congo-icon.png",
-        "conguinho-icon.png",
-        "chorado-icon.png",
-        "choradinho-icon.png",
-
-        "reinado-icon.png",
-        "juizado-icon.png",
-
-        "rei-do-congo-icon.png",
-
-        "imperador-imperatriz-icon.png",
-
-        "rei-rainha-mae-deus-icon.png",
-        "juiz-juiza-mae-deus-icon.png",
-
-        "juiz-juiza-3pessoas-icon.png",
-
-        "missa-icon.png",
-        "procissao-icon.png",
-
-        "tambor-icon.png",
-        "bandeira-icon.png",
-
-        "patrimonio-icon.png",
-        "cultura-icon.png",
-        "turismo-icon.png",
-        "historia-icon.png"
-
-      ]
+    "accessibility": {
+      "altTextRequired": true,
+      "highContrastRecommended": true,
+      "textInsideImagesMustRemainLegible": true,
+      "colorMustNotBeTheOnlyInformationCarrier": true
     },
 
-    "symbols": {
-      "path": "assets/brand/symbols",
-      "files": [
-        "estrela-festanca.png",
-        "arco-dourado.png",
-        "ornamentos.png",
-        "molduras.png",
-        "elementos-graficos.png"
-      ]
-    },
-
-    "patterns": {
-      "path": "assets/brand/patterns",
-      "files": [
-        "pattern-gold.png",
-        "pattern-dark.png",
-        "pattern-heritage.png",
-        "texture-gold.png"
-      ]
-    },
-
-    "palette": {
-      "path": "assets/brand/palette",
-      "files": [
-        "color-guide.png",
-        "typography-guide.png",
-        "brand-grid.png"
-      ]
+    "provenance": {
+      "sourceReferenceRecommended": true,
+      "authorizationStatusRequiredForPhotographicSources": true,
+      "creditsRequired": true,
+      "culturalContextRequiredForTraditionalSubjects": true
     }
-
   },
 
-  "principles": [
-
-    "Fidelidade Cultural",
-
-    "Coerência Visual",
-
-    "Preservação Histórica",
-
-    "Acessibilidade",
-
-    "Respeito Religioso",
-
-    "Evolução Controlada"
-
+  "statusVocabulary": [
+    "draft",
+    "review",
+    "approved",
+    "official",
+    "replaced",
+    "archived",
+    "historical"
   ],
+
+  "assets": [
+    {
+      "id": "festanca-logo-master-2026",
+      "category": "logo",
+      "name": "Logotipo Master Oficial FESTANÇA 2026",
+      "file": "assets/brand/logos/master/festanca-logo-master-2026.png",
+      "format": "png",
+      "variant": "master",
+      "purpose": "Marca institucional principal da FESTANÇA 2026.",
+      "recommendedUse": [
+        "landing-page",
+        "documentos-institucionais",
+        "cartazes",
+        "banners",
+        "apresentacoes",
+        "capas",
+        "acervo-historico"
+      ],
+      "backgroundCompatibility": [
+        "dark"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 20,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Logotipo dourado da FESTANÇA 2026 de Vila Bela da Santíssima Trindade.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": null,
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": "Pedra fundamental da identidade visual da FESTANÇA 2026."
+    },
+
+    {
+      "id": "festanca-logo-master-dark",
+      "category": "logo",
+      "name": "Logotipo Master Dark",
+      "file": "assets/brand/logos/master/festanca-logo-master-dark.png",
+      "format": "png",
+      "variant": "dark",
+      "purpose": "Aplicação institucional sobre fundos escuros.",
+      "recommendedUse": [
+        "interfaces-dark",
+        "landing-page",
+        "banners",
+        "videos",
+        "apresentacoes"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "blue-deep",
+        "black"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 20,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão escura do logotipo oficial da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "festanca-logo-master-light",
+      "category": "logo",
+      "name": "Logotipo Master Light",
+      "file": "assets/brand/logos/master/festanca-logo-master-light.png",
+      "format": "png",
+      "variant": "light",
+      "purpose": "Aplicação institucional sobre fundos claros.",
+      "recommendedUse": [
+        "documentos",
+        "papelaria",
+        "fundos-claros",
+        "impressos"
+      ],
+      "backgroundCompatibility": [
+        "white",
+        "ivory",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 20,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão clara do logotipo oficial da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "festanca-logo-master-gold",
+      "category": "logo",
+      "name": "Logotipo Master Gold",
+      "file": "assets/brand/logos/master/festanca-logo-master-gold.png",
+      "format": "png",
+      "variant": "gold",
+      "purpose": "Aplicação solene, comemorativa e cerimonial.",
+      "recommendedUse": [
+        "eventos-oficiais",
+        "homenagens",
+        "capas-premium",
+        "certificados",
+        "paineis"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "gold",
+        "ceremonial"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 20,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão dourada cerimonial do logotipo da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": "Uso recomendado em peças de alta solenidade."
+    },
+
+    {
+      "id": "festanca-logo-master-white",
+      "category": "logo",
+      "name": "Logotipo Master White",
+      "file": "assets/brand/logos/master/festanca-logo-master-white.png",
+      "format": "png",
+      "variant": "white",
+      "purpose": "Aplicação sobre fotografias e fundos escuros.",
+      "recommendedUse": [
+        "fotografias",
+        "videos",
+        "fundos-escuros",
+        "sobreposicoes"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "photographic"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 20,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão branca do logotipo da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "festanca-logo-master-neon",
+      "category": "logo",
+      "name": "Logotipo Master Neon",
+      "file": "assets/brand/logos/master/festanca-logo-master-neon.png",
+      "format": "png",
+      "variant": "neon",
+      "purpose": "Aplicação tecnológica, digital e experimental.",
+      "recommendedUse": [
+        "interfaces-digitais",
+        "holograficos",
+        "videos",
+        "paineis-tecnologicos"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "black",
+        "digital"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão neon dourada e verde do logotipo da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": "Uso prioritariamente digital."
+    },
+
+    {
+      "id": "festanca-logo-master-flat",
+      "category": "logo",
+      "name": "Logotipo Master Flat",
+      "file": "assets/brand/logos/master/festanca-logo-master-flat.svg",
+      "format": "svg",
+      "variant": "flat",
+      "purpose": "Aplicação vetorial, escalável e funcional.",
+      "recommendedUse": [
+        "interfaces",
+        "impressao",
+        "recorte",
+        "sinalizacao",
+        "materiais-escalaveis"
+      ],
+      "backgroundCompatibility": [
+        "light",
+        "dark",
+        "print"
+      ],
+      "minimumDigitalWidthPx": 80,
+      "minimumPrintWidthMm": 15,
+      "dimensions": "vector",
+      "transparentBackground": true,
+      "altText": "Versão vetorial simplificada do logotipo da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": "Versão recomendada para escalabilidade e aplicações técnicas."
+    },
+
+    {
+      "id": "festanca-logo-master-monochrome",
+      "category": "logo",
+      "name": "Logotipo Master Monochrome",
+      "file": "assets/brand/logos/master/festanca-logo-master-monochrome.png",
+      "format": "png",
+      "variant": "monochrome",
+      "purpose": "Aplicação em uma única cor.",
+      "recommendedUse": [
+        "documentos",
+        "carimbos",
+        "impressao-monocromatica",
+        "copias"
+      ],
+      "backgroundCompatibility": [
+        "white",
+        "light",
+        "single-color-print"
+      ],
+      "minimumDigitalWidthPx": 100,
+      "minimumPrintWidthMm": 18,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Versão monocromática do logotipo da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "favicon-main",
+      "category": "favicon",
+      "name": "Favicon Principal",
+      "file": "assets/brand/favicon/favicon.ico",
+      "format": "ico",
+      "variant": "browser",
+      "purpose": "Identificação da FESTANÇA 2026 nas abas dos navegadores.",
+      "recommendedUse": [
+        "browser",
+        "website"
+      ],
+      "backgroundCompatibility": [
+        "browser-interface"
+      ],
+      "minimumDigitalWidthPx": 16,
+      "minimumPrintWidthMm": null,
+      "dimensions": "multi-size",
+      "transparentBackground": true,
+      "altText": "Ícone oficial da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "favicon-16",
+      "category": "favicon",
+      "name": "Favicon 16 pixels",
+      "file": "assets/brand/favicon/favicon-16.png",
+      "format": "png",
+      "variant": "browser-small",
+      "purpose": "Identificação em abas e interfaces compactas.",
+      "recommendedUse": [
+        "browser",
+        "small-interface"
+      ],
+      "backgroundCompatibility": [
+        "browser-interface"
+      ],
+      "minimumDigitalWidthPx": 16,
+      "minimumPrintWidthMm": null,
+      "dimensions": "16x16",
+      "transparentBackground": true,
+      "altText": "Favicon compacto da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "favicon-main",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "apple-touch-icon",
+      "category": "favicon",
+      "name": "Apple Touch Icon",
+      "file": "assets/brand/favicon/apple-touch-icon.png",
+      "format": "png",
+      "variant": "apple",
+      "purpose": "Ícone para atalhos em dispositivos Apple.",
+      "recommendedUse": [
+        "ios",
+        "ipados",
+        "home-screen"
+      ],
+      "backgroundCompatibility": [
+        "mobile-interface"
+      ],
+      "minimumDigitalWidthPx": 180,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Ícone da FESTANÇA 2026 para dispositivos Apple.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "android-chrome-512",
+      "category": "favicon",
+      "name": "Android Chrome 512",
+      "file": "assets/brand/favicon/android-chrome-512.png",
+      "format": "png",
+      "variant": "android",
+      "purpose": "Ícone de alta resolução para Android e aplicações web progressivas.",
+      "recommendedUse": [
+        "android",
+        "pwa",
+        "home-screen"
+      ],
+      "backgroundCompatibility": [
+        "mobile-interface"
+      ],
+      "minimumDigitalWidthPx": 512,
+      "minimumPrintWidthMm": null,
+      "dimensions": "512x512",
+      "transparentBackground": false,
+      "altText": "Ícone da FESTANÇA 2026 para Android e PWA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": false,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "congo-icon",
+      "category": "cultural-icon",
+      "name": "Ícone do Congo",
+      "file": "assets/brand/icons/congo-icon.png",
+      "format": "png",
+      "variant": "traditional-group",
+      "purpose": "Representar o Grupo Tradicional do Congo.",
+      "culturalContext": "O capacete com penacho dos soldados constitui o símbolo visual central do Congo.",
+      "recommendedUse": [
+        "filtros",
+        "programacao",
+        "cards",
+        "mapas-culturais",
+        "materiais-educativos"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone cultural do Congo com destaque para o capacete e o penacho dos soldados.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-de-soldado-do-congo",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-caricaturar",
+        "nao-descontextualizar",
+        "preservar-o-simbolo-do-penacho"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "conguinho-icon",
+      "category": "cultural-icon",
+      "name": "Ícone do Conguinho",
+      "file": "assets/brand/icons/conguinho-icon.png",
+      "format": "png",
+      "variant": "traditional-group-child",
+      "purpose": "Representar o Conguinho e a continuidade geracional da tradição.",
+      "culturalContext": "Destaca o capacete, as flores e a participação das crianças na transmissão cultural.",
+      "recommendedUse": [
+        "filtros",
+        "programacao",
+        "cards",
+        "educacao-patrimonial"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Conguinho com soldado infantil, flores e elementos tradicionais.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-de-soldado-do-conguinho",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "proteger-a-imagem-da-crianca",
+        "nao-caricaturar",
+        "preservar-o-contexto-cultural"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "chorado-icon",
+      "category": "cultural-icon",
+      "name": "Ícone do Chorado",
+      "file": "assets/brand/icons/chorado-icon.png",
+      "format": "png",
+      "variant": "traditional-group",
+      "purpose": "Representar o Chorado.",
+      "culturalContext": "A garrafa equilibrada sobre a cabeça da dançarina constitui o símbolo visual central do Chorado.",
+      "recommendedUse": [
+        "filtros",
+        "programacao",
+        "cards",
+        "mapas-culturais",
+        "memoria-historica"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Chorado com dançarina equilibrando uma garrafa sobre a cabeça.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-e-homenagem-a-professora-aninha-bombom",
+      "authorizationStatus": "referencia-cultural-e-memorial",
+      "credits": [
+        "Professora Aninha Bombom - homenagem póstuma",
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "preservar-a-dignidade-da-homenagem",
+        "destacar-a-garrafa",
+        "nao-caricaturar"
+      ],
+      "notes": "Ativo associado à memória da Professora Aninha Bombom."
+    },
+
+    {
+      "id": "choradinho-icon",
+      "category": "cultural-icon",
+      "name": "Ícone do Choradinho",
+      "file": "assets/brand/icons/choradinho-icon.png",
+      "format": "png",
+      "variant": "traditional-group-child",
+      "purpose": "Representar o Choradinho e a continuidade infantil da tradição.",
+      "culturalContext": "Adaptação infantil da linguagem visual do Chorado, mantendo a garrafa como símbolo central.",
+      "recommendedUse": [
+        "filtros",
+        "programacao",
+        "cards",
+        "educacao-patrimonial"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Choradinho com representação infantil da tradição da garrafa equilibrada.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "tradicao-do-choradinho",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "proteger-a-imagem-infantil",
+        "nao-caricaturar",
+        "preservar-o-contexto-cultural"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "reinado-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Reinado",
+      "file": "assets/brand/icons/reinado-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Rei e a Rainha do Glorioso São Benedito.",
+      "culturalContext": "Autoridades tradicionais e religiosas vinculadas às celebrações do Glorioso São Benedito.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-historica"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Rei e da Rainha do Glorioso São Benedito.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-do-rei-e-rainha-do-glorioso-sao-benedito",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "nao-caricaturar",
+        "preservar-o-contexto-religioso"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "juizado-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Juizado",
+      "file": "assets/brand/icons/juizado-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Juiz e a Juíza do Glorioso São Benedito.",
+      "culturalContext": "Autoridades tradicionais vinculadas à organização e realização dos ritos do Glorioso São Benedito.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-historica"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Juiz e da Juíza do Glorioso São Benedito.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-do-juiz-e-juiza-do-glorioso-sao-benedito",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "nao-caricaturar",
+        "preservar-o-contexto-religioso"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "rei-do-congo-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Rei do Congo",
+      "file": "assets/brand/icons/rei-do-congo-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar a autoridade máxima do Grupo do Congo.",
+      "culturalContext": "O Rei do Congo ocupa posição de máxima autoridade dentro da organização tradicional do grupo.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "historia-do-congo"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Rei do Congo com coroa e vestimenta cerimonial.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-do-rei-do-congo",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Grupo Tradicional do Congo",
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "nao-caricaturar",
+        "preservar-a-autoridade-tradicional"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "imperador-imperatriz-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Imperador e da Imperatriz",
+      "file": "assets/brand/icons/imperador-imperatriz-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Imperador e a Imperatriz do Senhor Divino Espírito Santo.",
+      "culturalContext": "Autoridades tradicionais ligadas às celebrações do Senhor Divino Espírito Santo.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-religiosa"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Imperador e da Imperatriz do Senhor Divino Espírito Santo.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografias-do-imperador-e-imperatriz",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "preservar-o-contexto-religioso",
+        "nao-caricaturar"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "rei-rainha-mae-deus-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Rei e da Rainha da Gloriosa Mãe de Deus",
+      "file": "assets/brand/icons/rei-rainha-mae-deus-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Rei e a Rainha da Gloriosa Mãe de Deus.",
+      "culturalContext": "Autoridades tradicionais vinculadas à celebração da Gloriosa Mãe de Deus.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-religiosa"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Rei e da Rainha da Gloriosa Mãe de Deus.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "fotografia-do-rei-da-gloriosa-mae-de-deus",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "preservar-o-contexto-religioso",
+        "nao-caricaturar"
+      ],
+      "notes": "A imagem de referência inicial apresentava apenas o Rei."
+    },
+
+    {
+      "id": "juiz-juiza-mae-deus-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Juiz e da Juíza da Gloriosa Mãe de Deus",
+      "file": "assets/brand/icons/juiz-juiza-mae-deus-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Juiz e a Juíza da Gloriosa Mãe de Deus.",
+      "culturalContext": "Autoridades tradicionais vinculadas à celebração da Gloriosa Mãe de Deus.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-religiosa"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Juiz e da Juíza da Gloriosa Mãe de Deus.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "referencia-da-gloriosa-mae-de-deus",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "preservar-o-contexto-religioso",
+        "nao-caricaturar"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "juiz-juiza-3pessoas-icon",
+      "category": "authority-icon",
+      "name": "Ícone do Juiz e da Juíza de Três Pessoas",
+      "file": "assets/brand/icons/juiz-juiza-3pessoas-icon.png",
+      "format": "png",
+      "variant": "traditional-authority",
+      "purpose": "Representar o Juiz e a Juíza de Três Pessoas da Santíssima Trindade.",
+      "culturalContext": "Autoridades tradicionais vinculadas às celebrações de Três Pessoas da Santíssima Trindade.",
+      "recommendedUse": [
+        "programacao",
+        "autoridades",
+        "cards",
+        "memoria-religiosa"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 48,
+      "minimumPrintWidthMm": 15,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone do Juiz e da Juíza de Três Pessoas da Santíssima Trindade.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "tradicao-de-tres-pessoas-da-santissima-trindade",
+      "authorizationStatus": "referencia-cultural",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "preservar-o-contexto-religioso",
+        "nao-caricaturar"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "missa-icon",
+      "category": "activity-icon",
+      "name": "Ícone de Missa",
+      "file": "assets/brand/icons/missa-icon.png",
+      "format": "png",
+      "variant": "religious-activity",
+      "purpose": "Representar missas e celebrações litúrgicas.",
+      "culturalContext": "As missas constituem parte central das celebrações religiosas da FESTANÇA.",
+      "recommendedUse": [
+        "programacao",
+        "filtros",
+        "cards",
+        "roteiros-religiosos"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando uma missa ou celebração religiosa.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "celebracoes-religiosas-da-festanca",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "uso-respeitoso",
+        "nao-banalizar-simbolos-religiosos"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "procissao-icon",
+      "category": "activity-icon",
+      "name": "Ícone de Procissão",
+      "file": "assets/brand/icons/procissao-icon.png",
+      "format": "png",
+      "variant": "religious-activity",
+      "purpose": "Representar procissões, cortejos religiosos e deslocamentos cerimoniais.",
+      "culturalContext": "Os trajetos podem ser dinâmicos, participativos e definidos conforme o momento cultural.",
+      "recommendedUse": [
+        "programacao",
+        "filtros",
+        "cards",
+        "roteiros-culturais"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando uma procissão ou cortejo religioso.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "route-and-venue-policy",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-sugerir-rota-rigida-sem-confirmacao",
+        "respeitar-privacidade-e-dinamica-cultural"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "tambor-icon",
+      "category": "activity-icon",
+      "name": "Ícone de Tambor",
+      "file": "assets/brand/icons/tambor-icon.png",
+      "format": "png",
+      "variant": "musical-element",
+      "purpose": "Representar o tambor e a dimensão musical das manifestações tradicionais.",
+      "culturalContext": "O tambor integra o ritmo, a comunicação e a presença coletiva dos grupos tradicionais.",
+      "recommendedUse": [
+        "programacao",
+        "filtros",
+        "musica",
+        "grupos-tradicionais"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone de tambor tradicional utilizado nas manifestações da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "instrumentos-tradicionais",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "preservar-o-contexto-cultural"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "bandeira-icon",
+      "category": "activity-icon",
+      "name": "Ícone de Bandeira",
+      "file": "assets/brand/icons/bandeira-icon.png",
+      "format": "png",
+      "variant": "ceremonial-symbol",
+      "purpose": "Representar bandeiras cerimoniais, religiosas e tradicionais.",
+      "culturalContext": "As bandeiras integram cortejos, ritos, procissões e manifestações de fé.",
+      "recommendedUse": [
+        "programacao",
+        "filtros",
+        "procissoes",
+        "cortejos",
+        "materiais-religiosos"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone de bandeira cerimonial da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "bandeiras-tradicionais-da-festanca",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-alterar-simbolos-sagrados-sem-validacao"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "patrimonio-icon",
+      "category": "thematic-icon",
+      "name": "Ícone de Patrimônio",
+      "file": "assets/brand/icons/patrimonio-icon.png",
+      "format": "png",
+      "variant": "institutional-theme",
+      "purpose": "Representar patrimônio material, imaterial, religioso e histórico.",
+      "culturalContext": "Abrange lugares, objetos, memórias, práticas, conhecimentos e expressões da comunidade.",
+      "recommendedUse": [
+        "patrimonio",
+        "curadoria",
+        "memoria",
+        "roteiros",
+        "materiais-educativos"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando o patrimônio cultural e histórico da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "sistema-de-curadoria-historica",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    },
+
+    {
+      "id": "cultura-icon",
+      "category": "thematic-icon",
+      "name": "Ícone de Cultura",
+      "file": "assets/brand/icons/cultura-icon.png",
+      "format": "png",
+      "variant": "institutional-theme",
+      "purpose": "Representar cultura, identidade, tradição e expressão comunitária.",
+      "culturalContext": "Síntese visual das manifestações culturais da FESTANÇA.",
+      "recommendedUse": [
+        "cultura",
+        "filtros",
+        "cards",
+        "educacao",
+        "divulgacao"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando a cultura e as tradições da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "identidade-cultural-da-festanca",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    },
+
+    {
+      "id": "turismo-icon",
+      "category": "thematic-icon",
+      "name": "Ícone de Turismo",
+      "file": "assets/brand/icons/turismo-icon.png",
+      "format": "png",
+      "variant": "institutional-theme",
+      "purpose": "Representar turismo cultural, religioso, histórico e de experiência.",
+      "culturalContext": "Apoia a orientação ao visitante e a apresentação responsável do território.",
+      "recommendedUse": [
+        "turismo",
+        "roteiros",
+        "visitantes",
+        "mapas",
+        "orientacoes"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando o turismo cultural e religioso da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "orientacao-ao-visitante",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "respeitar-residencias-e-espacos-protegidos",
+        "nao-publicar-rotas-restritas"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "historia-icon",
+      "category": "thematic-icon",
+      "name": "Ícone de História",
+      "file": "assets/brand/icons/historia-icon.png",
+      "format": "png",
+      "variant": "institutional-theme",
+      "purpose": "Representar história, memória, cronologia e documentação.",
+      "culturalContext": "Integra o Diário de Campo Digital e o sistema de Curadoria Histórica.",
+      "recommendedUse": [
+        "historia",
+        "memoria",
+        "curadoria",
+        "cronicas",
+        "acervo"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 40,
+      "minimumPrintWidthMm": 12,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Ícone representando a história e a memória da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "historical-curation-workflow",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    },
+
+    {
+      "id": "estrela-festanca",
+      "category": "symbol",
+      "name": "Estrela da FESTANÇA",
+      "file": "assets/brand/symbols/estrela-festanca.png",
+      "format": "png",
+      "variant": "primary-symbol",
+      "purpose": "Representar luz, fé, orientação, celebração e continuidade.",
+      "recommendedUse": [
+        "titulos",
+        "separadores",
+        "selos",
+        "cabecalhos",
+        "destaques"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 24,
+      "minimumPrintWidthMm": 8,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Estrela dourada oficial da identidade visual da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-deformar",
+        "nao-aplicar-em-excesso"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "arco-dourado",
+      "category": "symbol",
+      "name": "Arco Dourado",
+      "file": "assets/brand/symbols/arco-dourado.png",
+      "format": "png",
+      "variant": "structural-symbol",
+      "purpose": "Criar conexão, proteção, horizonte e composição visual.",
+      "recommendedUse": [
+        "cabecalhos",
+        "fundos",
+        "capas",
+        "molduras",
+        "composicoes"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 30,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Arco dourado utilizado na identidade da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "festanca-logo-master-2026",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "preservar-proporcao",
+        "nao-competir-com-o-logotipo"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "ornamentos",
+      "category": "symbol",
+      "name": "Ornamentos Oficiais",
+      "file": "assets/brand/symbols/ornamentos.png",
+      "format": "png",
+      "variant": "ornamental-set",
+      "purpose": "Apoiar títulos, separadores, molduras e composições.",
+      "recommendedUse": [
+        "documentos",
+        "cards",
+        "capas",
+        "banners",
+        "separadores"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 24,
+      "minimumPrintWidthMm": 8,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Conjunto de ornamentos dourados da identidade da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "evitar-poluicao-visual",
+        "usar-com-moderacao"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "molduras",
+      "category": "symbol",
+      "name": "Molduras Oficiais",
+      "file": "assets/brand/symbols/molduras.png",
+      "format": "png",
+      "variant": "frame-set",
+      "purpose": "Enquadrar conteúdos, imagens, títulos e aplicações institucionais.",
+      "recommendedUse": [
+        "cards",
+        "certificados",
+        "convites",
+        "capas",
+        "posts"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 120,
+      "minimumPrintWidthMm": 30,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Conjunto de molduras oficiais da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-cortar-elementos-essenciais",
+        "preservar-legibilidade"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "elementos-graficos",
+      "category": "symbol",
+      "name": "Elementos Gráficos Oficiais",
+      "file": "assets/brand/symbols/elementos-graficos.png",
+      "format": "png",
+      "variant": "graphic-elements-set",
+      "purpose": "Fornecer elementos auxiliares para composições institucionais.",
+      "recommendedUse": [
+        "interfaces",
+        "cards",
+        "banners",
+        "documentos",
+        "posts"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": 24,
+      "minimumPrintWidthMm": 8,
+      "dimensions": null,
+      "transparentBackground": true,
+      "altText": "Conjunto de elementos gráficos da identidade da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "usar-com-coerencia",
+        "evitar-excesso"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "pattern-gold",
+      "category": "pattern",
+      "name": "Padrão Dourado",
+      "file": "assets/brand/patterns/pattern-gold.png",
+      "format": "png",
+      "variant": "gold",
+      "purpose": "Criar fundos solenes e comemorativos.",
+      "recommendedUse": [
+        "capas",
+        "banners",
+        "certificados",
+        "materiais-cerimoniais"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "gold"
+      ],
+      "minimumDigitalWidthPx": null,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "recommendedOpacityPercent": 20,
+      "altText": "Padrão visual dourado oficial da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "reduzir-opacidade-atras-de-textos",
+        "preservar-contraste"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "pattern-dark",
+      "category": "pattern",
+      "name": "Padrão Escuro",
+      "file": "assets/brand/patterns/pattern-dark.png",
+      "format": "png",
+      "variant": "dark",
+      "purpose": "Criar fundos institucionais para interfaces e materiais digitais.",
+      "recommendedUse": [
+        "landing-page",
+        "cards",
+        "dashboards",
+        "apresentacoes"
+      ],
+      "backgroundCompatibility": [
+        "dark"
+      ],
+      "minimumDigitalWidthPx": null,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "recommendedOpacityPercent": 25,
+      "altText": "Padrão escuro oficial da identidade da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "preservar-legibilidade",
+        "garantir-alto-contraste"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "pattern-heritage",
+      "category": "pattern",
+      "name": "Padrão Patrimonial",
+      "file": "assets/brand/patterns/pattern-heritage.png",
+      "format": "png",
+      "variant": "heritage",
+      "purpose": "Criar fundos relacionados à história, memória e patrimônio.",
+      "recommendedUse": [
+        "acervo",
+        "curadoria",
+        "cronicas",
+        "materiais-historicos",
+        "exposicoes"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "light"
+      ],
+      "minimumDigitalWidthPx": null,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "recommendedOpacityPercent": 18,
+      "altText": "Padrão patrimonial inspirado na memória cultural da FESTANÇA.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "patrimonio-cultural-da-festanca",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Comunidade de Vila Bela da Santíssima Trindade",
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-descontextualizar-simbolos",
+        "preservar-legibilidade"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "texture-gold",
+      "category": "pattern",
+      "name": "Textura Dourada",
+      "file": "assets/brand/patterns/texture-gold.png",
+      "format": "png",
+      "variant": "gold-texture",
+      "purpose": "Adicionar acabamento dourado a selos, títulos e peças especiais.",
+      "recommendedUse": [
+        "selos",
+        "titulos",
+        "certificados",
+        "destaques",
+        "materiais-premium"
+      ],
+      "backgroundCompatibility": [
+        "dark",
+        "gold"
+      ],
+      "minimumDigitalWidthPx": null,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "recommendedOpacityPercent": 35,
+      "altText": "Textura dourada oficial da identidade da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [
+        "nao-aplicar-em-textos-pequenos",
+        "evitar-excesso-de-brilho"
+      ],
+      "notes": null
+    },
+
+    {
+      "id": "color-guide",
+      "category": "guide",
+      "name": "Guia Oficial de Cores",
+      "file": "assets/brand/palette/color-guide.png",
+      "format": "png",
+      "variant": "color-guide",
+      "purpose": "Definir a paleta visual oficial da FESTANÇA 2026.",
+      "recommendedUse": [
+        "design",
+        "desenvolvimento",
+        "impressao",
+        "revisao-visual"
+      ],
+      "backgroundCompatibility": [
+        "reference-document"
+      ],
+      "minimumDigitalWidthPx": 720,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Guia visual com a paleta oficial de cores da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    },
+
+    {
+      "id": "typography-guide",
+      "category": "guide",
+      "name": "Guia Oficial de Tipografia",
+      "file": "assets/brand/palette/typography-guide.png",
+      "format": "png",
+      "variant": "typography-guide",
+      "purpose": "Definir famílias, hierarquias e regras tipográficas.",
+      "recommendedUse": [
+        "design",
+        "desenvolvimento",
+        "documentos",
+        "revisao-editorial"
+      ],
+      "backgroundCompatibility": [
+        "reference-document"
+      ],
+      "minimumDigitalWidthPx": 720,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Guia visual de tipografia da FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    },
+
+    {
+      "id": "brand-grid",
+      "category": "guide",
+      "name": "Brand Grid Oficial",
+      "file": "assets/brand/palette/brand-grid.png",
+      "format": "png",
+      "variant": "grid-guide",
+      "purpose": "Definir construção, alinhamento, proporção, área de proteção e usos da marca.",
+      "recommendedUse": [
+        "design",
+        "desenvolvimento",
+        "documentos",
+        "revisao-visual",
+        "aplicacao-da-marca"
+      ],
+      "backgroundCompatibility": [
+        "reference-document"
+      ],
+      "minimumDigitalWidthPx": 720,
+      "minimumPrintWidthMm": null,
+      "dimensions": null,
+      "transparentBackground": false,
+      "altText": "Guia de construção, alinhamento e aplicação visual da marca FESTANÇA 2026.",
+      "status": "official",
+      "version": "1.0.0",
+      "preferred": true,
+      "sourceReference": "brand-design-system",
+      "authorizationStatus": "projeto-oficial",
+      "credits": [
+        "Ecossistema Décio Coelho Global",
+        "OpenAI",
+        "ChatGPT"
+      ],
+      "usageRestrictions": [],
+      "notes": null
+    }
+  ],
+
+  "statistics": {
+    "totalAssets": 43,
+    "logos": 8,
+    "favicons": 4,
+    "culturalIcons": 4,
+    "authorityIcons": 7,
+    "activityIcons": 4,
+    "thematicIcons": 4,
+    "symbols": 5,
+    "patterns": 4,
+    "guides": 3
+  },
 
   "governance": {
-
-    "curator": "Antonio Décio Ferreira Coelho",
-
-    "ecosystem": "Ecossistema Décio Coelho Global",
-
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
     "technologyPartners": [
-
       "OpenAI",
-
       "ChatGPT"
-
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "cultural",
+      "accessibility",
+      "provenance"
     ]
-
   },
 
-  "versioning": {
-
-    "strategy": "semantic",
-
-    "format": "MAJOR.MINOR.PATCH"
-
-  },
-
-  "status": [
-
-    "draft",
-
-    "review",
-
-    "approved",
-
-    "official",
-
-    "archived"
-
-  ],
-
-  "nextFiles": [
-
-    "assets/brand/brand-assets-catalog.json",
-
+  "nextRecommendedFiles": [
     "assets/brand/CHANGELOG.md",
-
     "assets/brand/USAGE-GUIDE.md",
-
     "assets/brand/LICENSE-AND-CREDITS.md"
-
   ]
 }
