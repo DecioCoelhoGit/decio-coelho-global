@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifestType": "festanca-brand-design-system",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "officialName": "FESTANÇA 2026 - Vila Bela da Santíssima Trindade",
+    "city": "Vila Bela da Santíssima Trindade",
+    "state": "Mato Grosso",
+    "country": "Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "manifest": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "repositoryPath": "assets/brand/brand-manifest.json",
+    "reference": "assets/brand/README.md"
+  },
+
+  "brand": {
+
+    "logos": {
+      "path": "assets/brand/logos/master",
+      "default": "festanca-logo-master-2026.png",
+      "variants": [
+        "festanca-logo-master-dark.png",
+        "festanca-logo-master-light.png",
+        "festanca-logo-master-gold.png",
+        "festanca-logo-master-white.png",
+        "festanca-logo-master-neon.png",
+        "festanca-logo-master-flat.svg",
+        "festanca-logo-master-monochrome.png"
+      ]
+    },
+
+    "favicon": {
+      "path": "assets/brand/favicon",
+      "files": [
+        "favicon.ico",
+        "favicon-16.png",
+        "apple-touch-icon.png",
+        "android-chrome-512.png"
+      ]
+    },
+
+    "icons": {
+      "path": "assets/brand/icons",
+      "files": [
+
+        "congo-icon.png",
+        "conguinho-icon.png",
+        "chorado-icon.png",
+        "choradinho-icon.png",
+
+        "reinado-icon.png",
+        "juizado-icon.png",
+
+        "rei-do-congo-icon.png",
+
+        "imperador-imperatriz-icon.png",
+
+        "rei-rainha-mae-deus-icon.png",
+        "juiz-juiza-mae-deus-icon.png",
+
+        "juiz-juiza-3pessoas-icon.png",
+
+        "missa-icon.png",
+        "procissao-icon.png",
+
+        "tambor-icon.png",
+        "bandeira-icon.png",
+
+        "patrimonio-icon.png",
+        "cultura-icon.png",
+        "turismo-icon.png",
+        "historia-icon.png"
+
+      ]
+    },
+
+    "symbols": {
+      "path": "assets/brand/symbols",
+      "files": [
+        "estrela-festanca.png",
+        "arco-dourado.png",
+        "ornamentos.png",
+        "molduras.png",
+        "elementos-graficos.png"
+      ]
+    },
+
+    "patterns": {
+      "path": "assets/brand/patterns",
+      "files": [
+        "pattern-gold.png",
+        "pattern-dark.png",
+        "pattern-heritage.png",
+        "texture-gold.png"
+      ]
+    },
+
+    "palette": {
+      "path": "assets/brand/palette",
+      "files": [
+        "color-guide.png",
+        "typography-guide.png",
+        "brand-grid.png"
+      ]
+    }
+
+  },
+
+  "principles": [
+
+    "Fidelidade Cultural",
+
+    "Coerência Visual",
+
+    "Preservação Histórica",
+
+    "Acessibilidade",
+
+    "Respeito Religioso",
+
+    "Evolução Controlada"
+
+  ],
+
+  "governance": {
+
+    "curator": "Antonio Décio Ferreira Coelho",
+
+    "ecosystem": "Ecossistema Décio Coelho Global",
+
+    "technologyPartners": [
+
+      "OpenAI",
+
+      "ChatGPT"
+
+    ]
+
+  },
+
+  "versioning": {
+
+    "strategy": "semantic",
+
+    "format": "MAJOR.MINOR.PATCH"
+
+  },
+
+  "status": [
+
+    "draft",
+
+    "review",
+
+    "approved",
+
+    "official",
+
+    "archived"
+
+  ],
+
+  "nextFiles": [
+
+    "assets/brand/brand-assets-catalog.json",
+
+    "assets/brand/CHANGELOG.md",
+
+    "assets/brand/USAGE-GUIDE.md",
+
+    "assets/brand/LICENSE-AND-CREDITS.md"
+
+  ]
+}
