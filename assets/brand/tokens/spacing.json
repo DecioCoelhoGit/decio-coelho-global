@@ -1,0 +1,1141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-spacing-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/spacing.json",
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "brandGridReference": "assets/brand/palette/brand-grid.png",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "spacing.{context}.{role}.{size}",
+    "cssVariableFormat": "--festanca-space-{size}",
+    "examples": [
+      "spacing.scale.md",
+      "spacing.component.card.padding",
+      "spacing.layout.section.desktop",
+      "spacing.brand.logo.safeArea"
+    ]
+  },
+
+  "foundation": {
+    "baseUnit": {
+      "value": "0.25rem",
+      "pixels": 4,
+      "type": "dimension",
+      "description": "Unidade-base do sistema espacial."
+    },
+
+    "principle": {
+      "value": "multiples-of-four",
+      "type": "string",
+      "description": "Todo espaçamento deve preferencialmente utilizar múltiplos de 4 px."
+    },
+
+    "primaryRhythm": {
+      "value": 8,
+      "unit": "px",
+      "type": "dimension",
+      "description": "Ritmo principal utilizado na organização de interfaces."
+    }
+  },
+
+  "scale": {
+    "none": {
+      "value": "0",
+      "pixels": 0,
+      "type": "dimension",
+      "description": "Ausência de espaçamento."
+    },
+
+    "3xs": {
+      "value": "0.125rem",
+      "pixels": 2,
+      "type": "dimension",
+      "description": "Microajuste excepcional."
+    },
+
+    "2xs": {
+      "value": "0.25rem",
+      "pixels": 4,
+      "type": "dimension",
+      "description": "Espaçamento mínimo do sistema."
+    },
+
+    "xs": {
+      "value": "0.5rem",
+      "pixels": 8,
+      "type": "dimension",
+      "description": "Espaçamento compacto."
+    },
+
+    "sm": {
+      "value": "0.75rem",
+      "pixels": 12,
+      "type": "dimension",
+      "description": "Espaçamento pequeno."
+    },
+
+    "md": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension",
+      "description": "Espaçamento padrão."
+    },
+
+    "lg": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "dimension",
+      "description": "Espaçamento confortável."
+    },
+
+    "xl": {
+      "value": "2rem",
+      "pixels": 32,
+      "type": "dimension",
+      "description": "Separação ampla entre elementos."
+    },
+
+    "2xl": {
+      "value": "2.5rem",
+      "pixels": 40,
+      "type": "dimension",
+      "description": "Espaçamento de blocos."
+    },
+
+    "3xl": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "dimension",
+      "description": "Espaçamento entre componentes amplos."
+    },
+
+    "4xl": {
+      "value": "4rem",
+      "pixels": 64,
+      "type": "dimension",
+      "description": "Espaçamento entre seções."
+    },
+
+    "5xl": {
+      "value": "5rem",
+      "pixels": 80,
+      "type": "dimension",
+      "description": "Espaçamento institucional amplo."
+    },
+
+    "6xl": {
+      "value": "6rem",
+      "pixels": 96,
+      "type": "dimension",
+      "description": "Espaçamento monumental."
+    },
+
+    "7xl": {
+      "value": "8rem",
+      "pixels": 128,
+      "type": "dimension",
+      "description": "Espaçamento cinematográfico."
+    },
+
+    "8xl": {
+      "value": "10rem",
+      "pixels": 160,
+      "type": "dimension",
+      "description": "Espaçamento de grandes painéis e hero sections."
+    }
+  },
+
+  "layout": {
+    "page": {
+      "mobile": {
+        "horizontalPadding": {
+          "value": "1rem",
+          "pixels": 16,
+          "type": "dimension",
+          "description": "Margem lateral mínima em celulares."
+        },
+
+        "verticalPadding": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension",
+          "description": "Margem vertical básica em celulares."
+        }
+      },
+
+      "tablet": {
+        "horizontalPadding": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension",
+          "description": "Margem lateral em tablets."
+        },
+
+        "verticalPadding": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension",
+          "description": "Margem vertical em tablets."
+        }
+      },
+
+      "desktop": {
+        "horizontalPadding": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension",
+          "description": "Margem lateral em desktop."
+        },
+
+        "verticalPadding": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension",
+          "description": "Margem vertical em desktop."
+        }
+      },
+
+      "wide": {
+        "horizontalPadding": {
+          "value": "4rem",
+          "pixels": 64,
+          "type": "dimension",
+          "description": "Margem lateral em telas largas."
+        }
+      }
+    },
+
+    "container": {
+      "content": {
+        "value": "72rem",
+        "pixels": 1152,
+        "type": "dimension",
+        "description": "Largura máxima padrão para conteúdo."
+      },
+
+      "reading": {
+        "value": "48rem",
+        "pixels": 768,
+        "type": "dimension",
+        "description": "Largura máxima para leitura de textos."
+      },
+
+      "wide": {
+        "value": "90rem",
+        "pixels": 1440,
+        "type": "dimension",
+        "description": "Largura máxima para dashboards e grids amplos."
+      },
+
+      "full": {
+        "value": "100%",
+        "type": "dimension",
+        "description": "Contêiner de largura integral."
+      }
+    },
+
+    "section": {
+      "mobile": {
+        "paddingBlock": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        }
+      },
+
+      "tablet": {
+        "paddingBlock": {
+          "value": "4rem",
+          "pixels": 64,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "2.5rem",
+          "pixels": 40,
+          "type": "dimension"
+        }
+      },
+
+      "desktop": {
+        "paddingBlock": {
+          "value": "6rem",
+          "pixels": 96,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension"
+        }
+      },
+
+      "monumental": {
+        "paddingBlock": {
+          "value": "8rem",
+          "pixels": 128,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "4rem",
+          "pixels": 64,
+          "type": "dimension"
+        }
+      }
+    },
+
+    "hero": {
+      "mobile": {
+        "paddingTop": {
+          "value": "5rem",
+          "pixels": 80,
+          "type": "dimension"
+        },
+
+        "paddingBottom": {
+          "value": "4rem",
+          "pixels": 64,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension"
+        }
+      },
+
+      "desktop": {
+        "paddingTop": {
+          "value": "8rem",
+          "pixels": 128,
+          "type": "dimension"
+        },
+
+        "paddingBottom": {
+          "value": "7rem",
+          "pixels": 112,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        }
+      }
+    }
+  },
+
+  "grid": {
+    "columns": {
+      "mobile": {
+        "value": 4,
+        "type": "number",
+        "description": "Quantidade de colunas em celulares."
+      },
+
+      "tablet": {
+        "value": 8,
+        "type": "number",
+        "description": "Quantidade de colunas em tablets."
+      },
+
+      "desktop": {
+        "value": 12,
+        "type": "number",
+        "description": "Quantidade de colunas em desktop."
+      }
+    },
+
+    "gutter": {
+      "mobile": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "tablet": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      },
+
+      "desktop": {
+        "value": "2rem",
+        "pixels": 32,
+        "type": "dimension"
+      }
+    },
+
+    "rowGap": {
+      "compact": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "default": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      },
+
+      "comfortable": {
+        "value": "2rem",
+        "pixels": 32,
+        "type": "dimension"
+      },
+
+      "wide": {
+        "value": "3rem",
+        "pixels": 48,
+        "type": "dimension"
+      }
+    }
+  },
+
+  "component": {
+    "button": {
+      "small": {
+        "paddingInline": {
+          "value": "0.875rem",
+          "pixels": 14,
+          "type": "dimension"
+        },
+
+        "paddingBlock": {
+          "value": "0.625rem",
+          "pixels": 10,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "0.5rem",
+          "pixels": 8,
+          "type": "dimension"
+        },
+
+        "minimumHeight": {
+          "value": "2.75rem",
+          "pixels": 44,
+          "type": "dimension"
+        }
+      },
+
+      "medium": {
+        "paddingInline": {
+          "value": "1.25rem",
+          "pixels": 20,
+          "type": "dimension"
+        },
+
+        "paddingBlock": {
+          "value": "0.75rem",
+          "pixels": 12,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "0.625rem",
+          "pixels": 10,
+          "type": "dimension"
+        },
+
+        "minimumHeight": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension"
+        }
+      },
+
+      "large": {
+        "paddingInline": {
+          "value": "1.75rem",
+          "pixels": 28,
+          "type": "dimension"
+        },
+
+        "paddingBlock": {
+          "value": "1rem",
+          "pixels": 16,
+          "type": "dimension"
+        },
+
+        "gap": {
+          "value": "0.75rem",
+          "pixels": 12,
+          "type": "dimension"
+        },
+
+        "minimumHeight": {
+          "value": "3.5rem",
+          "pixels": 56,
+          "type": "dimension"
+        }
+      }
+    },
+
+    "iconButton": {
+      "small": {
+        "size": {
+          "value": "2.75rem",
+          "pixels": 44,
+          "type": "dimension"
+        },
+
+        "padding": {
+          "value": "0.625rem",
+          "pixels": 10,
+          "type": "dimension"
+        }
+      },
+
+      "medium": {
+        "size": {
+          "value": "3rem",
+          "pixels": 48,
+          "type": "dimension"
+        },
+
+        "padding": {
+          "value": "0.75rem",
+          "pixels": 12,
+          "type": "dimension"
+        }
+      },
+
+      "large": {
+        "size": {
+          "value": "3.5rem",
+          "pixels": 56,
+          "type": "dimension"
+        },
+
+        "padding": {
+          "value": "0.875rem",
+          "pixels": 14,
+          "type": "dimension"
+        }
+      }
+    },
+
+    "card": {
+      "compact": {
+        "padding": {
+          "value": "1rem",
+          "pixels": 16,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "0.75rem",
+          "pixels": 12,
+          "type": "dimension"
+        }
+      },
+
+      "default": {
+        "padding": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "1rem",
+          "pixels": 16,
+          "type": "dimension"
+        }
+      },
+
+      "comfortable": {
+        "padding": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension"
+        }
+      },
+
+      "feature": {
+        "padding": {
+          "value": "2.5rem",
+          "pixels": 40,
+          "type": "dimension"
+        },
+
+        "contentGap": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        }
+      }
+    },
+
+    "input": {
+      "paddingInline": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "paddingBlock": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      },
+
+      "labelGap": {
+        "value": "0.5rem",
+        "pixels": 8,
+        "type": "dimension"
+      },
+
+      "helpTextGap": {
+        "value": "0.375rem",
+        "pixels": 6,
+        "type": "dimension"
+      },
+
+      "fieldGap": {
+        "value": "1.25rem",
+        "pixels": 20,
+        "type": "dimension"
+      },
+
+      "minimumHeight": {
+        "value": "3rem",
+        "pixels": 48,
+        "type": "dimension"
+      }
+    },
+
+    "form": {
+      "groupGap": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      },
+
+      "sectionGap": {
+        "value": "2rem",
+        "pixels": 32,
+        "type": "dimension"
+      },
+
+      "actionsGap": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "containerPadding": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      }
+    },
+
+    "navigation": {
+      "header": {
+        "paddingInlineMobile": {
+          "value": "1rem",
+          "pixels": 16,
+          "type": "dimension"
+        },
+
+        "paddingInlineDesktop": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        },
+
+        "itemGap": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension"
+        },
+
+        "minimumHeight": {
+          "value": "4rem",
+          "pixels": 64,
+          "type": "dimension"
+        }
+      },
+
+      "mobileMenu": {
+        "padding": {
+          "value": "1.5rem",
+          "pixels": 24,
+          "type": "dimension"
+        },
+
+        "itemGap": {
+          "value": "0.75rem",
+          "pixels": 12,
+          "type": "dimension"
+        },
+
+        "sectionGap": {
+          "value": "2rem",
+          "pixels": 32,
+          "type": "dimension"
+        }
+      }
+    },
+
+    "modal": {
+      "mobilePadding": {
+        "value": "1.25rem",
+        "pixels": 20,
+        "type": "dimension"
+      },
+
+      "desktopPadding": {
+        "value": "2rem",
+        "pixels": 32,
+        "type": "dimension"
+      },
+
+      "headerGap": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "contentGap": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      },
+
+      "actionsGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      }
+    },
+
+    "table": {
+      "cellPaddingInline": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "cellPaddingBlock": {
+        "value": "0.875rem",
+        "pixels": 14,
+        "type": "dimension"
+      },
+
+      "headerPaddingBlock": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      }
+    },
+
+    "list": {
+      "itemGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      },
+
+      "nestedIndent": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension"
+      },
+
+      "iconGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      }
+    },
+
+    "badge": {
+      "paddingInline": {
+        "value": "0.625rem",
+        "pixels": 10,
+        "type": "dimension"
+      },
+
+      "paddingBlock": {
+        "value": "0.25rem",
+        "pixels": 4,
+        "type": "dimension"
+      },
+
+      "iconGap": {
+        "value": "0.375rem",
+        "pixels": 6,
+        "type": "dimension"
+      }
+    },
+
+    "toast": {
+      "padding": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      },
+
+      "contentGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      },
+
+      "stackGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension"
+      },
+
+      "viewportOffset": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension"
+      }
+    }
+  },
+
+  "content": {
+    "titleToSubtitle": {
+      "value": "0.75rem",
+      "pixels": 12,
+      "type": "dimension",
+      "description": "Distância entre título e subtítulo."
+    },
+
+    "subtitleToBody": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension",
+      "description": "Distância entre subtítulo e texto."
+    },
+
+    "paragraphGap": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension",
+      "description": "Distância entre parágrafos."
+    },
+
+    "headingToContent": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "dimension",
+      "description": "Distância entre cabeçalho e conteúdo."
+    },
+
+    "contentBlockGap": {
+      "value": "2rem",
+      "pixels": 32,
+      "type": "dimension",
+      "description": "Distância entre blocos de conteúdo."
+    },
+
+    "imageToCaption": {
+      "value": "0.5rem",
+      "pixels": 8,
+      "type": "dimension",
+      "description": "Distância entre imagem e legenda."
+    },
+
+    "captionToCredit": {
+      "value": "0.25rem",
+      "pixels": 4,
+      "type": "dimension",
+      "description": "Distância entre legenda e crédito."
+    }
+  },
+
+  "brand": {
+    "logo": {
+      "safeArea": {
+        "value": "1x",
+        "type": "ratio",
+        "description": "Área mínima equivalente à altura do número 2026 ou unidade de referência definida no grid."
+      },
+
+      "minimumPaddingDigital": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension",
+        "description": "Respiro mínimo ao redor do logotipo em interfaces."
+      },
+
+      "preferredPaddingDigital": {
+        "value": "1.5rem",
+        "pixels": 24,
+        "type": "dimension",
+        "description": "Respiro recomendado ao redor do logotipo."
+      },
+
+      "ceremonialPadding": {
+        "value": "2rem",
+        "pixels": 32,
+        "type": "dimension",
+        "description": "Respiro recomendado em aplicações solenes."
+      }
+    },
+
+    "symbol": {
+      "minimumGap": {
+        "value": "0.75rem",
+        "pixels": 12,
+        "type": "dimension",
+        "description": "Distância mínima entre símbolos e textos."
+      }
+    },
+
+    "icon": {
+      "labelGap": {
+        "value": "0.5rem",
+        "pixels": 8,
+        "type": "dimension",
+        "description": "Distância entre ícone e rótulo."
+      },
+
+      "groupGap": {
+        "value": "1rem",
+        "pixels": 16,
+        "type": "dimension",
+        "description": "Distância entre grupos de ícones."
+      }
+    }
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "mobileSmall": {
+        "value": "20rem",
+        "pixels": 320,
+        "type": "dimension"
+      },
+
+      "mobile": {
+        "value": "30rem",
+        "pixels": 480,
+        "type": "dimension"
+      },
+
+      "tablet": {
+        "value": "48rem",
+        "pixels": 768,
+        "type": "dimension"
+      },
+
+      "desktop": {
+        "value": "64rem",
+        "pixels": 1024,
+        "type": "dimension"
+      },
+
+      "desktopLarge": {
+        "value": "80rem",
+        "pixels": 1280,
+        "type": "dimension"
+      },
+
+      "wide": {
+        "value": "90rem",
+        "pixels": 1440,
+        "type": "dimension"
+      }
+    },
+
+    "density": {
+      "compact": {
+        "factor": 0.75,
+        "type": "number",
+        "description": "Redução controlada para interfaces densas."
+      },
+
+      "default": {
+        "factor": 1,
+        "type": "number",
+        "description": "Densidade padrão."
+      },
+
+      "comfortable": {
+        "factor": 1.25,
+        "type": "number",
+        "description": "Densidade ampliada para leitura e acessibilidade."
+      }
+    }
+  },
+
+  "accessibility": {
+    "minimumTouchTarget": {
+      "value": "2.75rem",
+      "pixels": 44,
+      "type": "dimension",
+      "description": "Tamanho mínimo recomendado para áreas interativas."
+    },
+
+    "preferredTouchTarget": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "dimension",
+      "description": "Tamanho preferencial para controles móveis."
+    },
+
+    "minimumInteractiveGap": {
+      "value": "0.5rem",
+      "pixels": 8,
+      "type": "dimension",
+      "description": "Distância mínima entre controles interativos."
+    },
+
+    "preferredInteractiveGap": {
+      "value": "0.75rem",
+      "pixels": 12,
+      "type": "dimension",
+      "description": "Distância confortável entre controles."
+    },
+
+    "rules": [
+      "Manter áreas de toque com no mínimo 44 por 44 px.",
+      "Não compactar botões a ponto de prejudicar o acionamento.",
+      "Utilizar margens laterais mínimas de 16 px em celulares.",
+      "Permitir ampliação de texto sem sobreposição.",
+      "Evitar blocos muito próximos em interfaces mobile.",
+      "Usar espaçamento para reforçar hierarquia, não apenas ornamento.",
+      "Manter distância adequada entre ícone e rótulo.",
+      "Não depender exclusivamente de linhas ou cores para separar grupos."
+    ]
+  },
+
+  "cssVariables": {
+    "--festanca-space-0": "0",
+    "--festanca-space-3xs": "0.125rem",
+    "--festanca-space-2xs": "0.25rem",
+    "--festanca-space-xs": "0.5rem",
+    "--festanca-space-sm": "0.75rem",
+    "--festanca-space-md": "1rem",
+    "--festanca-space-lg": "1.5rem",
+    "--festanca-space-xl": "2rem",
+    "--festanca-space-2xl": "2.5rem",
+    "--festanca-space-3xl": "3rem",
+    "--festanca-space-4xl": "4rem",
+    "--festanca-space-5xl": "5rem",
+    "--festanca-space-6xl": "6rem",
+    "--festanca-space-7xl": "8rem",
+    "--festanca-space-8xl": "10rem",
+
+    "--festanca-container-reading": "48rem",
+    "--festanca-container-content": "72rem",
+    "--festanca-container-wide": "90rem",
+
+    "--festanca-page-padding-mobile": "1rem",
+    "--festanca-page-padding-tablet": "2rem",
+    "--festanca-page-padding-desktop": "3rem",
+
+    "--festanca-section-padding-mobile": "3rem",
+    "--festanca-section-padding-tablet": "4rem",
+    "--festanca-section-padding-desktop": "6rem",
+
+    "--festanca-grid-gutter-mobile": "1rem",
+    "--festanca-grid-gutter-tablet": "1.5rem",
+    "--festanca-grid-gutter-desktop": "2rem",
+
+    "--festanca-touch-target-min": "2.75rem",
+    "--festanca-touch-target-preferred": "3rem"
+  },
+
+  "usageExamples": {
+    "css": {
+      "section": "padding-block: var(--festanca-section-padding-desktop);",
+      "container": "max-width: var(--festanca-container-content); margin-inline: auto;",
+      "mobilePage": "padding-inline: var(--festanca-page-padding-mobile);",
+      "card": "padding: var(--festanca-space-lg); gap: var(--festanca-space-md);",
+      "button": "min-height: var(--festanca-touch-target-min);"
+    },
+
+    "layout": {
+      "hero": {
+        "paddingBlock": "{layout.hero.desktop.paddingTop.value}",
+        "gap": "{layout.hero.desktop.contentGap.value}"
+      },
+
+      "cardGrid": {
+        "columns": "{grid.columns.desktop.value}",
+        "gap": "{grid.gutter.desktop.value}"
+      }
+    }
+  },
+
+  "restrictions": [
+    "Não criar espaçamentos arbitrários quando existir token equivalente.",
+    "Não reduzir a margem lateral mobile abaixo de 16 px sem justificativa.",
+    "Não reduzir áreas interativas abaixo de 44 por 44 px.",
+    "Não aplicar espaçamentos monumentais em componentes pequenos.",
+    "Não utilizar margem negativa para corrigir problemas estruturais sem revisão.",
+    "Não misturar múltiplas escalas espaciais no mesmo componente.",
+    "Não remover a área de proteção do logotipo.",
+    "Toda alteração deve ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "responsive",
+      "accessibility"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/radius.json",
+    "assets/brand/tokens/shadows.json",
+    "assets/brand/tokens/animations.json",
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+      }
