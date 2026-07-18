@@ -1,0 +1,817 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-design-token-index",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+
+    "repositoryPath": "assets/brand/tokens/index.json",
+
+    "systemName": "FESTANÇA 2026 Official Brand Design System",
+    "systemLayer": "Design Tokens Registry",
+
+    "manifestReference": "assets/brand/brand-manifest.json",
+    "catalogReference": "assets/brand/brand-assets-catalog.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "licenseReference": "assets/brand/LICENSE-AND-CREDITS.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md",
+    "changeLogReference": "assets/brand/CHANGELOG.md"
+  },
+
+  "purpose": {
+    "description": "Registrar, organizar e governar todos os conjuntos oficiais de Design Tokens da FESTANÇA 2026 em um único manifesto técnico central.",
+
+    "objectives": [
+      "Definir a ordem oficial de carregamento.",
+      "Registrar dependências entre arquivos.",
+      "Centralizar versões e status.",
+      "Estabelecer pontos de integração.",
+      "Facilitar validação automatizada.",
+      "Permitir geração futura de CSS, JavaScript e componentes.",
+      "Garantir rastreabilidade e governança.",
+      "Preparar o sistema para evolução anual."
+    ]
+  },
+
+  "registry": {
+    "totalTokenSets": 9,
+
+    "tokenSets": {
+      "colors": {
+        "id": "festanca-token-colors",
+        "name": "Colors",
+        "path": "assets/brand/tokens/colors.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 1,
+        "required": true,
+
+        "purpose": "Definir paleta, cores semânticas, contraste, estados e aplicações cromáticas.",
+
+        "provides": [
+          "brand-colors",
+          "semantic-colors",
+          "surface-colors",
+          "text-colors",
+          "feedback-colors",
+          "accessibility-colors"
+        ],
+
+        "dependsOn": []
+      },
+
+      "typography": {
+        "id": "festanca-token-typography",
+        "name": "Typography",
+        "path": "assets/brand/tokens/typography.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 2,
+        "required": true,
+
+        "purpose": "Definir hierarquia tipográfica para interfaces, documentos, memória, títulos e conteúdos cerimoniais.",
+
+        "provides": [
+          "font-families",
+          "font-sizes",
+          "font-weights",
+          "line-heights",
+          "letter-spacing",
+          "text-styles"
+        ],
+
+        "dependsOn": [
+          "colors"
+        ]
+      },
+
+      "spacing": {
+        "id": "festanca-token-spacing",
+        "name": "Spacing",
+        "path": "assets/brand/tokens/spacing.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 3,
+        "required": true,
+
+        "purpose": "Definir escalas espaciais, margens, preenchimentos, grids, gutters e áreas de proteção.",
+
+        "provides": [
+          "spacing-scale",
+          "margins",
+          "padding",
+          "gaps",
+          "grids",
+          "safe-areas"
+        ],
+
+        "dependsOn": []
+      },
+
+      "radius": {
+        "id": "festanca-token-radius",
+        "name": "Radius",
+        "path": "assets/brand/tokens/radius.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 4,
+        "required": true,
+
+        "purpose": "Definir arredondamentos oficiais de componentes e superfícies.",
+
+        "provides": [
+          "radius-scale",
+          "component-radius",
+          "ceremonial-radius",
+          "interactive-radius"
+        ],
+
+        "dependsOn": [
+          "spacing"
+        ]
+      },
+
+      "shadows": {
+        "id": "festanca-token-shadows",
+        "name": "Shadows",
+        "path": "assets/brand/tokens/shadows.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 5,
+        "required": true,
+
+        "purpose": "Definir elevação, profundidade, brilho, foco e efeitos de superfície.",
+
+        "provides": [
+          "elevation",
+          "component-shadows",
+          "gold-glow",
+          "focus-effects",
+          "holographic-effects"
+        ],
+
+        "dependsOn": [
+          "colors"
+        ]
+      },
+
+      "animations": {
+        "id": "festanca-token-animations",
+        "name": "Animations",
+        "path": "assets/brand/tokens/animations.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "foundation",
+        "priority": 6,
+        "required": true,
+
+        "purpose": "Definir movimento, transições, microinterações e comportamento com movimento reduzido.",
+
+        "provides": [
+          "durations",
+          "easing",
+          "transitions",
+          "entrances",
+          "exits",
+          "hover-effects",
+          "reduced-motion"
+        ],
+
+        "dependsOn": [
+          "colors",
+          "shadows"
+        ]
+      },
+
+      "icons": {
+        "id": "festanca-token-icons",
+        "name": "Icons",
+        "path": "assets/brand/tokens/icons.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "identity",
+        "priority": 7,
+        "required": true,
+
+        "purpose": "Catalogar e governar o acervo iconográfico cultural, religioso, institucional e temático.",
+
+        "provides": [
+          "icon-registry",
+          "icon-categories",
+          "alt-text",
+          "cultural-restrictions",
+          "icon-sizing",
+          "provenance"
+        ],
+
+        "dependsOn": [
+          "colors",
+          "spacing",
+          "radius",
+          "shadows",
+          "animations"
+        ]
+      },
+
+      "symbols": {
+        "id": "festanca-token-symbols",
+        "name": "Symbols",
+        "path": "assets/brand/tokens/symbols.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "identity",
+        "priority": 8,
+        "required": true,
+
+        "purpose": "Catalogar os símbolos oficiais e sua gramática visual.",
+
+        "provides": [
+          "symbol-registry",
+          "star",
+          "golden-arc",
+          "ornaments",
+          "frames",
+          "graphic-elements"
+        ],
+
+        "dependsOn": [
+          "colors",
+          "spacing",
+          "shadows",
+          "animations"
+        ]
+      },
+
+      "themes": {
+        "id": "festanca-token-themes",
+        "name": "Themes",
+        "path": "assets/brand/tokens/themes.json",
+        "version": "1.0.0",
+        "status": "official",
+        "layer": "composition",
+        "priority": 9,
+        "required": true,
+
+        "purpose": "Compor todos os tokens anteriores em experiências completas e utilizáveis.",
+
+        "provides": [
+          "dark-theme",
+          "light-theme",
+          "heritage-theme",
+          "ceremonial-theme",
+          "high-contrast-theme",
+          "holographic-theme"
+        ],
+
+        "dependsOn": [
+          "colors",
+          "typography",
+          "spacing",
+          "radius",
+          "shadows",
+          "animations",
+          "icons",
+          "symbols"
+        ]
+      }
+    }
+  },
+
+  "architecture": {
+    "layers": {
+      "foundation": {
+        "description": "Tokens fundamentais que definem propriedades primitivas e semânticas.",
+
+        "members": [
+          "colors",
+          "typography",
+          "spacing",
+          "radius",
+          "shadows",
+          "animations"
+        ]
+      },
+
+      "identity": {
+        "description": "Tokens responsáveis pelos elementos visuais diretamente associados à identidade cultural.",
+
+        "members": [
+          "icons",
+          "symbols"
+        ]
+      },
+
+      "composition": {
+        "description": "Camada que combina os demais tokens em experiências contextuais completas.",
+
+        "members": [
+          "themes"
+        ]
+      }
+    },
+
+    "dependencyFlow": [
+      "foundation",
+      "identity",
+      "composition"
+    ]
+  },
+
+  "loadOrder": [
+    {
+      "order": 1,
+      "tokenSet": "colors",
+      "required": true
+    },
+    {
+      "order": 2,
+      "tokenSet": "typography",
+      "required": true
+    },
+    {
+      "order": 3,
+      "tokenSet": "spacing",
+      "required": true
+    },
+    {
+      "order": 4,
+      "tokenSet": "radius",
+      "required": true
+    },
+    {
+      "order": 5,
+      "tokenSet": "shadows",
+      "required": true
+    },
+    {
+      "order": 6,
+      "tokenSet": "animations",
+      "required": true
+    },
+    {
+      "order": 7,
+      "tokenSet": "icons",
+      "required": true
+    },
+    {
+      "order": 8,
+      "tokenSet": "symbols",
+      "required": true
+    },
+    {
+      "order": 9,
+      "tokenSet": "themes",
+      "required": true
+    }
+  ],
+
+  "dependencyGraph": {
+    "colors": [],
+
+    "typography": [
+      "colors"
+    ],
+
+    "spacing": [],
+
+    "radius": [
+      "spacing"
+    ],
+
+    "shadows": [
+      "colors"
+    ],
+
+    "animations": [
+      "colors",
+      "shadows"
+    ],
+
+    "icons": [
+      "colors",
+      "spacing",
+      "radius",
+      "shadows",
+      "animations"
+    ],
+
+    "symbols": [
+      "colors",
+      "spacing",
+      "shadows",
+      "animations"
+    ],
+
+    "themes": [
+      "colors",
+      "typography",
+      "spacing",
+      "radius",
+      "shadows",
+      "animations",
+      "icons",
+      "symbols"
+    ]
+  },
+
+  "validation": {
+    "requiredFiles": [
+      "assets/brand/tokens/colors.json",
+      "assets/brand/tokens/typography.json",
+      "assets/brand/tokens/spacing.json",
+      "assets/brand/tokens/radius.json",
+      "assets/brand/tokens/shadows.json",
+      "assets/brand/tokens/animations.json",
+      "assets/brand/tokens/icons.json",
+      "assets/brand/tokens/symbols.json",
+      "assets/brand/tokens/themes.json"
+    ],
+
+    "checks": [
+      "file-exists",
+      "valid-json",
+      "version-present",
+      "status-present",
+      "repository-path-correct",
+      "dependencies-resolved",
+      "no-circular-dependency",
+      "governance-reference-present",
+      "quality-reference-present"
+    ],
+
+    "failurePolicy": {
+      "missingRequiredFile": "error",
+      "invalidJson": "error",
+      "missingOptionalReference": "warning",
+      "versionMismatch": "warning",
+      "brokenDependency": "error"
+    }
+  },
+
+  "versioning": {
+    "strategy": "semantic-versioning",
+
+    "format": "MAJOR.MINOR.PATCH",
+
+    "rules": {
+      "major": "Mudanças incompatíveis na estrutura dos tokens ou contratos públicos.",
+      "minor": "Adição compatível de novos tokens, temas ou propriedades.",
+      "patch": "Correções compatíveis sem alteração estrutural."
+    },
+
+    "current": "1.0.0",
+
+    "compatibility": {
+      "minimumSupported": "1.0.0",
+      "backwardCompatible": true
+    }
+  },
+
+  "statusModel": {
+    "allowed": [
+      "draft",
+      "review",
+      "approved",
+      "official",
+      "deprecated",
+      "archived"
+    ],
+
+    "current": "official"
+  },
+
+  "integrationPoints": {
+    "landingPage": {
+      "path": "apps/festanca-2026/",
+      "usage": [
+        "colors",
+        "typography",
+        "spacing",
+        "radius",
+        "shadows",
+        "animations",
+        "icons",
+        "symbols",
+        "themes"
+      ]
+    },
+
+    "css": {
+      "plannedOutput": "assets/brand/tokens/tokens.css",
+      "status": "planned"
+    },
+
+    "javascript": {
+      "plannedOutput": "assets/brand/tokens/theme-loader.js",
+      "status": "planned"
+    },
+
+    "dashboards": {
+      "usage": [
+        "colors",
+        "typography",
+        "spacing",
+        "radius",
+        "shadows",
+        "animations",
+        "themes"
+      ]
+    },
+
+    "documents": {
+      "usage": [
+        "colors",
+        "typography",
+        "spacing",
+        "symbols",
+        "themes"
+      ]
+    },
+
+    "socialMedia": {
+      "usage": [
+        "colors",
+        "typography",
+        "icons",
+        "symbols"
+      ]
+    },
+
+    "signage": {
+      "usage": [
+        "colors",
+        "typography",
+        "icons",
+        "symbols",
+        "spacing"
+      ]
+    },
+
+    "futureApps": {
+      "strategy": "consume-from-central-token-registry"
+    }
+  },
+
+  "applicationProfiles": {
+    "festancaLandingPage": {
+      "defaultTheme": "dark",
+
+      "requiredTokenSets": [
+        "colors",
+        "typography",
+        "spacing",
+        "radius",
+        "shadows",
+        "animations",
+        "icons",
+        "symbols",
+        "themes"
+      ]
+    },
+
+    "historicalArchive": {
+      "defaultTheme": "heritage",
+
+      "requiredTokenSets": [
+        "colors",
+        "typography",
+        "spacing",
+        "symbols",
+        "themes"
+      ]
+    },
+
+    "ceremonialExperience": {
+      "defaultTheme": "ceremonial",
+
+      "requiredTokenSets": [
+        "colors",
+        "typography",
+        "spacing",
+        "shadows",
+        "symbols",
+        "icons",
+        "themes"
+      ]
+    },
+
+    "accessibleExperience": {
+      "defaultTheme": "high-contrast",
+
+      "requiredTokenSets": [
+        "colors",
+        "typography",
+        "spacing",
+        "radius",
+        "icons",
+        "themes"
+      ]
+    },
+
+    "innovationExperience": {
+      "defaultTheme": "holographic",
+
+      "requiredTokenSets": [
+        "colors",
+        "typography",
+        "spacing",
+        "shadows",
+        "animations",
+        "symbols",
+        "themes"
+      ]
+    }
+  },
+
+  "sourceOfTruth": {
+    "strategy": "single-source-of-truth",
+
+    "rules": [
+      "Tokens devem ser alterados primeiro em seus arquivos JSON oficiais.",
+      "CSS gerado não deve substituir os arquivos JSON como fonte primária.",
+      "JavaScript deve consumir ou refletir os tokens oficiais.",
+      "Temas devem referenciar tokens existentes.",
+      "Não duplicar valores sem justificativa técnica.",
+      "Mudanças devem ser versionadas.",
+      "Toda alteração oficial deve constar no CHANGELOG.md."
+    ]
+  },
+
+  "namingConvention": {
+    "tokenSetFile": "lowercase-plural.json",
+
+    "examples": [
+      "colors.json",
+      "typography.json",
+      "spacing.json",
+      "radius.json",
+      "shadows.json",
+      "animations.json",
+      "icons.json",
+      "symbols.json",
+      "themes.json"
+    ],
+
+    "tokenPattern": "{domain}.{category}.{name}",
+
+    "cssVariablePattern": "--festanca-{domain}-{category}-{name}",
+
+    "rules": [
+      "Usar nomenclatura semântica.",
+      "Evitar nomes baseados apenas na aparência.",
+      "Não utilizar números mágicos como nomes.",
+      "Preservar compatibilidade entre versões."
+    ]
+  },
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+
+    "approvalRequiredFor": [
+      "new-token-set",
+      "breaking-change",
+      "theme-removal",
+      "cultural-symbol-change",
+      "naming-change",
+      "accessibility-regression",
+      "license-change"
+    ],
+
+    "reviewRequired": [
+      "technical",
+      "visual",
+      "cultural",
+      "accessibility",
+      "documentation"
+    ],
+
+    "approvalFlow": [
+      "proposal",
+      "technical-review",
+      "visual-review",
+      "cultural-review",
+      "accessibility-review",
+      "validation",
+      "institutional-approval",
+      "versioning",
+      "publication",
+      "changelog-registration"
+    ]
+  },
+
+  "qualityGate": {
+    "requiredBeforeRelease": true,
+
+    "checks": [
+      "all-nine-token-files-present",
+      "all-json-valid",
+      "all-required-fields-present",
+      "dependencies-valid",
+      "no-circular-dependencies",
+      "paths-valid",
+      "themes-resolvable",
+      "accessibility-reviewed",
+      "cultural-review-completed",
+      "version-updated",
+      "changelog-updated"
+    ]
+  },
+
+  "automationReady": {
+    "jsonValidation": true,
+    "dependencyValidation": true,
+    "fileExistenceValidation": true,
+    "cssGeneration": "planned",
+    "themeLoaderGeneration": "planned",
+    "contrastTesting": "planned",
+    "assetIntegrityHashing": "planned",
+    "continuousIntegration": "future"
+  },
+
+  "plannedOutputs": {
+    "css": {
+      "path": "assets/brand/tokens/tokens.css",
+      "purpose": "Converter tokens aprovados em variáveis CSS utilizáveis diretamente pelas interfaces."
+    },
+
+    "themeLoader": {
+      "path": "assets/brand/tokens/theme-loader.js",
+      "purpose": "Controlar seleção, persistência e aplicação dinâmica dos temas."
+    },
+
+    "generatedDocumentation": {
+      "path": "assets/brand/tokens/README.md",
+      "purpose": "Documentar consumo técnico e arquitetura dos Design Tokens."
+    }
+  },
+
+  "restrictions": [
+    "Não excluir um token set obrigatório sem aprovação institucional.",
+    "Não alterar ordem de dependência sem revisão técnica.",
+    "Não criar dependências circulares.",
+    "Não apontar para arquivos inexistentes.",
+    "Não utilizar arquivos gerados como fonte primária de verdade.",
+    "Não duplicar tokens para resolver problemas locais sem revisão.",
+    "Não remover suporte de acessibilidade.",
+    "Não alterar significado cultural de símbolos ou ícones.",
+    "Não publicar mudanças estruturais sem atualizar versão.",
+    "Toda alteração deve ser registrada no CHANGELOG.md."
+  ],
+
+  "validationCommands": {
+    "validateIndex": "python -m json.tool assets/brand/tokens/index.json > /dev/null",
+
+    "validateAllJson": "for f in assets/brand/tokens/*.json; do python -m json.tool \"$f\" > /dev/null || exit 1; done",
+
+    "listTokenFiles": "find assets/brand/tokens -maxdepth 1 -type f -print",
+
+    "expectedCount": 10
+  },
+
+  "futureEvolution": {
+    "recommended": [
+      "Gerar tokens.css automaticamente.",
+      "Gerar theme-loader.js.",
+      "Criar README técnico da pasta tokens.",
+      "Criar validador automático de dependências.",
+      "Criar verificação automática de arquivos referenciados.",
+      "Criar testes de contraste WCAG.",
+      "Criar geração automática de documentação.",
+      "Criar integração CI/CD.",
+      "Gerar hashes de integridade.",
+      "Preparar migração versionada para FESTANÇA 2027."
+    ]
+  },
+
+  "nextRecommendedFiles": [
+    "assets/brand/tokens/tokens.css",
+    "assets/brand/tokens/theme-loader.js",
+    "assets/brand/tokens/README.md"
+  ]
+    }
