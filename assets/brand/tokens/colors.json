@@ -1,0 +1,809 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-color-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/colors.json",
+    "brandManifestReference": "assets/brand/brand-manifest.json",
+    "catalogReference": "assets/brand/brand-assets-catalog.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "color.{group}.{role}.{state}",
+    "cssVariableFormat": "--festanca-{group}-{role}-{state}",
+    "examples": [
+      "color.brand.gold.primary",
+      "color.surface.dark.primary",
+      "color.text.light.primary",
+      "color.feedback.success.default"
+    ]
+  },
+
+  "sourcePalette": {
+    "reference": "assets/brand/palette/color-guide.png",
+    "note": "Os valores abaixo constituem a primeira tradução técnica oficial da paleta visual da FESTANÇA 2026."
+  },
+
+  "colors": {
+    "brand": {
+      "gold": {
+        "primary": {
+          "value": "#D9A21B",
+          "type": "color",
+          "description": "Dourado principal da FESTANÇA 2026.",
+          "usage": [
+            "logotipos",
+            "titulos",
+            "bordas",
+            "selos",
+            "destaques"
+          ]
+        },
+
+        "bright": {
+          "value": "#FFD34E",
+          "type": "color",
+          "description": "Dourado luminoso para brilhos, estrelas e elementos cerimoniais.",
+          "usage": [
+            "estrela-festanca",
+            "glow",
+            "destaques-premium"
+          ]
+        },
+
+        "deep": {
+          "value": "#9B6A00",
+          "type": "color",
+          "description": "Dourado profundo para sombras, contornos e contraste.",
+          "usage": [
+            "bordas",
+            "sombras",
+            "detalhes",
+            "impressos"
+          ]
+        },
+
+        "soft": {
+          "value": "#EBCB78",
+          "type": "color",
+          "description": "Dourado suave para fundos leves e detalhes secundários.",
+          "usage": [
+            "fundos-claros",
+            "ornamentos-secundarios",
+            "divisores"
+          ]
+        }
+      },
+
+      "blue": {
+        "deep": {
+          "value": "#071A2B",
+          "type": "color",
+          "description": "Azul profundo institucional.",
+          "usage": [
+            "fundos-principais",
+            "landing-page",
+            "dashboards",
+            "cabecalhos"
+          ]
+        },
+
+        "primary": {
+          "value": "#0D2F4F",
+          "type": "color",
+          "description": "Azul principal de suporte institucional.",
+          "usage": [
+            "cards",
+            "paineis",
+            "secoes",
+            "navegacao"
+          ]
+        },
+
+        "medium": {
+          "value": "#15557A",
+          "type": "color",
+          "description": "Azul médio para elementos interativos e destaques.",
+          "usage": [
+            "links",
+            "botoes-secundarios",
+            "indicadores"
+          ]
+        },
+
+        "light": {
+          "value": "#5FA6C9",
+          "type": "color",
+          "description": "Azul claro para informações, divisores e estados suaves.",
+          "usage": [
+            "informacoes",
+            "bordas",
+            "destaques-leves"
+          ]
+        }
+      },
+
+      "green": {
+        "primary": {
+          "value": "#2DBE67",
+          "type": "color",
+          "description": "Verde principal de esperança, território e continuidade.",
+          "usage": [
+            "acoes-positivas",
+            "destaques",
+            "links-ativos",
+            "elementos-territoriais"
+          ]
+        },
+
+        "bright": {
+          "value": "#62F58D",
+          "type": "color",
+          "description": "Verde luminoso para aplicações digitais e neon.",
+          "usage": [
+            "logo-neon",
+            "status-ativo",
+            "holograficos"
+          ]
+        },
+
+        "deep": {
+          "value": "#176B3A",
+          "type": "color",
+          "description": "Verde profundo para fundos, contornos e estados fortes.",
+          "usage": [
+            "fundos",
+            "bordas",
+            "status-confirmado"
+          ]
+        }
+      },
+
+      "red": {
+        "primary": {
+          "value": "#B4342C",
+          "type": "color",
+          "description": "Vermelho principal associado à devoção e à solenidade.",
+          "usage": [
+            "detalhes-religiosos",
+            "alertas-culturais",
+            "destaques-controlados"
+          ]
+        },
+
+        "bright": {
+          "value": "#E85A4F",
+          "type": "color",
+          "description": "Vermelho luminoso para chamadas e avisos.",
+          "usage": [
+            "alertas",
+            "indicadores",
+            "chamadas"
+          ]
+        },
+
+        "deep": {
+          "value": "#6D1E1A",
+          "type": "color",
+          "description": "Vermelho profundo para fundos cerimoniais e contornos.",
+          "usage": [
+            "fundos-cerimoniais",
+            "bordas",
+            "detalhes"
+          ]
+        }
+      },
+
+      "ivory": {
+        "primary": {
+          "value": "#F3EBD8",
+          "type": "color",
+          "description": "Marfim principal para textos claros e fundos patrimoniais.",
+          "usage": [
+            "textos",
+            "fundos",
+            "documentos",
+            "materiais-historicos"
+          ]
+        },
+
+        "soft": {
+          "value": "#FFF8E8",
+          "type": "color",
+          "description": "Marfim claro para áreas de leitura.",
+          "usage": [
+            "fundos-claros",
+            "cards",
+            "documentos"
+          ]
+        }
+      },
+
+      "black": {
+        "primary": {
+          "value": "#050709",
+          "type": "color",
+          "description": "Preto profundo para fundos e contraste máximo.",
+          "usage": [
+            "fundos",
+            "modo-escuro",
+            "materiais-premium"
+          ]
+        },
+
+        "soft": {
+          "value": "#11161C",
+          "type": "color",
+          "description": "Preto suave para superfícies e cards.",
+          "usage": [
+            "cards",
+            "paineis",
+            "navegacao"
+          ]
+        }
+      }
+    },
+
+    "surface": {
+      "dark": {
+        "primary": {
+          "value": "#07111B",
+          "type": "color",
+          "description": "Fundo principal do tema escuro."
+        },
+
+        "secondary": {
+          "value": "#0D1D2A",
+          "type": "color",
+          "description": "Fundo secundário do tema escuro."
+        },
+
+        "elevated": {
+          "value": "#132A3A",
+          "type": "color",
+          "description": "Superfície elevada para cards e modais."
+        },
+
+        "overlay": {
+          "value": "rgba(0, 0, 0, 0.72)",
+          "type": "color",
+          "description": "Sobreposição escura para imagens e modais."
+        }
+      },
+
+      "light": {
+        "primary": {
+          "value": "#FFFDF8",
+          "type": "color",
+          "description": "Fundo principal do tema claro."
+        },
+
+        "secondary": {
+          "value": "#F4EEDC",
+          "type": "color",
+          "description": "Fundo secundário do tema claro."
+        },
+
+        "elevated": {
+          "value": "#FFFFFF",
+          "type": "color",
+          "description": "Superfície elevada do tema claro."
+        }
+      },
+
+      "heritage": {
+        "primary": {
+          "value": "#2A2016",
+          "type": "color",
+          "description": "Fundo patrimonial principal."
+        },
+
+        "secondary": {
+          "value": "#4A3824",
+          "type": "color",
+          "description": "Fundo patrimonial secundário."
+        },
+
+        "paper": {
+          "value": "#E8D7B0",
+          "type": "color",
+          "description": "Tom de papel histórico."
+        }
+      },
+
+      "ceremonial": {
+        "primary": {
+          "value": "#241204",
+          "type": "color",
+          "description": "Fundo cerimonial profundo."
+        },
+
+        "secondary": {
+          "value": "#5D3305",
+          "type": "color",
+          "description": "Fundo cerimonial dourado escuro."
+        }
+      }
+    },
+
+    "text": {
+      "darkTheme": {
+        "primary": {
+          "value": "#FFF8E8",
+          "type": "color",
+          "description": "Texto principal sobre fundos escuros."
+        },
+
+        "secondary": {
+          "value": "#D2D8DE",
+          "type": "color",
+          "description": "Texto secundário sobre fundos escuros."
+        },
+
+        "muted": {
+          "value": "#94A1AD",
+          "type": "color",
+          "description": "Texto de apoio sobre fundos escuros."
+        },
+
+        "accent": {
+          "value": "#FFD34E",
+          "type": "color",
+          "description": "Texto de destaque no tema escuro."
+        }
+      },
+
+      "lightTheme": {
+        "primary": {
+          "value": "#15202B",
+          "type": "color",
+          "description": "Texto principal sobre fundos claros."
+        },
+
+        "secondary": {
+          "value": "#394A58",
+          "type": "color",
+          "description": "Texto secundário sobre fundos claros."
+        },
+
+        "muted": {
+          "value": "#687783",
+          "type": "color",
+          "description": "Texto de apoio sobre fundos claros."
+        },
+
+        "accent": {
+          "value": "#8A5B00",
+          "type": "color",
+          "description": "Texto dourado acessível sobre fundo claro."
+        }
+      },
+
+      "inverse": {
+        "value": "#FFFFFF",
+        "type": "color",
+        "description": "Texto invertido para fundos fortes."
+      },
+
+      "disabled": {
+        "value": "#7A8791",
+        "type": "color",
+        "description": "Texto desabilitado."
+      }
+    },
+
+    "border": {
+      "darkTheme": {
+        "subtle": {
+          "value": "#20384A",
+          "type": "color",
+          "description": "Borda discreta em superfícies escuras."
+        },
+
+        "default": {
+          "value": "#36566D",
+          "type": "color",
+          "description": "Borda padrão em tema escuro."
+        },
+
+        "accent": {
+          "value": "#D9A21B",
+          "type": "color",
+          "description": "Borda dourada de destaque."
+        }
+      },
+
+      "lightTheme": {
+        "subtle": {
+          "value": "#DDD4BF",
+          "type": "color",
+          "description": "Borda discreta em superfícies claras."
+        },
+
+        "default": {
+          "value": "#B9AD94",
+          "type": "color",
+          "description": "Borda padrão em tema claro."
+        },
+
+        "accent": {
+          "value": "#9B6A00",
+          "type": "color",
+          "description": "Borda dourada acessível em tema claro."
+        }
+      }
+    },
+
+    "interactive": {
+      "primary": {
+        "default": {
+          "value": "#D9A21B",
+          "type": "color",
+          "description": "Botão ou ação principal."
+        },
+
+        "hover": {
+          "value": "#FFD34E",
+          "type": "color",
+          "description": "Estado hover da ação principal."
+        },
+
+        "active": {
+          "value": "#9B6A00",
+          "type": "color",
+          "description": "Estado ativo da ação principal."
+        },
+
+        "disabled": {
+          "value": "#6E6656",
+          "type": "color",
+          "description": "Estado desabilitado da ação principal."
+        }
+      },
+
+      "secondary": {
+        "default": {
+          "value": "#15557A",
+          "type": "color",
+          "description": "Ação secundária."
+        },
+
+        "hover": {
+          "value": "#257AA5",
+          "type": "color",
+          "description": "Estado hover da ação secundária."
+        },
+
+        "active": {
+          "value": "#0D2F4F",
+          "type": "color",
+          "description": "Estado ativo da ação secundária."
+        }
+      },
+
+      "focus": {
+        "ring": {
+          "value": "#62F58D",
+          "type": "color",
+          "description": "Anel de foco visível para navegação por teclado."
+        }
+      }
+    },
+
+    "feedback": {
+      "success": {
+        "default": {
+          "value": "#2DBE67",
+          "type": "color",
+          "description": "Confirmação ou sucesso."
+        },
+
+        "background": {
+          "value": "#113D28",
+          "type": "color",
+          "description": "Fundo de mensagens de sucesso."
+        }
+      },
+
+      "warning": {
+        "default": {
+          "value": "#F2B544",
+          "type": "color",
+          "description": "Aviso ou atenção."
+        },
+
+        "background": {
+          "value": "#4A3512",
+          "type": "color",
+          "description": "Fundo de mensagens de aviso."
+        }
+      },
+
+      "error": {
+        "default": {
+          "value": "#E85A4F",
+          "type": "color",
+          "description": "Erro, falha ou impedimento."
+        },
+
+        "background": {
+          "value": "#4C1D1A",
+          "type": "color",
+          "description": "Fundo de mensagens de erro."
+        }
+      },
+
+      "info": {
+        "default": {
+          "value": "#5FA6C9",
+          "type": "color",
+          "description": "Informação geral."
+        },
+
+        "background": {
+          "value": "#15394D",
+          "type": "color",
+          "description": "Fundo de mensagens informativas."
+        }
+      }
+    },
+
+    "cultural": {
+      "congo": {
+        "primary": {
+          "value": "#E46728",
+          "type": "color",
+          "description": "Cor de identificação visual do Congo."
+        },
+
+        "secondary": {
+          "value": "#1E4F84",
+          "type": "color",
+          "description": "Cor secundária do Congo."
+        },
+
+        "accent": {
+          "value": "#FFD34E",
+          "type": "color",
+          "description": "Destaque cerimonial do Congo."
+        }
+      },
+
+      "conguinho": {
+        "primary": {
+          "value": "#2F79B8",
+          "type": "color",
+          "description": "Cor principal do Conguinho."
+        },
+
+        "secondary": {
+          "value": "#E85A4F",
+          "type": "color",
+          "description": "Cor complementar do Conguinho."
+        },
+
+        "accent": {
+          "value": "#F2C84B",
+          "type": "color",
+          "description": "Destaque floral e geracional."
+        }
+      },
+
+      "chorado": {
+        "primary": {
+          "value": "#174FA3",
+          "type": "color",
+          "description": "Azul principal do Chorado."
+        },
+
+        "secondary": {
+          "value": "#F5C542",
+          "type": "color",
+          "description": "Amarelo floral do Chorado."
+        },
+
+        "accent": {
+          "value": "#7D3FB2",
+          "type": "color",
+          "description": "Acento cultural do Chorado."
+        }
+      },
+
+      "choradinho": {
+        "primary": {
+          "value": "#4C74D9",
+          "type": "color",
+          "description": "Azul principal do Choradinho."
+        },
+
+        "secondary": {
+          "value": "#FF8A3D",
+          "type": "color",
+          "description": "Cor complementar infantil."
+        },
+
+        "accent": {
+          "value": "#FFD34E",
+          "type": "color",
+          "description": "Destaque luminoso do Choradinho."
+        }
+      },
+
+      "religious": {
+        "divino": {
+          "value": "#D44335",
+          "type": "color",
+          "description": "Cor associada ao Senhor Divino Espírito Santo."
+        },
+
+        "saoBenedito": {
+          "value": "#1B4A84",
+          "type": "color",
+          "description": "Cor de apoio às celebrações de São Benedito."
+        },
+
+        "maeDeDeus": {
+          "value": "#7D3E87",
+          "type": "color",
+          "description": "Cor de apoio à Gloriosa Mãe de Deus."
+        },
+
+        "santissimaTrindade": {
+          "value": "#D9A21B",
+          "type": "color",
+          "description": "Cor de apoio às Três Pessoas da Santíssima Trindade."
+        }
+      }
+    }
+  },
+
+  "themes": {
+    "dark": {
+      "background": "{colors.surface.dark.primary.value}",
+      "surface": "{colors.surface.dark.secondary.value}",
+      "surfaceElevated": "{colors.surface.dark.elevated.value}",
+      "textPrimary": "{colors.text.darkTheme.primary.value}",
+      "textSecondary": "{colors.text.darkTheme.secondary.value}",
+      "textMuted": "{colors.text.darkTheme.muted.value}",
+      "accent": "{colors.brand.gold.primary.value}",
+      "border": "{colors.border.darkTheme.default.value}",
+      "focus": "{colors.interactive.focus.ring.value}"
+    },
+
+    "light": {
+      "background": "{colors.surface.light.primary.value}",
+      "surface": "{colors.surface.light.secondary.value}",
+      "surfaceElevated": "{colors.surface.light.elevated.value}",
+      "textPrimary": "{colors.text.lightTheme.primary.value}",
+      "textSecondary": "{colors.text.lightTheme.secondary.value}",
+      "textMuted": "{colors.text.lightTheme.muted.value}",
+      "accent": "{colors.brand.gold.deep.value}",
+      "border": "{colors.border.lightTheme.default.value}",
+      "focus": "{colors.interactive.focus.ring.value}"
+    },
+
+    "heritage": {
+      "background": "{colors.surface.heritage.primary.value}",
+      "surface": "{colors.surface.heritage.secondary.value}",
+      "textPrimary": "{colors.brand.ivory.primary.value}",
+      "accent": "{colors.brand.gold.soft.value}",
+      "border": "{colors.brand.gold.deep.value}"
+    },
+
+    "ceremonial": {
+      "background": "{colors.surface.ceremonial.primary.value}",
+      "surface": "{colors.surface.ceremonial.secondary.value}",
+      "textPrimary": "{colors.brand.ivory.soft.value}",
+      "accent": "{colors.brand.gold.bright.value}",
+      "border": "{colors.brand.gold.primary.value}"
+    }
+  },
+
+  "cssVariables": {
+    "--festanca-gold-primary": "#D9A21B",
+    "--festanca-gold-bright": "#FFD34E",
+    "--festanca-gold-deep": "#9B6A00",
+
+    "--festanca-blue-deep": "#071A2B",
+    "--festanca-blue-primary": "#0D2F4F",
+    "--festanca-blue-medium": "#15557A",
+    "--festanca-blue-light": "#5FA6C9",
+
+    "--festanca-green-primary": "#2DBE67",
+    "--festanca-green-bright": "#62F58D",
+    "--festanca-green-deep": "#176B3A",
+
+    "--festanca-red-primary": "#B4342C",
+    "--festanca-red-bright": "#E85A4F",
+    "--festanca-red-deep": "#6D1E1A",
+
+    "--festanca-ivory-primary": "#F3EBD8",
+    "--festanca-ivory-soft": "#FFF8E8",
+
+    "--festanca-black-primary": "#050709",
+    "--festanca-black-soft": "#11161C",
+
+    "--festanca-surface-dark": "#07111B",
+    "--festanca-surface-dark-secondary": "#0D1D2A",
+    "--festanca-surface-dark-elevated": "#132A3A",
+
+    "--festanca-text-on-dark": "#FFF8E8",
+    "--festanca-text-on-light": "#15202B",
+
+    "--festanca-success": "#2DBE67",
+    "--festanca-warning": "#F2B544",
+    "--festanca-error": "#E85A4F",
+    "--festanca-info": "#5FA6C9",
+
+    "--festanca-focus-ring": "#62F58D"
+  },
+
+  "accessibility": {
+    "rules": [
+      "Não utilizar cor como único meio de transmitir informação.",
+      "Verificar contraste entre texto e fundo antes da publicação.",
+      "Utilizar texto claro sobre fundos azul profundo, preto ou patrimonial.",
+      "Utilizar texto escuro sobre fundos marfim, branco ou dourado claro.",
+      "Manter foco visível em elementos interativos.",
+      "Evitar dourado claro como texto pequeno sobre fundo branco.",
+      "Associar estados de sucesso, aviso e erro a ícones ou mensagens textuais."
+    ],
+
+    "recommendedMinimumContrast": {
+      "normalText": "4.5:1",
+      "largeText": "3:1",
+      "interfaceElements": "3:1"
+    }
+  },
+
+  "restrictions": [
+    "Não criar novas cores institucionais sem revisão.",
+    "Não substituir tokens oficiais diretamente em componentes isolados.",
+    "Não usar tons culturais para representar outro grupo sem validação.",
+    "Não utilizar o vermelho como cor dominante fora de contexto aprovado.",
+    "Não utilizar o dourado em excesso a ponto de prejudicar a leitura.",
+    "Toda alteração deve ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "cultural",
+      "accessibility"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/typography.json",
+    "assets/brand/tokens/spacing.json",
+    "assets/brand/tokens/radius.json",
+    "assets/brand/tokens/shadows.json",
+    "assets/brand/tokens/animations.json",
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+        }
