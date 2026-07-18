@@ -1,0 +1,1275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-animation-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/animations.json",
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "spacingTokensReference": "assets/brand/tokens/spacing.json",
+    "radiusTokensReference": "assets/brand/tokens/radius.json",
+    "shadowTokensReference": "assets/brand/tokens/shadows.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "animation.{context}.{role}.{state}",
+    "cssVariableFormat": "--festanca-motion-{property}-{name}",
+    "examples": [
+      "animation.duration.fast",
+      "animation.easing.standard",
+      "animation.component.card.hover",
+      "animation.ceremonial.reveal"
+    ]
+  },
+
+  "principles": {
+    "description": "O movimento deve orientar, revelar, confirmar e valorizar o conteúdo sem competir com a tradição, a fé ou a legibilidade.",
+
+    "rules": [
+      "Toda animação deve possuir finalidade clara.",
+      "O movimento não deve atrasar ações essenciais.",
+      "Microinterações devem ser discretas e rápidas.",
+      "Animações cerimoniais devem ser lentas e solenes.",
+      "Conteúdos históricos devem utilizar transições suaves.",
+      "Conteúdos religiosos não devem receber efeitos jocosos.",
+      "Animações contínuas devem ser raras.",
+      "O sistema deve respeitar prefers-reduced-motion.",
+      "Foco e estados interativos devem permanecer perceptíveis sem animação.",
+      "Animações não devem alterar o significado cultural de símbolos ou imagens."
+    ]
+  },
+
+  "duration": {
+    "instant": {
+      "value": "0ms",
+      "milliseconds": 0,
+      "type": "duration",
+      "description": "Aplicação imediata, sem transição."
+    },
+
+    "50": {
+      "value": "50ms",
+      "milliseconds": 50,
+      "type": "duration",
+      "description": "Resposta visual quase instantânea."
+    },
+
+    "fastest": {
+      "value": "100ms",
+      "milliseconds": 100,
+      "type": "duration",
+      "description": "Microinterações muito rápidas."
+    },
+
+    "fast": {
+      "value": "150ms",
+      "milliseconds": 150,
+      "type": "duration",
+      "description": "Estados de hover, foco e pressão."
+    },
+
+    "normal": {
+      "value": "220ms",
+      "milliseconds": 220,
+      "type": "duration",
+      "description": "Transição padrão de componentes."
+    },
+
+    "moderate": {
+      "value": "300ms",
+      "milliseconds": 300,
+      "type": "duration",
+      "description": "Entrada e saída de pequenos componentes."
+    },
+
+    "slow": {
+      "value": "450ms",
+      "milliseconds": 450,
+      "type": "duration",
+      "description": "Transição de painéis e cards de destaque."
+    },
+
+    "slower": {
+      "value": "650ms",
+      "milliseconds": 650,
+      "type": "duration",
+      "description": "Revelações editoriais e patrimoniais."
+    },
+
+    "ceremonial": {
+      "value": "900ms",
+      "milliseconds": 900,
+      "type": "duration",
+      "description": "Entrada solene de conteúdo cerimonial."
+    },
+
+    "monumental": {
+      "value": "1200ms",
+      "milliseconds": 1200,
+      "type": "duration",
+      "description": "Aberturas monumentais e peças institucionais."
+    },
+
+    "ambient": {
+      "value": "2400ms",
+      "milliseconds": 2400,
+      "type": "duration",
+      "description": "Movimento ambiental lento e controlado."
+    }
+  },
+
+  "delay": {
+    "none": {
+      "value": "0ms",
+      "milliseconds": 0,
+      "type": "duration"
+    },
+
+    "short": {
+      "value": "80ms",
+      "milliseconds": 80,
+      "type": "duration"
+    },
+
+    "default": {
+      "value": "150ms",
+      "milliseconds": 150,
+      "type": "duration"
+    },
+
+    "medium": {
+      "value": "250ms",
+      "milliseconds": 250,
+      "type": "duration"
+    },
+
+    "long": {
+      "value": "400ms",
+      "milliseconds": 400,
+      "type": "duration"
+    },
+
+    "ceremonial": {
+      "value": "600ms",
+      "milliseconds": 600,
+      "type": "duration"
+    }
+  },
+
+  "easing": {
+    "linear": {
+      "value": "linear",
+      "type": "cubicBezier",
+      "description": "Movimento constante."
+    },
+
+    "standard": {
+      "value": "cubic-bezier(0.2, 0, 0, 1)",
+      "type": "cubicBezier",
+      "description": "Curva padrão para transições gerais."
+    },
+
+    "standardEnter": {
+      "value": "cubic-bezier(0, 0, 0.2, 1)",
+      "type": "cubicBezier",
+      "description": "Entrada suave."
+    },
+
+    "standardExit": {
+      "value": "cubic-bezier(0.4, 0, 1, 1)",
+      "type": "cubicBezier",
+      "description": "Saída rápida e natural."
+    },
+
+    "emphasized": {
+      "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "type": "cubicBezier",
+      "description": "Movimento expressivo sem exagero."
+    },
+
+    "decelerate": {
+      "value": "cubic-bezier(0, 0, 0.2, 1)",
+      "type": "cubicBezier",
+      "description": "Entrada com desaceleração."
+    },
+
+    "accelerate": {
+      "value": "cubic-bezier(0.4, 0, 1, 1)",
+      "type": "cubicBezier",
+      "description": "Saída acelerada."
+    },
+
+    "smooth": {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "type": "cubicBezier",
+      "description": "Curva suave para componentes."
+    },
+
+    "springSoft": {
+      "value": "cubic-bezier(0.34, 1.2, 0.64, 1)",
+      "type": "cubicBezier",
+      "description": "Pequena elasticidade para microinterações."
+    },
+
+    "ceremonial": {
+      "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "type": "cubicBezier",
+      "description": "Entrada elegante e solene."
+    },
+
+    "heritage": {
+      "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "type": "cubicBezier",
+      "description": "Movimento editorial e patrimonial."
+    }
+  },
+
+  "distance": {
+    "none": {
+      "value": "0",
+      "type": "dimension"
+    },
+
+    "micro": {
+      "value": "0.125rem",
+      "pixels": 2,
+      "type": "dimension"
+    },
+
+    "xs": {
+      "value": "0.25rem",
+      "pixels": 4,
+      "type": "dimension"
+    },
+
+    "sm": {
+      "value": "0.5rem",
+      "pixels": 8,
+      "type": "dimension"
+    },
+
+    "md": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension"
+    },
+
+    "lg": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "dimension"
+    },
+
+    "xl": {
+      "value": "2rem",
+      "pixels": 32,
+      "type": "dimension"
+    },
+
+    "2xl": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "dimension"
+    }
+  },
+
+  "scale": {
+    "pressed": {
+      "value": 0.97,
+      "type": "number",
+      "description": "Escala de botão pressionado."
+    },
+
+    "subtle": {
+      "value": 1.01,
+      "type": "number",
+      "description": "Ampliação mínima."
+    },
+
+    "hover": {
+      "value": 1.025,
+      "type": "number",
+      "description": "Ampliação padrão em hover."
+    },
+
+    "prominent": {
+      "value": 1.05,
+      "type": "number",
+      "description": "Ampliação de elemento destacado."
+    },
+
+    "hidden": {
+      "value": 0.96,
+      "type": "number",
+      "description": "Escala inicial de entrada."
+    },
+
+    "full": {
+      "value": 1,
+      "type": "number",
+      "description": "Escala original."
+    }
+  },
+
+  "opacity": {
+    "hidden": {
+      "value": 0,
+      "type": "number"
+    },
+
+    "disabled": {
+      "value": 0.46,
+      "type": "number"
+    },
+
+    "muted": {
+      "value": 0.68,
+      "type": "number"
+    },
+
+    "visible": {
+      "value": 1,
+      "type": "number"
+    }
+  },
+
+  "transition": {
+    "instant": {
+      "value": "none",
+      "type": "transition",
+      "description": "Sem transição."
+    },
+
+    "color": {
+      "value": "color 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição de cores."
+    },
+
+    "opacity": {
+      "value": "opacity 220ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição de opacidade."
+    },
+
+    "transform": {
+      "value": "transform 220ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição de movimento."
+    },
+
+    "shadow": {
+      "value": "box-shadow 220ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição de sombra."
+    },
+
+    "interactive": {
+      "value": "transform 150ms cubic-bezier(0.2, 0, 0, 1), box-shadow 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição padrão de elementos interativos."
+    },
+
+    "surface": {
+      "value": "transform 300ms cubic-bezier(0.2, 0, 0, 1), box-shadow 300ms cubic-bezier(0.2, 0, 0, 1), opacity 300ms cubic-bezier(0.2, 0, 0, 1)",
+      "type": "transition",
+      "description": "Transição de cards e superfícies."
+    },
+
+    "ceremonial": {
+      "value": "opacity 900ms cubic-bezier(0.16, 1, 0.3, 1), transform 900ms cubic-bezier(0.16, 1, 0.3, 1), filter 900ms cubic-bezier(0.16, 1, 0.3, 1)",
+      "type": "transition",
+      "description": "Transição solene."
+    }
+  },
+
+  "entrance": {
+    "fadeIn": {
+      "duration": "{duration.normal.value}",
+      "easing": "{easing.standardEnter.value}",
+      "from": {
+        "opacity": 0
+      },
+      "to": {
+        "opacity": 1
+      },
+      "description": "Entrada simples por opacidade."
+    },
+
+    "fadeUp": {
+      "duration": "{duration.moderate.value}",
+      "easing": "{easing.decelerate.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateY(1rem)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateY(0)"
+      },
+      "description": "Entrada vertical padrão."
+    },
+
+    "fadeDown": {
+      "duration": "{duration.moderate.value}",
+      "easing": "{easing.decelerate.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateY(-1rem)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateY(0)"
+      },
+      "description": "Entrada superior."
+    },
+
+    "fadeLeft": {
+      "duration": "{duration.moderate.value}",
+      "easing": "{easing.decelerate.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateX(1rem)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateX(0)"
+      },
+      "description": "Entrada pela direita em direção à esquerda."
+    },
+
+    "fadeRight": {
+      "duration": "{duration.moderate.value}",
+      "easing": "{easing.decelerate.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateX(-1rem)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateX(0)"
+      },
+      "description": "Entrada pela esquerda."
+    },
+
+    "scaleIn": {
+      "duration": "{duration.normal.value}",
+      "easing": "{easing.springSoft.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "scale(0.96)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "scale(1)"
+      },
+      "description": "Entrada por escala."
+    },
+
+    "slideUp": {
+      "duration": "{duration.slow.value}",
+      "easing": "{easing.emphasized.value}",
+      "from": {
+        "transform": "translateY(100%)"
+      },
+      "to": {
+        "transform": "translateY(0)"
+      },
+      "description": "Entrada de bottom sheet."
+    },
+
+    "ceremonialReveal": {
+      "duration": "{duration.ceremonial.value}",
+      "easing": "{easing.ceremonial.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateY(1.5rem) scale(0.98)",
+        "filter": "blur(4px)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateY(0) scale(1)",
+        "filter": "blur(0)"
+      },
+      "description": "Revelação cerimonial."
+    },
+
+    "heritageReveal": {
+      "duration": "{duration.slower.value}",
+      "easing": "{easing.heritage.value}",
+      "from": {
+        "opacity": 0,
+        "transform": "translateY(0.75rem)"
+      },
+      "to": {
+        "opacity": 1,
+        "transform": "translateY(0)"
+      },
+      "description": "Revelação de conteúdos históricos."
+    }
+  },
+
+  "exit": {
+    "fadeOut": {
+      "duration": "{duration.fast.value}",
+      "easing": "{easing.standardExit.value}",
+      "from": {
+        "opacity": 1
+      },
+      "to": {
+        "opacity": 0
+      },
+      "description": "Saída por opacidade."
+    },
+
+    "fadeDown": {
+      "duration": "{duration.normal.value}",
+      "easing": "{easing.accelerate.value}",
+      "from": {
+        "opacity": 1,
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "opacity": 0,
+        "transform": "translateY(0.75rem)"
+      },
+      "description": "Saída vertical."
+    },
+
+    "scaleOut": {
+      "duration": "{duration.fast.value}",
+      "easing": "{easing.accelerate.value}",
+      "from": {
+        "opacity": 1,
+        "transform": "scale(1)"
+      },
+      "to": {
+        "opacity": 0,
+        "transform": "scale(0.97)"
+      },
+      "description": "Saída por escala."
+    },
+
+    "slideDown": {
+      "duration": "{duration.moderate.value}",
+      "easing": "{easing.accelerate.value}",
+      "from": {
+        "transform": "translateY(0)"
+      },
+      "to": {
+        "transform": "translateY(100%)"
+      },
+      "description": "Saída de bottom sheet."
+    }
+  },
+
+  "component": {
+    "button": {
+      "hover": {
+        "duration": "{duration.fast.value}",
+        "easing": "{easing.standard.value}",
+        "transform": "translateY(-2px)",
+        "scale": 1.01,
+        "description": "Elevação discreta."
+      },
+
+      "pressed": {
+        "duration": "{duration.fastest.value}",
+        "easing": "{easing.standard.value}",
+        "transform": "translateY(1px) scale(0.97)",
+        "description": "Resposta de pressionamento."
+      },
+
+      "focus": {
+        "duration": "{duration.fast.value}",
+        "easing": "{easing.standard.value}",
+        "properties": [
+          "box-shadow",
+          "outline-color"
+        ],
+        "description": "Revelação do foco."
+      },
+
+      "loading": {
+        "duration": "800ms",
+        "easing": "{easing.linear.value}",
+        "iterationCount": "infinite",
+        "transform": "rotate(360deg)",
+        "description": "Indicador de carregamento."
+      }
+    },
+
+    "card": {
+      "hover": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standard.value}",
+        "transform": "translateY(-4px)",
+        "scale": 1.01,
+        "description": "Elevação do card."
+      },
+
+      "press": {
+        "duration": "{duration.fastest.value}",
+        "easing": "{easing.standard.value}",
+        "transform": "scale(0.99)",
+        "description": "Estado pressionado."
+      },
+
+      "reveal": {
+        "reference": "{entrance.fadeUp}",
+        "description": "Entrada padrão de cards."
+      },
+
+      "staggerDelay": {
+        "value": "80ms",
+        "type": "duration",
+        "description": "Intervalo entre cards sequenciais."
+      }
+    },
+
+    "input": {
+      "focus": {
+        "duration": "{duration.fast.value}",
+        "easing": "{easing.standard.value}",
+        "properties": [
+          "border-color",
+          "box-shadow",
+          "background-color"
+        ],
+        "description": "Transição de foco."
+      },
+
+      "validation": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standard.value}",
+        "properties": [
+          "border-color",
+          "box-shadow",
+          "color"
+        ],
+        "description": "Transição de validação."
+      }
+    },
+
+    "modal": {
+      "backdropEnter": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standardEnter.value}",
+        "fromOpacity": 0,
+        "toOpacity": 1
+      },
+
+      "contentEnter": {
+        "reference": "{entrance.scaleIn}"
+      },
+
+      "backdropExit": {
+        "duration": "{duration.fast.value}",
+        "easing": "{easing.standardExit.value}",
+        "fromOpacity": 1,
+        "toOpacity": 0
+      },
+
+      "contentExit": {
+        "reference": "{exit.scaleOut}"
+      }
+    },
+
+    "drawer": {
+      "enter": {
+        "duration": "{duration.moderate.value}",
+        "easing": "{easing.emphasized.value}",
+        "transformFrom": "translateX(100%)",
+        "transformTo": "translateX(0)"
+      },
+
+      "exit": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.accelerate.value}",
+        "transformFrom": "translateX(0)",
+        "transformTo": "translateX(100%)"
+      }
+    },
+
+    "dropdown": {
+      "enter": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.decelerate.value}",
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(-0.5rem) scale(0.98)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0) scale(1)"
+        }
+      },
+
+      "exit": {
+        "duration": "{duration.fast.value}",
+        "easing": "{easing.accelerate.value}",
+        "from": {
+          "opacity": 1
+        },
+        "to": {
+          "opacity": 0
+        }
+      }
+    },
+
+    "tooltip": {
+      "enter": {
+        "duration": "{duration.fast.value}",
+        "delay": "{delay.short.value}",
+        "easing": "{easing.standardEnter.value}",
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(0.25rem)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      },
+
+      "exit": {
+        "duration": "{duration.fastest.value}",
+        "easing": "{easing.standardExit.value}",
+        "fromOpacity": 1,
+        "toOpacity": 0
+      }
+    },
+
+    "toast": {
+      "enter": {
+        "duration": "{duration.moderate.value}",
+        "easing": "{easing.emphasized.value}",
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(1rem)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      },
+
+      "exit": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.accelerate.value}",
+        "from": {
+          "opacity": 1
+        },
+        "to": {
+          "opacity": 0
+        }
+      }
+    },
+
+    "accordion": {
+      "duration": "{duration.normal.value}",
+      "easing": "{easing.standard.value}",
+      "properties": [
+        "grid-template-rows",
+        "opacity"
+      ],
+      "description": "Abertura e fechamento de conteúdo."
+    },
+
+    "tab": {
+      "indicator": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.emphasized.value}",
+        "properties": [
+          "transform",
+          "width"
+        ]
+      },
+
+      "content": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standard.value}",
+        "properties": [
+          "opacity",
+          "transform"
+        ]
+      }
+    },
+
+    "navigation": {
+      "header": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standard.value}",
+        "properties": [
+          "background-color",
+          "box-shadow",
+          "transform"
+        ]
+      },
+
+      "mobileMenu": {
+        "enter": {
+          "duration": "{duration.moderate.value}",
+          "easing": "{easing.emphasized.value}",
+          "transformFrom": "translateX(-100%)",
+          "transformTo": "translateX(0)"
+        },
+
+        "exit": {
+          "duration": "{duration.normal.value}",
+          "easing": "{easing.accelerate.value}",
+          "transformFrom": "translateX(0)",
+          "transformTo": "translateX(-100%)"
+        }
+      }
+    },
+
+    "progress": {
+      "determinate": {
+        "duration": "{duration.slow.value}",
+        "easing": "{easing.standard.value}",
+        "property": "transform"
+      },
+
+      "indeterminate": {
+        "duration": "1600ms",
+        "easing": "{easing.linear.value}",
+        "iterationCount": "infinite"
+      }
+    },
+
+    "skeleton": {
+      "shimmer": {
+        "duration": "1600ms",
+        "easing": "{easing.linear.value}",
+        "iterationCount": "infinite",
+        "description": "Carregamento visual discreto."
+      }
+    }
+  },
+
+  "brand": {
+    "logo": {
+      "reveal": {
+        "duration": "{duration.monumental.value}",
+        "easing": "{easing.ceremonial.value}",
+        "from": {
+          "opacity": 0,
+          "transform": "scale(0.96)",
+          "filter": "blur(6px)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "scale(1)",
+          "filter": "blur(0)"
+        },
+        "description": "Revelação oficial do logotipo."
+      },
+
+      "goldGlow": {
+        "duration": "2400ms",
+        "easing": "{easing.smooth.value}",
+        "iterationCount": "infinite",
+        "direction": "alternate",
+        "from": {
+          "filter": "drop-shadow(0 0 8px rgba(217, 162, 27, 0.28))"
+        },
+        "to": {
+          "filter": "drop-shadow(0 0 18px rgba(255, 211, 78, 0.56))"
+        },
+        "description": "Pulsação dourada opcional."
+      },
+
+      "restriction": "Não utilizar pulsação contínua em páginas de leitura prolongada."
+    },
+
+    "star": {
+      "twinkle": {
+        "duration": "2200ms",
+        "easing": "{easing.smooth.value}",
+        "iterationCount": "infinite",
+        "direction": "alternate",
+        "from": {
+          "opacity": 0.72,
+          "transform": "scale(0.96)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "scale(1.04)"
+        },
+        "description": "Cintilação discreta da estrela."
+      }
+    },
+
+    "arc": {
+      "reveal": {
+        "duration": "{duration.ceremonial.value}",
+        "easing": "{easing.ceremonial.value}",
+        "property": "stroke-dashoffset",
+        "description": "Desenho progressivo do arco dourado."
+      }
+    },
+
+    "culturalIcon": {
+      "hover": {
+        "duration": "{duration.normal.value}",
+        "easing": "{easing.standard.value}",
+        "transform": "translateY(-3px) scale(1.025)",
+        "description": "Destaque respeitoso do ícone cultural."
+      },
+
+      "reveal": {
+        "duration": "{duration.slow.value}",
+        "easing": "{easing.heritage.value}",
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(0.75rem)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      }
+    },
+
+    "ceremonialPanel": {
+      "reveal": {
+        "reference": "{entrance.ceremonialReveal}"
+      }
+    },
+
+    "historicalPanel": {
+      "reveal": {
+        "reference": "{entrance.heritageReveal}"
+      }
+    }
+  },
+
+  "holographic": {
+    "panelHover": {
+      "duration": "{duration.slow.value}",
+      "easing": "{easing.emphasized.value}",
+      "transform": "translateY(-6px) scale(1.01)",
+      "properties": [
+        "transform",
+        "box-shadow",
+        "border-color",
+        "filter"
+      ]
+    },
+
+    "scanLine": {
+      "duration": "3200ms",
+      "easing": "{easing.linear.value}",
+      "iterationCount": "infinite",
+      "transformFrom": "translateY(-100%)",
+      "transformTo": "translateY(100%)",
+      "description": "Linha de varredura holográfica."
+    },
+
+    "ambientGlow": {
+      "duration": "3600ms",
+      "easing": "{easing.smooth.value}",
+      "iterationCount": "infinite",
+      "direction": "alternate",
+      "description": "Brilho ambiental suave."
+    },
+
+    "restriction": [
+      "Não aplicar efeitos holográficos em fotografias históricas.",
+      "Não utilizar varredura contínua em textos longos.",
+      "Desativar efeitos contínuos no modo de movimento reduzido."
+    ]
+  },
+
+  "stagger": {
+    "fast": {
+      "value": "50ms",
+      "milliseconds": 50,
+      "type": "duration",
+      "description": "Sequência rápida."
+    },
+
+    "default": {
+      "value": "80ms",
+      "milliseconds": 80,
+      "type": "duration",
+      "description": "Sequência padrão."
+    },
+
+    "comfortable": {
+      "value": "120ms",
+      "milliseconds": 120,
+      "type": "duration",
+      "description": "Sequência de conteúdos editoriais."
+    },
+
+    "ceremonial": {
+      "value": "180ms",
+      "milliseconds": 180,
+      "type": "duration",
+      "description": "Sequência solene."
+    },
+
+    "maximumItemsRecommended": {
+      "value": 8,
+      "type": "number",
+      "description": "Quantidade máxima recomendada em uma sequência animada."
+    }
+  },
+
+  "scroll": {
+    "behavior": {
+      "default": {
+        "value": "smooth",
+        "type": "string"
+      },
+
+      "reducedMotion": {
+        "value": "auto",
+        "type": "string"
+      }
+    },
+
+    "revealThreshold": {
+      "value": 0.15,
+      "type": "number",
+      "description": "Percentual mínimo visível antes da animação."
+    },
+
+    "revealOnce": {
+      "value": true,
+      "type": "boolean",
+      "description": "Evitar repetição desnecessária."
+    }
+  },
+
+  "reducedMotion": {
+    "mediaQuery": "(prefers-reduced-motion: reduce)",
+
+    "strategy": {
+      "disableContinuousAnimations": true,
+      "disableParallax": true,
+      "disableAutoScroll": true,
+      "disableDecorativeTransforms": true,
+      "preserveEssentialFeedback": true,
+      "maximumDuration": "100ms"
+    },
+
+    "fallbacks": {
+      "entrance": {
+        "duration": "0ms",
+        "transform": "none",
+        "opacity": 1
+      },
+
+      "exit": {
+        "duration": "0ms",
+        "transform": "none"
+      },
+
+      "hover": {
+        "transform": "none"
+      },
+
+      "loading": {
+        "recommendation": "Utilizar indicador estático acompanhado de texto."
+      },
+
+      "scroll": {
+        "behavior": "auto"
+      }
+    },
+
+    "rules": [
+      "Movimentos decorativos devem ser removidos.",
+      "Conteúdo deve permanecer imediatamente disponível.",
+      "Feedback essencial pode utilizar mudança de cor ou borda.",
+      "Não utilizar parallax.",
+      "Não utilizar cintilação contínua.",
+      "Não utilizar varredura holográfica.",
+      "Não iniciar vídeos automaticamente.",
+      "Não remover estados de foco."
+    ]
+  },
+
+  "cssVariables": {
+    "--festanca-duration-instant": "0ms",
+    "--festanca-duration-fastest": "100ms",
+    "--festanca-duration-fast": "150ms",
+    "--festanca-duration-normal": "220ms",
+    "--festanca-duration-moderate": "300ms",
+    "--festanca-duration-slow": "450ms",
+    "--festanca-duration-slower": "650ms",
+    "--festanca-duration-ceremonial": "900ms",
+    "--festanca-duration-monumental": "1200ms",
+
+    "--festanca-ease-linear": "linear",
+    "--festanca-ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+    "--festanca-ease-enter": "cubic-bezier(0, 0, 0.2, 1)",
+    "--festanca-ease-exit": "cubic-bezier(0.4, 0, 1, 1)",
+    "--festanca-ease-emphasized": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+    "--festanca-ease-smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "--festanca-ease-ceremonial": "cubic-bezier(0.16, 1, 0.3, 1)",
+
+    "--festanca-transition-color": "color 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1), border-color 150ms cubic-bezier(0.2, 0, 0, 1)",
+    "--festanca-transition-opacity": "opacity 220ms cubic-bezier(0.2, 0, 0, 1)",
+    "--festanca-transition-transform": "transform 220ms cubic-bezier(0.2, 0, 0, 1)",
+    "--festanca-transition-shadow": "box-shadow 220ms cubic-bezier(0.2, 0, 0, 1)",
+    "--festanca-transition-interactive": "transform 150ms cubic-bezier(0.2, 0, 0, 1), box-shadow 150ms cubic-bezier(0.2, 0, 0, 1), background-color 150ms cubic-bezier(0.2, 0, 0, 1)",
+
+    "--festanca-motion-distance-sm": "0.5rem",
+    "--festanca-motion-distance-md": "1rem",
+    "--festanca-motion-distance-lg": "1.5rem",
+
+    "--festanca-motion-scale-pressed": "0.97",
+    "--festanca-motion-scale-hover": "1.025",
+
+    "--festanca-stagger-fast": "50ms",
+    "--festanca-stagger-default": "80ms",
+    "--festanca-stagger-comfortable": "120ms",
+    "--festanca-stagger-ceremonial": "180ms"
+  },
+
+  "usageExamples": {
+    "css": {
+      "button": "transition: var(--festanca-transition-interactive);",
+      "card": "transition: transform var(--festanca-duration-normal) var(--festanca-ease-standard), box-shadow var(--festanca-duration-normal) var(--festanca-ease-standard);",
+      "fade": "animation: festanca-fade-in var(--festanca-duration-normal) var(--festanca-ease-enter) both;",
+      "ceremonial": "animation: festanca-ceremonial-reveal var(--festanca-duration-ceremonial) var(--festanca-ease-ceremonial) both;"
+    },
+
+    "keyframes": {
+      "festanca-fade-in": {
+        "from": {
+          "opacity": 0
+        },
+        "to": {
+          "opacity": 1
+        }
+      },
+
+      "festanca-fade-up": {
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(1rem)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      },
+
+      "festanca-ceremonial-reveal": {
+        "from": {
+          "opacity": 0,
+          "transform": "translateY(1.5rem) scale(0.98)",
+          "filter": "blur(4px)"
+        },
+        "to": {
+          "opacity": 1,
+          "transform": "translateY(0) scale(1)",
+          "filter": "blur(0)"
+        }
+      }
+    }
+  },
+
+  "performance": {
+    "preferredProperties": [
+      "transform",
+      "opacity"
+    ],
+
+    "limitedProperties": [
+      "box-shadow",
+      "filter",
+      "background-position"
+    ],
+
+    "avoidAnimating": [
+      "width",
+      "height",
+      "top",
+      "left",
+      "margin",
+      "padding"
+    ],
+
+    "rules": [
+      "Priorizar transform e opacity.",
+      "Evitar animações que provoquem recálculo de layout.",
+      "Não manter mais de três animações contínuas simultâneas.",
+      "Não utilizar will-change permanentemente.",
+      "Aplicar will-change apenas antes da interação.",
+      "Remover will-change após a transição.",
+      "Testar em dispositivos móveis.",
+      "Reduzir filtros e sombras complexas em celulares."
+    ]
+  },
+
+  "accessibility": {
+    "rules": [
+      "Respeitar prefers-reduced-motion.",
+      "Não utilizar flashes rápidos.",
+      "Não utilizar cintilação superior a três vezes por segundo.",
+      "Não exigir movimento para compreender conteúdo.",
+      "Manter controles disponíveis durante transições.",
+      "Não bloquear a interface com animações decorativas.",
+      "Não alterar a ordem de leitura por meio de movimento.",
+      "Garantir que mensagens permaneçam tempo suficiente para leitura.",
+      "Pausar ou permitir interromper movimentos contínuos."
+    ]
+  },
+
+  "restrictions": [
+    "Não criar durações arbitrárias quando existir token equivalente.",
+    "Não utilizar bounce exagerado em conteúdos tradicionais.",
+    "Não aplicar rotações em símbolos religiosos.",
+    "Não animar fotografias históricas com distorção.",
+    "Não utilizar parallax em conteúdos sensíveis.",
+    "Não aplicar efeitos contínuos em todos os componentes.",
+    "Não utilizar animação para ocultar lentidão estrutural.",
+    "Não atrasar informações essenciais.",
+    "Não utilizar efeitos cerimoniais em mensagens de erro.",
+    "Toda alteração deverá ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "performance",
+      "accessibility",
+      "cultural"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+    }
