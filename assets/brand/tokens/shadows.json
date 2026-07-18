@@ -1,0 +1,866 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-shadow-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/shadows.json",
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "spacingTokensReference": "assets/brand/tokens/spacing.json",
+    "radiusTokensReference": "assets/brand/tokens/radius.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "shadow.{context}.{role}.{level}",
+    "cssVariableFormat": "--festanca-shadow-{role}",
+    "examples": [
+      "shadow.elevation.level1",
+      "shadow.component.card.default",
+      "shadow.glow.gold.medium",
+      "shadow.holographic.panel"
+    ]
+  },
+
+  "principles": {
+    "description": "Sombras, brilhos e efeitos de profundidade devem reforçar hierarquia, legibilidade e solenidade sem comprometer a autenticidade cultural.",
+
+    "rules": [
+      "Utilizar sombras para indicar profundidade e hierarquia.",
+      "Evitar sombras excessivamente densas em textos.",
+      "Reservar brilhos dourados para elementos de destaque.",
+      "Utilizar efeitos neon apenas em ambientes digitais aprovados.",
+      "Não aplicar brilho holográfico em documentos históricos formais.",
+      "Manter foco visual acessível e claramente identificável.",
+      "Utilizar efeitos cerimoniais com moderação.",
+      "Evitar múltiplas sombras concorrentes no mesmo componente."
+    ]
+  },
+
+  "foundation": {
+    "shadowColorDark": {
+      "value": "rgba(0, 0, 0, 0.48)",
+      "type": "color",
+      "description": "Cor-base para sombras profundas."
+    },
+
+    "shadowColorSoft": {
+      "value": "rgba(0, 0, 0, 0.24)",
+      "type": "color",
+      "description": "Cor-base para sombras suaves."
+    },
+
+    "shadowColorLight": {
+      "value": "rgba(7, 26, 43, 0.18)",
+      "type": "color",
+      "description": "Sombra azulada para superfícies claras."
+    },
+
+    "goldGlowColor": {
+      "value": "rgba(217, 162, 27, 0.55)",
+      "type": "color",
+      "description": "Brilho dourado oficial."
+    },
+
+    "goldGlowBrightColor": {
+      "value": "rgba(255, 211, 78, 0.72)",
+      "type": "color",
+      "description": "Brilho dourado intenso."
+    },
+
+    "greenGlowColor": {
+      "value": "rgba(98, 245, 141, 0.58)",
+      "type": "color",
+      "description": "Brilho verde para aplicações neon."
+    },
+
+    "blueGlowColor": {
+      "value": "rgba(95, 166, 201, 0.48)",
+      "type": "color",
+      "description": "Brilho azul para interfaces e painéis."
+    }
+  },
+
+  "elevation": {
+    "none": {
+      "value": "none",
+      "type": "boxShadow",
+      "description": "Sem sombra."
+    },
+
+    "level1": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.18)",
+      "type": "boxShadow",
+      "description": "Elevação mínima para elementos discretos."
+    },
+
+    "level2": {
+      "value": "0 2px 6px rgba(0, 0, 0, 0.22)",
+      "type": "boxShadow",
+      "description": "Elevação leve para botões e pequenos cards."
+    },
+
+    "level3": {
+      "value": "0 4px 12px rgba(0, 0, 0, 0.26)",
+      "type": "boxShadow",
+      "description": "Elevação padrão para cards."
+    },
+
+    "level4": {
+      "value": "0 8px 20px rgba(0, 0, 0, 0.30)",
+      "type": "boxShadow",
+      "description": "Elevação para menus e componentes flutuantes."
+    },
+
+    "level5": {
+      "value": "0 12px 32px rgba(0, 0, 0, 0.36)",
+      "type": "boxShadow",
+      "description": "Elevação forte para modais."
+    },
+
+    "level6": {
+      "value": "0 20px 48px rgba(0, 0, 0, 0.42)",
+      "type": "boxShadow",
+      "description": "Elevação máxima para painéis monumentais."
+    }
+  },
+
+  "component": {
+    "button": {
+      "default": {
+        "value": "0 2px 6px rgba(0, 0, 0, 0.24)",
+        "type": "boxShadow",
+        "description": "Sombra padrão de botão."
+      },
+
+      "hover": {
+        "value": "0 5px 14px rgba(0, 0, 0, 0.30)",
+        "type": "boxShadow",
+        "description": "Sombra de botão em hover."
+      },
+
+      "active": {
+        "value": "0 1px 3px rgba(0, 0, 0, 0.28)",
+        "type": "boxShadow",
+        "description": "Sombra reduzida para botão pressionado."
+      },
+
+      "primary": {
+        "value": "0 4px 14px rgba(217, 162, 27, 0.28)",
+        "type": "boxShadow",
+        "description": "Sombra dourada da ação principal."
+      },
+
+      "primaryHover": {
+        "value": "0 7px 22px rgba(255, 211, 78, 0.38)",
+        "type": "boxShadow",
+        "description": "Realce da ação principal."
+      },
+
+      "disabled": {
+        "value": "none",
+        "type": "boxShadow",
+        "description": "Botão desabilitado sem elevação."
+      }
+    },
+
+    "card": {
+      "subtle": {
+        "value": "0 2px 8px rgba(0, 0, 0, 0.18)",
+        "type": "boxShadow",
+        "description": "Card discreto."
+      },
+
+      "default": {
+        "value": "0 6px 18px rgba(0, 0, 0, 0.24)",
+        "type": "boxShadow",
+        "description": "Card padrão."
+      },
+
+      "hover": {
+        "value": "0 12px 30px rgba(0, 0, 0, 0.32)",
+        "type": "boxShadow",
+        "description": "Card elevado em interação."
+      },
+
+      "feature": {
+        "value": "0 16px 42px rgba(0, 0, 0, 0.38)",
+        "type": "boxShadow",
+        "description": "Card de grande destaque."
+      },
+
+      "gold": {
+        "value": "0 8px 28px rgba(217, 162, 27, 0.24)",
+        "type": "boxShadow",
+        "description": "Card com acabamento dourado."
+      },
+
+      "historical": {
+        "value": "0 4px 14px rgba(42, 32, 22, 0.32)",
+        "type": "boxShadow",
+        "description": "Card patrimonial e histórico."
+      },
+
+      "ceremonial": {
+        "value": "0 12px 36px rgba(217, 162, 27, 0.32), 0 0 18px rgba(255, 211, 78, 0.18)",
+        "type": "boxShadow",
+        "description": "Card cerimonial com brilho moderado."
+      }
+    },
+
+    "input": {
+      "default": {
+        "value": "inset 0 0 0 1px rgba(54, 86, 109, 0.58)",
+        "type": "boxShadow",
+        "description": "Contorno interno padrão de campo."
+      },
+
+      "hover": {
+        "value": "inset 0 0 0 1px rgba(95, 166, 201, 0.72)",
+        "type": "boxShadow",
+        "description": "Contorno do campo em hover."
+      },
+
+      "focus": {
+        "value": "0 0 0 3px rgba(98, 245, 141, 0.34), inset 0 0 0 1px rgba(98, 245, 141, 0.78)",
+        "type": "boxShadow",
+        "description": "Foco acessível em campo."
+      },
+
+      "error": {
+        "value": "0 0 0 3px rgba(232, 90, 79, 0.26), inset 0 0 0 1px rgba(232, 90, 79, 0.84)",
+        "type": "boxShadow",
+        "description": "Campo com erro."
+      },
+
+      "success": {
+        "value": "0 0 0 3px rgba(45, 190, 103, 0.24), inset 0 0 0 1px rgba(45, 190, 103, 0.82)",
+        "type": "boxShadow",
+        "description": "Campo validado."
+      },
+
+      "disabled": {
+        "value": "inset 0 0 0 1px rgba(122, 135, 145, 0.28)",
+        "type": "boxShadow",
+        "description": "Campo desabilitado."
+      }
+    },
+
+    "modal": {
+      "default": {
+        "value": "0 24px 64px rgba(0, 0, 0, 0.52)",
+        "type": "boxShadow",
+        "description": "Sombra principal de modal."
+      },
+
+      "mobile": {
+        "value": "0 -10px 36px rgba(0, 0, 0, 0.44)",
+        "type": "boxShadow",
+        "description": "Sombra de modal ou bottom sheet móvel."
+      },
+
+      "ceremonial": {
+        "value": "0 28px 72px rgba(0, 0, 0, 0.58), 0 0 28px rgba(217, 162, 27, 0.22)",
+        "type": "boxShadow",
+        "description": "Modal cerimonial."
+      }
+    },
+
+    "dialog": {
+      "default": {
+        "value": "0 20px 56px rgba(0, 0, 0, 0.48)",
+        "type": "boxShadow",
+        "description": "Caixa de diálogo."
+      }
+    },
+
+    "dropdown": {
+      "default": {
+        "value": "0 10px 28px rgba(0, 0, 0, 0.36)",
+        "type": "boxShadow",
+        "description": "Menu suspenso."
+      }
+    },
+
+    "popover": {
+      "default": {
+        "value": "0 12px 34px rgba(0, 0, 0, 0.40)",
+        "type": "boxShadow",
+        "description": "Painel flutuante."
+      }
+    },
+
+    "tooltip": {
+      "default": {
+        "value": "0 4px 12px rgba(0, 0, 0, 0.38)",
+        "type": "boxShadow",
+        "description": "Tooltip."
+      }
+    },
+
+    "toast": {
+      "default": {
+        "value": "0 10px 30px rgba(0, 0, 0, 0.38)",
+        "type": "boxShadow",
+        "description": "Notificação temporária."
+      },
+
+      "success": {
+        "value": "0 10px 30px rgba(45, 190, 103, 0.22)",
+        "type": "boxShadow",
+        "description": "Notificação de sucesso."
+      },
+
+      "warning": {
+        "value": "0 10px 30px rgba(242, 181, 68, 0.22)",
+        "type": "boxShadow",
+        "description": "Notificação de aviso."
+      },
+
+      "error": {
+        "value": "0 10px 30px rgba(232, 90, 79, 0.24)",
+        "type": "boxShadow",
+        "description": "Notificação de erro."
+      }
+    },
+
+    "navigation": {
+      "header": {
+        "value": "0 4px 18px rgba(0, 0, 0, 0.24)",
+        "type": "boxShadow",
+        "description": "Sombra do cabeçalho fixo."
+      },
+
+      "mobileMenu": {
+        "value": "0 14px 38px rgba(0, 0, 0, 0.46)",
+        "type": "boxShadow",
+        "description": "Menu móvel."
+      },
+
+      "bottomNavigation": {
+        "value": "0 -8px 26px rgba(0, 0, 0, 0.34)",
+        "type": "boxShadow",
+        "description": "Navegação inferior."
+      }
+    },
+
+    "table": {
+      "container": {
+        "value": "0 4px 16px rgba(0, 0, 0, 0.20)",
+        "type": "boxShadow",
+        "description": "Contêiner de tabela."
+      },
+
+      "stickyHeader": {
+        "value": "0 4px 8px rgba(0, 0, 0, 0.18)",
+        "type": "boxShadow",
+        "description": "Cabeçalho fixo da tabela."
+      }
+    },
+
+    "image": {
+      "default": {
+        "value": "0 8px 24px rgba(0, 0, 0, 0.28)",
+        "type": "boxShadow",
+        "description": "Imagem padrão."
+      },
+
+      "portrait": {
+        "value": "0 10px 30px rgba(0, 0, 0, 0.34)",
+        "type": "boxShadow",
+        "description": "Retrato institucional."
+      },
+
+      "historical": {
+        "value": "0 6px 20px rgba(42, 32, 22, 0.36)",
+        "type": "boxShadow",
+        "description": "Fotografia histórica."
+      }
+    },
+
+    "badge": {
+      "default": {
+        "value": "0 2px 6px rgba(0, 0, 0, 0.20)",
+        "type": "boxShadow",
+        "description": "Badge padrão."
+      },
+
+      "gold": {
+        "value": "0 2px 10px rgba(217, 162, 27, 0.30)",
+        "type": "boxShadow",
+        "description": "Badge dourado."
+      }
+    },
+
+    "floatingActionButton": {
+      "default": {
+        "value": "0 10px 28px rgba(0, 0, 0, 0.38)",
+        "type": "boxShadow",
+        "description": "Botão flutuante."
+      },
+
+      "hover": {
+        "value": "0 15px 38px rgba(0, 0, 0, 0.46)",
+        "type": "boxShadow",
+        "description": "Botão flutuante em interação."
+      },
+
+      "whatsapp": {
+        "value": "0 10px 28px rgba(45, 190, 103, 0.34)",
+        "type": "boxShadow",
+        "description": "Botão institucional do WhatsApp."
+      }
+    }
+  },
+
+  "focus": {
+    "default": {
+      "value": "0 0 0 3px rgba(98, 245, 141, 0.42)",
+      "type": "boxShadow",
+      "description": "Anel de foco principal."
+    },
+
+    "highContrast": {
+      "value": "0 0 0 4px rgba(255, 211, 78, 0.86)",
+      "type": "boxShadow",
+      "description": "Anel de foco em alto contraste."
+    },
+
+    "darkSurface": {
+      "value": "0 0 0 3px rgba(98, 245, 141, 0.62), 0 0 14px rgba(98, 245, 141, 0.28)",
+      "type": "boxShadow",
+      "description": "Foco para superfícies escuras."
+    },
+
+    "lightSurface": {
+      "value": "0 0 0 3px rgba(21, 85, 122, 0.38)",
+      "type": "boxShadow",
+      "description": "Foco para superfícies claras."
+    },
+
+    "error": {
+      "value": "0 0 0 3px rgba(232, 90, 79, 0.42)",
+      "type": "boxShadow",
+      "description": "Foco em elemento com erro."
+    }
+  },
+
+  "glow": {
+    "gold": {
+      "subtle": {
+        "value": "0 0 8px rgba(217, 162, 27, 0.24)",
+        "type": "boxShadow",
+        "description": "Brilho dourado discreto."
+      },
+
+      "medium": {
+        "value": "0 0 16px rgba(217, 162, 27, 0.42)",
+        "type": "boxShadow",
+        "description": "Brilho dourado médio."
+      },
+
+      "strong": {
+        "value": "0 0 28px rgba(255, 211, 78, 0.60)",
+        "type": "boxShadow",
+        "description": "Brilho dourado forte."
+      },
+
+      "monumental": {
+        "value": "0 0 20px rgba(217, 162, 27, 0.52), 0 0 48px rgba(255, 211, 78, 0.38)",
+        "type": "boxShadow",
+        "description": "Brilho de peças monumentais."
+      }
+    },
+
+    "green": {
+      "subtle": {
+        "value": "0 0 10px rgba(98, 245, 141, 0.26)",
+        "type": "boxShadow",
+        "description": "Brilho verde discreto."
+      },
+
+      "medium": {
+        "value": "0 0 18px rgba(98, 245, 141, 0.46)",
+        "type": "boxShadow",
+        "description": "Brilho verde médio."
+      },
+
+      "strong": {
+        "value": "0 0 32px rgba(98, 245, 141, 0.64)",
+        "type": "boxShadow",
+        "description": "Brilho verde neon."
+      }
+    },
+
+    "blue": {
+      "subtle": {
+        "value": "0 0 10px rgba(95, 166, 201, 0.24)",
+        "type": "boxShadow",
+        "description": "Brilho azul discreto."
+      },
+
+      "medium": {
+        "value": "0 0 20px rgba(95, 166, 201, 0.42)",
+        "type": "boxShadow",
+        "description": "Brilho azul médio."
+      },
+
+      "strong": {
+        "value": "0 0 34px rgba(95, 166, 201, 0.58)",
+        "type": "boxShadow",
+        "description": "Brilho azul holográfico."
+      }
+    },
+
+    "red": {
+      "subtle": {
+        "value": "0 0 10px rgba(232, 90, 79, 0.24)",
+        "type": "boxShadow",
+        "description": "Brilho vermelho discreto."
+      },
+
+      "strong": {
+        "value": "0 0 26px rgba(232, 90, 79, 0.54)",
+        "type": "boxShadow",
+        "description": "Brilho vermelho de alerta."
+      }
+    }
+  },
+
+  "textShadow": {
+    "none": {
+      "value": "none",
+      "type": "textShadow",
+      "description": "Sem sombra tipográfica."
+    },
+
+    "subtle": {
+      "value": "0 1px 2px rgba(0, 0, 0, 0.42)",
+      "type": "textShadow",
+      "description": "Sombra discreta para legibilidade."
+    },
+
+    "strong": {
+      "value": "0 2px 6px rgba(0, 0, 0, 0.68)",
+      "type": "textShadow",
+      "description": "Sombra para textos sobre fotografia."
+    },
+
+    "gold": {
+      "value": "0 0 8px rgba(217, 162, 27, 0.52)",
+      "type": "textShadow",
+      "description": "Brilho dourado para títulos cerimoniais."
+    },
+
+    "neonGreen": {
+      "value": "0 0 6px rgba(98, 245, 141, 0.62), 0 0 14px rgba(98, 245, 141, 0.38)",
+      "type": "textShadow",
+      "description": "Texto neon verde."
+    },
+
+    "holographic": {
+      "value": "0 0 8px rgba(95, 166, 201, 0.58), 0 0 18px rgba(98, 245, 141, 0.28)",
+      "type": "textShadow",
+      "description": "Título holográfico."
+    }
+  },
+
+  "inset": {
+    "surface": {
+      "value": "inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+      "type": "boxShadow",
+      "description": "Realce interno de superfície escura."
+    },
+
+    "goldBorder": {
+      "value": "inset 0 0 0 1px rgba(217, 162, 27, 0.48)",
+      "type": "boxShadow",
+      "description": "Contorno interno dourado."
+    },
+
+    "blueBorder": {
+      "value": "inset 0 0 0 1px rgba(95, 166, 201, 0.38)",
+      "type": "boxShadow",
+      "description": "Contorno interno azul."
+    },
+
+    "pressed": {
+      "value": "inset 0 3px 8px rgba(0, 0, 0, 0.34)",
+      "type": "boxShadow",
+      "description": "Estado pressionado."
+    }
+  },
+
+  "brand": {
+    "logo": {
+      "gold": {
+        "value": "0 0 16px rgba(217, 162, 27, 0.48), 0 0 34px rgba(255, 211, 78, 0.24)",
+        "type": "filterDropShadow",
+        "description": "Brilho oficial do logotipo dourado."
+      },
+
+      "white": {
+        "value": "0 3px 12px rgba(0, 0, 0, 0.64)",
+        "type": "filterDropShadow",
+        "description": "Sombra do logotipo branco."
+      },
+
+      "neon": {
+        "value": "0 0 14px rgba(255, 211, 78, 0.68), 0 0 28px rgba(98, 245, 141, 0.52)",
+        "type": "filterDropShadow",
+        "description": "Brilho do logotipo neon."
+      },
+
+      "monochrome": {
+        "value": "0 2px 8px rgba(0, 0, 0, 0.36)",
+        "type": "filterDropShadow",
+        "description": "Sombra da versão monocromática."
+      }
+    },
+
+    "star": {
+      "subtle": {
+        "value": "0 0 12px rgba(255, 211, 78, 0.46)",
+        "type": "filterDropShadow",
+        "description": "Brilho discreto da estrela."
+      },
+
+      "bright": {
+        "value": "0 0 18px rgba(255, 211, 78, 0.78), 0 0 42px rgba(255, 211, 78, 0.48)",
+        "type": "filterDropShadow",
+        "description": "Brilho intenso da estrela."
+      }
+    },
+
+    "culturalIcon": {
+      "default": {
+        "value": "0 6px 18px rgba(0, 0, 0, 0.30)",
+        "type": "filterDropShadow",
+        "description": "Sombra padrão de ícone cultural."
+      },
+
+      "highlighted": {
+        "value": "0 8px 24px rgba(217, 162, 27, 0.32)",
+        "type": "filterDropShadow",
+        "description": "Ícone cultural destacado."
+      }
+    },
+
+    "historicalPanel": {
+      "value": "0 8px 26px rgba(42, 32, 22, 0.44), inset 0 0 0 1px rgba(232, 215, 176, 0.16)",
+      "type": "boxShadow",
+      "description": "Painel histórico e patrimonial."
+    },
+
+    "ceremonialPanel": {
+      "value": "0 18px 48px rgba(0, 0, 0, 0.48), 0 0 26px rgba(217, 162, 27, 0.26), inset 0 0 0 1px rgba(255, 211, 78, 0.28)",
+      "type": "boxShadow",
+      "description": "Painel cerimonial."
+    },
+
+    "institutionalPanel": {
+      "value": "0 12px 34px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(95, 166, 201, 0.18)",
+      "type": "boxShadow",
+      "description": "Painel institucional."
+    }
+  },
+
+  "holographic": {
+    "panel": {
+      "value": "0 18px 52px rgba(0, 0, 0, 0.52), 0 0 26px rgba(95, 166, 201, 0.28), inset 0 0 0 1px rgba(98, 245, 141, 0.18)",
+      "type": "boxShadow",
+      "description": "Painel holográfico principal."
+    },
+
+    "panelHover": {
+      "value": "0 24px 64px rgba(0, 0, 0, 0.58), 0 0 36px rgba(95, 166, 201, 0.40), 0 0 18px rgba(98, 245, 141, 0.28)",
+      "type": "boxShadow",
+      "description": "Painel holográfico em interação."
+    },
+
+    "goldGreen": {
+      "value": "0 0 18px rgba(217, 162, 27, 0.46), 0 0 34px rgba(98, 245, 141, 0.34)",
+      "type": "boxShadow",
+      "description": "Efeito híbrido dourado e verde."
+    },
+
+    "blueGreen": {
+      "value": "0 0 20px rgba(95, 166, 201, 0.44), 0 0 38px rgba(98, 245, 141, 0.30)",
+      "type": "boxShadow",
+      "description": "Efeito holográfico azul e verde."
+    },
+
+    "interfaceRing": {
+      "value": "0 0 0 1px rgba(95, 166, 201, 0.38), 0 0 16px rgba(98, 245, 141, 0.20)",
+      "type": "boxShadow",
+      "description": "Contorno holográfico de interface."
+    }
+  },
+
+  "themes": {
+    "dark": {
+      "card": "{component.card.default.value}",
+      "cardHover": "{component.card.hover.value}",
+      "modal": "{component.modal.default.value}",
+      "dropdown": "{component.dropdown.default.value}",
+      "focus": "{focus.darkSurface.value}"
+    },
+
+    "light": {
+      "card": "0 4px 16px rgba(7, 26, 43, 0.14)",
+      "cardHover": "0 10px 28px rgba(7, 26, 43, 0.20)",
+      "modal": "0 24px 64px rgba(7, 26, 43, 0.26)",
+      "dropdown": "0 10px 28px rgba(7, 26, 43, 0.20)",
+      "focus": "{focus.lightSurface.value}"
+    },
+
+    "heritage": {
+      "card": "{component.card.historical.value}",
+      "panel": "{brand.historicalPanel.value}",
+      "image": "{component.image.historical.value}",
+      "focus": "{focus.highContrast.value}"
+    },
+
+    "ceremonial": {
+      "card": "{component.card.ceremonial.value}",
+      "panel": "{brand.ceremonialPanel.value}",
+      "logo": "{brand.logo.gold.value}",
+      "focus": "{focus.highContrast.value}"
+    },
+
+    "holographic": {
+      "card": "{holographic.panel.value}",
+      "cardHover": "{holographic.panelHover.value}",
+      "ring": "{holographic.interfaceRing.value}",
+      "focus": "{focus.darkSurface.value}"
+    }
+  },
+
+  "cssVariables": {
+    "--festanca-shadow-none": "none",
+    "--festanca-shadow-xs": "0 1px 2px rgba(0, 0, 0, 0.18)",
+    "--festanca-shadow-sm": "0 2px 6px rgba(0, 0, 0, 0.22)",
+    "--festanca-shadow-md": "0 4px 12px rgba(0, 0, 0, 0.26)",
+    "--festanca-shadow-lg": "0 8px 20px rgba(0, 0, 0, 0.30)",
+    "--festanca-shadow-xl": "0 12px 32px rgba(0, 0, 0, 0.36)",
+    "--festanca-shadow-2xl": "0 20px 48px rgba(0, 0, 0, 0.42)",
+
+    "--festanca-shadow-button": "0 2px 6px rgba(0, 0, 0, 0.24)",
+    "--festanca-shadow-button-hover": "0 5px 14px rgba(0, 0, 0, 0.30)",
+    "--festanca-shadow-card": "0 6px 18px rgba(0, 0, 0, 0.24)",
+    "--festanca-shadow-card-hover": "0 12px 30px rgba(0, 0, 0, 0.32)",
+    "--festanca-shadow-modal": "0 24px 64px rgba(0, 0, 0, 0.52)",
+    "--festanca-shadow-dropdown": "0 10px 28px rgba(0, 0, 0, 0.36)",
+    "--festanca-shadow-header": "0 4px 18px rgba(0, 0, 0, 0.24)",
+
+    "--festanca-focus-ring": "0 0 0 3px rgba(98, 245, 141, 0.42)",
+    "--festanca-focus-ring-high": "0 0 0 4px rgba(255, 211, 78, 0.86)",
+
+    "--festanca-glow-gold": "0 0 16px rgba(217, 162, 27, 0.42)",
+    "--festanca-glow-gold-strong": "0 0 28px rgba(255, 211, 78, 0.60)",
+    "--festanca-glow-green": "0 0 18px rgba(98, 245, 141, 0.46)",
+    "--festanca-glow-blue": "0 0 20px rgba(95, 166, 201, 0.42)",
+
+    "--festanca-text-shadow-subtle": "0 1px 2px rgba(0, 0, 0, 0.42)",
+    "--festanca-text-shadow-strong": "0 2px 6px rgba(0, 0, 0, 0.68)",
+    "--festanca-text-shadow-gold": "0 0 8px rgba(217, 162, 27, 0.52)",
+
+    "--festanca-shadow-ceremonial": "0 18px 48px rgba(0, 0, 0, 0.48), 0 0 26px rgba(217, 162, 27, 0.26)",
+    "--festanca-shadow-holographic": "0 18px 52px rgba(0, 0, 0, 0.52), 0 0 26px rgba(95, 166, 201, 0.28)"
+  },
+
+  "usageExamples": {
+    "css": {
+      "card": "box-shadow: var(--festanca-shadow-card);",
+      "cardHover": "box-shadow: var(--festanca-shadow-card-hover);",
+      "modal": "box-shadow: var(--festanca-shadow-modal);",
+      "focus": "box-shadow: var(--festanca-focus-ring);",
+      "goldTitle": "text-shadow: var(--festanca-text-shadow-gold);",
+      "ceremonialPanel": "box-shadow: var(--festanca-shadow-ceremonial);",
+      "holographicPanel": "box-shadow: var(--festanca-shadow-holographic);"
+    },
+
+    "componentMapping": {
+      "programCard": "{component.card.default.value}",
+      "featuredProgramCard": "{component.card.feature.value}",
+      "historicalCard": "{component.card.historical.value}",
+      "ceremonialCard": "{component.card.ceremonial.value}",
+      "curationModal": "{component.modal.default.value}",
+      "mobileMenu": "{component.navigation.mobileMenu.value}",
+      "whatsappButton": "{component.floatingActionButton.whatsapp.value}",
+      "holographicDashboard": "{holographic.panel.value}"
+    }
+  },
+
+  "performance": {
+    "rules": [
+      "Evitar mais de três camadas de sombra em componentes comuns.",
+      "Reservar sombras múltiplas para peças cerimoniais ou holográficas.",
+      "Não animar sombras complexas continuamente.",
+      "Preferir transform e opacity em animações de elevação.",
+      "Reduzir efeitos em dispositivos com baixa capacidade.",
+      "Respeitar prefers-reduced-motion quando sombras forem animadas."
+    ]
+  },
+
+  "accessibility": {
+    "rules": [
+      "Sombras não devem substituir bordas ou contraste necessário.",
+      "O estado de foco deve permanecer visível sem depender apenas de cor.",
+      "Não utilizar brilho intenso atrás de textos longos.",
+      "Evitar halos que reduzam a nitidez de letras.",
+      "Manter foco com espessura visual mínima equivalente a 3 px.",
+      "Estados de erro e sucesso devem possuir texto ou ícone adicional.",
+      "Elementos interativos devem continuar identificáveis sem sombras."
+    ]
+  },
+
+  "restrictions": [
+    "Não utilizar sombras arbitrárias quando existir token equivalente.",
+    "Não aplicar brilho dourado a todos os componentes.",
+    "Não utilizar neon em documentos jurídicos, históricos ou litúrgicos formais.",
+    "Não combinar mais de dois brilhos cromáticos sem justificativa.",
+    "Não utilizar sombra forte em textos pequenos.",
+    "Não utilizar sombra para ocultar baixo contraste.",
+    "Não aplicar efeitos holográficos sobre fotografias históricas sem revisão.",
+    "Não animar brilhos continuamente em conteúdos sensíveis.",
+    "Toda alteração deverá ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "performance",
+      "accessibility"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/animations.json",
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+  }
