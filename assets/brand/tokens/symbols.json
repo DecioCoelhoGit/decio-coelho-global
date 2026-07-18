@@ -1,0 +1,1069 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-symbol-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+
+    "repositoryPath": "assets/brand/tokens/symbols.json",
+    "symbolsDirectory": "assets/brand/symbols/",
+
+    "manifestReference": "assets/brand/brand-manifest.json",
+    "catalogReference": "assets/brand/brand-assets-catalog.json",
+
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "spacingTokensReference": "assets/brand/tokens/spacing.json",
+    "radiusTokensReference": "assets/brand/tokens/radius.json",
+    "shadowTokensReference": "assets/brand/tokens/shadows.json",
+    "animationTokensReference": "assets/brand/tokens/animations.json",
+    "iconTokensReference": "assets/brand/tokens/icons.json",
+
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "licenseReference": "assets/brand/LICENSE-AND-CREDITS.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "fileFormat": "nome-descritivo.ext",
+    "tokenFormat": "symbol.{category}.{name}",
+    "cssVariableFormat": "--festanca-symbol-{property}",
+
+    "examples": [
+      "symbol.primary.star",
+      "symbol.primary.goldenArc",
+      "symbol.decorative.ornaments",
+      "symbol.structural.frames",
+      "symbol.graphic.elements"
+    ],
+
+    "rules": [
+      "Utilizar nomes descritivos em português sem acentos no arquivo.",
+      "Utilizar letras minúsculas.",
+      "Separar palavras por hífen.",
+      "Manter um identificador único por símbolo.",
+      "Não reutilizar o mesmo arquivo com significados conflitantes.",
+      "Registrar alterações no CHANGELOG.md."
+    ]
+  },
+
+  "principles": {
+    "description": "Os símbolos oficiais da FESTANÇA 2026 formam uma gramática visual própria destinada a comunicar luz, continuidade, tradição, proteção, solenidade, território e identidade.",
+
+    "rules": [
+      "O símbolo deve preservar seu significado institucional.",
+      "Elementos estruturais não devem ser usados como mera decoração aleatória.",
+      "Símbolos derivados da marca devem manter coerência com o logotipo oficial.",
+      "O significado cultural deve prevalecer sobre efeitos estéticos.",
+      "A ornamentação deve reforçar, e não competir com, o conteúdo.",
+      "Aplicações litúrgicas ou tradicionais exigem maior sobriedade.",
+      "As composições devem respeitar áreas de proteção.",
+      "A proporcionalidade original deve ser mantida."
+    ]
+  },
+
+  "categories": {
+    "primary": {
+      "label": "Símbolos primários",
+      "description": "Elementos diretamente associados à identidade central da FESTANÇA."
+    },
+
+    "decorative": {
+      "label": "Elementos ornamentais",
+      "description": "Recursos de apoio visual para composição."
+    },
+
+    "structural": {
+      "label": "Elementos estruturais",
+      "description": "Molduras e estruturas de organização visual."
+    },
+
+    "graphic": {
+      "label": "Elementos gráficos",
+      "description": "Conjunto de componentes complementares do sistema visual."
+    }
+  },
+
+  "symbols": {
+    "star": {
+      "id": "festanca-symbol-star",
+      "token": "symbol.primary.star",
+      "name": "Estrela da FESTANÇA",
+
+      "fileName": "estrela-festanca.png",
+      "path": "assets/brand/symbols/estrela-festanca.png",
+
+      "category": "primary",
+      "status": "official",
+
+      "meaning": {
+        "primary": "Luz, orientação e transcendência.",
+        "secondary": "Marco superior da composição visual oficial.",
+        "symbolicRole": "Símbolo de convergência entre fé, memória, tradição e futuro."
+      },
+
+      "visualRole": [
+        "Coroamento da identidade visual.",
+        "Ponto de luz central.",
+        "Elemento de orientação vertical.",
+        "Marca de solenidade."
+      ],
+
+      "composition": {
+        "preferredPosition": [
+          "top-center",
+          "central-axis",
+          "above-logo"
+        ],
+
+        "minimumClearSpace": "25%",
+        "preferredClearSpace": "35%",
+
+        "rotationAllowed": false,
+        "horizontalFlipAllowed": false,
+        "verticalFlipAllowed": false,
+
+        "cropAllowed": false,
+        "distortionAllowed": false
+      },
+
+      "recommendedSizes": {
+        "minimumDigital": "24px",
+        "standardDigital": "64px",
+        "hero": "128px",
+        "monumental": "256px+"
+      },
+
+      "versions": {
+        "gold": {
+          "allowed": true,
+          "preferred": true
+        },
+
+        "white": {
+          "allowed": true
+        },
+
+        "black": {
+          "allowed": true
+        },
+
+        "monochrome": {
+          "allowed": true
+        },
+
+        "neon": {
+          "allowed": true,
+          "context": "digital"
+        },
+
+        "transparent": {
+          "allowed": true,
+          "preferred": true
+        }
+      },
+
+      "effects": {
+        "goldGlow": "shadow.glow.gold.medium",
+        "brightGlow": "shadow.glow.gold.strong",
+        "animation": "brand.star.twinkle"
+      },
+
+      "allowedContexts": [
+        "logo",
+        "hero",
+        "landing-page",
+        "documentos-institucionais",
+        "painel-cerimonial",
+        "redes-sociais",
+        "eventos",
+        "sinalizacao",
+        "materiais-historicos"
+      ],
+
+      "restrictions": [
+        "Não rotacionar.",
+        "Não inclinar.",
+        "Não deformar.",
+        "Não substituir por estrela genérica.",
+        "Não utilizar efeitos multicoloridos sem validação.",
+        "Não utilizar como ícone de avaliação ou favorito.",
+        "Não recortar partes essenciais.",
+        "Não aplicar animação rápida ou piscante."
+      ],
+
+      "accessibility": {
+        "decorativeAlt": "",
+        "informativeAlt": "Estrela símbolo da FESTANÇA 2026",
+        "ariaHiddenWhenDecorative": true
+      }
+    },
+
+    "goldenArc": {
+      "id": "festanca-symbol-golden-arc",
+      "token": "symbol.primary.goldenArc",
+      "name": "Arco Dourado",
+
+      "fileName": "arco-dourado.png",
+      "path": "assets/brand/symbols/arco-dourado.png",
+
+      "category": "primary",
+      "status": "official",
+
+      "meaning": {
+        "primary": "União e continuidade.",
+        "secondary": "Horizonte simbólico.",
+        "symbolicRole": "Liga visualmente tradição, território, espiritualidade e futuro."
+      },
+
+      "visualRole": [
+        "Elemento envolvente da identidade.",
+        "Estrutura de proteção visual.",
+        "Linha de horizonte.",
+        "Elemento de conexão."
+      ],
+
+      "composition": {
+        "preferredPosition": [
+          "above-logo",
+          "behind-star",
+          "hero-background"
+        ],
+
+        "minimumClearSpace": "15%",
+        "preferredClearSpace": "25%",
+
+        "rotationAllowed": false,
+        "horizontalFlipAllowed": false,
+        "verticalFlipAllowed": false,
+
+        "cropAllowed": "limited",
+        "distortionAllowed": false
+      },
+
+      "recommendedSizes": {
+        "minimumWidth": "160px",
+        "standardWidth": "640px",
+        "heroWidth": "1200px+"
+      },
+
+      "versions": {
+        "gold": {
+          "allowed": true,
+          "preferred": true
+        },
+
+        "white": {
+          "allowed": true
+        },
+
+        "black": {
+          "allowed": true
+        },
+
+        "monochrome": {
+          "allowed": true
+        },
+
+        "greenNeon": {
+          "allowed": true,
+          "context": "digital-experimental"
+        },
+
+        "transparent": {
+          "allowed": true,
+          "preferred": true
+        }
+      },
+
+      "effects": {
+        "goldGlow": "shadow.glow.gold.medium",
+        "animation": "brand.arc.reveal"
+      },
+
+      "allowedContexts": [
+        "logo",
+        "hero",
+        "banners",
+        "painel-institucional",
+        "painel-cerimonial",
+        "redes-sociais",
+        "documentos-premium"
+      ],
+
+      "restrictions": [
+        "Não transformar o arco em círculo completo.",
+        "Não inverter verticalmente.",
+        "Não alterar sua curvatura sem aprovação.",
+        "Não quebrar o arco em segmentos arbitrários.",
+        "Não utilizar como simples divisor de texto.",
+        "Não aplicar espessuras inconsistentes."
+      ],
+
+      "accessibility": {
+        "decorativeAlt": "",
+        "informativeAlt": "Arco dourado da identidade visual da FESTANÇA",
+        "ariaHiddenWhenDecorative": true
+      }
+    },
+
+    "ornaments": {
+      "id": "festanca-symbol-ornaments",
+      "token": "symbol.decorative.ornaments",
+      "name": "Ornamentos Oficiais",
+
+      "fileName": "ornamentos.png",
+      "path": "assets/brand/symbols/ornamentos.png",
+
+      "category": "decorative",
+      "status": "official",
+
+      "meaning": {
+        "primary": "Solenidade e refinamento.",
+        "secondary": "Continuidade ornamental da identidade."
+      },
+
+      "visualRole": [
+        "Separadores.",
+        "Acabamentos.",
+        "Coroamentos.",
+        "Elementos de apoio.",
+        "Detalhes de borda."
+      ],
+
+      "composition": {
+        "preferredUsage": [
+          "headers",
+          "footers",
+          "dividers",
+          "cards",
+          "certificates",
+          "historical-panels"
+        ],
+
+        "minimumClearSpace": "10%",
+
+        "rotationAllowed": "limited",
+        "horizontalFlipAllowed": true,
+        "verticalFlipAllowed": "limited",
+
+        "cropAllowed": true,
+        "distortionAllowed": false
+      },
+
+      "density": {
+        "minimal": {
+          "description": "Uma peça ornamental por área visual."
+        },
+
+        "standard": {
+          "description": "Duas peças complementares."
+        },
+
+        "ceremonial": {
+          "description": "Composição mais rica, mantendo hierarquia."
+        }
+      },
+
+      "versions": {
+        "gold": {
+          "allowed": true,
+          "preferred": true
+        },
+
+        "white": {
+          "allowed": true
+        },
+
+        "black": {
+          "allowed": true
+        },
+
+        "monochrome": {
+          "allowed": true
+        },
+
+        "transparent": {
+          "allowed": true,
+          "preferred": true
+        }
+      },
+
+      "restrictions": [
+        "Não sobrecarregar a composição.",
+        "Não utilizar ornamentação sobre textos pequenos.",
+        "Não competir com o logotipo.",
+        "Não misturar estilos ornamentais incompatíveis.",
+        "Não utilizar ornamentos como símbolos religiosos independentes.",
+        "Não criar simetria forçada quando prejudicar o conteúdo."
+      ],
+
+      "accessibility": {
+        "decorativeAlt": "",
+        "ariaHidden": true
+      }
+    },
+
+    "frames": {
+      "id": "festanca-symbol-frames",
+      "token": "symbol.structural.frames",
+      "name": "Molduras Oficiais",
+
+      "fileName": "molduras.png",
+      "path": "assets/brand/symbols/molduras.png",
+
+      "category": "structural",
+      "status": "official",
+
+      "meaning": {
+        "primary": "Proteção visual e enquadramento.",
+        "secondary": "Organização, memória e solenidade."
+      },
+
+      "visualRole": [
+        "Enquadramento de fotografias.",
+        "Delimitação de cards.",
+        "Certificados.",
+        "Documentos históricos.",
+        "Painéis cerimoniais."
+      ],
+
+      "composition": {
+        "minimumInternalPadding": "8%",
+        "preferredInternalPadding": "12%",
+
+        "minimumExternalClearSpace": "8%",
+
+        "rotationAllowed": false,
+        "horizontalFlipAllowed": true,
+        "verticalFlipAllowed": true,
+
+        "cropAllowed": false,
+        "distortionAllowed": false
+      },
+
+      "types": {
+        "minimal": {
+          "usage": "interfaces digitais"
+        },
+
+        "heritage": {
+          "usage": "documentos e fotografias históricas"
+        },
+
+        "ceremonial": {
+          "usage": "homenagens, diplomas e peças solenes"
+        },
+
+        "monumental": {
+          "usage": "painéis e exposições"
+        }
+      },
+
+      "versions": {
+        "gold": {
+          "allowed": true,
+          "preferred": true
+        },
+
+        "white": {
+          "allowed": true
+        },
+
+        "black": {
+          "allowed": true
+        },
+
+        "monochrome": {
+          "allowed": true
+        },
+
+        "transparent": {
+          "allowed": true,
+          "preferred": true
+        }
+      },
+
+      "restrictions": [
+        "Não esticar apenas um dos eixos.",
+        "Não cortar cantos essenciais.",
+        "Não usar moldura ornamental pesada em interfaces densas.",
+        "Não sobrepor texto às bordas decorativas.",
+        "Não utilizar moldura cerimonial para mensagens de erro ou alertas."
+      ],
+
+      "accessibility": {
+        "decorativeAlt": "",
+        "ariaHidden": true
+      }
+    },
+
+    "graphicElements": {
+      "id": "festanca-symbol-graphic-elements",
+      "token": "symbol.graphic.elements",
+      "name": "Elementos Gráficos Oficiais",
+
+      "fileName": "elementos-graficos.png",
+      "path": "assets/brand/symbols/elementos-graficos.png",
+
+      "category": "graphic",
+      "status": "official",
+
+      "meaning": {
+        "primary": "Vocabulário visual complementar.",
+        "secondary": "Unificação das peças do Brand Design System."
+      },
+
+      "visualRole": [
+        "Divisores.",
+        "Marcadores.",
+        "Elementos de apoio.",
+        "Linhas ornamentais.",
+        "Destaques.",
+        "Conectores.",
+        "Fundos compositivos."
+      ],
+
+      "composition": {
+        "rotationAllowed": "limited",
+        "horizontalFlipAllowed": true,
+        "verticalFlipAllowed": true,
+
+        "cropAllowed": true,
+        "distortionAllowed": false,
+
+        "maximumDecorativeDensity": "moderate"
+      },
+
+      "versions": {
+        "gold": {
+          "allowed": true
+        },
+
+        "green": {
+          "allowed": true
+        },
+
+        "white": {
+          "allowed": true
+        },
+
+        "black": {
+          "allowed": true
+        },
+
+        "monochrome": {
+          "allowed": true
+        },
+
+        "transparent": {
+          "allowed": true,
+          "preferred": true
+        }
+      },
+
+      "allowedContexts": [
+        "web",
+        "social",
+        "print",
+        "documents",
+        "dashboards",
+        "presentations",
+        "signage"
+      ],
+
+      "restrictions": [
+        "Não utilizar elementos aleatoriamente.",
+        "Não criar poluição visual.",
+        "Não usar como substitutos do logotipo.",
+        "Não combinar elementos sem hierarquia.",
+        "Não descaracterizar elementos com filtros extremos."
+      ],
+
+      "accessibility": {
+        "decorativeAlt": "",
+        "ariaHidden": true
+      }
+    }
+  },
+
+  "symbolHierarchy": {
+    "level1": {
+      "name": "Identidade Primária",
+      "symbols": [
+        "star",
+        "goldenArc"
+      ],
+      "priority": "maximum"
+    },
+
+    "level2": {
+      "name": "Sistema Ornamental",
+      "symbols": [
+        "ornaments"
+      ],
+      "priority": "support"
+    },
+
+    "level3": {
+      "name": "Sistema Estrutural",
+      "symbols": [
+        "frames"
+      ],
+      "priority": "support"
+    },
+
+    "level4": {
+      "name": "Vocabulário Gráfico",
+      "symbols": [
+        "graphicElements"
+      ],
+      "priority": "complementary"
+    }
+  },
+
+  "compositionRules": {
+    "logoComposition": {
+      "required": [
+        "star",
+        "goldenArc"
+      ],
+
+      "optional": [
+        "ornaments",
+        "graphicElements"
+      ],
+
+      "rules": [
+        "A estrela deve ocupar posição hierárquica superior.",
+        "O arco deve funcionar como elemento envolvente.",
+        "Ornamentos não devem competir com o nome FESTANÇA.",
+        "A composição deve permanecer legível em redução."
+      ]
+    },
+
+    "heroComposition": {
+      "preferred": [
+        "star",
+        "goldenArc",
+        "ornaments"
+      ],
+
+      "maximumSymbolFamilies": 3
+    },
+
+    "historicalComposition": {
+      "preferred": [
+        "frames",
+        "ornaments"
+      ],
+
+      "avoid": [
+        "heavy-neon",
+        "continuous-animation"
+      ]
+    },
+
+    "ceremonialComposition": {
+      "preferred": [
+        "star",
+        "goldenArc",
+        "ornaments",
+        "frames"
+      ],
+
+      "maximumDecorativeDensity": "rich-controlled"
+    }
+  },
+
+  "safeAreas": {
+    "star": {
+      "minimum": "25%",
+      "preferred": "35%"
+    },
+
+    "goldenArc": {
+      "minimum": "15%",
+      "preferred": "25%"
+    },
+
+    "ornaments": {
+      "minimum": "10%"
+    },
+
+    "frames": {
+      "innerMinimum": "8%",
+      "innerPreferred": "12%",
+      "outerMinimum": "8%"
+    }
+  },
+
+  "colorUsage": {
+    "primary": {
+      "gold": {
+        "preferredFor": [
+          "star",
+          "goldenArc",
+          "ornaments",
+          "frames"
+        ]
+      },
+
+      "white": {
+        "preferredFor": [
+          "dark-backgrounds",
+          "monochrome-layouts"
+        ]
+      },
+
+      "black": {
+        "preferredFor": [
+          "light-backgrounds",
+          "monochrome-print"
+        ]
+      }
+    },
+
+    "special": {
+      "greenNeon": {
+        "allowedFor": [
+          "goldenArc",
+          "graphicElements"
+        ],
+        "context": "digital-only"
+      },
+
+      "multicolor": {
+        "allowed": false,
+        "exception": "specific approved cultural composition"
+      }
+    }
+  },
+
+  "backgroundRules": {
+    "dark": {
+      "preferred": [
+        "gold",
+        "white",
+        "neon-approved"
+      ]
+    },
+
+    "light": {
+      "preferred": [
+        "gold",
+        "black",
+        "dark-monochrome"
+      ]
+    },
+
+    "photographic": {
+      "requirements": [
+        "Maintain contrast.",
+        "Apply protective field when necessary.",
+        "Do not obscure faces or important cultural content."
+      ]
+    },
+
+    "transparent": {
+      "preferred": true
+    }
+  },
+
+  "responsiveRules": {
+    "mobile": {
+      "maximumDecorativeFamilies": 2,
+      "minimumStarSize": "24px",
+      "simplifyOrnaments": true,
+      "simplifyFrames": true
+    },
+
+    "tablet": {
+      "maximumDecorativeFamilies": 3,
+      "simplifyOrnaments": "optional"
+    },
+
+    "desktop": {
+      "maximumDecorativeFamilies": 4
+    },
+
+    "largeDisplay": {
+      "maximumDecorativeFamilies": 4,
+      "monumentalEffectsAllowed": true
+    }
+  },
+
+  "animationRules": {
+    "star": {
+      "allowed": [
+        "fade",
+        "slow-glow",
+        "subtle-twinkle"
+      ],
+
+      "prohibited": [
+        "rapid-flash",
+        "spin",
+        "bounce"
+      ]
+    },
+
+    "goldenArc": {
+      "allowed": [
+        "stroke-reveal",
+        "fade",
+        "slow-glow"
+      ],
+
+      "prohibited": [
+        "spin",
+        "wave-distortion"
+      ]
+    },
+
+    "ornaments": {
+      "allowed": [
+        "fade",
+        "subtle-reveal"
+      ]
+    },
+
+    "frames": {
+      "allowed": [
+        "fade",
+        "line-reveal"
+      ]
+    },
+
+    "reducedMotion": {
+      "disableContinuous": true,
+      "fallback": "static"
+    }
+  },
+
+  "accessibility": {
+    "principles": [
+      "Símbolos decorativos devem ser ocultados de tecnologias assistivas.",
+      "Símbolos informativos devem possuir nome acessível.",
+      "Não depender exclusivamente do símbolo para transmitir informação essencial.",
+      "Não utilizar efeitos que reduzam legibilidade.",
+      "Não utilizar cintilação rápida.",
+      "Preservar contraste suficiente.",
+      "Não sobrepor símbolos a textos sem área de proteção."
+    ],
+
+    "decorativeMarkup": {
+      "alt": "",
+      "ariaHidden": true
+    },
+
+    "informativeMarkup": {
+      "requireAlt": true
+    }
+  },
+
+  "culturalSafeguards": {
+    "principles": [
+      "Respeito à dimensão religiosa e cultural.",
+      "Preservação da identidade de Vila Bela da Santíssima Trindade.",
+      "Não apropriação indevida.",
+      "Não descaracterização de significados.",
+      "Validação cultural para alterações substanciais."
+    ],
+
+    "prohibitedUses": [
+      "Uso depreciativo.",
+      "Uso jocoso de símbolos vinculados à fé.",
+      "Associação com conteúdo discriminatório.",
+      "Distorção intencional.",
+      "Uso político-partidário sem autorização.",
+      "Aplicação que sugira endosso institucional inexistente."
+    ]
+  },
+
+  "printRules": {
+    "minimumStroke": "0.5pt",
+
+    "minimumSymbolSize": {
+      "star": "8mm",
+      "goldenArc": "35mm",
+      "ornament": "6mm"
+    },
+
+    "recommendedFormats": [
+      "SVG",
+      "PDF",
+      "high-resolution PNG"
+    ],
+
+    "rules": [
+      "Evitar rasterização em baixa resolução.",
+      "Verificar contraste na prova impressa.",
+      "Preservar transparência.",
+      "Não aplicar sombras excessivas em impressão simples."
+    ]
+  },
+
+  "digitalRules": {
+    "preferredFormats": [
+      "SVG",
+      "WebP",
+      "PNG"
+    ],
+
+    "requirements": [
+      "Otimizar peso.",
+      "Utilizar lazy loading quando apropriado.",
+      "Não ampliar raster acima da resolução original.",
+      "Fornecer versão responsiva quando necessário."
+    ]
+  },
+
+  "cssVariables": {
+    "--festanca-symbol-star-size-sm": "24px",
+    "--festanca-symbol-star-size-md": "64px",
+    "--festanca-symbol-star-size-lg": "128px",
+
+    "--festanca-symbol-safe-star": "25%",
+    "--festanca-symbol-safe-arc": "15%",
+    "--festanca-symbol-safe-ornament": "10%",
+
+    "--festanca-symbol-opacity-muted": "0.68",
+    "--festanca-symbol-opacity-decorative": "0.82",
+
+    "--festanca-symbol-transition": "opacity 300ms cubic-bezier(0.2, 0, 0, 1), transform 300ms cubic-bezier(0.2, 0, 0, 1), filter 300ms cubic-bezier(0.2, 0, 0, 1)",
+
+    "--festanca-symbol-glow-gold": "0 0 16px rgba(217, 162, 27, 0.42)",
+    "--festanca-symbol-glow-gold-strong": "0 0 28px rgba(255, 211, 78, 0.60)"
+  },
+
+  "usageExamples": {
+    "starDecorative": {
+      "html": "<img src=\"assets/brand/symbols/estrela-festanca.png\" alt=\"\" aria-hidden=\"true\">"
+    },
+
+    "starInformative": {
+      "html": "<img src=\"assets/brand/symbols/estrela-festanca.png\" alt=\"Estrela símbolo da FESTANÇA 2026\">"
+    },
+
+    "arcDecorative": {
+      "html": "<img src=\"assets/brand/symbols/arco-dourado.png\" alt=\"\" aria-hidden=\"true\">"
+    },
+
+    "css": {
+      "star": "filter: drop-shadow(var(--festanca-symbol-glow-gold));",
+      "symbol": "transition: var(--festanca-symbol-transition);",
+      "decorative": "opacity: var(--festanca-symbol-opacity-decorative);"
+    }
+  },
+
+  "qualityChecklist": {
+    "visual": [
+      "Proporção preservada.",
+      "Contraste adequado.",
+      "Área de proteção respeitada.",
+      "Sem serrilhamento excessivo.",
+      "Sem corte indevido.",
+      "Sem distorção."
+    ],
+
+    "technical": [
+      "Caminho correto.",
+      "Arquivo íntegro.",
+      "Transparência correta.",
+      "Formato adequado.",
+      "Peso otimizado.",
+      "Nome conforme convenção."
+    ],
+
+    "cultural": [
+      "Significado preservado.",
+      "Contexto correto.",
+      "Sem apropriação indevida.",
+      "Sem descaracterização.",
+      "Revisão realizada quando necessária."
+    ],
+
+    "accessibility": [
+      "Alt definido quando informativo.",
+      "Alt vazio quando decorativo.",
+      "Contraste suficiente.",
+      "Sem animação agressiva.",
+      "Símbolo não substitui informação textual essencial."
+    ]
+  },
+
+  "restrictions": [
+    "Não deformar símbolos.",
+    "Não modificar proporções.",
+    "Não alterar significados.",
+    "Não substituir símbolos oficiais por equivalentes genéricos.",
+    "Não utilizar efeitos visuais incompatíveis com o contexto.",
+    "Não misturar estilos sem validação.",
+    "Não utilizar símbolos religiosos ou tradicionais de forma jocosa.",
+    "Não criar versões alternativas sem registro.",
+    "Não remover créditos ou proveniência quando aplicável.",
+    "Toda alteração deve ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "cultural",
+      "accessibility",
+      "provenance"
+    ],
+
+    "approvalFlow": [
+      "proposta",
+      "registro-de-origem",
+      "revisao-visual",
+      "revisao-cultural",
+      "revisao-tecnica",
+      "revisao-de-acessibilidade",
+      "aprovacao-institucional",
+      "publicacao",
+      "registro-no-changelog"
+    ]
+  },
+
+  "futureEvolution": {
+    "recommended": [
+      "Criar versões SVG oficiais.",
+      "Criar variantes para fundos claros e escuros.",
+      "Criar biblioteca vetorial central.",
+      "Criar sprite SVG.",
+      "Criar componentes Web.",
+      "Criar catálogo visual interativo.",
+      "Registrar hashes de integridade.",
+      "Automatizar verificação de caminhos.",
+      "Integrar símbolos ao painel de curadoria."
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/themes.json"
+  ]
+  }
