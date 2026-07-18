@@ -1,0 +1,1433 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-icon-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/icons.json",
+
+    "iconsDirectory": "assets/brand/icons/",
+    "catalogReference": "assets/brand/brand-assets-catalog.json",
+    "manifestReference": "assets/brand/brand-manifest.json",
+
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "spacingTokensReference": "assets/brand/tokens/spacing.json",
+    "radiusTokensReference": "assets/brand/tokens/radius.json",
+    "shadowTokensReference": "assets/brand/tokens/shadows.json",
+    "animationTokensReference": "assets/brand/tokens/animations.json",
+
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "licenseReference": "assets/brand/LICENSE-AND-CREDITS.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "fileFormat": "nome-descritivo-icon.png",
+    "tokenFormat": "icon.{category}.{name}",
+    "cssVariableFormat": "--festanca-icon-{property}-{size}",
+
+    "examples": [
+      "icon.cultural.congo",
+      "icon.authority.reiDoCongo",
+      "icon.religious.missa",
+      "icon.institutional.patrimonio"
+    ],
+
+    "rules": [
+      "Utilizar letras minúsculas.",
+      "Separar palavras por hífen.",
+      "Finalizar arquivos com -icon.",
+      "Não utilizar espaços, acentos ou caracteres especiais.",
+      "Não reutilizar o mesmo identificador para significados diferentes.",
+      "Manter o caminho físico sincronizado com este catálogo."
+    ]
+  },
+
+  "formats": {
+    "primary": {
+      "value": "png",
+      "type": "string",
+      "description": "Formato raster oficial atualmente disponível."
+    },
+
+    "preferredFuture": {
+      "value": "svg",
+      "type": "string",
+      "description": "Formato vetorial recomendado para evolução futura."
+    },
+
+    "webOptimized": {
+      "value": "webp",
+      "type": "string",
+      "description": "Formato opcional para desempenho web."
+    },
+
+    "transparentBackgroundRequired": {
+      "value": true,
+      "type": "boolean"
+    }
+  },
+
+  "sizeScale": {
+    "xs": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension",
+      "usage": "Indicadores compactos e metadados."
+    },
+
+    "sm": {
+      "value": "1.25rem",
+      "pixels": 20,
+      "type": "dimension",
+      "usage": "Botões pequenos e listas."
+    },
+
+    "md": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "dimension",
+      "usage": "Tamanho padrão de interface."
+    },
+
+    "lg": {
+      "value": "2rem",
+      "pixels": 32,
+      "type": "dimension",
+      "usage": "Cards e menus destacados."
+    },
+
+    "xl": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "dimension",
+      "usage": "Cards culturais e atalhos principais."
+    },
+
+    "2xl": {
+      "value": "4rem",
+      "pixels": 64,
+      "type": "dimension",
+      "usage": "Seções institucionais."
+    },
+
+    "3xl": {
+      "value": "6rem",
+      "pixels": 96,
+      "type": "dimension",
+      "usage": "Painéis e destaques visuais."
+    },
+
+    "4xl": {
+      "value": "8rem",
+      "pixels": 128,
+      "type": "dimension",
+      "usage": "Aplicações monumentais."
+    },
+
+    "touch": {
+      "value": "2.75rem",
+      "pixels": 44,
+      "type": "dimension",
+      "usage": "Área mínima de interação."
+    }
+  },
+
+  "stroke": {
+    "thin": {
+      "value": "1.25px",
+      "type": "dimension"
+    },
+
+    "regular": {
+      "value": "1.75px",
+      "type": "dimension"
+    },
+
+    "medium": {
+      "value": "2px",
+      "type": "dimension"
+    },
+
+    "bold": {
+      "value": "2.5px",
+      "type": "dimension"
+    }
+  },
+
+  "safeArea": {
+    "minimum": {
+      "value": "12.5%",
+      "type": "percentage",
+      "description": "Área mínima livre em torno do desenho."
+    },
+
+    "preferred": {
+      "value": "18.75%",
+      "type": "percentage",
+      "description": "Área de proteção recomendada."
+    },
+
+    "ceremonial": {
+      "value": "25%",
+      "type": "percentage",
+      "description": "Área de proteção para aplicações solenes."
+    }
+  },
+
+  "categories": {
+    "cultural": {
+      "label": "Grupos e manifestações culturais",
+      "reviewRequired": [
+        "cultural",
+        "visual",
+        "accessibility"
+      ]
+    },
+
+    "authority": {
+      "label": "Autoridades tradicionais e festeiros",
+      "reviewRequired": [
+        "cultural",
+        "institutional",
+        "provenance"
+      ]
+    },
+
+    "religious": {
+      "label": "Atividades e símbolos religiosos",
+      "reviewRequired": [
+        "cultural",
+        "religious",
+        "institutional"
+      ]
+    },
+
+    "event": {
+      "label": "Atividades e elementos da programação",
+      "reviewRequired": [
+        "visual",
+        "technical"
+      ]
+    },
+
+    "institutional": {
+      "label": "Patrimônio, cultura, turismo e história",
+      "reviewRequired": [
+        "institutional",
+        "visual",
+        "accessibility"
+      ]
+    }
+  },
+
+  "icons": {
+    "congo": {
+      "id": "festanca-icon-congo",
+      "token": "icon.cultural.congo",
+      "name": "Congo",
+      "fileName": "congo-icon.png",
+      "path": "assets/brand/icons/congo-icon.png",
+      "category": "cultural",
+      "status": "official",
+
+      "meaning": "Representa o Grupo Tradicional do Congo e seus integrantes.",
+      "subjectReference": "Soldado do Congo com indumentária tradicional.",
+      "culturalContext": "Manifestação central da FESTANÇA de Vila Bela da Santíssima Trindade.",
+
+      "altText": "Ícone representando um soldado do tradicional Grupo do Congo.",
+      "shortLabel": "Congo",
+      "ariaLabel": "Grupo Tradicional do Congo",
+
+      "recommendedSizes": [
+        32,
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "programacao",
+        "grupos-culturais",
+        "cards",
+        "mapas",
+        "formularios",
+        "materiais-educativos"
+      ],
+
+      "restrictions": [
+        "Não alterar a indumentária tradicional.",
+        "Não remover elementos culturais essenciais.",
+        "Não utilizar em contexto jocoso ou depreciativo.",
+        "Não representar outro grupo com este ícone."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "referenceDescription": "Imagem de soldado do Grupo do Congo fornecida ao projeto.",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "conguinho": {
+      "id": "festanca-icon-conguinho",
+      "token": "icon.cultural.conguinho",
+      "name": "Conguinho",
+      "fileName": "conguinho-icon.png",
+      "path": "assets/brand/icons/conguinho-icon.png",
+      "category": "cultural",
+      "status": "official",
+
+      "meaning": "Representa o Conguinho e a transmissão geracional da tradição.",
+      "subjectReference": "Soldado do Conguinho em indumentária tradicional.",
+      "culturalContext": "Continuidade infantil e juvenil da tradição do Congo.",
+
+      "altText": "Ícone representando um jovem soldado do Conguinho.",
+      "shortLabel": "Conguinho",
+      "ariaLabel": "Grupo Tradicional do Conguinho",
+
+      "recommendedSizes": [
+        32,
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "programacao",
+        "grupos-culturais",
+        "educacao-patrimonial",
+        "cards",
+        "mapas",
+        "formularios"
+      ],
+
+      "restrictions": [
+        "Preservar o caráter geracional e cultural.",
+        "Não infantilizar de forma caricatural.",
+        "Não alterar arbitrariamente roupas e adereços.",
+        "Não utilizar para representar o Congo adulto."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "referenceDescription": "Imagem do Conguinho associada à memória do saudoso Joaquim Poeta.",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "chorado": {
+      "id": "festanca-icon-chorado",
+      "token": "icon.cultural.chorado",
+      "name": "Chorado",
+      "fileName": "chorado-icon.png",
+      "path": "assets/brand/icons/chorado-icon.png",
+      "category": "cultural",
+      "status": "official",
+
+      "meaning": "Representa a Dança do Chorado e suas dançarinas.",
+      "subjectReference": "Dançarina tradicional do Chorado.",
+      "culturalContext": "Manifestação histórica feminina da FESTANÇA.",
+
+      "altText": "Ícone representando uma dançarina tradicional do Chorado.",
+      "shortLabel": "Chorado",
+      "ariaLabel": "Dança Tradicional do Chorado",
+
+      "recommendedSizes": [
+        32,
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "programacao",
+        "grupos-culturais",
+        "memoria",
+        "homenagens",
+        "cards",
+        "materiais-educativos"
+      ],
+
+      "restrictions": [
+        "Não descaracterizar o traje tradicional.",
+        "Não sexualizar a representação.",
+        "Não utilizar em contexto depreciativo.",
+        "Preservar o respeito às dançarinas e à memória cultural."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-and-illustrative-reference",
+        "referenceDescription": "Referências da Dança do Chorado e homenagem à Professora Aninha Bombom.",
+        "memorialReference": "Professora Aninha Bombom, falecida em 2025.",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "choradinho": {
+      "id": "festanca-icon-choradinho",
+      "token": "icon.cultural.choradinho",
+      "name": "Choradinho",
+      "fileName": "choradinho-icon.png",
+      "path": "assets/brand/icons/choradinho-icon.png",
+      "category": "cultural",
+      "status": "official",
+
+      "meaning": "Representa o Choradinho e a continuidade geracional da dança.",
+      "culturalContext": "Transmissão da memória e da expressão corporal às novas gerações.",
+
+      "altText": "Ícone representando uma participante do Choradinho.",
+      "shortLabel": "Choradinho",
+      "ariaLabel": "Dança Tradicional do Choradinho",
+
+      "recommendedSizes": [
+        32,
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "programacao",
+        "grupos-culturais",
+        "educacao-patrimonial",
+        "cards",
+        "materiais-infantis"
+      ],
+
+      "restrictions": [
+        "Não caricaturar participantes.",
+        "Não utilizar para representar o Chorado adulto.",
+        "Preservar os elementos culturais da dança."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "reinado": {
+      "id": "festanca-icon-reinado",
+      "token": "icon.authority.reinado",
+      "name": "Reinado de São Benedito",
+      "fileName": "reinado-icon.png",
+      "path": "assets/brand/icons/reinado-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Rei e a Rainha do Glorioso São Benedito.",
+      "culturalContext": "Autoridades tradicionais do reinado de São Benedito.",
+
+      "altText": "Ícone representando o Rei e a Rainha do Glorioso São Benedito.",
+      "shortLabel": "Reinado",
+      "ariaLabel": "Rei e Rainha do Glorioso São Benedito",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "programacao-religiosa",
+        "autoridades-tradicionais",
+        "cards",
+        "documentos"
+      ],
+
+      "restrictions": [
+        "Não separar os papéis sem identificação adequada.",
+        "Não modificar coroas, mantos ou objetos simbólicos.",
+        "Não utilizar para representar autoridades civis."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "culturalValidationRequired": true,
+        "personalImageRightsReview": true
+      }
+    },
+
+    "juizado": {
+      "id": "festanca-icon-juizado",
+      "token": "icon.authority.juizado",
+      "name": "Juizado de São Benedito",
+      "fileName": "juizado-icon.png",
+      "path": "assets/brand/icons/juizado-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Juiz e a Juíza do Glorioso São Benedito.",
+      "culturalContext": "Festeiros e autoridades tradicionais vinculadas à celebração.",
+
+      "altText": "Ícone representando o Juiz e a Juíza do Glorioso São Benedito.",
+      "shortLabel": "Juizado",
+      "ariaLabel": "Juiz e Juíza do Glorioso São Benedito",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "programacao",
+        "autoridades-tradicionais",
+        "cards",
+        "formularios"
+      ],
+
+      "restrictions": [
+        "Não confundir com autoridade judicial estatal.",
+        "Preservar o significado tradicional e religioso.",
+        "Não utilizar sem identificação contextual."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "culturalValidationRequired": true,
+        "personalImageRightsReview": true
+      }
+    },
+
+    "reiDoCongo": {
+      "id": "festanca-icon-rei-do-congo",
+      "token": "icon.authority.reiDoCongo",
+      "name": "Rei do Congo",
+      "fileName": "rei-do-congo-icon.png",
+      "path": "assets/brand/icons/rei-do-congo-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa a autoridade máxima do Grupo Tradicional do Congo.",
+      "culturalContext": "Liderança máxima da hierarquia tradicional do Congo.",
+
+      "altText": "Ícone representando o Rei do Congo com coroa e manto tradicional.",
+      "shortLabel": "Rei do Congo",
+      "ariaLabel": "Rei do Grupo Tradicional do Congo",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "hierarquia-do-congo",
+        "autoridades-tradicionais",
+        "programacao",
+        "documentos",
+        "cards"
+      ],
+
+      "restrictions": [
+        "Não utilizar para representar outro rei ou festeiro.",
+        "Não remover coroa, manto ou insígnias.",
+        "Não reduzir sua posição hierárquica no conteúdo."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "referenceDescription": "Imagem identificada como Juarez, Rei do Congo.",
+        "culturalValidationRequired": true,
+        "personalImageRightsReview": true
+      }
+    },
+
+    "imperadorImperatriz": {
+      "id": "festanca-icon-imperador-imperatriz",
+      "token": "icon.authority.imperadorImperatriz",
+      "name": "Imperador e Imperatriz do Divino",
+      "fileName": "imperador-imperatriz-icon.png",
+      "path": "assets/brand/icons/imperador-imperatriz-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Imperador e a Imperatriz do Senhor Divino Espírito Santo.",
+      "culturalContext": "Autoridades tradicionais da celebração do Divino.",
+
+      "altText": "Ícone representando o Imperador e a Imperatriz do Senhor Divino Espírito Santo.",
+      "shortLabel": "Imperador e Imperatriz",
+      "ariaLabel": "Imperador e Imperatriz do Senhor Divino Espírito Santo",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "divino-espirito-santo",
+        "programacao-religiosa",
+        "cards",
+        "documentos"
+      ],
+
+      "restrictions": [
+        "Não substituir a identificação nominal dos festeiros.",
+        "Não utilizar para representar o reinado de São Benedito.",
+        "Preservar a simbologia do Divino Espírito Santo."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "culturalValidationRequired": true,
+        "personalImageRightsReview": true
+      }
+    },
+
+    "reiRainhaMaeDeus": {
+      "id": "festanca-icon-rei-rainha-mae-deus",
+      "token": "icon.authority.reiRainhaMaeDeus",
+      "name": "Rei e Rainha da Mãe de Deus",
+      "fileName": "rei-rainha-mae-deus-icon.png",
+      "path": "assets/brand/icons/rei-rainha-mae-deus-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Rei e a Rainha da Gloriosa Mãe de Deus.",
+      "culturalContext": "Autoridades tradicionais vinculadas à celebração da Mãe de Deus.",
+
+      "altText": "Ícone representando o Rei e a Rainha da Gloriosa Mãe de Deus.",
+      "shortLabel": "Rei e Rainha",
+      "ariaLabel": "Rei e Rainha da Gloriosa Mãe de Deus",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "mae-de-deus",
+        "programacao-religiosa",
+        "cards",
+        "documentos"
+      ],
+
+      "restrictions": [
+        "Não utilizar para representar outro reinado.",
+        "Quando a referência visual apresentar apenas uma pessoa, informar que o ícone representa o cargo conjunto.",
+        "Manter a denominação oficial completa em documentos."
+      ],
+
+      "provenance": {
+        "sourceType": "photographic-reference",
+        "referenceLimitation": "A fotografia de origem apresentada registrava apenas o Rei.",
+        "culturalValidationRequired": true,
+        "personalImageRightsReview": true
+      }
+    },
+
+    "juizJuizaMaeDeus": {
+      "id": "festanca-icon-juiz-juiza-mae-deus",
+      "token": "icon.authority.juizJuizaMaeDeus",
+      "name": "Juiz e Juíza da Mãe de Deus",
+      "fileName": "juiz-juiza-mae-deus-icon.png",
+      "path": "assets/brand/icons/juiz-juiza-mae-deus-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Juiz e a Juíza da Gloriosa Mãe de Deus.",
+      "culturalContext": "Festeiros tradicionais da celebração da Mãe de Deus.",
+
+      "altText": "Ícone representando o Juiz e a Juíza da Gloriosa Mãe de Deus.",
+      "shortLabel": "Juiz e Juíza",
+      "ariaLabel": "Juiz e Juíza da Gloriosa Mãe de Deus",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "mae-de-deus",
+        "programacao",
+        "cards",
+        "formularios"
+      ],
+
+      "restrictions": [
+        "Não confundir com autoridade judicial estatal.",
+        "Não utilizar para o Juizado de São Benedito.",
+        "Manter identificação religiosa e cultural completa."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "juizJuizaTresPessoas": {
+      "id": "festanca-icon-juiz-juiza-tres-pessoas",
+      "token": "icon.authority.juizJuizaTresPessoas",
+      "name": "Juiz e Juíza de Três Pessoas",
+      "fileName": "juiz-juiza-3pessoas-icon.png",
+      "path": "assets/brand/icons/juiz-juiza-3pessoas-icon.png",
+      "category": "authority",
+      "status": "official",
+
+      "meaning": "Representa o Juiz e a Juíza de Três Pessoas da Santíssima Trindade.",
+      "culturalContext": "Autoridades tradicionais ligadas à devoção à Santíssima Trindade.",
+
+      "altText": "Ícone representando o Juiz e a Juíza de Três Pessoas da Santíssima Trindade.",
+      "shortLabel": "Juiz e Juíza de Três Pessoas",
+      "ariaLabel": "Juiz e Juíza de Três Pessoas da Santíssima Trindade",
+
+      "recommendedSizes": [
+        48,
+        64,
+        96,
+        128
+      ],
+
+      "allowedContexts": [
+        "festeiros",
+        "santissima-trindade",
+        "programacao-religiosa",
+        "cards",
+        "documentos"
+      ],
+
+      "restrictions": [
+        "Não abreviar o nome em documentos oficiais sem legenda.",
+        "Não utilizar para outra celebração.",
+        "Preservar a referência às Três Pessoas da Santíssima Trindade."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "missa": {
+      "id": "festanca-icon-missa",
+      "token": "icon.religious.missa",
+      "name": "Missa",
+      "fileName": "missa-icon.png",
+      "path": "assets/brand/icons/missa-icon.png",
+      "category": "religious",
+      "status": "official",
+
+      "meaning": "Identifica missas e celebrações litúrgicas.",
+      "altText": "Ícone de missa ou celebração litúrgica.",
+      "shortLabel": "Missa",
+      "ariaLabel": "Missa e celebração litúrgica",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64
+      ],
+
+      "allowedContexts": [
+        "calendario",
+        "programacao-religiosa",
+        "mapas",
+        "cards",
+        "filtros"
+      ],
+
+      "restrictions": [
+        "Não utilizar para atividades não religiosas.",
+        "Não animar de maneira jocosa.",
+        "Não alterar símbolos litúrgicos sem revisão."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "religiousValidationRequired": true
+      }
+    },
+
+    "procissao": {
+      "id": "festanca-icon-procissao",
+      "token": "icon.religious.procissao",
+      "name": "Procissão",
+      "fileName": "procissao-icon.png",
+      "path": "assets/brand/icons/procissao-icon.png",
+      "category": "religious",
+      "status": "official",
+
+      "meaning": "Identifica procissões, cortejos devocionais e deslocamentos religiosos.",
+      "altText": "Ícone representando uma procissão religiosa.",
+      "shortLabel": "Procissão",
+      "ariaLabel": "Procissão ou cortejo religioso",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64
+      ],
+
+      "allowedContexts": [
+        "programacao",
+        "rotas",
+        "mapas",
+        "calendario",
+        "cards"
+      ],
+
+      "restrictions": [
+        "Não utilizar para cortejo não religioso sem legenda.",
+        "Não inverter direção quando houver implicação de rota.",
+        "Não descaracterizar objetos devocionais."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "religiousValidationRequired": true
+      }
+    },
+
+    "tambor": {
+      "id": "festanca-icon-tambor",
+      "token": "icon.event.tambor",
+      "name": "Tambor",
+      "fileName": "tambor-icon.png",
+      "path": "assets/brand/icons/tambor-icon.png",
+      "category": "event",
+      "status": "official",
+
+      "meaning": "Representa musicalidade, ritmo, Congo e manifestações tradicionais.",
+      "altText": "Ícone de tambor tradicional.",
+      "shortLabel": "Tambor",
+      "ariaLabel": "Tambor e manifestação musical tradicional",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64
+      ],
+
+      "allowedContexts": [
+        "musica",
+        "congo",
+        "programacao-cultural",
+        "cards",
+        "materiais-educativos"
+      ],
+
+      "restrictions": [
+        "Não utilizar como símbolo genérico de qualquer cultura.",
+        "Não alterar sua forma cultural sem validação.",
+        "Não associar a estereótipos depreciativos."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "bandeira": {
+      "id": "festanca-icon-bandeira",
+      "token": "icon.event.bandeira",
+      "name": "Bandeira",
+      "fileName": "bandeira-icon.png",
+      "path": "assets/brand/icons/bandeira-icon.png",
+      "category": "event",
+      "status": "official",
+
+      "meaning": "Representa bandeiras cerimoniais, cortejos e símbolos de devoção.",
+      "altText": "Ícone de bandeira cerimonial da FESTANÇA.",
+      "shortLabel": "Bandeira",
+      "ariaLabel": "Bandeira cerimonial",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64
+      ],
+
+      "allowedContexts": [
+        "cortejos",
+        "programacao",
+        "simbolos",
+        "mapas",
+        "cards"
+      ],
+
+      "restrictions": [
+        "Não substituir bandeiras específicas sem identificação.",
+        "Não alterar cores cerimoniais arbitrariamente.",
+        "Não utilizar de forma desrespeitosa."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "patrimonio": {
+      "id": "festanca-icon-patrimonio",
+      "token": "icon.institutional.patrimonio",
+      "name": "Patrimônio",
+      "fileName": "patrimonio-icon.png",
+      "path": "assets/brand/icons/patrimonio-icon.png",
+      "category": "institutional",
+      "status": "official",
+
+      "meaning": "Representa patrimônio material, imaterial e memória coletiva.",
+      "altText": "Ícone representando patrimônio histórico e cultural.",
+      "shortLabel": "Patrimônio",
+      "ariaLabel": "Patrimônio histórico e cultural",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64,
+        96
+      ],
+
+      "allowedContexts": [
+        "patrimonio",
+        "memoria",
+        "documentacao",
+        "educacao",
+        "cards",
+        "mapas"
+      ],
+
+      "restrictions": [
+        "Não limitar patrimônio apenas a edificações.",
+        "Não utilizar sem contexto em conteúdo comercial.",
+        "Preservar a abrangência material e imaterial."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "institutionalValidationRequired": true
+      }
+    },
+
+    "cultura": {
+      "id": "festanca-icon-cultura",
+      "token": "icon.institutional.cultura",
+      "name": "Cultura",
+      "fileName": "cultura-icon.png",
+      "path": "assets/brand/icons/cultura-icon.png",
+      "category": "institutional",
+      "status": "official",
+
+      "meaning": "Representa manifestações culturais, saberes, expressões e identidade.",
+      "altText": "Ícone representando cultura e identidade tradicional.",
+      "shortLabel": "Cultura",
+      "ariaLabel": "Cultura e identidade tradicional",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64,
+        96
+      ],
+
+      "allowedContexts": [
+        "cultura",
+        "grupos",
+        "programacao",
+        "educacao-patrimonial",
+        "cards"
+      ],
+
+      "restrictions": [
+        "Não utilizar como substituto de ícones culturais específicos quando estes existirem.",
+        "Não representar manifestações de modo genérico ou estereotipado."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "culturalValidationRequired": true
+      }
+    },
+
+    "turismo": {
+      "id": "festanca-icon-turismo",
+      "token": "icon.institutional.turismo",
+      "name": "Turismo",
+      "fileName": "turismo-icon.png",
+      "path": "assets/brand/icons/turismo-icon.png",
+      "category": "institutional",
+      "status": "official",
+
+      "meaning": "Representa visitação, acolhimento, orientação e experiência territorial.",
+      "altText": "Ícone representando turismo cultural e visitação.",
+      "shortLabel": "Turismo",
+      "ariaLabel": "Turismo cultural e visitação",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64,
+        96
+      ],
+
+      "allowedContexts": [
+        "turismo",
+        "roteiros",
+        "mapas",
+        "visitantes",
+        "cards",
+        "informacoes"
+      ],
+
+      "restrictions": [
+        "Não sobrepor o interesse turístico ao respeito religioso.",
+        "Não utilizar para atividades sem relação com visitação.",
+        "Associar sempre a práticas responsáveis."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "institutionalValidationRequired": true
+      }
+    },
+
+    "historia": {
+      "id": "festanca-icon-historia",
+      "token": "icon.institutional.historia",
+      "name": "História",
+      "fileName": "historia-icon.png",
+      "path": "assets/brand/icons/historia-icon.png",
+      "category": "institutional",
+      "status": "official",
+
+      "meaning": "Representa pesquisa, memória, cronologia e preservação histórica.",
+      "altText": "Ícone representando história e memória documental.",
+      "shortLabel": "História",
+      "ariaLabel": "História, memória e documentação",
+
+      "recommendedSizes": [
+        20,
+        24,
+        32,
+        48,
+        64,
+        96
+      ],
+
+      "allowedContexts": [
+        "historia",
+        "memoria",
+        "linha-do-tempo",
+        "documentos",
+        "cards",
+        "educacao"
+      ],
+
+      "restrictions": [
+        "Não apresentar memória oral como fato documental sem classificação.",
+        "Não utilizar para conteúdos sem referência histórica.",
+        "Manter ligação com sistema de proveniência."
+      ],
+
+      "provenance": {
+        "sourceType": "project-illustration",
+        "institutionalValidationRequired": true
+      }
+    }
+  },
+
+  "collections": {
+    "culturalGroups": [
+      "congo",
+      "conguinho",
+      "chorado",
+      "choradinho"
+    ],
+
+    "saoBeneditoAuthorities": [
+      "reinado",
+      "juizado"
+    ],
+
+    "congoAuthorities": [
+      "reiDoCongo"
+    ],
+
+    "divinoAuthorities": [
+      "imperadorImperatriz"
+    ],
+
+    "maeDeDeusAuthorities": [
+      "reiRainhaMaeDeus",
+      "juizJuizaMaeDeus"
+    ],
+
+    "santissimaTrindadeAuthorities": [
+      "juizJuizaTresPessoas"
+    ],
+
+    "religiousActivities": [
+      "missa",
+      "procissao"
+    ],
+
+    "traditionalElements": [
+      "tambor",
+      "bandeira"
+    ],
+
+    "institutionalThemes": [
+      "patrimonio",
+      "cultura",
+      "turismo",
+      "historia"
+    ]
+  },
+
+  "componentMapping": {
+    "programCard": {
+      "defaultSize": "{sizeScale.lg.value}",
+      "compactSize": "{sizeScale.md.value}",
+      "iconLabelGap": "{spacingTokensReference}",
+      "radius": "circle-or-rounded-container",
+      "animation": "culturalIconHover"
+    },
+
+    "navigation": {
+      "defaultSize": "{sizeScale.md.value}",
+      "mobileSize": "{sizeScale.lg.value}",
+      "touchTarget": "{sizeScale.touch.value}"
+    },
+
+    "filter": {
+      "defaultSize": "{sizeScale.sm.value}",
+      "selectedSize": "{sizeScale.md.value}"
+    },
+
+    "mapMarker": {
+      "defaultSize": "{sizeScale.lg.value}",
+      "highlightedSize": "{sizeScale.xl.value}"
+    },
+
+    "hero": {
+      "defaultSize": "{sizeScale.3xl.value}",
+      "maximumSize": "{sizeScale.4xl.value}"
+    }
+  },
+
+  "visualStates": {
+    "default": {
+      "opacity": 1,
+      "filter": "none"
+    },
+
+    "hover": {
+      "opacity": 1,
+      "transform": "translateY(-2px) scale(1.025)",
+      "shadowReference": "brand.culturalIcon.highlighted"
+    },
+
+    "active": {
+      "opacity": 1,
+      "transform": "scale(0.97)"
+    },
+
+    "disabled": {
+      "opacity": 0.46,
+      "filter": "grayscale(0.65)"
+    },
+
+    "muted": {
+      "opacity": 0.68
+    },
+
+    "selected": {
+      "opacity": 1,
+      "ringReference": "focus.default"
+    }
+  },
+
+  "colorModes": {
+    "original": {
+      "description": "Cores originais oficiais do ícone.",
+      "preferred": true
+    },
+
+    "darkBackground": {
+      "description": "Versão otimizada para fundos escuros.",
+      "allowed": true
+    },
+
+    "lightBackground": {
+      "description": "Versão otimizada para fundos claros.",
+      "allowed": true
+    },
+
+    "monochrome": {
+      "description": "Versão de uma única cor.",
+      "allowed": true,
+      "approvalRequired": true
+    },
+
+    "white": {
+      "description": "Versão branca para alto contraste.",
+      "allowed": true
+    },
+
+    "gold": {
+      "description": "Versão dourada para materiais cerimoniais.",
+      "allowed": true,
+      "approvalRequired": true
+    }
+  },
+
+  "accessibility": {
+    "decorativeRule": "Ícones puramente decorativos devem utilizar alt vazio e aria-hidden igual a true.",
+
+    "informativeRule": "Ícones informativos devem possuir nome acessível equivalente ao significado apresentado.",
+
+    "interactiveRule": "Botões iconográficos devem possuir aria-label ou texto visível.",
+
+    "minimumRenderedSize": {
+      "informative": "20px",
+      "interactive": "24px",
+      "complexCultural": "32px"
+    },
+
+    "minimumTouchTarget": {
+      "value": "44px",
+      "type": "dimension"
+    },
+
+    "rules": [
+      "Não utilizar o nome do arquivo como texto alternativo.",
+      "Descrever significado, não detalhes ornamentais irrelevantes.",
+      "Não repetir no texto alternativo informação já visível ao lado.",
+      "Não depender apenas da cor para diferenciar categorias.",
+      "Manter contraste mínimo de 3:1 em elementos essenciais.",
+      "Não inserir texto pequeno dentro do ícone.",
+      "Não usar ícones complexos em tamanhos que impeçam seu reconhecimento.",
+      "Ícones interativos devem apresentar foco visível."
+    ]
+  },
+
+  "culturalSafeguards": {
+    "principles": [
+      "Respeito às tradições de Vila Bela da Santíssima Trindade.",
+      "Preservação dos títulos e hierarquias tradicionais.",
+      "Não caricaturização de pessoas, grupos ou práticas.",
+      "Não comercialização descontextualizada de símbolos sagrados.",
+      "Identificação correta de grupos, festeiros e celebrações.",
+      "Validação comunitária quando houver dúvida cultural.",
+      "Proteção da memória de pessoas homenageadas."
+    ],
+
+    "prohibitedTransformations": [
+      "Distorção facial.",
+      "Mudança arbitrária de indumentária.",
+      "Supressão de símbolos de autoridade.",
+      "Erotização.",
+      "Caricatura depreciativa.",
+      "Mistura indevida entre celebrações.",
+      "Uso jocoso de símbolos religiosos.",
+      "Troca de cores com significado tradicional sem validação."
+    ]
+  },
+
+  "provenance": {
+    "requiredFields": [
+      "sourceType",
+      "referenceDescription",
+      "creationDate",
+      "responsiblePerson",
+      "culturalValidationStatus",
+      "usageRightsStatus"
+    ],
+
+    "statuses": [
+      "confirmed",
+      "documented",
+      "personal-memory",
+      "community-reference",
+      "pending-validation"
+    ],
+
+    "rule": "Todo ícone derivado de fotografia ou pessoa identificável deve possuir registro de origem e análise de autorização de uso."
+  },
+
+  "cssVariables": {
+    "--festanca-icon-size-xs": "1rem",
+    "--festanca-icon-size-sm": "1.25rem",
+    "--festanca-icon-size-md": "1.5rem",
+    "--festanca-icon-size-lg": "2rem",
+    "--festanca-icon-size-xl": "3rem",
+    "--festanca-icon-size-2xl": "4rem",
+    "--festanca-icon-size-3xl": "6rem",
+    "--festanca-icon-size-4xl": "8rem",
+
+    "--festanca-icon-touch-target": "2.75rem",
+
+    "--festanca-icon-stroke-thin": "1.25px",
+    "--festanca-icon-stroke-regular": "1.75px",
+    "--festanca-icon-stroke-medium": "2px",
+    "--festanca-icon-stroke-bold": "2.5px",
+
+    "--festanca-icon-opacity-disabled": "0.46",
+    "--festanca-icon-opacity-muted": "0.68",
+
+    "--festanca-icon-safe-area": "18.75%",
+    "--festanca-icon-transition": "transform 220ms cubic-bezier(0.2, 0, 0, 1), opacity 220ms cubic-bezier(0.2, 0, 0, 1), filter 220ms cubic-bezier(0.2, 0, 0, 1)"
+  },
+
+  "usageExamples": {
+    "html": {
+      "informative": "<img src=\"assets/brand/icons/congo-icon.png\" alt=\"Ícone representando um soldado do tradicional Grupo do Congo.\">",
+      "decorative": "<img src=\"assets/brand/icons/ornamento-icon.png\" alt=\"\" aria-hidden=\"true\">",
+      "interactive": "<button type=\"button\" aria-label=\"Exibir programação do Congo\"><img src=\"assets/brand/icons/congo-icon.png\" alt=\"\"></button>"
+    },
+
+    "css": {
+      "base": "width: var(--festanca-icon-size-md); height: var(--festanca-icon-size-md); object-fit: contain;",
+      "interactive": "min-width: var(--festanca-icon-touch-target); min-height: var(--festanca-icon-touch-target);",
+      "disabled": "opacity: var(--festanca-icon-opacity-disabled); filter: grayscale(0.65);",
+      "transition": "transition: var(--festanca-icon-transition);"
+    }
+  },
+
+  "qualityChecklist": {
+    "visual": [
+      "O ícone permanece reconhecível em tamanho pequeno.",
+      "Não existem margens irregulares.",
+      "A transparência está correta.",
+      "Não existem bordas serrilhadas excessivas.",
+      "As cores estão alinhadas à paleta."
+    ],
+
+    "technical": [
+      "O caminho do arquivo está correto.",
+      "O arquivo abre sem erro.",
+      "As dimensões foram registradas.",
+      "O peso foi otimizado para web.",
+      "O nome segue a convenção."
+    ],
+
+    "cultural": [
+      "A manifestação foi identificada corretamente.",
+      "Os títulos tradicionais foram preservados.",
+      "A indumentária não foi descaracterizada.",
+      "A representação foi revisada culturalmente.",
+      "A proveniência foi registrada."
+    ],
+
+    "accessibility": [
+      "Existe texto alternativo adequado.",
+      "O ícone não depende apenas de cor.",
+      "O contraste é suficiente.",
+      "A área de toque possui pelo menos 44 px.",
+      "O foco é visível quando interativo."
+    ]
+  },
+
+  "restrictions": [
+    "Não criar ícones culturais sem validação.",
+    "Não substituir ícones oficiais por emojis em materiais institucionais.",
+    "Não alterar proporções livremente.",
+    "Não esticar ou comprimir imagens.",
+    "Não aplicar filtros que descaracterizem pessoas ou indumentárias.",
+    "Não utilizar fundos opacos quando a transparência for exigida.",
+    "Não misturar estilos gráficos incompatíveis na mesma coleção.",
+    "Não usar fotografias não autorizadas como ícones públicos.",
+    "Não atribuir autoria inexistente.",
+    "Não excluir créditos ou proveniência.",
+    "Toda alteração deverá ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "cultural",
+      "accessibility",
+      "licensing",
+      "provenance"
+    ],
+
+    "approvalFlow": [
+      "proposta",
+      "registro-de-proveniencia",
+      "revisao-visual",
+      "revisao-cultural",
+      "revisao-tecnica",
+      "revisao-de-acessibilidade",
+      "aprovacao-institucional",
+      "publicacao",
+      "registro-no-changelog"
+    ]
+  },
+
+  "futureEvolution": {
+    "recommended": [
+      "Criar versões vetoriais em SVG.",
+      "Produzir versões monocromáticas.",
+      "Produzir versões para fundo claro e escuro.",
+      "Gerar sprites ou componentes web.",
+      "Criar catálogo visual em HTML.",
+      "Adicionar dimensões e hashes dos arquivos.",
+      "Integrar verificação automática de caminhos.",
+      "Integrar o catálogo ao painel de curadoria."
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+        }
