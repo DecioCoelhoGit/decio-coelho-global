@@ -1,0 +1,804 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-typography-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/typography.json",
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyGuideReference": "assets/brand/palette/typography-guide.png",
+    "brandManifestReference": "assets/brand/brand-manifest.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "typography.{context}.{role}.{size}",
+    "cssVariableFormat": "--festanca-font-{property}-{role}",
+    "examples": [
+      "typography.display.hero",
+      "typography.heading.h1",
+      "typography.body.default",
+      "typography.interface.button"
+    ]
+  },
+
+  "fontFamilies": {
+    "display": {
+      "value": "\"Cinzel Decorative\", \"Cinzel\", Georgia, serif",
+      "type": "fontFamily",
+      "name": "Cinzel Decorative",
+      "role": "display",
+      "description": "Fonte monumental, cerimonial e identitária.",
+      "recommendedUse": [
+        "marca",
+        "titulos-monumentais",
+        "capas",
+        "cartazes",
+        "aberturas",
+        "materiais-cerimoniais"
+      ],
+      "restrictions": [
+        "nao-utilizar-em-textos-longos",
+        "nao-utilizar-em-tamanhos-muito-pequenos",
+        "nao-utilizar-em-botoes-compactos"
+      ]
+    },
+
+    "editorial": {
+      "value": "\"Playfair Display\", Georgia, serif",
+      "type": "fontFamily",
+      "name": "Playfair Display",
+      "role": "editorial",
+      "description": "Fonte editorial para títulos elegantes e conteúdos institucionais.",
+      "recommendedUse": [
+        "titulos-editoriais",
+        "subtitulos",
+        "citacoes",
+        "apresentacoes",
+        "documentos-institucionais"
+      ],
+      "restrictions": [
+        "evitar-em-interfaces-muito-compactas",
+        "nao-utilizar-em-todos-os-niveis-simultaneamente"
+      ]
+    },
+
+    "historical": {
+      "value": "\"Libre Baskerville\", Georgia, serif",
+      "type": "fontFamily",
+      "name": "Libre Baskerville",
+      "role": "historical",
+      "description": "Fonte destinada a textos históricos, memoriais e patrimoniais.",
+      "recommendedUse": [
+        "textos-historicos",
+        "cronicas",
+        "memoria",
+        "biografias",
+        "documentos-patrimoniais",
+        "legendas-historicas"
+      ],
+      "restrictions": [
+        "evitar-em-botoes",
+        "evitar-em-navegacao-principal"
+      ]
+    },
+
+    "interface": {
+      "value": "\"Montserrat\", \"Arial\", sans-serif",
+      "type": "fontFamily",
+      "name": "Montserrat",
+      "role": "interface",
+      "description": "Fonte funcional principal para interfaces e leitura digital.",
+      "recommendedUse": [
+        "landing-page",
+        "dashboards",
+        "menus",
+        "botoes",
+        "formularios",
+        "cards",
+        "tabelas",
+        "legendas",
+        "textos-funcionais"
+      ],
+      "restrictions": []
+    },
+
+    "system": {
+      "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "type": "fontFamily",
+      "name": "System UI",
+      "role": "fallback",
+      "description": "Fonte de segurança para carregamento rápido e compatibilidade.",
+      "recommendedUse": [
+        "fallback",
+        "aplicacoes-offline",
+        "interfaces-de-emergencia"
+      ],
+      "restrictions": [
+        "nao-substituir-a-tipografia-oficial-sem-necessidade"
+      ]
+    },
+
+    "monospace": {
+      "value": "\"JetBrains Mono\", \"Fira Code\", Consolas, monospace",
+      "type": "fontFamily",
+      "name": "JetBrains Mono",
+      "role": "technical",
+      "description": "Fonte técnica para código, dados, identificadores e documentação.",
+      "recommendedUse": [
+        "codigo",
+        "json",
+        "caminhos",
+        "identificadores",
+        "dados-tecnicos",
+        "painel-de-curadoria"
+      ],
+      "restrictions": [
+        "nao-utilizar-em-textos-editoriais",
+        "nao-utilizar-em-titulos-cerimoniais"
+      ]
+    }
+  },
+
+  "fontWeights": {
+    "thin": {
+      "value": 100,
+      "type": "fontWeight"
+    },
+
+    "extraLight": {
+      "value": 200,
+      "type": "fontWeight"
+    },
+
+    "light": {
+      "value": 300,
+      "type": "fontWeight"
+    },
+
+    "regular": {
+      "value": 400,
+      "type": "fontWeight"
+    },
+
+    "medium": {
+      "value": 500,
+      "type": "fontWeight"
+    },
+
+    "semiBold": {
+      "value": 600,
+      "type": "fontWeight"
+    },
+
+    "bold": {
+      "value": 700,
+      "type": "fontWeight"
+    },
+
+    "extraBold": {
+      "value": 800,
+      "type": "fontWeight"
+    },
+
+    "black": {
+      "value": 900,
+      "type": "fontWeight"
+    }
+  },
+
+  "fontSizes": {
+    "xs": {
+      "value": "0.75rem",
+      "pixels": 12,
+      "type": "dimension",
+      "description": "Informações auxiliares restritas."
+    },
+
+    "sm": {
+      "value": "0.875rem",
+      "pixels": 14,
+      "type": "dimension",
+      "description": "Legendas e metadados."
+    },
+
+    "md": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "dimension",
+      "description": "Texto padrão mínimo recomendado."
+    },
+
+    "lg": {
+      "value": "1.125rem",
+      "pixels": 18,
+      "type": "dimension",
+      "description": "Texto destacado e confortável."
+    },
+
+    "xl": {
+      "value": "1.25rem",
+      "pixels": 20,
+      "type": "dimension",
+      "description": "Subtítulos pequenos."
+    },
+
+    "2xl": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "dimension",
+      "description": "Títulos de cards e seções compactas."
+    },
+
+    "3xl": {
+      "value": "1.875rem",
+      "pixels": 30,
+      "type": "dimension",
+      "description": "Títulos de seção."
+    },
+
+    "4xl": {
+      "value": "2.25rem",
+      "pixels": 36,
+      "type": "dimension",
+      "description": "Cabeçalhos principais."
+    },
+
+    "5xl": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "dimension",
+      "description": "Título monumental responsivo."
+    },
+
+    "6xl": {
+      "value": "3.75rem",
+      "pixels": 60,
+      "type": "dimension",
+      "description": "Título hero."
+    },
+
+    "7xl": {
+      "value": "4.5rem",
+      "pixels": 72,
+      "type": "dimension",
+      "description": "Título institucional de grande formato."
+    },
+
+    "8xl": {
+      "value": "6rem",
+      "pixels": 96,
+      "type": "dimension",
+      "description": "Título cinematográfico."
+    }
+  },
+
+  "lineHeights": {
+    "none": {
+      "value": 1,
+      "type": "number"
+    },
+
+    "tight": {
+      "value": 1.1,
+      "type": "number"
+    },
+
+    "compact": {
+      "value": 1.25,
+      "type": "number"
+    },
+
+    "normal": {
+      "value": 1.5,
+      "type": "number"
+    },
+
+    "comfortable": {
+      "value": 1.65,
+      "type": "number"
+    },
+
+    "relaxed": {
+      "value": 1.8,
+      "type": "number"
+    }
+  },
+
+  "letterSpacing": {
+    "tighter": {
+      "value": "-0.04em",
+      "type": "dimension"
+    },
+
+    "tight": {
+      "value": "-0.02em",
+      "type": "dimension"
+    },
+
+    "normal": {
+      "value": "0em",
+      "type": "dimension"
+    },
+
+    "wide": {
+      "value": "0.04em",
+      "type": "dimension"
+    },
+
+    "wider": {
+      "value": "0.08em",
+      "type": "dimension"
+    },
+
+    "widest": {
+      "value": "0.14em",
+      "type": "dimension"
+    }
+  },
+
+  "textTransforms": {
+    "none": {
+      "value": "none",
+      "type": "textTransform"
+    },
+
+    "uppercase": {
+      "value": "uppercase",
+      "type": "textTransform"
+    },
+
+    "lowercase": {
+      "value": "lowercase",
+      "type": "textTransform"
+    },
+
+    "capitalize": {
+      "value": "capitalize",
+      "type": "textTransform"
+    }
+  },
+
+  "styles": {
+    "display": {
+      "hero": {
+        "fontFamily": "{fontFamilies.display.value}",
+        "fontSize": "{fontSizes.7xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.tight.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Título monumental da abertura principal."
+      },
+
+      "cinematic": {
+        "fontFamily": "{fontFamilies.display.value}",
+        "fontSize": "{fontSizes.8xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.none.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Título para painéis, posters e peças monumentais."
+      },
+
+      "ceremonial": {
+        "fontFamily": "{fontFamilies.display.value}",
+        "fontSize": "{fontSizes.5xl.value}",
+        "fontWeight": "{fontWeights.semiBold.value}",
+        "lineHeight": "{lineHeights.tight.value}",
+        "letterSpacing": "{letterSpacing.wider.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Título de materiais solenes e religiosos."
+      }
+    },
+
+    "heading": {
+      "h1": {
+        "fontFamily": "{fontFamilies.editorial.value}",
+        "fontSize": "{fontSizes.4xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.compact.value}",
+        "letterSpacing": "{letterSpacing.tight.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título principal de página."
+      },
+
+      "h2": {
+        "fontFamily": "{fontFamilies.editorial.value}",
+        "fontSize": "{fontSizes.3xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.compact.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título principal de seção."
+      },
+
+      "h3": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.2xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.compact.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título de subseção."
+      },
+
+      "h4": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.xl.value}",
+        "fontWeight": "{fontWeights.semiBold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título de bloco ou card."
+      },
+
+      "h5": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.lg.value}",
+        "fontWeight": "{fontWeights.semiBold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título auxiliar."
+      },
+
+      "h6": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.md.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Título funcional compacto."
+      }
+    },
+
+    "body": {
+      "large": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.lg.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.comfortable.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Texto de abertura ou introdução."
+      },
+
+      "default": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.md.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.comfortable.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Texto padrão de interfaces."
+      },
+
+      "small": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Texto auxiliar e metadados."
+      },
+
+      "historical": {
+        "fontFamily": "{fontFamilies.historical.value}",
+        "fontSize": "{fontSizes.lg.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.relaxed.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Texto histórico, memorial ou patrimonial."
+      }
+    },
+
+    "interface": {
+      "navigation": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.semiBold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Itens do menu principal."
+      },
+
+      "button": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.none.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Textos de botões."
+      },
+
+      "inputLabel": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.semiBold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Rótulo de campos e formulários."
+      },
+
+      "inputText": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.md.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Texto digitado em campos."
+      },
+
+      "tableHeader": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Cabeçalho de tabelas."
+      },
+
+      "tableCell": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Conteúdo de tabelas."
+      }
+    },
+
+    "card": {
+      "eyebrow": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.xs.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.widest.value}",
+        "textTransform": "{textTransforms.uppercase.value}",
+        "description": "Categoria ou identificação superior do card."
+      },
+
+      "title": {
+        "fontFamily": "{fontFamilies.editorial.value}",
+        "fontSize": "{fontSizes.xl.value}",
+        "fontWeight": "{fontWeights.bold.value}",
+        "lineHeight": "{lineHeights.compact.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Título principal do card."
+      },
+
+      "body": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.comfortable.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Descrição do card."
+      },
+
+      "metadata": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.xs.value}",
+        "fontWeight": "{fontWeights.medium.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.wide.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Data, horário, local e informações auxiliares."
+      }
+    },
+
+    "caption": {
+      "default": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Legenda de imagem."
+      },
+
+      "historical": {
+        "fontFamily": "{fontFamilies.historical.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.comfortable.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Legenda documental ou histórica."
+      },
+
+      "credit": {
+        "fontFamily": "{fontFamilies.interface.value}",
+        "fontSize": "{fontSizes.xs.value}",
+        "fontWeight": "{fontWeights.medium.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Crédito fotográfico ou autoria."
+      }
+    },
+
+    "technical": {
+      "code": {
+        "fontFamily": "{fontFamilies.monospace.value}",
+        "fontSize": "{fontSizes.sm.value}",
+        "fontWeight": "{fontWeights.regular.value}",
+        "lineHeight": "{lineHeights.comfortable.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Código, JSON e comandos."
+      },
+
+      "identifier": {
+        "fontFamily": "{fontFamilies.monospace.value}",
+        "fontSize": "{fontSizes.xs.value}",
+        "fontWeight": "{fontWeights.medium.value}",
+        "lineHeight": "{lineHeights.normal.value}",
+        "letterSpacing": "{letterSpacing.normal.value}",
+        "textTransform": "{textTransforms.none.value}",
+        "description": "Identificadores, IDs e caminhos."
+      }
+    }
+  },
+
+  "responsiveScale": {
+    "mobile": {
+      "displayHero": "clamp(2.5rem, 11vw, 4.5rem)",
+      "headingH1": "clamp(2rem, 8vw, 2.75rem)",
+      "headingH2": "clamp(1.75rem, 7vw, 2.25rem)",
+      "headingH3": "clamp(1.375rem, 5vw, 1.75rem)",
+      "body": "1rem"
+    },
+
+    "tablet": {
+      "displayHero": "clamp(3.5rem, 8vw, 5rem)",
+      "headingH1": "clamp(2.5rem, 6vw, 3.25rem)",
+      "headingH2": "clamp(2rem, 5vw, 2.75rem)",
+      "headingH3": "clamp(1.5rem, 4vw, 2rem)",
+      "body": "1rem"
+    },
+
+    "desktop": {
+      "displayHero": "clamp(4.5rem, 7vw, 7rem)",
+      "headingH1": "clamp(3rem, 5vw, 4rem)",
+      "headingH2": "clamp(2.25rem, 4vw, 3rem)",
+      "headingH3": "clamp(1.75rem, 3vw, 2.25rem)",
+      "body": "1.0625rem"
+    }
+  },
+
+  "cssVariables": {
+    "--festanca-font-display": "\"Cinzel Decorative\", \"Cinzel\", Georgia, serif",
+    "--festanca-font-editorial": "\"Playfair Display\", Georgia, serif",
+    "--festanca-font-historical": "\"Libre Baskerville\", Georgia, serif",
+    "--festanca-font-interface": "\"Montserrat\", Arial, sans-serif",
+    "--festanca-font-system": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "--festanca-font-monospace": "\"JetBrains Mono\", \"Fira Code\", Consolas, monospace",
+
+    "--festanca-font-size-xs": "0.75rem",
+    "--festanca-font-size-sm": "0.875rem",
+    "--festanca-font-size-md": "1rem",
+    "--festanca-font-size-lg": "1.125rem",
+    "--festanca-font-size-xl": "1.25rem",
+    "--festanca-font-size-2xl": "1.5rem",
+    "--festanca-font-size-3xl": "1.875rem",
+    "--festanca-font-size-4xl": "2.25rem",
+    "--festanca-font-size-5xl": "3rem",
+    "--festanca-font-size-6xl": "3.75rem",
+    "--festanca-font-size-7xl": "4.5rem",
+    "--festanca-font-size-8xl": "6rem",
+
+    "--festanca-line-height-tight": "1.1",
+    "--festanca-line-height-compact": "1.25",
+    "--festanca-line-height-normal": "1.5",
+    "--festanca-line-height-comfortable": "1.65",
+    "--festanca-line-height-relaxed": "1.8",
+
+    "--festanca-letter-spacing-tight": "-0.02em",
+    "--festanca-letter-spacing-normal": "0",
+    "--festanca-letter-spacing-wide": "0.04em",
+    "--festanca-letter-spacing-wider": "0.08em",
+    "--festanca-letter-spacing-widest": "0.14em"
+  },
+
+  "accessibility": {
+    "minimumBodyTextPx": 16,
+    "minimumSupportTextPx": 14,
+    "minimumInteractiveTextPx": 14,
+    "recommendedMaximumLineLengthCharacters": 75,
+    "recommendedMinimumLineLengthCharacters": 40,
+
+    "rules": [
+      "Utilizar tamanho mínimo de 16 px para textos corridos.",
+      "Evitar textos longos em caixa alta.",
+      "Não utilizar Cinzel Decorative em parágrafos.",
+      "Manter contraste adequado entre texto e fundo.",
+      "Permitir ampliação do texto sem perda de conteúdo.",
+      "Evitar blocos excessivamente largos.",
+      "Manter espaçamento confortável entre linhas.",
+      "Utilizar rótulos claros em botões e ícones.",
+      "Evitar alinhamento justificado em telas pequenas.",
+      "Preservar a hierarquia sem depender apenas de tamanho ou cor."
+    ]
+  },
+
+  "loadingStrategy": {
+    "recommended": "self-hosted-or-google-fonts-with-display-swap",
+    "fontDisplay": "swap",
+    "preload": [
+      "Montserrat-Regular",
+      "Montserrat-SemiBold",
+      "PlayfairDisplay-Bold"
+    ],
+    "optional": [
+      "CinzelDecorative-Bold",
+      "LibreBaskerville-Regular",
+      "JetBrainsMono-Regular"
+    ],
+    "fallbackRequired": true
+  },
+
+  "restrictions": [
+    "Não utilizar mais de três famílias tipográficas em uma única composição.",
+    "Não substituir as famílias oficiais sem revisão.",
+    "Não utilizar fonte decorativa em textos longos.",
+    "Não reduzir textos corridos abaixo de 16 px.",
+    "Não utilizar pesos muito finos sobre fundos complexos.",
+    "Não aplicar espaçamento extremo em textos longos.",
+    "Não usar caixa alta em parágrafos completos.",
+    "Toda alteração deverá ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "editorial",
+      "accessibility"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/spacing.json",
+    "assets/brand/tokens/radius.json",
+    "assets/brand/tokens/shadows.json",
+    "assets/brand/tokens/animations.json",
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+      }
