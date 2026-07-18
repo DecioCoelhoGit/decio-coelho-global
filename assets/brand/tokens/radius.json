@@ -1,0 +1,723 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-radius-design-tokens",
+
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+    "repositoryPath": "assets/brand/tokens/radius.json",
+    "colorTokensReference": "assets/brand/tokens/colors.json",
+    "typographyTokensReference": "assets/brand/tokens/typography.json",
+    "spacingTokensReference": "assets/brand/tokens/spacing.json",
+    "brandGridReference": "assets/brand/palette/brand-grid.png",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "namingConvention": {
+    "format": "radius.{context}.{role}.{size}",
+    "cssVariableFormat": "--festanca-radius-{size}",
+    "examples": [
+      "radius.scale.md",
+      "radius.component.card.default",
+      "radius.component.button.pill",
+      "radius.brand.ceremonial"
+    ]
+  },
+
+  "principles": {
+    "description": "Os arredondamentos devem equilibrar solenidade, acolhimento, acessibilidade e consistência visual.",
+
+    "rules": [
+      "Utilizar valores da escala oficial.",
+      "Evitar arredondamentos arbitrários.",
+      "Manter coerência entre componentes relacionados.",
+      "Reservar formas circulares para avatares, ícones e indicadores.",
+      "Utilizar formas cerimoniais com moderação.",
+      "Preservar bordas mais discretas em documentos históricos.",
+      "Não aplicar cantos excessivamente arredondados em tabelas densas."
+    ]
+  },
+
+  "scale": {
+    "none": {
+      "value": "0",
+      "pixels": 0,
+      "type": "borderRadius",
+      "description": "Sem arredondamento."
+    },
+
+    "2xs": {
+      "value": "0.125rem",
+      "pixels": 2,
+      "type": "borderRadius",
+      "description": "Arredondamento técnico mínimo."
+    },
+
+    "xs": {
+      "value": "0.25rem",
+      "pixels": 4,
+      "type": "borderRadius",
+      "description": "Arredondamento discreto."
+    },
+
+    "sm": {
+      "value": "0.375rem",
+      "pixels": 6,
+      "type": "borderRadius",
+      "description": "Arredondamento pequeno."
+    },
+
+    "md": {
+      "value": "0.5rem",
+      "pixels": 8,
+      "type": "borderRadius",
+      "description": "Arredondamento padrão compacto."
+    },
+
+    "lg": {
+      "value": "0.75rem",
+      "pixels": 12,
+      "type": "borderRadius",
+      "description": "Arredondamento confortável."
+    },
+
+    "xl": {
+      "value": "1rem",
+      "pixels": 16,
+      "type": "borderRadius",
+      "description": "Arredondamento principal de cards e componentes."
+    },
+
+    "2xl": {
+      "value": "1.5rem",
+      "pixels": 24,
+      "type": "borderRadius",
+      "description": "Arredondamento amplo."
+    },
+
+    "3xl": {
+      "value": "2rem",
+      "pixels": 32,
+      "type": "borderRadius",
+      "description": "Arredondamento monumental."
+    },
+
+    "4xl": {
+      "value": "3rem",
+      "pixels": 48,
+      "type": "borderRadius",
+      "description": "Arredondamento de grandes superfícies."
+    },
+
+    "pill": {
+      "value": "9999px",
+      "type": "borderRadius",
+      "description": "Formato cápsula."
+    },
+
+    "circle": {
+      "value": "50%",
+      "type": "borderRadius",
+      "description": "Formato circular."
+    }
+  },
+
+  "component": {
+    "button": {
+      "square": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Botão funcional com cantos moderados."
+      },
+
+      "default": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Botão padrão do sistema."
+      },
+
+      "prominent": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Botão principal ou chamada de destaque."
+      },
+
+      "pill": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Botão em formato cápsula."
+      },
+
+      "icon": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Botão exclusivamente iconográfico."
+      }
+    },
+
+    "card": {
+      "compact": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Card compacto ou informativo."
+      },
+
+      "default": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Card principal do sistema."
+      },
+
+      "comfortable": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Card com maior presença visual."
+      },
+
+      "feature": {
+        "value": "{scale.3xl.value}",
+        "type": "borderRadius",
+        "description": "Card de destaque ou seção especial."
+      },
+
+      "historical": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Card patrimonial com linguagem mais documental."
+      },
+
+      "ceremonial": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Card cerimonial e solene."
+      }
+    },
+
+    "input": {
+      "default": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Campo de formulário padrão."
+      },
+
+      "comfortable": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Campo ampliado para interfaces mobile."
+      },
+
+      "search": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Campo de busca em formato cápsula."
+      },
+
+      "textarea": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Área de texto multilinha."
+      }
+    },
+
+    "select": {
+      "default": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Seletor padrão."
+      }
+    },
+
+    "checkbox": {
+      "default": {
+        "value": "{scale.xs.value}",
+        "type": "borderRadius",
+        "description": "Caixa de seleção."
+      }
+    },
+
+    "radio": {
+      "default": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Botão de opção circular."
+      }
+    },
+
+    "switch": {
+      "track": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Trilho do seletor liga/desliga."
+      },
+
+      "thumb": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Controle circular do seletor."
+      }
+    },
+
+    "badge": {
+      "default": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Badge padrão."
+      },
+
+      "square": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Badge técnico ou categórico."
+      }
+    },
+
+    "chip": {
+      "default": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Chip de filtro ou seleção."
+      }
+    },
+
+    "tag": {
+      "default": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Etiqueta de categoria."
+      },
+
+      "pill": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Etiqueta arredondada."
+      }
+    },
+
+    "avatar": {
+      "circle": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Avatar circular."
+      },
+
+      "rounded": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Avatar ou retrato com cantos arredondados."
+      },
+
+      "historical": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Retrato documental."
+      }
+    },
+
+    "image": {
+      "thumbnail": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Miniatura de imagem."
+      },
+
+      "card": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Imagem inserida em cards."
+      },
+
+      "feature": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Imagem de destaque."
+      },
+
+      "portrait": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Retrato institucional."
+      },
+
+      "circle": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Imagem circular."
+      }
+    },
+
+    "modal": {
+      "mobile": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Modal em dispositivos móveis."
+      },
+
+      "desktop": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Modal em desktop."
+      },
+
+      "fullscreenMobile": {
+        "value": "0",
+        "type": "borderRadius",
+        "description": "Modal em tela cheia no celular."
+      }
+    },
+
+    "dialog": {
+      "default": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Caixa de diálogo."
+      }
+    },
+
+    "drawer": {
+      "left": {
+        "value": "0 {scale.2xl.value} {scale.2xl.value} 0",
+        "type": "borderRadius",
+        "description": "Painel lateral aberto pela esquerda."
+      },
+
+      "right": {
+        "value": "{scale.2xl.value} 0 0 {scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Painel lateral aberto pela direita."
+      },
+
+      "bottom": {
+        "value": "{scale.2xl.value} {scale.2xl.value} 0 0",
+        "type": "borderRadius",
+        "description": "Painel inferior."
+      }
+    },
+
+    "dropdown": {
+      "default": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Menu suspenso."
+      }
+    },
+
+    "tooltip": {
+      "default": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Tooltip informativo."
+      }
+    },
+
+    "popover": {
+      "default": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Painel flutuante."
+      }
+    },
+
+    "toast": {
+      "default": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Notificação temporária."
+      }
+    },
+
+    "alert": {
+      "default": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Alerta padrão."
+      },
+
+      "prominent": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Alerta de maior destaque."
+      }
+    },
+
+    "table": {
+      "container": {
+        "value": "{scale.lg.value}",
+        "type": "borderRadius",
+        "description": "Contêiner externo de tabela."
+      },
+
+      "cell": {
+        "value": "0",
+        "type": "borderRadius",
+        "description": "Células permanecem sem arredondamento individual."
+      }
+    },
+
+    "navigation": {
+      "header": {
+        "value": "0",
+        "type": "borderRadius",
+        "description": "Cabeçalho principal sem arredondamento."
+      },
+
+      "menuItem": {
+        "value": "{scale.md.value}",
+        "type": "borderRadius",
+        "description": "Item interativo do menu."
+      },
+
+      "mobileMenu": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Menu móvel flutuante."
+      },
+
+      "bottomNavigation": {
+        "value": "{scale.2xl.value} {scale.2xl.value} 0 0",
+        "type": "borderRadius",
+        "description": "Navegação inferior móvel."
+      }
+    },
+
+    "progress": {
+      "track": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Trilho de progresso."
+      },
+
+      "indicator": {
+        "value": "{scale.pill.value}",
+        "type": "borderRadius",
+        "description": "Indicador de progresso."
+      }
+    },
+
+    "skeleton": {
+      "text": {
+        "value": "{scale.sm.value}",
+        "type": "borderRadius",
+        "description": "Skeleton de texto."
+      },
+
+      "card": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Skeleton de card."
+      },
+
+      "avatar": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Skeleton circular."
+      }
+    }
+  },
+
+  "brand": {
+    "logoContainer": {
+      "default": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Contêiner do logotipo em interfaces."
+      },
+
+      "ceremonial": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius",
+        "description": "Contêiner cerimonial do logotipo."
+      }
+    },
+
+    "iconContainer": {
+      "cultural": {
+        "value": "{scale.circle.value}",
+        "type": "borderRadius",
+        "description": "Contêiner circular para ícones culturais."
+      },
+
+      "institutional": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius",
+        "description": "Contêiner institucional para ícones."
+      }
+    },
+
+    "historicalPanel": {
+      "value": "{scale.sm.value}",
+      "type": "borderRadius",
+      "description": "Painel histórico com cantos discretos."
+    },
+
+    "ceremonialPanel": {
+      "value": "{scale.3xl.value}",
+      "type": "borderRadius",
+      "description": "Painel cerimonial de grande destaque."
+    },
+
+    "heritageFrame": {
+      "value": "{scale.xs.value}",
+      "type": "borderRadius",
+      "description": "Moldura patrimonial com acabamento discreto."
+    },
+
+    "holographicPanel": {
+      "value": "{scale.3xl.value}",
+      "type": "borderRadius",
+      "description": "Painel futurista e holográfico."
+    }
+  },
+
+  "responsive": {
+    "mobile": {
+      "card": {
+        "value": "{scale.xl.value}",
+        "type": "borderRadius"
+      },
+
+      "modal": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius"
+      },
+
+      "bottomSheet": {
+        "value": "{scale.2xl.value} {scale.2xl.value} 0 0",
+        "type": "borderRadius"
+      }
+    },
+
+    "tablet": {
+      "card": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius"
+      },
+
+      "modal": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius"
+      }
+    },
+
+    "desktop": {
+      "card": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius"
+      },
+
+      "featureCard": {
+        "value": "{scale.3xl.value}",
+        "type": "borderRadius"
+      },
+
+      "modal": {
+        "value": "{scale.2xl.value}",
+        "type": "borderRadius"
+      }
+    }
+  },
+
+  "cssVariables": {
+    "--festanca-radius-none": "0",
+    "--festanca-radius-2xs": "0.125rem",
+    "--festanca-radius-xs": "0.25rem",
+    "--festanca-radius-sm": "0.375rem",
+    "--festanca-radius-md": "0.5rem",
+    "--festanca-radius-lg": "0.75rem",
+    "--festanca-radius-xl": "1rem",
+    "--festanca-radius-2xl": "1.5rem",
+    "--festanca-radius-3xl": "2rem",
+    "--festanca-radius-4xl": "3rem",
+    "--festanca-radius-pill": "9999px",
+    "--festanca-radius-circle": "50%",
+
+    "--festanca-radius-button": "0.75rem",
+    "--festanca-radius-button-prominent": "1rem",
+    "--festanca-radius-card": "1rem",
+    "--festanca-radius-card-feature": "2rem",
+    "--festanca-radius-input": "0.5rem",
+    "--festanca-radius-modal": "1.5rem",
+    "--festanca-radius-image": "1rem",
+    "--festanca-radius-badge": "9999px"
+  },
+
+  "usageExamples": {
+    "css": {
+      "button": "border-radius: var(--festanca-radius-button);",
+      "featureButton": "border-radius: var(--festanca-radius-button-prominent);",
+      "card": "border-radius: var(--festanca-radius-card);",
+      "featureCard": "border-radius: var(--festanca-radius-card-feature);",
+      "input": "border-radius: var(--festanca-radius-input);",
+      "modal": "border-radius: var(--festanca-radius-modal);",
+      "avatar": "border-radius: var(--festanca-radius-circle);",
+      "badge": "border-radius: var(--festanca-radius-pill);"
+    },
+
+    "componentMapping": {
+      "primaryButton": "{component.button.default.value}",
+      "culturalIcon": "{brand.iconContainer.cultural.value}",
+      "programCard": "{component.card.default.value}",
+      "historicalCard": "{component.card.historical.value}",
+      "ceremonialCard": "{component.card.ceremonial.value}",
+      "searchField": "{component.input.search.value}"
+    }
+  },
+
+  "accessibility": {
+    "rules": [
+      "O arredondamento não deve reduzir a área útil de interação.",
+      "Controles circulares devem manter área mínima de toque.",
+      "Bordas arredondadas não devem cortar textos ou ícones.",
+      "Estados de foco devem acompanhar corretamente o contorno.",
+      "Elementos clicáveis semelhantes devem utilizar raios consistentes.",
+      "Não utilizar formato circular em botões com textos extensos.",
+      "Não depender do formato como único indicador de estado."
+    ]
+  },
+
+  "restrictions": [
+    "Não utilizar valores arbitrários quando existir token equivalente.",
+    "Não misturar mais de três escalas de raio em um mesmo componente.",
+    "Não utilizar formato circular em cards ou textos extensos.",
+    "Não utilizar raio monumental em componentes compactos.",
+    "Não remover o arredondamento de elementos interativos sem justificativa.",
+    "Não aplicar arredondamentos que descaracterizem molduras históricas.",
+    "Não cortar símbolos culturais com máscaras inadequadas.",
+    "Toda alteração deverá ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "responsive",
+      "accessibility"
+    ]
+  },
+
+  "nextRecommendedTokens": [
+    "assets/brand/tokens/shadows.json",
+    "assets/brand/tokens/animations.json",
+    "assets/brand/tokens/icons.json",
+    "assets/brand/tokens/symbols.json",
+    "assets/brand/tokens/themes.json"
+  ]
+    }
