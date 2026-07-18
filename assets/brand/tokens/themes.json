@@ -1,1 +1,1109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "tokenSetType": "festanca-theme-design-tokens",
 
+  "project": {
+    "id": "festanca-2026",
+    "name": "FESTANÇA 2026",
+    "location": "Vila Bela da Santíssima Trindade - Mato Grosso - Brasil",
+    "tagline": "Ao encontro do futuro, com os pés firmes na tradição."
+  },
+
+  "metadata": {
+    "version": "1.0.0",
+    "status": "official",
+    "language": "pt-BR",
+    "createdAt": "2026-07-18",
+    "updatedAt": "2026-07-18",
+
+    "repositoryPath": "assets/brand/tokens/themes.json",
+
+    "colorsReference": "assets/brand/tokens/colors.json",
+    "typographyReference": "assets/brand/tokens/typography.json",
+    "spacingReference": "assets/brand/tokens/spacing.json",
+    "radiusReference": "assets/brand/tokens/radius.json",
+    "shadowsReference": "assets/brand/tokens/shadows.json",
+    "animationsReference": "assets/brand/tokens/animations.json",
+    "iconsReference": "assets/brand/tokens/icons.json",
+    "symbolsReference": "assets/brand/tokens/symbols.json",
+
+    "manifestReference": "assets/brand/brand-manifest.json",
+    "catalogReference": "assets/brand/brand-assets-catalog.json",
+    "usageGuideReference": "assets/brand/USAGE-GUIDE.md",
+    "licenseReference": "assets/brand/LICENSE-AND-CREDITS.md",
+    "governanceReference": "assets/brand/governance.md",
+    "qualityChecklistReference": "assets/brand/quality-checklist.md"
+  },
+
+  "purpose": {
+    "description": "Compor os tokens fundamentais do Brand Design System da FESTANÇA 2026 em temas completos, coerentes e reutilizáveis para interfaces, páginas, documentos, painéis, aplicações culturais e experiências digitais.",
+
+    "objectives": [
+      "Centralizar decisões visuais por contexto.",
+      "Evitar estilização arbitrária.",
+      "Permitir alternância consistente entre temas.",
+      "Garantir acessibilidade.",
+      "Preservar identidade cultural.",
+      "Facilitar implementação em CSS, JavaScript e frameworks.",
+      "Preparar o sistema para futuras edições da FESTANÇA."
+    ]
+  },
+
+  "principles": {
+    "rules": [
+      "Todo tema deve herdar os tokens fundamentais oficiais.",
+      "Temas não podem redefinir arbitrariamente identidade institucional.",
+      "Acessibilidade prevalece sobre efeitos decorativos.",
+      "Tema ceremonial deve preservar sobriedade e solenidade.",
+      "Tema heritage deve priorizar memória e leitura.",
+      "Tema holographic deve permanecer opcional.",
+      "Tema high-contrast deve priorizar legibilidade máxima.",
+      "Nenhum tema deve comprometer conteúdo cultural ou religioso.",
+      "Alterações estruturais devem ser registradas no CHANGELOG.md."
+    ]
+  },
+
+  "themeOrder": [
+    "dark",
+    "light",
+    "heritage",
+    "ceremonial",
+    "high-contrast",
+    "holographic"
+  ],
+
+  "defaultTheme": "dark",
+
+  "fallbackTheme": "dark",
+
+  "themes": {
+    "dark": {
+      "id": "festanca-theme-dark",
+      "name": "Dark",
+      "status": "official",
+      "default": true,
+
+      "purpose": "Tema principal digital da FESTANÇA, com alto contraste, profundidade e presença institucional.",
+
+      "contexts": [
+        "landing-page",
+        "dashboard",
+        "mobile",
+        "web-app",
+        "display",
+        "presentation"
+      ],
+
+      "colors": {
+        "background": "#070A0E",
+        "backgroundSecondary": "#0D131A",
+        "surface": "#111A23",
+        "surfaceElevated": "#17232E",
+
+        "textPrimary": "#F7F4EC",
+        "textSecondary": "#D7D3C8",
+        "textMuted": "#9EA6AD",
+
+        "primary": "#D9A21B",
+        "primaryStrong": "#FFD34E",
+        "primaryContrast": "#111111",
+
+        "secondary": "#1F6F8B",
+        "secondaryStrong": "#5FA6C9",
+
+        "accent": "#62F58D",
+        "accentSoft": "#2DBE67",
+
+        "border": "rgba(255,255,255,0.14)",
+        "borderStrong": "rgba(217,162,27,0.42)",
+
+        "focus": "#62F58D",
+
+        "success": "#2DBE67",
+        "warning": "#F2B544",
+        "error": "#E85A4F",
+        "info": "#5FA6C9"
+      },
+
+      "typography": {
+        "heading": "display-primary",
+        "body": "body-primary",
+        "caption": "caption",
+        "button": "button",
+        "ceremonial": "display-ceremonial"
+      },
+
+      "spacing": {
+        "density": "comfortable",
+        "section": "xl",
+        "component": "md",
+        "inline": "sm"
+      },
+
+      "radius": {
+        "button": "md",
+        "card": "lg",
+        "modal": "xl",
+        "badge": "full"
+      },
+
+      "shadows": {
+        "card": "component.card.default",
+        "cardHover": "component.card.hover",
+        "modal": "component.modal.default",
+        "dropdown": "component.dropdown.default",
+        "focus": "focus.darkSurface"
+      },
+
+      "animations": {
+        "interaction": "transition.interactive",
+        "surface": "transition.surface",
+        "entrance": "entrance.fadeUp",
+        "exit": "exit.fadeOut"
+      },
+
+      "symbols": {
+        "preferred": [
+          "star",
+          "goldenArc"
+        ],
+        "ornamentDensity": "minimal"
+      },
+
+      "icons": {
+        "colorMode": "original",
+        "preferredSize": "md"
+      }
+    },
+
+    "light": {
+      "id": "festanca-theme-light",
+      "name": "Light",
+      "status": "official",
+
+      "purpose": "Tema claro para leitura prolongada, documentos, acessibilidade e ambientes iluminados.",
+
+      "contexts": [
+        "documents",
+        "reading",
+        "forms",
+        "print-preview",
+        "desktop"
+      ],
+
+      "colors": {
+        "background": "#FBFAF6",
+        "backgroundSecondary": "#F3F0E8",
+        "surface": "#FFFFFF",
+        "surfaceElevated": "#FFFDF8",
+
+        "textPrimary": "#111820",
+        "textSecondary": "#36444F",
+        "textMuted": "#68747D",
+
+        "primary": "#9E6F00",
+        "primaryStrong": "#7B5500",
+        "primaryContrast": "#FFFFFF",
+
+        "secondary": "#15557A",
+        "secondaryStrong": "#0C4262",
+
+        "accent": "#176B3A",
+        "accentSoft": "#2D8F55",
+
+        "border": "rgba(17,24,32,0.16)",
+        "borderStrong": "rgba(158,111,0,0.42)",
+
+        "focus": "#15557A",
+
+        "success": "#1D7D46",
+        "warning": "#9C6500",
+        "error": "#B23830",
+        "info": "#15557A"
+      },
+
+      "typography": {
+        "heading": "display-primary",
+        "body": "body-primary",
+        "caption": "caption",
+        "button": "button"
+      },
+
+      "spacing": {
+        "density": "comfortable",
+        "section": "xl",
+        "component": "md",
+        "inline": "sm"
+      },
+
+      "radius": {
+        "button": "md",
+        "card": "lg",
+        "modal": "xl",
+        "badge": "full"
+      },
+
+      "shadows": {
+        "card": "themes.light.card",
+        "cardHover": "themes.light.cardHover",
+        "modal": "themes.light.modal",
+        "focus": "focus.lightSurface"
+      },
+
+      "animations": {
+        "interaction": "transition.interactive",
+        "surface": "transition.surface",
+        "entrance": "entrance.fadeUp"
+      },
+
+      "symbols": {
+        "preferred": [
+          "star",
+          "goldenArc"
+        ],
+        "colorMode": "gold",
+        "ornamentDensity": "minimal"
+      },
+
+      "icons": {
+        "colorMode": "original",
+        "preferredSize": "md"
+      }
+    },
+
+    "heritage": {
+      "id": "festanca-theme-heritage",
+      "name": "Heritage",
+      "status": "official",
+
+      "purpose": "Tema dedicado à memória, patrimônio, história, acervos, cronologias e narrativas culturais.",
+
+      "contexts": [
+        "history",
+        "heritage",
+        "archive",
+        "timeline",
+        "museum",
+        "historical-document",
+        "memorial"
+      ],
+
+      "colors": {
+        "background": "#18130E",
+        "backgroundSecondary": "#231A12",
+        "surface": "#2B2118",
+        "surfaceElevated": "#382B20",
+
+        "textPrimary": "#F4E9CF",
+        "textSecondary": "#D7C5A2",
+        "textMuted": "#AA9675",
+
+        "primary": "#C9952B",
+        "primaryStrong": "#E7BE62",
+        "primaryContrast": "#1A1208",
+
+        "secondary": "#7D5A32",
+        "secondaryStrong": "#A57843",
+
+        "accent": "#9DAF78",
+
+        "border": "rgba(231,190,98,0.22)",
+        "borderStrong": "rgba(201,149,43,0.48)",
+
+        "focus": "#E7BE62",
+
+        "success": "#779458",
+        "warning": "#D69B35",
+        "error": "#B35A46",
+        "info": "#A57843"
+      },
+
+      "typography": {
+        "heading": "display-heritage",
+        "body": "body-reading",
+        "caption": "caption",
+        "quote": "quote",
+        "timeline": "timeline-label"
+      },
+
+      "spacing": {
+        "density": "comfortable",
+        "section": "2xl",
+        "component": "lg",
+        "readingMeasure": "optimal"
+      },
+
+      "radius": {
+        "card": "sm",
+        "image": "sm",
+        "document": "xs"
+      },
+
+      "shadows": {
+        "card": "component.card.historical",
+        "image": "component.image.historical",
+        "panel": "brand.historicalPanel"
+      },
+
+      "animations": {
+        "entrance": "entrance.heritageReveal",
+        "interaction": "transition.surface",
+        "continuousEffects": false
+      },
+
+      "symbols": {
+        "preferred": [
+          "frames",
+          "ornaments"
+        ],
+        "avoid": [
+          "heavy-neon"
+        ],
+        "ornamentDensity": "standard"
+      },
+
+      "icons": {
+        "colorMode": "original",
+        "preferredCollections": [
+          "institutionalThemes",
+          "culturalGroups"
+        ]
+      }
+    },
+
+    "ceremonial": {
+      "id": "festanca-theme-ceremonial",
+      "name": "Ceremonial",
+      "status": "official",
+
+      "purpose": "Tema solene para autoridades tradicionais, homenagens, celebrações, títulos e peças de grande valor simbólico.",
+
+      "contexts": [
+        "ceremonies",
+        "authorities",
+        "religious-program",
+        "tributes",
+        "certificates",
+        "official-panels"
+      ],
+
+      "colors": {
+        "background": "#090704",
+        "backgroundSecondary": "#151006",
+        "surface": "#1D1609",
+        "surfaceElevated": "#2A200B",
+
+        "textPrimary": "#FFF6D9",
+        "textSecondary": "#E9D7A4",
+        "textMuted": "#BDAA75",
+
+        "primary": "#D9A21B",
+        "primaryStrong": "#FFD34E",
+        "primaryContrast": "#120C02",
+
+        "secondary": "#A87810",
+        "secondaryStrong": "#E5B83F",
+
+        "accent": "#F5E4A4",
+
+        "border": "rgba(255,211,78,0.24)",
+        "borderStrong": "rgba(255,211,78,0.62)",
+
+        "focus": "#FFD34E",
+
+        "success": "#6EA85C",
+        "warning": "#E5B83F",
+        "error": "#C95C48",
+        "info": "#D2B26B"
+      },
+
+      "typography": {
+        "heading": "display-ceremonial",
+        "body": "body-primary",
+        "title": "title-ceremonial",
+        "caption": "caption"
+      },
+
+      "spacing": {
+        "density": "spacious",
+        "section": "2xl",
+        "component": "lg",
+        "ceremonialClearance": "xl"
+      },
+
+      "radius": {
+        "button": "md",
+        "card": "lg",
+        "panel": "xl"
+      },
+
+      "shadows": {
+        "card": "component.card.ceremonial",
+        "panel": "brand.ceremonialPanel",
+        "logo": "brand.logo.gold",
+        "focus": "focus.highContrast"
+      },
+
+      "animations": {
+        "entrance": "entrance.ceremonialReveal",
+        "logo": "brand.logo.reveal",
+        "arc": "brand.arc.reveal",
+        "interaction": "transition.ceremonial"
+      },
+
+      "symbols": {
+        "preferred": [
+          "star",
+          "goldenArc",
+          "ornaments",
+          "frames"
+        ],
+        "ornamentDensity": "ceremonial"
+      },
+
+      "icons": {
+        "colorMode": "gold",
+        "preferredCollections": [
+          "saoBeneditoAuthorities",
+          "divinoAuthorities",
+          "maeDeDeusAuthorities",
+          "santissimaTrindadeAuthorities"
+        ]
+      },
+
+      "restrictions": [
+        "Não utilizar animações jocosas.",
+        "Não utilizar neon intenso.",
+        "Não utilizar ornamentação exagerada sobre fotografias.",
+        "Não descaracterizar símbolos de autoridade."
+      ]
+    },
+
+    "high-contrast": {
+      "id": "festanca-theme-high-contrast",
+      "name": "High Contrast",
+      "status": "official",
+
+      "purpose": "Tema de máxima legibilidade e acessibilidade para usuários com baixa visão ou necessidade de contraste reforçado.",
+
+      "contexts": [
+        "accessibility",
+        "low-vision",
+        "public-kiosk",
+        "mobile",
+        "reading",
+        "critical-information"
+      ],
+
+      "colors": {
+        "background": "#000000",
+        "backgroundSecondary": "#080808",
+        "surface": "#111111",
+        "surfaceElevated": "#181818",
+
+        "textPrimary": "#FFFFFF",
+        "textSecondary": "#F2F2F2",
+        "textMuted": "#D0D0D0",
+
+        "primary": "#FFD700",
+        "primaryStrong": "#FFF36A",
+        "primaryContrast": "#000000",
+
+        "secondary": "#66CCFF",
+        "secondaryStrong": "#A6E4FF",
+
+        "accent": "#7CFF9E",
+
+        "border": "#FFFFFF",
+        "borderStrong": "#FFD700",
+
+        "focus": "#7CFF9E",
+
+        "success": "#7CFF9E",
+        "warning": "#FFD700",
+        "error": "#FF6B61",
+        "info": "#66CCFF"
+      },
+
+      "typography": {
+        "heading": "display-accessible",
+        "body": "body-accessible",
+        "caption": "caption-accessible",
+        "button": "button-accessible"
+      },
+
+      "spacing": {
+        "density": "comfortable",
+        "section": "xl",
+        "component": "lg",
+        "touchTargets": "large"
+      },
+
+      "radius": {
+        "button": "sm",
+        "card": "sm",
+        "input": "sm"
+      },
+
+      "shadows": {
+        "card": "none",
+        "modal": "none",
+        "focus": "focus.highContrast"
+      },
+
+      "animations": {
+        "entrance": "instant",
+        "interaction": "fast",
+        "continuousEffects": false,
+        "reducedMotionCompatible": true
+      },
+
+      "symbols": {
+        "preferred": [
+          "star"
+        ],
+        "colorMode": "white-or-gold",
+        "ornamentDensity": "minimal"
+      },
+
+      "icons": {
+        "colorMode": "white",
+        "preferredSize": "lg",
+        "minimumTouchTarget": "44px"
+      },
+
+      "accessibility": {
+        "fontScaleRecommended": "1.125",
+        "minimumBodySize": "18px",
+        "minimumContrast": "AAA-when-possible",
+        "decorativeMotion": false,
+        "textShadow": false
+      }
+    },
+
+    "holographic": {
+      "id": "festanca-theme-holographic",
+      "name": "Holographic",
+      "status": "official-optional",
+
+      "purpose": "Tema futurista para dashboards, exposições digitais, apresentações tecnológicas e experiências imersivas.",
+
+      "contexts": [
+        "dashboard",
+        "digital-exhibition",
+        "innovation",
+        "future-interface",
+        "immersive-display"
+      ],
+
+      "colors": {
+        "background": "#03070A",
+        "backgroundSecondary": "#071017",
+        "surface": "rgba(10,27,36,0.78)",
+        "surfaceElevated": "rgba(15,39,51,0.88)",
+
+        "textPrimary": "#ECFFFF",
+        "textSecondary": "#B8D9E2",
+        "textMuted": "#799CA8",
+
+        "primary": "#FFD34E",
+        "primaryStrong": "#FFE989",
+        "primaryContrast": "#061012",
+
+        "secondary": "#5FA6C9",
+        "secondaryStrong": "#8DD7F4",
+
+        "accent": "#62F58D",
+        "accentStrong": "#9CFFB7",
+
+        "border": "rgba(95,166,201,0.34)",
+        "borderStrong": "rgba(98,245,141,0.56)",
+
+        "focus": "#62F58D",
+
+        "success": "#62F58D",
+        "warning": "#FFD34E",
+        "error": "#FF7167",
+        "info": "#8DD7F4"
+      },
+
+      "typography": {
+        "heading": "display-digital",
+        "body": "body-primary",
+        "data": "data-display",
+        "caption": "caption"
+      },
+
+      "spacing": {
+        "density": "comfortable",
+        "section": "xl",
+        "component": "md",
+        "dashboardGap": "lg"
+      },
+
+      "radius": {
+        "button": "md",
+        "card": "lg",
+        "panel": "xl"
+      },
+
+      "shadows": {
+        "card": "holographic.panel",
+        "cardHover": "holographic.panelHover",
+        "ring": "holographic.interfaceRing",
+        "goldGreen": "holographic.goldGreen"
+      },
+
+      "animations": {
+        "entrance": "entrance.fadeUp",
+        "panelHover": "holographic.panelHover",
+        "ambientGlow": "holographic.ambientGlow",
+        "scanLine": "holographic.scanLine"
+      },
+
+      "symbols": {
+        "preferred": [
+          "star",
+          "goldenArc",
+          "graphicElements"
+        ],
+        "colorMode": "gold-green"
+      },
+
+      "icons": {
+        "colorMode": "original",
+        "preferredSize": "md",
+        "glowAllowed": true
+      },
+
+      "restrictions": [
+        "Não utilizar como tema padrão de documentos históricos.",
+        "Não utilizar em atos litúrgicos formais.",
+        "Não aplicar efeitos holográficos sobre fotografias históricas.",
+        "Desativar efeitos contínuos com prefers-reduced-motion."
+      ]
+    }
+  },
+
+  "semanticAliases": {
+    "background": {
+      "page": "{theme.colors.background}",
+      "section": "{theme.colors.backgroundSecondary}",
+      "surface": "{theme.colors.surface}",
+      "elevated": "{theme.colors.surfaceElevated}"
+    },
+
+    "text": {
+      "primary": "{theme.colors.textPrimary}",
+      "secondary": "{theme.colors.textSecondary}",
+      "muted": "{theme.colors.textMuted}",
+      "inverse": "{theme.colors.primaryContrast}"
+    },
+
+    "action": {
+      "primary": "{theme.colors.primary}",
+      "primaryHover": "{theme.colors.primaryStrong}",
+      "secondary": "{theme.colors.secondary}",
+      "accent": "{theme.colors.accent}",
+      "focus": "{theme.colors.focus}"
+    },
+
+    "feedback": {
+      "success": "{theme.colors.success}",
+      "warning": "{theme.colors.warning}",
+      "error": "{theme.colors.error}",
+      "info": "{theme.colors.info}"
+    },
+
+    "border": {
+      "default": "{theme.colors.border}",
+      "strong": "{theme.colors.borderStrong}"
+    }
+  },
+
+  "componentThemes": {
+    "button": {
+      "primary": {
+        "background": "{theme.colors.primary}",
+        "foreground": "{theme.colors.primaryContrast}",
+        "hoverBackground": "{theme.colors.primaryStrong}",
+        "radius": "{theme.radius.button}",
+        "transition": "animations.transition.interactive"
+      },
+
+      "secondary": {
+        "background": "transparent",
+        "foreground": "{theme.colors.textPrimary}",
+        "border": "{theme.colors.borderStrong}",
+        "radius": "{theme.radius.button}"
+      }
+    },
+
+    "card": {
+      "background": "{theme.colors.surface}",
+      "foreground": "{theme.colors.textPrimary}",
+      "border": "{theme.colors.border}",
+      "radius": "{theme.radius.card}",
+      "shadow": "{theme.shadows.card}"
+    },
+
+    "input": {
+      "background": "{theme.colors.surface}",
+      "foreground": "{theme.colors.textPrimary}",
+      "border": "{theme.colors.border}",
+      "focus": "{theme.colors.focus}"
+    },
+
+    "modal": {
+      "background": "{theme.colors.surfaceElevated}",
+      "foreground": "{theme.colors.textPrimary}",
+      "shadow": "{theme.shadows.modal}"
+    },
+
+    "header": {
+      "background": "{theme.colors.backgroundSecondary}",
+      "foreground": "{theme.colors.textPrimary}",
+      "border": "{theme.colors.border}"
+    },
+
+    "footer": {
+      "background": "{theme.colors.backgroundSecondary}",
+      "foreground": "{theme.colors.textSecondary}"
+    }
+  },
+
+  "applicationProfiles": {
+    "landingPage": {
+      "defaultTheme": "dark",
+
+      "availableThemes": [
+        "dark",
+        "light",
+        "high-contrast"
+      ],
+
+      "specialSections": {
+        "history": "heritage",
+        "ceremonies": "ceremonial",
+        "innovation": "holographic"
+      }
+    },
+
+    "dashboard": {
+      "defaultTheme": "dark",
+
+      "availableThemes": [
+        "dark",
+        "light",
+        "high-contrast",
+        "holographic"
+      ]
+    },
+
+    "historicalArchive": {
+      "defaultTheme": "heritage",
+
+      "availableThemes": [
+        "heritage",
+        "light",
+        "high-contrast"
+      ]
+    },
+
+    "ceremonialMaterial": {
+      "defaultTheme": "ceremonial",
+
+      "availableThemes": [
+        "ceremonial",
+        "light"
+      ]
+    },
+
+    "publicAccessibility": {
+      "defaultTheme": "high-contrast",
+
+      "availableThemes": [
+        "high-contrast",
+        "dark",
+        "light"
+      ]
+    }
+  },
+
+  "themeSwitching": {
+    "supported": true,
+
+    "htmlAttribute": "data-theme",
+
+    "examples": [
+      "data-theme=\"dark\"",
+      "data-theme=\"light\"",
+      "data-theme=\"heritage\"",
+      "data-theme=\"ceremonial\"",
+      "data-theme=\"high-contrast\"",
+      "data-theme=\"holographic\""
+    ],
+
+    "storage": {
+      "strategy": "localStorage",
+      "key": "festanca-theme"
+    },
+
+    "systemPreference": {
+      "supported": true,
+      "darkQuery": "(prefers-color-scheme: dark)",
+      "lightQuery": "(prefers-color-scheme: light)"
+    },
+
+    "priority": [
+      "explicit-user-selection",
+      "stored-preference",
+      "system-preference",
+      "default-theme"
+    ]
+  },
+
+  "accessibility": {
+    "globalRules": [
+      "Todos os temas devem preservar foco visível.",
+      "Tema high-contrast deve estar sempre disponível.",
+      "Nenhum tema pode depender apenas de cor para transmitir estado.",
+      "Textos devem respeitar contraste mínimo adequado.",
+      "Movimento reduzido deve funcionar em todos os temas.",
+      "Tamanhos mínimos de toque devem ser preservados.",
+      "Temas decorativos não podem comprometer leitura."
+    ],
+
+    "highContrastFallback": "high-contrast",
+
+    "reducedMotion": {
+      "respectSystemPreference": true,
+      "reference": "assets/brand/tokens/animations.json"
+    }
+  },
+
+  "responsiveBehavior": {
+    "mobile": {
+      "reduceOrnamentDensity": true,
+      "reduceHolographicEffects": true,
+      "minimumTouchTarget": "44px"
+    },
+
+    "tablet": {
+      "reduceOrnamentDensity": "optional"
+    },
+
+    "desktop": {
+      "fullThemeExpression": true
+    },
+
+    "largeDisplay": {
+      "monumentalEffectsAllowed": true,
+      "enhancedCeremonialComposition": true
+    }
+  },
+
+  "performance": {
+    "rules": [
+      "Não carregar assets específicos de temas não utilizados quando evitável.",
+      "Preferir CSS variables para alternância.",
+      "Evitar reprocessamento completo de layout na troca de tema.",
+      "Carregar efeitos holográficos sob demanda.",
+      "Não duplicar imagens apenas para alteração simples de cor.",
+      "Preferir SVG para futuras variantes vetoriais."
+    ]
+  },
+
+  "cssContract": {
+    "rootSelector": ":root",
+
+    "themeSelectorPattern": "[data-theme=\"{theme}\"]",
+
+    "coreVariables": [
+      "--festanca-bg",
+      "--festanca-bg-secondary",
+      "--festanca-surface",
+      "--festanca-surface-elevated",
+      "--festanca-text",
+      "--festanca-text-secondary",
+      "--festanca-text-muted",
+      "--festanca-primary",
+      "--festanca-primary-strong",
+      "--festanca-secondary",
+      "--festanca-accent",
+      "--festanca-border",
+      "--festanca-focus",
+      "--festanca-success",
+      "--festanca-warning",
+      "--festanca-error",
+      "--festanca-info"
+    ]
+  },
+
+  "cssVariables": {
+    "--festanca-theme-default": "dark",
+
+    "--festanca-theme-transition-duration": "220ms",
+    "--festanca-theme-transition-easing": "cubic-bezier(0.2, 0, 0, 1)",
+
+    "--festanca-theme-dark-bg": "#070A0E",
+    "--festanca-theme-dark-surface": "#111A23",
+    "--festanca-theme-dark-text": "#F7F4EC",
+    "--festanca-theme-dark-primary": "#D9A21B",
+
+    "--festanca-theme-light-bg": "#FBFAF6",
+    "--festanca-theme-light-surface": "#FFFFFF",
+    "--festanca-theme-light-text": "#111820",
+    "--festanca-theme-light-primary": "#9E6F00",
+
+    "--festanca-theme-heritage-bg": "#18130E",
+    "--festanca-theme-heritage-surface": "#2B2118",
+    "--festanca-theme-heritage-text": "#F4E9CF",
+    "--festanca-theme-heritage-primary": "#C9952B",
+
+    "--festanca-theme-ceremonial-bg": "#090704",
+    "--festanca-theme-ceremonial-surface": "#1D1609",
+    "--festanca-theme-ceremonial-text": "#FFF6D9",
+    "--festanca-theme-ceremonial-primary": "#D9A21B",
+
+    "--festanca-theme-high-contrast-bg": "#000000",
+    "--festanca-theme-high-contrast-surface": "#111111",
+    "--festanca-theme-high-contrast-text": "#FFFFFF",
+    "--festanca-theme-high-contrast-primary": "#FFD700",
+
+    "--festanca-theme-holographic-bg": "#03070A",
+    "--festanca-theme-holographic-surface": "rgba(10,27,36,0.78)",
+    "--festanca-theme-holographic-text": "#ECFFFF",
+    "--festanca-theme-holographic-primary": "#FFD34E"
+  },
+
+  "usageExamples": {
+    "html": {
+      "dark": "<html data-theme=\"dark\">",
+      "light": "<html data-theme=\"light\">",
+      "heritageSection": "<section data-theme=\"heritage\">",
+      "ceremonialSection": "<section data-theme=\"ceremonial\">",
+      "highContrast": "<html data-theme=\"high-contrast\">",
+      "holographic": "<section data-theme=\"holographic\">"
+    },
+
+    "javascript": {
+      "setTheme": "document.documentElement.setAttribute('data-theme', theme); localStorage.setItem('festanca-theme', theme);",
+      "getStoredTheme": "localStorage.getItem('festanca-theme')"
+    },
+
+    "css": {
+      "body": "background: var(--festanca-bg); color: var(--festanca-text);",
+      "card": "background: var(--festanca-surface); border-color: var(--festanca-border);",
+      "primaryButton": "background: var(--festanca-primary); color: var(--festanca-primary-contrast);"
+    }
+  },
+
+  "qualityChecklist": {
+    "themeIntegrity": [
+      "Todos os tokens referenciados existem.",
+      "Não há caminhos quebrados.",
+      "Não há conflito entre aliases.",
+      "Tema possui fallback.",
+      "Tema possui contexto de uso definido."
+    ],
+
+    "visual": [
+      "Hierarquia visual preservada.",
+      "Cores coerentes.",
+      "Contraste suficiente.",
+      "Ornamentação adequada.",
+      "Símbolos compatíveis."
+    ],
+
+    "technical": [
+      "JSON válido.",
+      "Nomes consistentes.",
+      "Temas podem ser alternados.",
+      "Sem dependência circular crítica.",
+      "Fallback funcionando."
+    ],
+
+    "accessibility": [
+      "Foco visível.",
+      "Contraste validado.",
+      "Movimento reduzido respeitado.",
+      "Tema high-contrast disponível.",
+      "Área mínima de toque preservada."
+    ],
+
+    "cultural": [
+      "Tema não descaracteriza símbolos.",
+      "Contextos cerimoniais permanecem solenes.",
+      "Conteúdos históricos permanecem legíveis.",
+      "Elementos religiosos não recebem efeitos inadequados."
+    ]
+  },
+
+  "restrictions": [
+    "Não criar temas paralelos sem governança.",
+    "Não duplicar tokens fundamentais dentro de componentes.",
+    "Não alterar identidade cultural por conveniência estética.",
+    "Não remover o tema high-contrast.",
+    "Não tornar holographic o único tema disponível.",
+    "Não utilizar ceremonial como tema genérico de todo o sistema.",
+    "Não usar heritage com efeitos neon intensos.",
+    "Não usar high-contrast com ornamentação excessiva.",
+    "Não alterar nomes de temas sem migração documentada.",
+    "Toda alteração deve ser registrada no CHANGELOG.md."
+  ],
+
+  "governance": {
+    "projectCurator": "Antonio Décio Ferreira Coelho",
+
+    "institutionalCustodian": "Ecossistema Décio Coelho Global",
+
+    "communityReference": "Comunidade de Vila Bela da Santíssima Trindade",
+
+    "technologyPartners": [
+      "OpenAI",
+      "ChatGPT"
+    ],
+
+    "reviewRequired": [
+      "visual",
+      "technical",
+      "cultural",
+      "accessibility",
+      "performance"
+    ],
+
+    "approvalFlow": [
+      "proposta",
+      "revisao-visual",
+      "revisao-tecnica",
+      "revisao-cultural",
+      "revisao-de-acessibilidade",
+      "teste-responsivo",
+      "aprovacao-institucional",
+      "publicacao",
+      "registro-no-changelog"
+    ]
+  },
+
+  "futureEvolution": {
+    "recommended": [
+      "Gerar CSS variables automaticamente a partir dos tokens.",
+      "Criar theme-loader.js.",
+      "Criar alternador visual de temas.",
+      "Persistir preferência do usuário.",
+      "Integrar prefers-color-scheme.",
+      "Integrar prefers-reduced-motion.",
+      "Criar testes automáticos de contraste.",
+      "Criar documentação visual dos seis temas.",
+      "Criar playground do Brand Design System.",
+      "Preparar temas versionados para FESTANÇA 2027+."
+    ]
+  },
+
+  "nextRecommendedFiles": [
+    "assets/brand/tokens/index.json",
+    "assets/brand/tokens/tokens.css",
+    "assets/brand/tokens/theme-loader.js"
+  ]
+  }
