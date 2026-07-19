@@ -1,0 +1,2218 @@
+/**
+ * ============================================================
+ * FESTANÇA 2026
+ * OFFICIAL BRAND DESIGN SYSTEM
+ * DESIGN TOKENS — EXECUTABLE CSS LAYER
+ * ============================================================
+ *
+ * Arquivo:
+ * assets/brand/tokens/tokens.css
+ *
+ * Versão:
+ * 1.0.0
+ *
+ * Status:
+ * Oficial
+ *
+ * Fonte primária de verdade:
+ * assets/brand/tokens/*.json
+ *
+ * Manifesto central:
+ * assets/brand/tokens/index.json
+ *
+ * Projeto:
+ * FESTANÇA 2026
+ * Vila Bela da Santíssima Trindade — Mato Grosso — Brasil
+ *
+ * "Ao encontro do futuro,
+ *  com os pés firmes na tradição."
+ *
+ * ============================================================
+ */
+
+
+/* ============================================================
+   1. ROOT — FOUNDATION TOKENS
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     1.1 BRAND IDENTITY
+     ---------------------------------------------------------- */
+
+  --festanca-brand-name: "FESTANÇA 2026";
+
+  --festanca-theme-default: dark;
+
+  --festanca-transition-duration: 220ms;
+  --festanca-transition-duration-fast: 140ms;
+  --festanca-transition-duration-slow: 420ms;
+
+  --festanca-transition-easing:
+    cubic-bezier(0.2, 0, 0, 1);
+
+  --festanca-transition-easing-emphasized:
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+
+
+  /* ----------------------------------------------------------
+     1.2 CORE COLOR PALETTE
+     ---------------------------------------------------------- */
+
+  --festanca-black: #070A0E;
+  --festanca-black-deep: #030507;
+
+  --festanca-white: #FFFFFF;
+  --festanca-white-soft: #F7F4EC;
+
+  --festanca-gold: #D9A21B;
+  --festanca-gold-bright: #FFD34E;
+  --festanca-gold-soft: #E7BE62;
+  --festanca-gold-dark: #9E6F00;
+
+  --festanca-green: #2DBE67;
+  --festanca-green-bright: #62F58D;
+  --festanca-green-dark: #176B3A;
+
+  --festanca-blue: #1F6F8B;
+  --festanca-blue-bright: #5FA6C9;
+  --festanca-blue-light: #8DD7F4;
+
+  --festanca-red: #E85A4F;
+
+  --festanca-brown: #7D5A32;
+  --festanca-brown-dark: #382B20;
+
+  --festanca-heritage-gold: #C9952B;
+
+  --festanca-purple-deep: #160D26;
+
+
+  /* ----------------------------------------------------------
+     1.3 SEMANTIC COLORS — DEFAULT / DARK
+     ---------------------------------------------------------- */
+
+  --festanca-bg: #070A0E;
+  --festanca-bg-secondary: #0D131A;
+
+  --festanca-surface: #111A23;
+  --festanca-surface-elevated: #17232E;
+  --festanca-surface-overlay: rgba(17, 26, 35, 0.94);
+
+  --festanca-text: #F7F4EC;
+  --festanca-text-secondary: #D7D3C8;
+  --festanca-text-muted: #9EA6AD;
+  --festanca-text-inverse: #111111;
+
+  --festanca-primary: #D9A21B;
+  --festanca-primary-strong: #FFD34E;
+  --festanca-primary-soft: #E7BE62;
+  --festanca-primary-contrast: #111111;
+
+  --festanca-secondary: #1F6F8B;
+  --festanca-secondary-strong: #5FA6C9;
+
+  --festanca-accent: #62F58D;
+  --festanca-accent-soft: #2DBE67;
+
+  --festanca-border: rgba(255, 255, 255, 0.14);
+  --festanca-border-soft: rgba(255, 255, 255, 0.08);
+  --festanca-border-strong: rgba(217, 162, 27, 0.42);
+
+  --festanca-focus: #62F58D;
+
+  --festanca-success: #2DBE67;
+  --festanca-warning: #F2B544;
+  --festanca-error: #E85A4F;
+  --festanca-info: #5FA6C9;
+
+
+  /* ----------------------------------------------------------
+     1.4 TYPOGRAPHY
+     ---------------------------------------------------------- */
+
+  --festanca-font-display:
+    "Montserrat",
+    "Arial Black",
+    "Arial",
+    sans-serif;
+
+  --festanca-font-body:
+    "Inter",
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  --festanca-font-serif:
+    "Georgia",
+    "Times New Roman",
+    serif;
+
+  --festanca-font-mono:
+    "JetBrains Mono",
+    "Fira Code",
+    "Courier New",
+    monospace;
+
+
+  /* Font Sizes */
+
+  --festanca-font-size-xs: 0.75rem;
+  --festanca-font-size-sm: 0.875rem;
+  --festanca-font-size-md: 1rem;
+  --festanca-font-size-lg: 1.125rem;
+  --festanca-font-size-xl: 1.25rem;
+
+  --festanca-font-size-2xl: 1.5rem;
+  --festanca-font-size-3xl: 1.875rem;
+  --festanca-font-size-4xl: 2.25rem;
+  --festanca-font-size-5xl: 3rem;
+  --festanca-font-size-6xl: 3.75rem;
+  --festanca-font-size-7xl: 4.5rem;
+
+
+  /* Font Weight */
+
+  --festanca-font-weight-light: 300;
+  --festanca-font-weight-regular: 400;
+  --festanca-font-weight-medium: 500;
+  --festanca-font-weight-semibold: 600;
+  --festanca-font-weight-bold: 700;
+  --festanca-font-weight-extrabold: 800;
+  --festanca-font-weight-black: 900;
+
+
+  /* Line Height */
+
+  --festanca-line-height-tight: 1.1;
+  --festanca-line-height-snug: 1.25;
+  --festanca-line-height-normal: 1.5;
+  --festanca-line-height-relaxed: 1.7;
+  --festanca-line-height-reading: 1.85;
+
+
+  /* Letter Spacing */
+
+  --festanca-letter-spacing-tight: -0.025em;
+  --festanca-letter-spacing-normal: 0;
+  --festanca-letter-spacing-wide: 0.05em;
+  --festanca-letter-spacing-wider: 0.1em;
+  --festanca-letter-spacing-monumental: 0.16em;
+
+
+  /* ----------------------------------------------------------
+     1.5 SPACING SCALE
+     ---------------------------------------------------------- */
+
+  --festanca-space-0: 0;
+
+  --festanca-space-1: 0.25rem;
+  --festanca-space-2: 0.5rem;
+  --festanca-space-3: 0.75rem;
+  --festanca-space-4: 1rem;
+
+  --festanca-space-5: 1.25rem;
+  --festanca-space-6: 1.5rem;
+  --festanca-space-7: 1.75rem;
+  --festanca-space-8: 2rem;
+
+  --festanca-space-10: 2.5rem;
+  --festanca-space-12: 3rem;
+  --festanca-space-14: 3.5rem;
+  --festanca-space-16: 4rem;
+
+  --festanca-space-20: 5rem;
+  --festanca-space-24: 6rem;
+  --festanca-space-28: 7rem;
+  --festanca-space-32: 8rem;
+
+  --festanca-space-section-sm: 3rem;
+  --festanca-space-section-md: 4.5rem;
+  --festanca-space-section-lg: 6rem;
+  --festanca-space-section-xl: 8rem;
+
+
+  /* ----------------------------------------------------------
+     1.6 CONTAINER
+     ---------------------------------------------------------- */
+
+  --festanca-container-sm: 640px;
+  --festanca-container-md: 768px;
+  --festanca-container-lg: 1024px;
+  --festanca-container-xl: 1280px;
+  --festanca-container-2xl: 1440px;
+
+  --festanca-container-padding-mobile: 1rem;
+  --festanca-container-padding-tablet: 1.5rem;
+  --festanca-container-padding-desktop: 2rem;
+
+
+  /* ----------------------------------------------------------
+     1.7 GRID
+     ---------------------------------------------------------- */
+
+  --festanca-grid-columns: 12;
+
+  --festanca-grid-gap-sm: 0.75rem;
+  --festanca-grid-gap-md: 1rem;
+  --festanca-grid-gap-lg: 1.5rem;
+  --festanca-grid-gap-xl: 2rem;
+
+
+  /* ----------------------------------------------------------
+     1.8 BORDER RADIUS
+     ---------------------------------------------------------- */
+
+  --festanca-radius-none: 0;
+  --festanca-radius-xs: 0.25rem;
+  --festanca-radius-sm: 0.5rem;
+  --festanca-radius-md: 0.75rem;
+  --festanca-radius-lg: 1rem;
+  --festanca-radius-xl: 1.5rem;
+  --festanca-radius-2xl: 2rem;
+  --festanca-radius-3xl: 3rem;
+
+  --festanca-radius-full: 9999px;
+
+
+  /* Component Radius */
+
+  --festanca-radius-button: var(--festanca-radius-md);
+  --festanca-radius-card: var(--festanca-radius-lg);
+  --festanca-radius-input: var(--festanca-radius-md);
+  --festanca-radius-modal: var(--festanca-radius-xl);
+  --festanca-radius-badge: var(--festanca-radius-full);
+  --festanca-radius-image: var(--festanca-radius-lg);
+
+
+  /* ----------------------------------------------------------
+     1.9 BORDER WIDTH
+     ---------------------------------------------------------- */
+
+  --festanca-border-width-thin: 1px;
+  --festanca-border-width-medium: 2px;
+  --festanca-border-width-bold: 3px;
+
+
+  /* ----------------------------------------------------------
+     1.10 SHADOWS
+     ---------------------------------------------------------- */
+
+  --festanca-shadow-none: none;
+
+  --festanca-shadow-xs:
+    0 1px 2px rgba(0, 0, 0, 0.18);
+
+  --festanca-shadow-sm:
+    0 4px 12px rgba(0, 0, 0, 0.20);
+
+  --festanca-shadow-md:
+    0 10px 28px rgba(0, 0, 0, 0.28);
+
+  --festanca-shadow-lg:
+    0 18px 48px rgba(0, 0, 0, 0.36);
+
+  --festanca-shadow-xl:
+    0 28px 72px rgba(0, 0, 0, 0.44);
+
+
+  /* Gold Glow */
+
+  --festanca-glow-gold-sm:
+    0 0 8px rgba(217, 162, 27, 0.26);
+
+  --festanca-glow-gold-md:
+    0 0 16px rgba(217, 162, 27, 0.42);
+
+  --festanca-glow-gold-lg:
+    0 0 28px rgba(255, 211, 78, 0.60);
+
+
+  /* Green Glow */
+
+  --festanca-glow-green-sm:
+    0 0 8px rgba(98, 245, 141, 0.22);
+
+  --festanca-glow-green-md:
+    0 0 18px rgba(98, 245, 141, 0.38);
+
+  --festanca-glow-green-lg:
+    0 0 32px rgba(98, 245, 141, 0.50);
+
+
+  /* Blue Glow */
+
+  --festanca-glow-blue:
+    0 0 22px rgba(95, 166, 201, 0.42);
+
+
+  /* Component Shadows */
+
+  --festanca-shadow-card:
+    0 12px 34px rgba(0, 0, 0, 0.28);
+
+  --festanca-shadow-card-hover:
+    0 18px 42px rgba(0, 0, 0, 0.36);
+
+  --festanca-shadow-modal:
+    0 28px 80px rgba(0, 0, 0, 0.55);
+
+  --festanca-shadow-dropdown:
+    0 16px 40px rgba(0, 0, 0, 0.34);
+
+
+  /* ----------------------------------------------------------
+     1.11 Z-INDEX
+     ---------------------------------------------------------- */
+
+  --festanca-z-base: 0;
+  --festanca-z-content: 10;
+  --festanca-z-card: 20;
+  --festanca-z-sticky: 100;
+  --festanca-z-dropdown: 200;
+  --festanca-z-header: 500;
+  --festanca-z-overlay: 800;
+  --festanca-z-modal: 900;
+  --festanca-z-toast: 1000;
+  --festanca-z-tooltip: 1100;
+
+
+  /* ----------------------------------------------------------
+     1.12 ICONS
+     ---------------------------------------------------------- */
+
+  --festanca-icon-xs: 1rem;
+  --festanca-icon-sm: 1.25rem;
+  --festanca-icon-md: 1.5rem;
+  --festanca-icon-lg: 2rem;
+  --festanca-icon-xl: 3rem;
+  --festanca-icon-2xl: 4rem;
+  --festanca-icon-3xl: 6rem;
+  --festanca-icon-4xl: 8rem;
+
+  --festanca-icon-touch-target: 2.75rem;
+
+  --festanca-icon-opacity-muted: 0.68;
+  --festanca-icon-opacity-disabled: 0.46;
+
+
+  /* ----------------------------------------------------------
+     1.13 SYMBOLS
+     ---------------------------------------------------------- */
+
+  --festanca-symbol-star-sm: 24px;
+  --festanca-symbol-star-md: 64px;
+  --festanca-symbol-star-lg: 128px;
+
+  --festanca-symbol-safe-star: 25%;
+  --festanca-symbol-safe-arc: 15%;
+  --festanca-symbol-safe-ornament: 10%;
+
+  --festanca-symbol-opacity-decorative: 0.82;
+
+
+  /* ----------------------------------------------------------
+     1.14 ACCESSIBILITY
+     ---------------------------------------------------------- */
+
+  --festanca-touch-target-min: 44px;
+
+  --festanca-focus-width: 3px;
+
+  --festanca-focus-offset: 3px;
+
+  --festanca-focus-ring:
+    0 0 0 var(--festanca-focus-width)
+    rgba(98, 245, 141, 0.42);
+
+
+  /* ----------------------------------------------------------
+     1.15 LAYOUT
+     ---------------------------------------------------------- */
+
+  --festanca-header-height: 72px;
+  --festanca-header-height-mobile: 64px;
+
+  --festanca-content-max-width:
+    var(--festanca-container-xl);
+
+  --festanca-reading-width: 72ch;
+
+  --festanca-card-min-width: 260px;
+
+
+  /* ----------------------------------------------------------
+     1.16 COMPONENT TOKENS
+     ---------------------------------------------------------- */
+
+  --festanca-button-height-sm: 36px;
+  --festanca-button-height-md: 44px;
+  --festanca-button-height-lg: 52px;
+
+  --festanca-input-height: 48px;
+
+  --festanca-card-padding:
+    var(--festanca-space-6);
+
+  --festanca-modal-padding:
+    var(--festanca-space-8);
+
+  --festanca-section-padding:
+    var(--festanca-space-section-md);
+
+}
+
+
+/* ============================================================
+   2. DARK THEME — DEFAULT
+   ============================================================ */
+
+:root,
+[data-theme="dark"] {
+
+  color-scheme: dark;
+
+  --festanca-bg: #070A0E;
+  --festanca-bg-secondary: #0D131A;
+
+  --festanca-surface: #111A23;
+  --festanca-surface-elevated: #17232E;
+  --festanca-surface-overlay: rgba(17, 26, 35, 0.94);
+
+  --festanca-text: #F7F4EC;
+  --festanca-text-secondary: #D7D3C8;
+  --festanca-text-muted: #9EA6AD;
+
+  --festanca-primary: #D9A21B;
+  --festanca-primary-strong: #FFD34E;
+  --festanca-primary-contrast: #111111;
+
+  --festanca-secondary: #1F6F8B;
+  --festanca-secondary-strong: #5FA6C9;
+
+  --festanca-accent: #62F58D;
+
+  --festanca-border: rgba(255, 255, 255, 0.14);
+  --festanca-border-strong: rgba(217, 162, 27, 0.42);
+
+  --festanca-focus: #62F58D;
+
+  --festanca-success: #2DBE67;
+  --festanca-warning: #F2B544;
+  --festanca-error: #E85A4F;
+  --festanca-info: #5FA6C9;
+
+}
+
+
+/* ============================================================
+   3. LIGHT THEME
+   ============================================================ */
+
+[data-theme="light"] {
+
+  color-scheme: light;
+
+  --festanca-bg: #FBFAF6;
+  --festanca-bg-secondary: #F3F0E8;
+
+  --festanca-surface: #FFFFFF;
+  --festanca-surface-elevated: #FFFDF8;
+  --festanca-surface-overlay: rgba(255, 255, 255, 0.96);
+
+  --festanca-text: #111820;
+  --festanca-text-secondary: #36444F;
+  --festanca-text-muted: #68747D;
+
+  --festanca-primary: #9E6F00;
+  --festanca-primary-strong: #7B5500;
+  --festanca-primary-contrast: #FFFFFF;
+
+  --festanca-secondary: #15557A;
+  --festanca-secondary-strong: #0C4262;
+
+  --festanca-accent: #176B3A;
+
+  --festanca-border: rgba(17, 24, 32, 0.16);
+  --festanca-border-strong: rgba(158, 111, 0, 0.42);
+
+  --festanca-focus: #15557A;
+
+  --festanca-success: #1D7D46;
+  --festanca-warning: #9C6500;
+  --festanca-error: #B23830;
+  --festanca-info: #15557A;
+
+  --festanca-shadow-card:
+    0 10px 28px rgba(15, 25, 32, 0.10);
+
+  --festanca-shadow-card-hover:
+    0 18px 44px rgba(15, 25, 32, 0.15);
+
+}
+
+
+/* ============================================================
+   4. HERITAGE THEME
+   ============================================================ */
+
+[data-theme="heritage"] {
+
+  color-scheme: dark;
+
+  --festanca-bg: #18130E;
+  --festanca-bg-secondary: #231A12;
+
+  --festanca-surface: #2B2118;
+  --festanca-surface-elevated: #382B20;
+
+  --festanca-text: #F4E9CF;
+  --festanca-text-secondary: #D7C5A2;
+  --festanca-text-muted: #AA9675;
+
+  --festanca-primary: #C9952B;
+  --festanca-primary-strong: #E7BE62;
+  --festanca-primary-contrast: #1A1208;
+
+  --festanca-secondary: #7D5A32;
+  --festanca-secondary-strong: #A57843;
+
+  --festanca-accent: #9DAF78;
+
+  --festanca-border: rgba(231, 190, 98, 0.22);
+  --festanca-border-strong: rgba(201, 149, 43, 0.48);
+
+  --festanca-focus: #E7BE62;
+
+  --festanca-success: #779458;
+  --festanca-warning: #D69B35;
+  --festanca-error: #B35A46;
+  --festanca-info: #A57843;
+
+  --festanca-radius-card:
+    var(--festanca-radius-sm);
+
+  --festanca-font-display:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+}
+
+
+/* ============================================================
+   5. CEREMONIAL THEME
+   ============================================================ */
+
+[data-theme="ceremonial"] {
+
+  color-scheme: dark;
+
+  --festanca-bg: #090704;
+  --festanca-bg-secondary: #151006;
+
+  --festanca-surface: #1D1609;
+  --festanca-surface-elevated: #2A200B;
+
+  --festanca-text: #FFF6D9;
+  --festanca-text-secondary: #E9D7A4;
+  --festanca-text-muted: #BDAA75;
+
+  --festanca-primary: #D9A21B;
+  --festanca-primary-strong: #FFD34E;
+  --festanca-primary-contrast: #120C02;
+
+  --festanca-secondary: #A87810;
+  --festanca-secondary-strong: #E5B83F;
+
+  --festanca-accent: #F5E4A4;
+
+  --festanca-border: rgba(255, 211, 78, 0.24);
+  --festanca-border-strong: rgba(255, 211, 78, 0.62);
+
+  --festanca-focus: #FFD34E;
+
+  --festanca-success: #6EA85C;
+  --festanca-warning: #E5B83F;
+  --festanca-error: #C95C48;
+  --festanca-info: #D2B26B;
+
+  --festanca-shadow-card:
+    0 16px 46px rgba(0, 0, 0, 0.44),
+    0 0 18px rgba(217, 162, 27, 0.16);
+
+  --festanca-shadow-card-hover:
+    0 22px 58px rgba(0, 0, 0, 0.54),
+    0 0 28px rgba(255, 211, 78, 0.26);
+
+}
+
+
+/* ============================================================
+   6. HIGH CONTRAST THEME
+   ============================================================ */
+
+[data-theme="high-contrast"] {
+
+  color-scheme: dark;
+
+  --festanca-bg: #000000;
+  --festanca-bg-secondary: #080808;
+
+  --festanca-surface: #111111;
+  --festanca-surface-elevated: #181818;
+
+  --festanca-text: #FFFFFF;
+  --festanca-text-secondary: #F2F2F2;
+  --festanca-text-muted: #D0D0D0;
+
+  --festanca-primary: #FFD700;
+  --festanca-primary-strong: #FFF36A;
+  --festanca-primary-contrast: #000000;
+
+  --festanca-secondary: #66CCFF;
+  --festanca-secondary-strong: #A6E4FF;
+
+  --festanca-accent: #7CFF9E;
+
+  --festanca-border: #FFFFFF;
+  --festanca-border-strong: #FFD700;
+
+  --festanca-focus: #7CFF9E;
+
+  --festanca-success: #7CFF9E;
+  --festanca-warning: #FFD700;
+  --festanca-error: #FF6B61;
+  --festanca-info: #66CCFF;
+
+  --festanca-shadow-card: none;
+  --festanca-shadow-card-hover: none;
+  --festanca-shadow-modal: none;
+
+  --festanca-radius-button:
+    var(--festanca-radius-sm);
+
+  --festanca-radius-card:
+    var(--festanca-radius-sm);
+
+  --festanca-font-size-md: 1.125rem;
+
+}
+
+
+/* ============================================================
+   7. HOLOGRAPHIC THEME
+   ============================================================ */
+
+[data-theme="holographic"] {
+
+  color-scheme: dark;
+
+  --festanca-bg: #03070A;
+  --festanca-bg-secondary: #071017;
+
+  --festanca-surface: rgba(10, 27, 36, 0.78);
+  --festanca-surface-elevated: rgba(15, 39, 51, 0.88);
+
+  --festanca-text: #ECFFFF;
+  --festanca-text-secondary: #B8D9E2;
+  --festanca-text-muted: #799CA8;
+
+  --festanca-primary: #FFD34E;
+  --festanca-primary-strong: #FFE989;
+  --festanca-primary-contrast: #061012;
+
+  --festanca-secondary: #5FA6C9;
+  --festanca-secondary-strong: #8DD7F4;
+
+  --festanca-accent: #62F58D;
+
+  --festanca-border: rgba(95, 166, 201, 0.34);
+  --festanca-border-strong: rgba(98, 245, 141, 0.56);
+
+  --festanca-focus: #62F58D;
+
+  --festanca-success: #62F58D;
+  --festanca-warning: #FFD34E;
+  --festanca-error: #FF7167;
+  --festanca-info: #8DD7F4;
+
+  --festanca-shadow-card:
+    0 14px 42px rgba(0, 0, 0, 0.42),
+    0 0 22px rgba(95, 166, 201, 0.16);
+
+  --festanca-shadow-card-hover:
+    0 20px 56px rgba(0, 0, 0, 0.50),
+    0 0 30px rgba(98, 245, 141, 0.22);
+
+}
+
+
+/* ============================================================
+   8. BASE DOCUMENT
+   ============================================================ */
+
+html {
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  background:
+    var(--festanca-bg);
+
+  color:
+    var(--festanca-text);
+
+  font-family:
+    var(--festanca-font-body);
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+*,
+*::before,
+*::after {
+
+  box-sizing: inherit;
+
+}
+
+
+body {
+
+  margin: 0;
+
+  min-width: 320px;
+
+  min-height: 100vh;
+
+  background:
+    var(--festanca-bg);
+
+  color:
+    var(--festanca-text);
+
+  font-family:
+    var(--festanca-font-body);
+
+  font-size:
+    var(--festanca-font-size-md);
+
+  line-height:
+    var(--festanca-line-height-normal);
+
+  transition:
+    background-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+/* ============================================================
+   9. TYPOGRAPHY UTILITIES
+   ============================================================ */
+
+.festanca-display {
+
+  font-family:
+    var(--festanca-font-display);
+
+  font-weight:
+    var(--festanca-font-weight-extrabold);
+
+  line-height:
+    var(--festanca-line-height-tight);
+
+  letter-spacing:
+    var(--festanca-letter-spacing-tight);
+
+}
+
+
+.festanca-title {
+
+  font-family:
+    var(--festanca-font-display);
+
+  font-weight:
+    var(--festanca-font-weight-bold);
+
+  line-height:
+    var(--festanca-line-height-snug);
+
+}
+
+
+.festanca-body {
+
+  font-family:
+    var(--festanca-font-body);
+
+  line-height:
+    var(--festanca-line-height-relaxed);
+
+}
+
+
+.festanca-reading {
+
+  max-width:
+    var(--festanca-reading-width);
+
+  line-height:
+    var(--festanca-line-height-reading);
+
+}
+
+
+.festanca-caption {
+
+  font-size:
+    var(--festanca-font-size-sm);
+
+  color:
+    var(--festanca-text-muted);
+
+}
+
+
+/* ============================================================
+   10. CONTAINER
+   ============================================================ */
+
+.festanca-container {
+
+  width: 100%;
+
+  max-width:
+    var(--festanca-content-max-width);
+
+  margin-inline: auto;
+
+  padding-inline:
+    var(--festanca-container-padding-mobile);
+
+}
+
+
+@media (min-width: 768px) {
+
+  .festanca-container {
+
+    padding-inline:
+      var(--festanca-container-padding-tablet);
+
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+
+  .festanca-container {
+
+    padding-inline:
+      var(--festanca-container-padding-desktop);
+
+  }
+
+}
+
+
+/* ============================================================
+   11. SECTIONS
+   ============================================================ */
+
+.festanca-section {
+
+  padding-block:
+    var(--festanca-section-padding);
+
+}
+
+
+.festanca-section--compact {
+
+  padding-block:
+    var(--festanca-space-section-sm);
+
+}
+
+
+.festanca-section--large {
+
+  padding-block:
+    var(--festanca-space-section-lg);
+
+}
+
+
+.festanca-section--monumental {
+
+  padding-block:
+    var(--festanca-space-section-xl);
+
+}
+
+
+/* ============================================================
+   12. CARD
+   ============================================================ */
+
+.festanca-card {
+
+  position: relative;
+
+  padding:
+    var(--festanca-card-padding);
+
+  background:
+    var(--festanca-surface);
+
+  color:
+    var(--festanca-text);
+
+  border:
+    var(--festanca-border-width-thin)
+    solid
+    var(--festanca-border);
+
+  border-radius:
+    var(--festanca-radius-card);
+
+  box-shadow:
+    var(--festanca-shadow-card);
+
+  transition:
+    transform
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    box-shadow
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    border-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+.festanca-card:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--festanca-shadow-card-hover);
+
+  border-color:
+    var(--festanca-border-strong);
+
+}
+
+
+/* ============================================================
+   13. BUTTONS
+   ============================================================ */
+
+.festanca-button {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    var(--festanca-space-2);
+
+  min-height:
+    var(--festanca-button-height-md);
+
+  padding:
+    0
+    var(--festanca-space-5);
+
+  border:
+    var(--festanca-border-width-thin)
+    solid
+    transparent;
+
+  border-radius:
+    var(--festanca-radius-button);
+
+  font-family:
+    var(--festanca-font-body);
+
+  font-size:
+    var(--festanca-font-size-md);
+
+  font-weight:
+    var(--festanca-font-weight-semibold);
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    transform
+    var(--festanca-transition-duration-fast)
+    var(--festanca-transition-easing),
+
+    background-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    border-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    box-shadow
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+.festanca-button:hover {
+
+  transform:
+    translateY(-1px);
+
+}
+
+
+.festanca-button:active {
+
+  transform:
+    scale(0.98);
+
+}
+
+
+.festanca-button--primary {
+
+  background:
+    var(--festanca-primary);
+
+  color:
+    var(--festanca-primary-contrast);
+
+}
+
+
+.festanca-button--primary:hover {
+
+  background:
+    var(--festanca-primary-strong);
+
+  box-shadow:
+    var(--festanca-glow-gold-sm);
+
+}
+
+
+.festanca-button--secondary {
+
+  background:
+    transparent;
+
+  color:
+    var(--festanca-text);
+
+  border-color:
+    var(--festanca-border-strong);
+
+}
+
+
+.festanca-button--secondary:hover {
+
+  background:
+    var(--festanca-surface-elevated);
+
+}
+
+
+/* ============================================================
+   14. FORM CONTROLS
+   ============================================================ */
+
+.festanca-input,
+.festanca-select,
+.festanca-textarea {
+
+  width: 100%;
+
+  min-height:
+    var(--festanca-input-height);
+
+  padding:
+    var(--festanca-space-3)
+    var(--festanca-space-4);
+
+  background:
+    var(--festanca-surface);
+
+  color:
+    var(--festanca-text);
+
+  border:
+    var(--festanca-border-width-thin)
+    solid
+    var(--festanca-border);
+
+  border-radius:
+    var(--festanca-radius-input);
+
+  font:
+    inherit;
+
+  transition:
+    border-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    box-shadow
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+.festanca-input:focus,
+.festanca-select:focus,
+.festanca-textarea:focus {
+
+  outline: none;
+
+  border-color:
+    var(--festanca-focus);
+
+  box-shadow:
+    var(--festanca-focus-ring);
+
+}
+
+
+/* ============================================================
+   15. FOCUS ACCESSIBILITY
+   ============================================================ */
+
+:focus-visible {
+
+  outline:
+    var(--festanca-focus-width)
+    solid
+    var(--festanca-focus);
+
+  outline-offset:
+    var(--festanca-focus-offset);
+
+}
+
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+  box-shadow:
+    var(--festanca-focus-ring);
+
+}
+
+
+/* ============================================================
+   16. ICON SYSTEM
+   ============================================================ */
+
+.festanca-icon {
+
+  display:
+    inline-block;
+
+  width:
+    var(--festanca-icon-md);
+
+  height:
+    var(--festanca-icon-md);
+
+  object-fit:
+    contain;
+
+  vertical-align:
+    middle;
+
+  flex-shrink: 0;
+
+}
+
+
+.festanca-icon--sm {
+
+  width:
+    var(--festanca-icon-sm);
+
+  height:
+    var(--festanca-icon-sm);
+
+}
+
+
+.festanca-icon--lg {
+
+  width:
+    var(--festanca-icon-lg);
+
+  height:
+    var(--festanca-icon-lg);
+
+}
+
+
+.festanca-icon--xl {
+
+  width:
+    var(--festanca-icon-xl);
+
+  height:
+    var(--festanca-icon-xl);
+
+}
+
+
+.festanca-icon--cultural {
+
+  transition:
+    transform
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    filter
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+.festanca-icon--cultural:hover {
+
+  transform:
+    translateY(-2px)
+    scale(1.025);
+
+  filter:
+    drop-shadow(
+      var(--festanca-glow-gold-sm)
+    );
+
+}
+
+
+/* ============================================================
+   17. SYMBOL SYSTEM
+   ============================================================ */
+
+.festanca-symbol {
+
+  display:
+    block;
+
+  max-width: 100%;
+
+  height: auto;
+
+  object-fit:
+    contain;
+
+}
+
+
+.festanca-symbol--star {
+
+  width:
+    var(--festanca-symbol-star-md);
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(217, 162, 27, 0.36)
+    );
+
+}
+
+
+.festanca-symbol--golden {
+
+  filter:
+    drop-shadow(
+      0 0 14px
+      rgba(217, 162, 27, 0.34)
+    );
+
+}
+
+
+.festanca-symbol--decorative {
+
+  opacity:
+    var(--festanca-symbol-opacity-decorative);
+
+  pointer-events: none;
+
+  user-select: none;
+
+}
+
+
+/* ============================================================
+   18. BADGES
+   ============================================================ */
+
+.festanca-badge {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    var(--festanca-space-1);
+
+  padding:
+    var(--festanca-space-1)
+    var(--festanca-space-3);
+
+  border-radius:
+    var(--festanca-radius-badge);
+
+  background:
+    var(--festanca-surface-elevated);
+
+  color:
+    var(--festanca-text-secondary);
+
+  border:
+    1px
+    solid
+    var(--festanca-border);
+
+  font-size:
+    var(--festanca-font-size-sm);
+
+  font-weight:
+    var(--festanca-font-weight-semibold);
+
+}
+
+
+/* ============================================================
+   19. FEEDBACK STATES
+   ============================================================ */
+
+.festanca-success {
+
+  color:
+    var(--festanca-success);
+
+}
+
+
+.festanca-warning {
+
+  color:
+    var(--festanca-warning);
+
+}
+
+
+.festanca-error {
+
+  color:
+    var(--festanca-error);
+
+}
+
+
+.festanca-info {
+
+  color:
+    var(--festanca-info);
+
+}
+
+
+/* ============================================================
+   20. CULTURAL / HERITAGE COMPONENTS
+   ============================================================ */
+
+.festanca-cultural-card {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    var(--festanca-surface);
+
+  border:
+    1px
+    solid
+    var(--festanca-border);
+
+  border-radius:
+    var(--festanca-radius-card);
+
+}
+
+
+.festanca-cultural-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0 auto 0 0;
+
+  width: 4px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--festanca-primary),
+      var(--festanca-primary-strong)
+    );
+
+}
+
+
+.festanca-heritage-panel {
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--festanca-surface),
+      var(--festanca-surface-elevated)
+    );
+
+  border:
+    1px
+    solid
+    var(--festanca-border-strong);
+
+  border-radius:
+    var(--festanca-radius-card);
+
+  box-shadow:
+    var(--festanca-shadow-card);
+
+}
+
+
+/* ============================================================
+   21. CEREMONIAL PANEL
+   ============================================================ */
+
+.festanca-ceremonial-panel {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    var(--festanca-space-8);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(217, 162, 27, 0.12),
+      transparent 48%
+    ),
+    var(--festanca-surface);
+
+  border:
+    1px
+    solid
+    var(--festanca-border-strong);
+
+  border-radius:
+    var(--festanca-radius-xl);
+
+  box-shadow:
+    var(--festanca-shadow-card);
+
+}
+
+
+/* ============================================================
+   22. HOLOGRAPHIC PANEL
+   ============================================================ */
+
+.festanca-holographic-panel {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 27, 36, 0.86),
+      rgba(3, 10, 15, 0.94)
+    );
+
+  border:
+    1px
+    solid
+    rgba(98, 245, 141, 0.28);
+
+  border-radius:
+    var(--festanca-radius-xl);
+
+  box-shadow:
+    0 0 28px
+    rgba(95, 166, 201, 0.16),
+
+    inset 0 0 24px
+    rgba(98, 245, 141, 0.04);
+
+}
+
+
+/* ============================================================
+   23. LINKS
+   ============================================================ */
+
+a {
+
+  color:
+    var(--festanca-primary-strong);
+
+  text-decoration-thickness:
+    0.08em;
+
+  text-underline-offset:
+    0.2em;
+
+}
+
+
+a:hover {
+
+  color:
+    var(--festanca-accent);
+
+}
+
+
+/* ============================================================
+   24. DIVIDERS
+   ============================================================ */
+
+.festanca-divider {
+
+  width: 100%;
+
+  height: 1px;
+
+  border: 0;
+
+  background:
+    var(--festanca-border);
+
+  margin-block:
+    var(--festanca-space-6);
+
+}
+
+
+.festanca-divider--gold {
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--festanca-primary),
+      transparent
+    );
+
+}
+
+
+/* ============================================================
+   25. RESPONSIVE GRID
+   ============================================================ */
+
+.festanca-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        min(
+          100%,
+          var(--festanca-card-min-width)
+        ),
+        1fr
+      )
+    );
+
+  gap:
+    var(--festanca-grid-gap-lg);
+
+}
+
+
+/* ============================================================
+   26. VISUALLY HIDDEN
+   ============================================================ */
+
+.festanca-sr-only {
+
+  position: absolute !important;
+
+  width: 1px !important;
+  height: 1px !important;
+
+  padding: 0 !important;
+
+  margin: -1px !important;
+
+  overflow: hidden !important;
+
+  clip: rect(0, 0, 0, 0) !important;
+
+  white-space: nowrap !important;
+
+  border: 0 !important;
+
+}
+
+
+/* ============================================================
+   27. MOTION TOKENS
+   ============================================================ */
+
+@keyframes festanca-fade-in {
+
+  from {
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+
+@keyframes festanca-fade-up {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes festanca-gold-glow {
+
+  0%,
+  100% {
+
+    filter:
+      drop-shadow(
+        0 0 6px
+        rgba(217, 162, 27, 0.28)
+      );
+
+  }
+
+  50% {
+
+    filter:
+      drop-shadow(
+        0 0 18px
+        rgba(255, 211, 78, 0.58)
+      );
+
+  }
+
+}
+
+
+@keyframes festanca-star-twinkle {
+
+  0%,
+  100% {
+
+    opacity: 0.92;
+
+    transform:
+      scale(1);
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+    transform:
+      scale(1.035);
+
+  }
+
+}
+
+
+@keyframes festanca-holographic-pulse {
+
+  0%,
+  100% {
+
+    box-shadow:
+      0 0 18px
+      rgba(95, 166, 201, 0.15);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 0 28px
+      rgba(98, 245, 141, 0.24);
+
+  }
+
+}
+
+
+.festanca-animate-fade-in {
+
+  animation:
+    festanca-fade-in
+    420ms
+    var(--festanca-transition-easing)
+    both;
+
+}
+
+
+.festanca-animate-fade-up {
+
+  animation:
+    festanca-fade-up
+    520ms
+    var(--festanca-transition-easing-emphasized)
+    both;
+
+}
+
+
+.festanca-animate-star {
+
+  animation:
+    festanca-star-twinkle
+    4s
+    ease-in-out
+    infinite;
+
+}
+
+
+/* ============================================================
+   28. REDUCED MOTION
+   ============================================================ */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  html {
+
+    scroll-behavior: auto;
+
+  }
+
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+
+  }
+
+}
+
+
+/* ============================================================
+   29. SYSTEM COLOR PREFERENCE
+   ============================================================ */
+
+@media (
+  prefers-color-scheme: light
+) {
+
+  :root:not([data-theme]) {
+
+    color-scheme: light;
+
+  }
+
+}
+
+
+/* ============================================================
+   30. HIGH CONTRAST SYSTEM SUPPORT
+   ============================================================ */
+
+@media (
+  prefers-contrast: more
+) {
+
+  :root {
+
+    --festanca-border:
+      rgba(
+        255,
+        255,
+        255,
+        0.52
+      );
+
+    --festanca-border-strong:
+      var(--festanca-primary-strong);
+
+  }
+
+
+  .festanca-card,
+  .festanca-input,
+  .festanca-select,
+  .festanca-textarea {
+
+    border-width:
+      2px;
+
+  }
+
+}
+
+
+/* ============================================================
+   31. MOBILE ADAPTATION
+   ============================================================ */
+
+@media (
+  max-width: 767px
+) {
+
+  :root {
+
+    --festanca-section-padding:
+      var(--festanca-space-section-sm);
+
+    --festanca-card-padding:
+      var(--festanca-space-5);
+
+    --festanca-modal-padding:
+      var(--festanca-space-5);
+
+  }
+
+
+  .festanca-symbol--decorative {
+
+    opacity: 0.60;
+
+  }
+
+
+  .festanca-card:hover {
+
+    transform: none;
+
+  }
+
+}
+
+
+/* ============================================================
+   32. LARGE DISPLAY
+   ============================================================ */
+
+@media (
+  min-width: 1440px
+) {
+
+  :root {
+
+    --festanca-content-max-width:
+      var(--festanca-container-2xl);
+
+  }
+
+}
+
+
+/* ============================================================
+   33. PRINT
+   ============================================================ */
+
+@media print {
+
+  :root {
+
+    --festanca-bg: #FFFFFF;
+    --festanca-bg-secondary: #FFFFFF;
+
+    --festanca-surface: #FFFFFF;
+    --festanca-surface-elevated: #FFFFFF;
+
+    --festanca-text: #000000;
+    --festanca-text-secondary: #222222;
+    --festanca-text-muted: #555555;
+
+    --festanca-border: #B0B0B0;
+    --festanca-border-strong: #777777;
+
+  }
+
+
+  body {
+
+    background: #FFFFFF;
+
+    color: #000000;
+
+  }
+
+
+  .festanca-card,
+  .festanca-ceremonial-panel,
+  .festanca-holographic-panel {
+
+    box-shadow: none;
+
+  }
+
+
+  .festanca-no-print {
+
+    display:
+      none !important;
+
+  }
+
+}
+
+
+/* ============================================================
+   34. THEME TRANSITION
+   ============================================================ */
+
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+
+  transition:
+
+    background-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    border-color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    color
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    fill
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    stroke
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing),
+
+    box-shadow
+    var(--festanca-transition-duration)
+    var(--festanca-transition-easing);
+
+}
+
+
+/* ============================================================
+   35. BRAND UTILITY CLASSES
+   ============================================================ */
+
+.festanca-bg {
+
+  background:
+    var(--festanca-bg);
+
+}
+
+
+.festanca-surface {
+
+  background:
+    var(--festanca-surface);
+
+}
+
+
+.festanca-text {
+
+  color:
+    var(--festanca-text);
+
+}
+
+
+.festanca-text-muted {
+
+  color:
+    var(--festanca-text-muted);
+
+}
+
+
+.festanca-text-gold {
+
+  color:
+    var(--festanca-primary);
+
+}
+
+
+.festanca-text-accent {
+
+  color:
+    var(--festanca-accent);
+
+}
+
+
+.festanca-border {
+
+  border-color:
+    var(--festanca-border);
+
+}
+
+
+.festanca-glow-gold {
+
+  filter:
+    drop-shadow(
+      0 0 16px
+      rgba(217, 162, 27, 0.42)
+    );
+
+}
+
+
+.festanca-glow-green {
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(98, 245, 141, 0.38)
+    );
+
+}
+
+
+/* ============================================================
+   36. END OF OFFICIAL TOKENS
+   ============================================================ */
+
+/**
+ * GOVERNANCE
+ *
+ * Este arquivo é um artefato executável derivado da arquitetura
+ * oficial registrada em:
+ *
+ * assets/brand/tokens/*.json
+ *
+ * A fonte primária de verdade permanece nos arquivos JSON.
+ *
+ * Não alterar valores estruturais diretamente neste arquivo
+ * sem sincronização correspondente com os tokens-fonte.
+ *
+ * Toda alteração oficial deverá:
+ *
+ * 1. ser revisada;
+ * 2. ser documentada;
+ * 3. atualizar versão quando aplicável;
+ * 4. ser registrada em CHANGELOG.md.
+ *
+ * FESTANÇA 2026
+ * Official Brand Design System
+ *
+ * Ao encontro do futuro,
+ * com os pés firmes na tradição.
+ */
