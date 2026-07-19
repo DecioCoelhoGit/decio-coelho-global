@@ -2180,3 +2180,1009 @@ SEÇÕES 17 → 32
 ✓ Símbolos
 
 ✓ Patterns e Texturas
+
+# 33. ACESSIBILIDADE
+
+A auditoria deverá verificar se a camada visual da Landing Page atende princípios básicos de acessibilidade digital.
+
+Áreas prioritárias:
+
+```text
+contraste
+
+foco visível
+
+navegação por teclado
+
+ordem lógica
+
+tamanho de toque
+
+legibilidade
+
+motion reduction
+
+zoom
+
+responsividade
+
+semântica visual
+
+mensagens de estado
+Checklist inicial:
+[ ] Foco visível em links
+
+[ ] Foco visível em botões
+
+[ ] Foco visível em formulários
+
+[ ] Contraste suficiente em textos
+
+[ ] Contraste suficiente em ícones
+
+[ ] Elementos interativos possuem área adequada
+
+[ ] Nenhuma informação depende apenas de cor
+
+[ ] Nenhuma informação depende apenas de animação
+
+[ ] Conteúdo permanece utilizável com zoom
+
+[ ] Conteúdo permanece utilizável em mobile
+
+[ ] Preferência reduced-motion é respeitada
+Classificação:
+CRITICAL
+
+HIGH
+
+MEDIUM
+
+LOW
+Acessibilidade deverá ser tratada como:
+REQUISITO ESTRUTURAL
+e não como:
+AJUSTE POSTERIOR
+34. CONTRASTE
+A auditoria deverá verificar contraste entre:
+texto e fundo
+
+ícone e fundo
+
+botão e fundo
+
+borda e superfície
+
+estado de foco e fundo
+
+links e texto normal
+
+mensagens de status
+Categorias:
+NORMAL TEXT
+
+LARGE TEXT
+
+UI COMPONENT
+
+FOCUS INDICATOR
+
+DECORATIVE
+Tabela-base:
+Elemento
+Foreground
+Background
+Contraste
+Status
+TBD
+TBD
+TBD
+TBD
+PENDING
+Estados a verificar:
+DEFAULT
+
+HOVER
+
+FOCUS
+
+ACTIVE
+
+DISABLED
+
+SELECTED
+
+ERROR
+
+SUCCESS
+Temas prioritários:
+dark
+
+light
+
+heritage
+
+ceremonial
+
+high-contrast
+
+holographic
+Regra:
+Um tema visualmente bonito não poderá comprometer leitura e interação.
+35. RESPONSIVIDADE
+A auditoria deverá verificar comportamento real em diferentes larguras.
+Faixas de referência:
+320 px
+
+360 px
+
+375 px
+
+390 px
+
+412 px
+
+480 px
+
+768 px
+
+1024 px
+
+1280 px
+
+1440 px
+
+1920 px
+Esses valores servem apenas como pontos de teste.
+Não deverão ser assumidos como breakpoints oficiais sem confirmação no CSS.
+Verificar:
+header
+
+navigation
+
+hero
+
+cards
+
+grids
+
+forms
+
+buttons
+
+images
+
+tables
+
+footer
+
+fixed elements
+
+floating buttons
+
+modals
+Problemas possíveis:
+overflow horizontal
+
+texto cortado
+
+botão fora da tela
+
+imagem deformada
+
+grid quebrado
+
+sobreposição
+
+altura excessiva
+
+largura fixa inadequada
+
+menu inacessível
+Tabela:
+Viewport
+Problema
+Componente
+Severidade
+Status
+TBD
+TBD
+TBD
+TBD
+PENDING
+36. OVERFLOW
+A auditoria deverá localizar regras relacionadas a:
+overflow
+
+overflow-x
+
+overflow-y
+
+text-overflow
+
+white-space
+Também deverá detectar visualmente:
+scroll horizontal involuntário
+
+conteúdo cortado
+
+elementos vazando
+
+cards extrapolando
+
+texto truncado
+
+imagens excedendo container
+Classificação:
+EXPECTED
+
+STRUCTURAL
+
+RESPONSIVE BUG
+
+CONTENT BUG
+
+LEGACY
+
+UNKNOWN
+Atenção especial a:
+100vw
+
+fixed widths
+
+absolute positioning
+
+transforms
+
+negative margins
+
+large shadows
+
+pseudo-elements
+Regra:
+overflow: hidden não deverá ser utilizado para mascarar problemas estruturais sem diagnóstico.
+37. Z-INDEX
+A auditoria deverá localizar todos os valores de:
+z-index
+Objetivo:
+identificar:
+escalas desordenadas;
+valores excessivamente altos;
+conflitos;
+stacking contexts;
+elementos fixed;
+modais;
+menus;
+tooltips;
+overlays;
+botões flutuantes.
+Tabela:
+Seletor
+Z-index
+Contexto
+Função
+Risco
+TBD
+TBD
+TBD
+TBD
+TBD
+Classificação:
+BASE
+
+CONTENT
+
+STICKY
+
+DROPDOWN
+
+OVERLAY
+
+MODAL
+
+TOAST
+
+SYSTEM
+Futura recomendação possível:
+tokens de camada
+Exemplo conceitual:
+--z-base
+--z-sticky
+--z-dropdown
+--z-overlay
+--z-modal
+--z-toast
+Nenhuma escala deverá ser criada antes do inventário real.
+38. CSS DUPLICADO
+A auditoria deverá identificar:
+regras repetidas
+
+seletores duplicados
+
+blocos equivalentes
+
+propriedades redefinidas
+
+media queries redundantes
+
+valores repetidos
+Tipos:
+EXACT DUPLICATE
+
+SEMANTIC DUPLICATE
+
+OVERRIDE
+
+LEGACY COPY
+
+RESPONSIVE VARIANT
+
+INTENTIONAL DUPLICATE
+Tabela:
+Regra
+Ocorrências
+Tipo
+Pode consolidar?
+Risco
+TBD
+TBD
+TBD
+TBD
+TBD
+Regra:
+Duplicação não significa automaticamente erro.
+Pode existir por:
+cascata
+
+breakpoint
+
+tema
+
+estado
+
+compatibilidade
+
+ordem de carregamento
+A consolidação somente ocorrerá após confirmação.
+39. CSS NÃO UTILIZADO
+A auditoria deverá identificar seletores potencialmente não utilizados.
+Fontes de verificação:
+index.html
+
+JavaScript
+
+templates
+
+conteúdo dinâmico
+
+classes adicionadas em runtime
+
+data attributes
+
+estados
+
+componentes futuros
+Status possíveis:
+USED
+
+DYNAMIC
+
+LEGACY
+
+UNKNOWN
+
+CANDIDATE FOR REMOVAL
+Nunca remover apenas porque:
+grep não encontrou no HTML
+A classe pode ser criada por:
+classList.add(...)
+ou utilizada em:
+dados externos
+
+componentes carregados depois
+
+estados temporários
+Fluxo:
+DETECTAR
+   ↓
+PROCURAR EM TODO O PROJETO
+   ↓
+VERIFICAR JS
+   ↓
+VERIFICAR HTML
+   ↓
+VERIFICAR RUNTIME
+   ↓
+CLASSIFICAR
+40. DEPENDÊNCIAS JAVASCRIPT
+A auditoria deverá verificar dependências entre JavaScript e CSS.
+Procurar:
+classList.add
+
+classList.remove
+
+classList.toggle
+
+className
+
+style.
+
+setAttribute
+
+dataset
+
+querySelector
+
+querySelectorAll
+
+getElementById
+Mapear:
+JS
+Classe/ID/Data Attribute
+Função
+CSS relacionado
+Risco
+TBD
+TBD
+TBD
+TBD
+TBD
+Casos críticos:
+menu mobile
+
+header scroll
+
+theme switch
+
+modals
+
+accordions
+
+tabs
+
+filters
+
+copy buttons
+
+forms
+
+maps
+
+lazy loading
+Regra:
+Nenhuma classe controlada por JavaScript deverá ser renomeada sem atualização coordenada.
+41. DATA ATTRIBUTES
+A auditoria deverá mapear atributos como:
+data-theme
+
+data-state
+
+data-open
+
+data-active
+
+data-section
+
+data-category
+
+data-id
+
+data-location
+
+data-component
+Uso possível:
+tema
+
+estado
+
+filtragem
+
+integração
+
+identificação
+
+comportamento
+Tabela:
+Attribute
+Valor
+CSS
+JS
+Função
+Status
+TBD
+TBD
+TBD
+TBD
+TBD
+PENDING
+Atenção especial:
+data-theme
+porque será peça central da integração com:
+theme-loader.js
+Fluxo:
+theme-loader.js
+      ↓
+data-theme
+      ↓
+tokens.css
+      ↓
+brand-integration.css
+      ↓
+Landing Page
+42. COMPATIBILIDADE COM BRAND-INTEGRATION.CSS
+Arquivo:
+apps/festanca-2026/css/brand-integration.css
+Função:
+CAMADA DE COMPATIBILIDADE
+Objetivos:
+preservar classes legadas
+
+introduzir aliases
+
+conectar tokens
+
+reduzir risco de regressão
+
+permitir migração progressiva
+A auditoria deverá verificar:
+quais classes existentes podem receber tokens
+
+quais propriedades podem ser sobrescritas com segurança
+
+quais componentes precisam de aliases
+
+quais áreas exigem isolamento
+
+quais regras dependem da ordem da cascata
+Modelo:
+LEGACY CLASS
+     ↓
+BRAND INTEGRATION
+     ↓
+DESIGN TOKEN
+Exemplo conceitual:
+.legacy-card {
+  background: var(--festanca-surface);
+  border-color: var(--festanca-border);
+}
+Regra:
+A camada de integração não deverá duplicar todo o style.css.
+Ela deverá funcionar como:
+PONTE
+e não como:
+SEGUNDO SISTEMA CSS COMPLETO
+43. COMPATIBILIDADE COM TOKENS.CSS
+Arquivo:
+assets/brand/tokens/tokens.css
+A auditoria deverá validar:
+nomes das variáveis
+
+valores
+
+escopo
+
+fallbacks
+
+temas
+
+aliases
+
+dependências
+
+ordem de carregamento
+Verificar:
+variáveis inexistentes
+
+variáveis sem uso
+
+duplicações
+
+nomes divergentes
+
+referências quebradas
+Modelo de consumo:
+color: var(--festanca-text);
+
+background: var(--festanca-surface);
+
+border-radius: var(--festanca-radius-card);
+
+box-shadow: var(--festanca-shadow-card);
+Regra:
+tokens.css deverá ser tratado como artefato derivado da arquitetura oficial de tokens.
+A fonte conceitual permanece:
+JSON TOKENS
+44. ORDEM DA CASCATA
+A ordem dos estilos deverá ser auditada cuidadosamente.
+Arquitetura-alvo:
+<link rel="stylesheet"
+      href="../../assets/brand/tokens/tokens.css">
+
+<link rel="stylesheet"
+      href="css/brand-integration.css">
+
+<link rel="stylesheet"
+      href="css/style.css">
+Mas a ordem definitiva deverá respeitar o comportamento real da Landing Page.
+Duas estratégias possíveis:
+Estratégia A
+tokens.css
+     ↓
+brand-integration.css
+     ↓
+style.css
+Objetivo:
+LEGADO TEM PRIORIDADE FINAL
+Adequada para:
+fase inicial conservadora
+Estratégia B
+tokens.css
+     ↓
+style.css
+     ↓
+brand-integration.css
+Objetivo:
+CAMADA DE INTEGRAÇÃO SOBRESCREVE O LEGADO
+Adequada para:
+migração controlada
+A escolha deverá ser baseada em teste.
+Nunca por preferência teórica.
+Registrar:
+ORDEM ATUAL:
+
+TBD
+
+ORDEM TESTADA:
+
+TBD
+
+ORDEM RECOMENDADA:
+
+TBD
+45. RISCOS DE INTEGRAÇÃO
+Classificação oficial:
+R0 — NEGLIGIBLE
+
+R1 — LOW
+
+R2 — MEDIUM
+
+R3 — HIGH
+
+R4 — CRITICAL
+Matriz:
+Área
+Risco inicial
+Motivo
+Tokens isolados
+R1
+Baixo impacto
+Cards simples
+R1/R2
+Escopo limitado
+Botões
+R2
+Estados interativos
+Tipografia global
+R3
+Impacto amplo
+Header
+R3
+Navegação + layout
+Hero
+R3
+LCP + layout
+Breakpoints
+R4
+Impacto sistêmico
+Reset global
+R4
+Toda interface
+IDs usados por JS
+R4
+Risco funcional
+Riscos técnicos:
+regressão visual
+
+regressão responsiva
+
+conflito de especificidade
+
+mudança de layout
+
+quebra de JavaScript
+
+problemas de contraste
+
+alteração cultural inadequada
+
+carregamento adicional
+
+CLS
+
+LCP
+
+FOUT
+
+FOIT
+Riscos culturais:
+descaracterização
+
+substituição indevida de símbolo
+
+uso inadequado de ícone
+
+perda de contexto
+
+aplicação decorativa imprópria
+46. MATRIZ PRELIMINAR DE MIGRAÇÃO
+A migração deverá ocorrer por níveis.
+NÍVEL 0 — INVENTÁRIO
+SEM ALTERAÇÃO VISUAL
+Ações:
+auditar
+
+mapear
+
+documentar
+NÍVEL 1 — ALIASES
+BAIXO RISCO
+Ações:
+ligar valores existentes a tokens equivalentes
+Exemplo:
+--legacy-gold: var(--festanca-gold);
+NÍVEL 2 — COMPONENTES ISOLADOS
+RISCO CONTROLADO
+Exemplos:
+badge
+
+botão secundário
+
+card informativo simples
+
+tag
+
+divisor
+NÍVEL 3 — COMPONENTES ESTRUTURAIS
+RISCO MÉDIO/ALTO
+Exemplos:
+cards principais
+
+navigation
+
+footer
+
+forms
+NÍVEL 4 — COMPONENTES CRÍTICOS
+ALTO RISCO
+Exemplos:
+header
+
+hero
+
+breakpoints
+
+layout principal
+
+tipografia global
+Fluxo:
+N0
+ ↓
+N1
+ ↓
+N2
+ ↓
+N3
+ ↓
+N4
+Nunca:
+N0
+ ↓
+N4 DIRETAMENTE
+47. DEPRECATION STRATEGY
+Elementos legados deverão ser descontinuados progressivamente.
+Estados:
+ACTIVE
+
+MAPPED
+
+DEPRECATED
+
+COMPATIBILITY ONLY
+
+REMOVED
+Fluxo:
+ACTIVE
+   ↓
+MAPPED
+   ↓
+TOKENIZED
+   ↓
+DEPRECATED
+   ↓
+REMOVED
+Todo item depreciado deverá registrar:
+nome
+
+arquivo
+
+versão
+
+motivo
+
+substituto
+
+data
+
+responsável
+
+impacto
+Exemplo:
+Legacy:
+--old-gold
+
+Substituto:
+--festanca-gold
+
+Status:
+DEPRECATED
+
+Remover:
+somente após confirmação de zero uso
+Regra:
+Deprecar antes de remover.
+A compatibilidade tem prioridade sobre limpeza prematura.
+48. PILOTO DE MIGRAÇÃO
+Antes de migrar componentes críticos, deverá ser escolhido um componente-piloto.
+Critérios:
+baixo risco
+
+visualmente identificável
+
+poucas dependências
+
+sem JavaScript crítico
+
+fácil rollback
+
+representativo do sistema visual
+Candidatos:
+badge
+
+tag
+
+card informativo simples
+
+botão secundário
+
+divisor de seção
+Evitar inicialmente:
+header
+
+hero
+
+menu mobile
+
+grid principal
+
+formulário complexo
+
+floating button crítico
+Fluxo do piloto:
+ESCOLHER COMPONENTE
+        ↓
+REGISTRAR BASELINE
+        ↓
+MAPEAR CSS ATUAL
+        ↓
+MAPEAR TOKENS
+        ↓
+APLICAR INTEGRAÇÃO
+        ↓
+TESTAR MOBILE
+        ↓
+TESTAR DESKTOP
+        ↓
+TESTAR ACESSIBILIDADE
+        ↓
+COMPARAR
+        ↓
+APROVAR
+        ↓
+DOCUMENTAR
+Critérios de aprovação:
+[ ] Sem regressão funcional
+
+[ ] Sem regressão visual grave
+
+[ ] Sem overflow
+
+[ ] Sem quebra responsiva
+
+[ ] Contraste preservado ou melhorado
+
+[ ] Foco preservado
+
+[ ] Sem dependência quebrada
+
+[ ] Tokens corretamente utilizados
+
+[ ] Rollback possível
+
+[ ] Mudança registrada no CHANGELOG
+Resultado:
+PILOT STATUS:
+
+PENDING
+O piloto aprovado será utilizado como padrão para os componentes seguintes.
+FIM DO BLOCO 3 DE 4
+Cobertura:
+SEÇÕES 33 → 48
+
+✓ Acessibilidade
+
+✓ Contraste
+
+✓ Responsividade
+
+✓ Overflow
+
+✓ Z-Index
+
+✓ CSS Duplicado
+
+✓ CSS Não Utilizado
+
+✓ Dependências JavaScript
+
+✓ Data Attributes
+
+✓ Compatibilidade com brand-integration.css
+
+✓ Compatibilidade com tokens.css
+
+✓ Ordem da Cascata
+
+✓ Riscos de Integração
+
+✓ Matriz Preliminar de Migração
+
+✓ Deprecation Strategy
+
+✓ Piloto de Migração
+Continuação oficial:
+BLOCO 4
+
+SEÇÕES 49 → 64
+
+49. Comandos de Auditoria
+
+50. Evidências
+
+51. Registro de Findings
+
+52. Severidade
+
+53. Quick Wins
+
+54. Dívida Técnica
+
+55. Performance
+
+56. Validação Visual
+
+57. Validação Técnica
+
+58. Plano de Rollback
+
+59. Governança da Migração
+
+60. Baseline Oficial
+
+61. Critérios de Aprovação
+
+62. Próximos Artefatos
+
+63. Conclusão
+
+64. Princípio Final
