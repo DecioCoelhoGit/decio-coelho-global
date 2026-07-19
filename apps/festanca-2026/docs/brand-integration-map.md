@@ -1,7 +1,3 @@
-PERFEITO! As capturas confirmam um marco importante: o brand-integration.css já foi criado e passou pelas verificações básicas, incluindo presença do arquivo, estrutura esperada e pontos críticos como prefers-reduced-motion. Agora o brand-integration-map.md deve funcionar como documento de controle da migração, e não apenas como documentação descritiva.
-Crie exatamente:
-apps/festanca-2026/docs/brand-integration-map.md
-Conteúdo completo para copiar e colar no GitHub:
 # FESTANÇA 2026
 ## Official Brand Design System
 
