@@ -4156,3 +4156,897 @@ SEÇÕES 33 → 48
 ✓ Deprecation Strategy
 
 ✓ Piloto de Migração
+
+# 49. COMANDOS DE AUDITORIA
+
+Esta seção consolida comandos operacionais para inspeção inicial da camada CSS.
+
+Os comandos deverão ser executados a partir da raiz do repositório:
+
+```bash
+cd ~/decio-coelho-global
+49.1 Localizar arquivos CSS
+find apps/festanca-2026 \
+  -type f \
+  -name "*.css" \
+  -print
+49.2 Contar linhas
+wc -l \
+apps/festanca-2026/css/*.css
+49.3 Localizar cores hexadecimais
+grep -RInE \
+'#[0-9A-Fa-f]{3,8}' \
+apps/festanca-2026/css
+49.4 Localizar rgb, rgba, hsl e hsla
+grep -RInE \
+'rgba?\(|hsla?\(' \
+apps/festanca-2026/css
+49.5 Localizar !important
+grep -RIn \
+'!important' \
+apps/festanca-2026/css
+49.6 Localizar media queries
+grep -RIn \
+'@media' \
+apps/festanca-2026/css
+49.7 Localizar z-index
+grep -RIn \
+'z-index' \
+apps/festanca-2026/css
+49.8 Localizar overflow
+grep -RInE \
+'overflow(-x|-y)?[[:space:]]*:' \
+apps/festanca-2026/css
+49.9 Localizar CSS variables
+grep -RInE \
+'--[a-zA-Z0-9_-]+[[:space:]]*:' \
+apps/festanca-2026/css
+49.10 Localizar uso de var()
+grep -RIn \
+'var(--' \
+apps/festanca-2026/css
+49.11 Localizar seletores por ID
+grep -RInE \
+'#[a-zA-Z_-][a-zA-Z0-9_-]*[[:space:]]*[{,]' \
+apps/festanca-2026/css
+49.12 Localizar estilos inline no HTML
+grep -RInE \
+'style="' \
+apps/festanca-2026
+49.13 Localizar manipulação CSS pelo JavaScript
+grep -RInE \
+'classList|className|\.style|setAttribute\(["'\'']style|dataset' \
+apps/festanca-2026/js
+49.14 Localizar data attributes
+grep -RInE \
+'data-[a-zA-Z0-9_-]+' \
+apps/festanca-2026
+Os resultados deverão ser registrados como:
+EVIDÊNCIA
+e nunca interpretados automaticamente como:
+ERRO
+50. EVIDÊNCIAS
+Toda conclusão relevante desta auditoria deverá possuir evidência verificável.
+Tipos de evidência:
+CODE
+
+SCREENSHOT
+
+TERMINAL
+
+BROWSER
+
+RESPONSIVE TEST
+
+ACCESSIBILITY TEST
+
+RUNTIME
+
+VERSION CONTROL
+Formato recomendado:
+EVIDENCE-ID:
+CSS-EVID-0001
+
+TIPO:
+CODE
+
+ARQUIVO:
+apps/festanca-2026/css/style.css
+
+LINHA:
+TBD
+
+OBSERVAÇÃO:
+TBD
+
+RELACIONADO AO FINDING:
+CSS-FIND-0001
+Padrão de identificação:
+CSS-EVID-0001
+
+CSS-EVID-0002
+
+CSS-EVID-0003
+Regras:
+Toda evidência deve ser rastreável.
+
+Não alterar evidência original.
+
+Screenshots devem preservar contexto suficiente.
+
+Saídas de terminal devem registrar comando utilizado.
+
+Comparações visuais devem registrar viewport.
+
+Evidências críticas devem ser preservadas antes da alteração.
+51. REGISTRO DE FINDINGS
+Cada problema, risco, oportunidade ou inconsistência deverá ser registrado formalmente.
+Modelo:
+FINDING-ID:
+CSS-FIND-0001
+
+TÍTULO:
+TBD
+
+CATEGORIA:
+TBD
+
+SEVERIDADE:
+TBD
+
+STATUS:
+OPEN
+
+ARQUIVO:
+TBD
+
+LINHAS:
+TBD
+
+EVIDÊNCIA:
+CSS-EVID-XXXX
+
+DESCRIÇÃO:
+TBD
+
+IMPACTO:
+TBD
+
+RECOMENDAÇÃO:
+TBD
+
+RISCO DE ALTERAÇÃO:
+TBD
+
+DEPENDÊNCIAS:
+TBD
+
+RESPONSÁVEL:
+TBD
+Categorias:
+COLOR
+
+TYPOGRAPHY
+
+SPACING
+
+LAYOUT
+
+RESPONSIVE
+
+ACCESSIBILITY
+
+PERFORMANCE
+
+SPECIFICITY
+
+DUPLICATION
+
+LEGACY
+
+JAVASCRIPT DEPENDENCY
+
+THEME
+
+CULTURAL IDENTITY
+
+MAINTAINABILITY
+Status:
+OPEN
+
+UNDER REVIEW
+
+APPROVED
+
+IN PROGRESS
+
+VALIDATION
+
+RESOLVED
+
+DEFERRED
+
+REJECTED
+52. SEVERIDADE
+Escala oficial:
+S0 — INFORMATIONAL
+
+S1 — LOW
+
+S2 — MEDIUM
+
+S3 — HIGH
+
+S4 — CRITICAL
+S0 — INFORMATIONAL
+documentação
+
+melhoria futura
+
+padronização opcional
+
+observação sem impacto
+S1 — LOW
+inconsistência visual pequena
+
+duplicação simples
+
+melhoria de manutenção
+S2 — MEDIUM
+problema responsivo localizado
+
+inconsistência de componente
+
+problema moderado de acessibilidade
+S3 — HIGH
+quebra funcional provável
+
+baixo contraste relevante
+
+layout inconsistente em múltiplos dispositivos
+
+dependência crítica de cascata
+S4 — CRITICAL
+interface inutilizável
+
+conteúdo inacessível
+
+menu quebrado
+
+formulário indisponível
+
+erro que impede navegação
+
+regressão generalizada
+Prioridade:
+SEVERIDADE
++
+IMPACTO
++
+PROBABILIDADE
++
+ALCANCE
+53. QUICK WINS
+Quick Wins deverão ser alterações:
+baixo risco
+
+baixo custo
+
+alto benefício
+
+fácil rollback
+
+facilmente validáveis
+Possíveis candidatos:
+substituir valor repetido por token equivalente
+
+padronizar foco visível
+
+corrigir contraste localizado
+
+corrigir touch target isolado
+
+eliminar duplicação exata segura
+
+documentar alias
+
+corrigir variável inexistente
+Tabela:
+Quick Win
+Benefício
+Risco
+Esforço
+Status
+TBD
+TBD
+LOW
+LOW
+PENDING
+Regra:
+Quick Win não significa mudança sem teste.
+Todo Quick Win deverá seguir:
+BASELINE
+
+ALTERAÇÃO
+
+VALIDAÇÃO
+
+REGISTRO
+
+ROLLBACK DISPONÍVEL
+54. DÍVIDA TÉCNICA
+A auditoria deverá registrar dívida técnica acumulada.
+Categorias:
+LEGACY CSS
+
+DUPLICATION
+
+HARDCODED VALUES
+
+SPECIFICITY
+
+UNUSED CSS
+
+RESPONSIVE
+
+ACCESSIBILITY
+
+NAMING
+
+DOCUMENTATION
+
+ARCHITECTURE
+
+JAVASCRIPT COUPLING
+Classificação:
+ACCEPTED
+
+PLANNED
+
+HIGH PRIORITY
+
+BLOCKING
+Registro:
+DEBT-ID:
+CSS-DEBT-0001
+
+CATEGORIA:
+TBD
+
+ORIGEM:
+TBD
+
+IMPACTO:
+TBD
+
+RISCO:
+TBD
+
+PLANO:
+TBD
+
+VERSÃO-ALVO:
+TBD
+Objetivo:
+NÃO ESCONDER DÍVIDA
+       ↓
+TORNÁ-LA VISÍVEL
+       ↓
+PRIORIZÁ-LA
+       ↓
+REDUZI-LA PROGRESSIVAMENTE
+55. PERFORMANCE
+A auditoria deverá avaliar impacto da camada visual sobre desempenho.
+Itens:
+tamanho dos CSS
+
+número de arquivos
+
+regras duplicadas
+
+CSS não utilizado
+
+fontes
+
+imagens de background
+
+shadows pesadas
+
+filters
+
+backdrop-filter
+
+animations
+
+fixed backgrounds
+
+large textures
+Métricas relacionadas:
+LCP
+
+CLS
+
+INP
+
+FCP
+
+render blocking
+Atenção especial:
+filter:
+
+backdrop-filter:
+
+box-shadow:
+
+background-image:
+
+animation:
+
+transition:
+Tabela:
+Recurso
+Impacto potencial
+Prioridade
+Status
+TBD
+TBD
+TBD
+PENDING
+Regra:
+Performance não deverá eliminar identidade visual; deverá orientar implementação eficiente.
+56. VALIDAÇÃO VISUAL
+Toda migração deverá possuir comparação visual.
+Método recomendado:
+BEFORE
+
+vs.
+
+AFTER
+Registrar:
+viewport
+
+dispositivo
+
+navegador
+
+tema
+
+estado do componente
+
+data
+
+versão
+Viewports mínimos:
+360 px
+
+390 px
+
+768 px
+
+1024 px
+
+1440 px
+Estados:
+default
+
+hover
+
+focus
+
+active
+
+open
+
+disabled
+
+error
+Critérios:
+hierarquia preservada
+
+marca preservada
+
+contraste adequado
+
+sem sobreposição
+
+sem corte
+
+sem mudança inesperada
+
+sem regressão cultural
+57. VALIDAÇÃO TÉCNICA
+A validação deverá incluir:
+HTML
+
+CSS
+
+JavaScript
+
+JSON
+
+responsividade
+
+acessibilidade
+
+console
+
+network
+Comandos básicos:
+Validar JSON dos tokens
+for f in assets/brand/tokens/*.json
+do
+  python -m json.tool "$f" > /dev/null || exit 1
+done
+
+echo "✅ JSON tokens válidos"
+Verificar sintaxe JavaScript
+node --check \
+assets/brand/tokens/theme-loader.js
+Confirmar arquivos principais
+test -f assets/brand/tokens/tokens.css &&
+test -f assets/brand/tokens/theme-loader.js &&
+test -f apps/festanca-2026/css/brand-integration.css &&
+echo "✅ Camada Brand presente"
+Também verificar no navegador:
+console errors
+
+404
+
+CSS não carregado
+
+JS não carregado
+
+variáveis indefinidas
+
+layout shifts
+58. PLANO DE ROLLBACK
+Toda alteração estrutural deverá possuir possibilidade clara de reversão.
+Estratégias:
+git revert
+
+rollback de commit
+
+remoção temporária do link CSS
+
+feature flag
+
+desativação da classe de integração
+
+restauração do arquivo anterior
+Antes da migração registrar:
+COMMIT BASELINE:
+
+TBD
+
+BRANCH:
+
+main
+
+ARQUIVOS ALTERADOS:
+
+TBD
+Fluxo:
+ALTERAÇÃO
+   ↓
+TESTE
+   ↓
+PROBLEMA?
+   ├─ NÃO → APROVAR
+   └─ SIM
+        ↓
+      ROLLBACK
+        ↓
+      DIAGNÓSTICO
+Regra:
+Nenhuma migração crítica deverá ser irreversível.
+59. GOVERNANÇA DA MIGRAÇÃO
+A migração seguirá a governança definida em:
+assets/brand/governance.md
+Papéis:
+proposição
+
+revisão visual
+
+revisão cultural
+
+revisão técnica
+
+revisão de acessibilidade
+
+aprovação institucional
+
+publicação
+
+registro no CHANGELOG
+Fluxo:
+PROPOSTA
+   ↓
+EVIDÊNCIA
+   ↓
+REVISÃO
+   ↓
+TESTE
+   ↓
+APROVAÇÃO
+   ↓
+PUBLICAÇÃO
+   ↓
+CHANGELOG
+Alterações críticas incluem:
+logo
+
+cores institucionais
+
+símbolos culturais
+
+tipografia principal
+
+header
+
+hero
+
+navegação
+
+breakpoints globais
+
+tema padrão
+60. BASELINE OFICIAL
+Antes da primeira migração real deverá ser estabelecida uma baseline.
+A baseline deverá registrar:
+commit
+
+data
+
+estado visual
+
+arquivos CSS
+
+arquivos JS relacionados
+
+estrutura HTML
+
+screenshots
+
+viewports
+
+temas
+
+problemas conhecidos
+Modelo:
+BASELINE-ID:
+FESTANCA-CSS-BASELINE-2026-001
+
+COMMIT:
+TBD
+
+DATA:
+TBD
+
+STATUS:
+PENDING
+
+ARQUIVOS PRINCIPAIS:
+
+apps/festanca-2026/index.html
+
+apps/festanca-2026/css/style.css
+
+apps/festanca-2026/css/brand-integration.css
+
+assets/brand/tokens/tokens.css
+
+assets/brand/tokens/theme-loader.js
+A baseline será:
+PONTO ZERO OFICIAL
+para comparar todas as evoluções futuras.
+61. CRITÉRIOS DE APROVAÇÃO
+Uma migração somente poderá ser considerada aprovada quando:
+[ ] O componente funciona
+
+[ ] O layout permanece estável
+
+[ ] Mobile foi testado
+
+[ ] Desktop foi testado
+
+[ ] Contraste foi validado
+
+[ ] Foco está visível
+
+[ ] Navegação por teclado permanece funcional
+
+[ ] JavaScript não foi quebrado
+
+[ ] Não existem erros novos no console
+
+[ ] Não existem 404 novos
+
+[ ] Tokens utilizados existem
+
+[ ] Rollback está disponível
+
+[ ] Evidências foram registradas
+
+[ ] Finding relacionado foi atualizado
+
+[ ] CHANGELOG foi atualizado
+Para componentes culturais:
+[ ] Significado cultural preservado
+
+[ ] Símbolo corretamente utilizado
+
+[ ] Contexto respeitado
+
+[ ] Proveniência preservada quando aplicável
+Status final:
+APPROVED
+
+APPROVED WITH NOTES
+
+REJECTED
+
+ROLLBACK REQUIRED
+62. PRÓXIMOS ARTEFATOS
+Após a conclusão desta auditoria, os próximos artefatos recomendados serão:
+apps/festanca-2026/docs/css-findings-register.md
+
+apps/festanca-2026/docs/css-migration-plan.md
+
+apps/festanca-2026/docs/css-baseline.md
+
+apps/festanca-2026/docs/component-migration-matrix.md
+Possível sequência:
+CSS AUDIT REPORT
+      ↓
+FINDINGS REGISTER
+      ↓
+BASELINE
+      ↓
+MIGRATION PLAN
+      ↓
+PILOT COMPONENT
+      ↓
+VALIDATION
+      ↓
+ROLL-OUT PROGRESSIVO
+Automação futura recomendada:
+scripts/brand/
+Possíveis scripts:
+audit-css.sh
+
+validate-tokens.sh
+
+validate-brand-paths.sh
+
+check-hardcoded-colors.sh
+
+check-token-references.sh
+
+generate-css-report.sh
+63. CONCLUSÃO
+A Landing Page da FESTANÇA 2026 não deverá ser submetida a uma substituição visual abrupta.
+A estratégia oficial será:
+PRESERVAR
+   ↓
+AUDITAR
+   ↓
+DOCUMENTAR
+   ↓
+MAPEAR
+   ↓
+TOKENIZAR
+   ↓
+INTEGRAR
+   ↓
+TESTAR
+   ↓
+VALIDAR
+   ↓
+MIGRAR PROGRESSIVAMENTE
+O Brand Design System agora possui uma arquitetura capaz de conectar:
+IDENTIDADE VISUAL
+
+PATRIMÔNIO CULTURAL
+
+DESIGN TOKENS
+
+CSS
+
+JAVASCRIPT
+
+ACESSIBILIDADE
+
+RESPONSIVIDADE
+
+GOVERNANÇA
+
+CONTROLE DE VERSÕES
+A auditoria estabelece a ponte entre:
+LANDING PAGE EXISTENTE
+        ↓
+ARQUITETURA DE TRANSIÇÃO
+        ↓
+OFFICIAL BRAND DESIGN SYSTEM
+O objetivo não é simplesmente modernizar a aparência.
+O objetivo é garantir:
+CONSISTÊNCIA
+
+MEMÓRIA
+
+IDENTIDADE
+
+SEGURANÇA
+
+RASTREABILIDADE
+
+ESCALABILIDADE
+
+ACESSIBILIDADE
+
+CONTINUIDADE HISTÓRICA
+64. PRINCÍPIO FINAL
+O CSS da FESTANÇA 2026 deverá evoluir sem apagar sua história.
+Cada regra existente deverá ser tratada inicialmente como:
+POSSÍVEL DECISÃO DE PROJETO
+e não como:
+ERRO A SER ELIMINADO
+Toda evolução deverá respeitar três dimensões simultâneas:
+TÉCNICA
+
+VISUAL
+
+CULTURAL
+Princípio arquitetural:
+NÃO REESCREVER PRIMEIRO.
+
+COMPREENDER PRIMEIRO.
+Princípio operacional:
+NÃO REMOVER SEM EVIDÊNCIA.
+
+NÃO MIGRAR SEM BASELINE.
+
+NÃO PUBLICAR SEM VALIDAÇÃO.
+Princípio patrimonial:
+A tecnologia deve servir à memória.
+
+O design deve servir à identidade.
+
+A inovação deve fortalecer a tradição.
+STATUS FINAL DO DOCUMENTO
+Documento:
+apps/festanca-2026/docs/css-audit-report.md
+
+Versão:
+1.0.0
+
+Status:
+OFFICIAL — BASELINE AUDIT FRAMEWORK
+
+Cobertura:
+SEÇÕES 01 → 64
+
+Bloco 1:
+01 → 16
+
+Bloco 2:
+17 → 32
+
+Bloco 3:
+33 → 48
+
+Bloco 4:
+49 → 64
+
+Resultado:
+ESTRUTURA COMPLETA
+FIM DO CSS AUDIT REPORT
+FESTANÇA 2026
+OFFICIAL BRAND DESIGN SYSTEM
+
+CSS AUDIT REPORT
+COMPLETO
+
+64 SEÇÕES
+
+Ao encontro do futuro,
+com os pés firmes na tradição.
