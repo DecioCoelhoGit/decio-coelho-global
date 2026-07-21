@@ -1026,7 +1026,7 @@ ol {
 .schedule-card {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
-  gap: 1.5rem;
+  gap: var(--festanca-grid-gap-lg);
   align-items: center;
 
   padding: 1.35rem;
