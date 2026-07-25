@@ -1376,3 +1376,135 @@ ol {
     minmax(220px, 0.7fr)
     minmax(280px, 1.3fr);
   gap: 2rem;
+
+/* ===========================================================
+   D48 — RESPONSIVIDADE FINAL
+   =========================================================== */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+*{
+    max-width:100%;
+}
+
+img,
+svg,
+canvas,
+video,
+iframe{
+    max-width:100%;
+    height:auto;
+}
+
+.section-container{
+    width:100%;
+    max-width:1180px;
+    margin:0 auto;
+    padding-left:16px;
+    padding-right:16px;
+}
+
+.main-navigation{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.main-navigation a{
+    white-space:nowrap;
+}
+
+.highlight-card{
+    margin-left:auto;
+    margin-right:auto;
+    transform:none;
+}
+
+.hero-actions,
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.hero-actions a,
+.hero-buttons a,
+.hero-actions button,
+.hero-buttons button{
+    width:auto;
+    max-width:100%;
+}
+
+@media (max-width:768px){
+
+    .section-container{
+        padding-left:14px;
+        padding-right:14px;
+    }
+
+    .hero{
+        overflow:hidden;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .highlight-card{
+        width:100%;
+        max-width:320px;
+    }
+}
+
+@media (max-width:480px){
+
+    .main-navigation{
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:8px;
+    }
+
+    .main-navigation a{
+
+        font-size:.92rem;
+
+        padding:8px 10px;
+    }
+
+    .hero-actions,
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .hero-actions a,
+    .hero-buttons a,
+    .hero-actions button,
+    .hero-buttons button{
+
+        width:100%;
+        max-width:300px;
+    }
+
+    .highlight-card{
+
+        max-width:280px;
+    }
+
+    .section{
+
+        overflow:hidden;
+    }
+}
