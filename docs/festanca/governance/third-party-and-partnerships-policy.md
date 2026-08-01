@@ -2422,150 +2422,163 @@ PRESERVAÇÃO HISTÓRICA
 ---
 
 ## 134. Lista mínima de verificação
+
 Antes da ativação de uma relação, deverá ser verificado:
-[ ] terceiro identificado;
-[ ] representantes confirmados;
-[ ] finalidade definida;
-[ ] escopo registrado;
-[ ] riscos avaliados;
-[ ] conflitos declarados;
-[ ] autoridade competente identificada;
-[ ] aprovações registradas;
-[ ] instrumento formalizado;
-[ ] marcas autorizadas;
-[ ] propriedade intelectual definida;
-[ ] dados pessoais avaliados;
-[ ] acessos limitados;
-[ ] segurança verificada;
-[ ] contrapartidas registradas;
-[ ] entregas definidas;
-[ ] continuidade considerada;
-[ ] encerramento previsto;
-[ ] preservação histórica estabelecida.
+
+- [ ] terceiro identificado;
+- [ ] representantes confirmados;
+- [ ] finalidade definida;
+- [ ] escopo registrado;
+- [ ] riscos avaliados;
+- [ ] conflitos declarados;
+- [ ] autoridade competente identificada;
+- [ ] aprovações registradas;
+- [ ] instrumento formalizado;
+- [ ] marcas autorizadas;
+- [ ] propriedade intelectual definida;
+- [ ] dados pessoais avaliados;
+- [ ] acessos limitados;
+- [ ] segurança verificada;
+- [ ] contrapartidas registradas;
+- [ ] entregas definidas;
+- [ ] continuidade considerada;
+- [ ] encerramento previsto;
+- [ ] preservação histórica estabelecida.
 
 ---
 
 ## 135. Estado inicial deste documento
-DOCUMENTO: third-party-and-partnerships-policy.md
-FUNÇÃO: Constituição de terceiros e parcerias
-REGIME: Permanente
-EDIÇÃO FUNDADORA: FESTANÇA 2026
-CRITICIDADE: Máxima
-MUTABILIDADE: Estritamente controlada
-PRESERVAÇÃO: Integral
-VERSIONAMENTO: Obrigatório
-AUDITORIA: Obrigatória
-ALTERAÇÃO: Controlada
-APLICABILIDADE: Portal Permanente e edições anuais
+
+**DOCUMENTO:** `third-party-and-partnerships-policy.md`  
+**FUNÇÃO:** Constituição de Terceiros e Parcerias  
+**REGIME:** Permanente  
+**EDIÇÃO FUNDADORA:** FESTANÇA 2026  
+**CRITICIDADE:** Máxima  
+**MUTABILIDADE:** Estritamente controlada  
+**PRESERVAÇÃO:** Integral  
+**VERSIONAMENTO:** Obrigatório  
+**AUDITORIA:** Obrigatória  
+**ALTERAÇÃO:** Controlada  
+**APLICABILIDADE:** Portal Permanente e edições anuais  
 
 ---
 
 ## 136. Declaração constitucional
+
 Este documento declara que:
-nenhuma parceria estará acima da Constituição de Governança;
-nenhum patrocinador será proprietário da memória da FESTANÇA;
-nenhum apoio concederá autoridade cultural automática;
-nenhum terceiro acessará ativos sem autorização;
-nenhuma marca será utilizada sem legitimidade;
-nenhuma contrapartida permanecerá oculta;
-nenhum dado será tratado sem finalidade;
-nenhuma criança ou adolescente será exposto irresponsavelmente;
-nenhuma residência privada será publicada sem proteção adequada;
-nenhum fornecedor criará dependência irreversível sem controle;
-nenhum conteúdo de terceiro será incorporado sem origem;
-nenhuma contribuição legítima será apagada;
-nenhum encerramento destruirá o registro histórico;
-nenhuma edição futura substituirá silenciosamente a edição fundadora;
-nenhuma tecnologia prevalecerá sobre a memória cultural;
-toda parceria deverá servir à continuidade da FESTANÇA;
-toda relação deverá ser identificável, verificável e auditável;
-toda divergência deverá ser tratada sem destruição de evidências;
-toda contribuição deverá ser reconhecida com justiça;
-todo legado deverá ser preservado para as futuras gerações.
+
+1. nenhuma parceria estará acima da Constituição de Governança;
+2. nenhum patrocinador será proprietário da memória da FESTANÇA;
+3. nenhum apoio concederá autoridade cultural automática;
+4. nenhum terceiro acessará ativos sem autorização;
+5. nenhuma marca será utilizada sem legitimidade;
+6. nenhuma contrapartida permanecerá oculta;
+7. nenhum dado será tratado sem finalidade;
+8. nenhuma criança ou adolescente será exposto irresponsavelmente;
+9. nenhuma residência privada será publicada sem proteção adequada;
+10. nenhum fornecedor criará dependência irreversível sem controle;
+11. nenhum conteúdo de terceiro será incorporado sem origem;
+12. nenhuma contribuição legítima será apagada;
+13. nenhum encerramento destruirá o registro histórico;
+14. nenhuma edição futura substituirá silenciosamente a edição fundadora;
+15. nenhuma tecnologia prevalecerá sobre a memória cultural;
+16. toda parceria deverá servir à continuidade da FESTANÇA;
+17. toda relação deverá ser identificável, verificável e auditável;
+18. toda divergência deverá ser tratada sem destruição de evidências;
+19. toda contribuição deverá ser reconhecida com justiça;
+20. todo legado deverá ser preservado para as futuras gerações.
 
 ---
 
 ## 137. Princípio maior
-IDENTIFICAR ANTES DE RELACIONAR.
 
-VERIFICAR ANTES DE APROVAR.
+**IDENTIFICAR ANTES DE RELACIONAR.**
 
-FORMALIZAR ANTES DE EXECUTAR.
+**VERIFICAR ANTES DE APROVAR.**
 
-PROTEGER ANTES DE COMPARTILHAR.
+**FORMALIZAR ANTES DE EXECUTAR.**
 
-ATRIBUIR ANTES DE DIVULGAR.
+**PROTEGER ANTES DE COMPARTILHAR.**
 
-MONITORAR ANTES DE RENOVAR.
+**ATRIBUIR ANTES DE DIVULGAR.**
 
-REVOGAR ANTES DE EXPOR.
+**MONITORAR ANTES DE RENOVAR.**
 
-DEVOLVER ANTES DE ENCERRAR.
+**REVOGAR ANTES DE ENCERRAR.**
 
-REGISTRAR ANTES DE ARQUIVAR.
+**DEVOLVER ANTES DE FINALIZAR.**
 
-PRESERVAR SEM APAGAR.
+**REGISTRAR ANTES DE ARQUIVAR.**
 
-COOPERAR SEM SUBORDINAR A MEMÓRIA.
+**PRESERVAR SEM APAGAR.**
 
-EVOLUIR SEM ROMPER A CONTINUIDADE.
+**COOPERAR SEM SUBORDINAR A MEMÓRIA.**
+
+**EVOLUIR SEM ROMPER A CONTINUIDADE.**
 
 ---
 
 ## 138. Compromisso permanente
+
 Toda governança de terceiros e parcerias deverá proteger simultaneamente:
-as pessoas;
-as crianças;
-os adolescentes;
-as famílias;
-a comunidade;
-os grupos tradicionais;
-os festeiros;
-os responsáveis;
-os parceiros legítimos;
-os apoiadores;
-os patrocinadores;
-os fornecedores;
-os colaboradores;
-os produtores de conteúdo;
-a cultura;
-a história;
-a fé;
-as tradições;
-os conhecimentos;
-a memória;
-os direitos;
-as imagens;
-as vozes;
-os documentos;
-os dados;
-os registros;
-os sistemas;
-as marcas;
-os ativos;
-a governança;
-a edição fundadora;
-as futuras edições;
-a continuidade;
-o patrimônio;
-o futuro.
+
+- as pessoas;
+- as crianças;
+- os adolescentes;
+- as famílias;
+- a comunidade;
+- os grupos tradicionais;
+- os festeiros;
+- os responsáveis;
+- os parceiros legítimos;
+- os apoiadores;
+- os patrocinadores;
+- os fornecedores;
+- os colaboradores;
+- os produtores de conteúdo;
+- a cultura;
+- a história;
+- a fé;
+- as tradições;
+- os conhecimentos;
+- a memória;
+- os direitos;
+- as imagens;
+- as vozes;
+- os documentos;
+- os dados;
+- os registros;
+- os sistemas;
+- as marcas;
+- os ativos;
+- a governança;
+- a edição fundadora;
+- as futuras edições;
+- a continuidade;
+- o patrimônio;
+- o futuro.
 
 ---
 
 ## 139. Vigência
+
 Esta Política entra em vigor a partir de sua aprovação e publicação no repositório oficial.
+
 Sua vigência será permanente.
+
 Revisões futuras deverão:
-preservar as versões anteriores;
-registrar justificativas;
-indicar responsáveis;
-apresentar impactos;
-manter compatibilidade histórica;
-proteger a edição fundadora.
+
+- preservar as versões anteriores;
+- registrar justificativas;
+- indicar responsáveis;
+- apresentar impactos;
+- manter compatibilidade histórica;
+- proteger a edição fundadora.
 
 ---
 
 ## 140. Encerramento institucional
+
 Seguimos juntos, passo a passo.
 
 Com método.
