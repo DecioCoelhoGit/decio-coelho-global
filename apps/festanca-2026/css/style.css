@@ -1695,6 +1695,10 @@ button[aria-label*="Compartilhar"] {
         grid-template-columns: minmax(0, 1fr);
     }
 
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
   .section-container,
   .header-container,
   .footer-container,
