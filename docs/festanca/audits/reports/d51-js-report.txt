@@ -1,0 +1,925 @@
+=== D51-C | INSPEÇÃO DO SCRIPT.JS ===
+Arquivo: apps/festanca-2026/js/script.js
+
+=== 1. TAMANHO E TOTAL DE LINHAS ===
+-rw-------. 1 u0_a27 u0_a27 45K Jul 12 20:01 apps/festanca-2026/js/script.js
+3037 apps/festanca-2026/js/script.js
+
+=== 2. INICIALIZAÇÕES E CARREGAMENTO ===
+312:  function initializeMobileMenu() {
+452:  function initializeSmoothScroll() {
+528:  function initializeActiveNavigation() {
+547:          !href.startsWith("#")
+2088:  function initializeDataIntegration() {
+2439:  function initializeShareButtons() {
+2477:  function initializeWhatsAppButtons() {
+2531:  function initializeAccessibility() {
+2701:  function initializeBackToTop() {
+2870:  function initializeExternalLinks() {
+2942:  function initialize() {
+2954:    initializeMobileMenu();
+2956:    initializeSmoothScroll();
+2958:    initializeActiveNavigation();
+2960:    initializeShareButtons();
+2962:    initializeWhatsAppButtons();
+2964:    initializeAccessibility();
+2966:    initializeBackToTop();
+2968:    initializeExternalLinks();
+2970:    initializeDataIntegration();
+3021:      "DOMContentLoaded",
+3033:    initialize();
+
+=== 3. EVENT LISTENERS ===
+368:    menuButton.addEventListener(
+398:        link.addEventListener(
+409:    document.addEventListener(
+426:    document.addEventListener(
+458:        link.addEventListener(
+1010:    celebrationSelect?.addEventListener(
+1026:    dateSelect?.addEventListener(
+1042:    categorySelect?.addEventListener(
+1060:    searchInput?.addEventListener(
+1094:        button.addEventListener(
+1924:    shareButton?.addEventListener(
+2004:      ?.addEventListener(
+2120:    window.addEventListener(
+2139:    window.addEventListener(
+2242:      ?.addEventListener(
+2309:      ?.addEventListener(
+2445:      button.addEventListener(
+2502:      button.addEventListener(
+2564:      button.addEventListener(
+2602:      button.addEventListener(
+2627:      button.addEventListener(
+2652:      button.addEventListener(
+2752:    window.addEventListener(
+2765:    button.addEventListener(
+2980:    window.addEventListener(
+3019:    document.addEventListener(
+
+=== 4. ALTERAÇÃO DE CLASSES ===
+237:    className = "",
+246:      element.className = className;
+328:      navigation.classList.remove("is-open");
+330:      menuButton.classList.remove("is-active");
+337:      document.body.classList.remove(
+346:      navigation.classList.add("is-open");
+348:      menuButton.classList.add("is-active");
+355:      document.body.classList.add(
+590:              link.classList.remove(
+609:              current.link.classList.add(
+1620:      article.classList.add(
+1629:      article.classList.add(
+2550:      document.documentElement.classList.add(
+2741:      button.classList.toggle(
+2838:    notice.classList.add(
+2853:          notice.classList.remove(
+
+=== 5. ESTILOS E LARGURAS DINÂMICAS ===
+490:            const headerHeight =
+492:                ? header.offsetHeight
+498:              headerHeight -
+626:          rootMargin:
+2673:    document.documentElement.style.setProperty(
+2681:    document.documentElement.style.fontSize =
+2909:    const width =
+2911:        .scrollWidth;
+2914:      window.innerWidth;
+2917:    if (width > viewport + 4) {
+2925:          documentWidth: width,
+2927:          viewportWidth: viewport
+
+=== 6. CRIAÇÃO E INJEÇÃO DE HTML ===
+235:  function createElement(
+242:      document.createElement(tagName);
+670:      filters = createElement(
+678:      section.appendChild(filters);
+688:      status = createElement(
+701:      section.appendChild(status);
+711:      counter = createElement(
+719:      status.appendChild(counter);
+729:      container = createElement(
+737:      section.appendChild(container);
+769:    filters.innerHTML = `
+923:        document.createElement("option");
+932:      select.appendChild(option);
+972:        document.createElement("option");
+980:      select.appendChild(option);
+1483:    container.innerHTML = "";
+1502:        createElement(
+1507:      empty.innerHTML = `
+1517:      container.appendChild(empty);
+1532:          createElement(
+1538:          createElement(
+1547:        dayGroup.appendChild(dayTitle);
+1551:          createElement(
+1559:          cards.appendChild(
+1568:        dayGroup.appendChild(cards);
+1570:        container.appendChild(dayGroup);
+1608:      createElement(
+1672:    article.innerHTML = `
+1950:    interfaceElements.container.innerHTML = `
+1977:    interfaceElements.container.innerHTML = `
+2037:    container.innerHTML = `
+2199:      container.innerHTML = `
+2210:    container.innerHTML = `
+2274:      container.innerHTML = `
+2285:    container.innerHTML = `
+2709:      button = createElement(
+2731:      button.innerHTML =
+2734:      document.body.appendChild(button);
+2803:      notice = createElement(
+2830:      document.body.appendChild(notice);
+
+=== 7. GRIDS, CARDS E COMPONENTES ===
+13: * - controlar menu mobile;
+15: * - destacar item ativo do menu;
+16: * - integrar a Programação Cultural Inteligente;
+20: * - mostrar programação de hoje;
+49:    "Confira a Programação Oficial da Festança de Vila Bela 2026.";
+88:    menuButton: [
+89:      "#menu-toggle",
+90:      ".menu-toggle",
+91:      "[data-menu-toggle]"
+94:    navigation: [
+101:    navigationLinks: [
+108:      "#programacao",
+109:      "[data-section='programacao']",
+110:      ".programacao"
+114:      "#programacao-lista",
+115:      "#programacao-container",
+116:      "#agenda-lista",
+117:      "[data-programacao-lista]"
+121:      "#programacao-filtros",
+122:      "[data-programacao-filtros]"
+126:      "#programacao-status",
+127:      "[data-programacao-status]"
+131:      "#programacao-contador",
+132:      "[data-programacao-contador]"
+136:      "#programacao-loading",
+137:      "[data-programacao-loading]"
+141:      "#programacao-error",
+142:      "[data-programacao-error]"
+151:      "#programacao-hoje",
+152:      "[data-programacao-hoje]"
+309:     MENU MOBILE
+312:  function initializeMobileMenu() {
+314:    const menuButton =
+315:      findFirst(selectors.menuButton);
+317:    const navigation =
+318:      findFirst(selectors.navigation);
+320:    if (!menuButton || !navigation) {
+326:    const closeMenu = () => {
+328:      navigation.classList.remove("is-open");
+330:      menuButton.classList.remove("is-active");
+332:      menuButton.setAttribute(
+338:        "menu-open"
+344:    const openMenu = () => {
+346:      navigation.classList.add("is-open");
+348:      menuButton.classList.add("is-active");
+350:      menuButton.setAttribute(
+356:        "menu-open"
+362:    menuButton.setAttribute(
+368:    menuButton.addEventListener(
+375:          navigation.classList.contains(
+381:          closeMenu();
+385:          openMenu();
+394:    navigation
+402:          closeMenu
+417:          closeMenu();
+433:          !navigation.contains(event.target) &&
+434:          !menuButton.contains(event.target)
+437:          closeMenu();
+525:     DESTAQUE DO MENU ATIVO
+528:  function initializeActiveNavigation() {
+531:      findAll(selectors.navigationLinks);
+646:     CRIAÇÃO AUTOMÁTICA DA INTERFACE DE PROGRAMAÇÃO
+657:        "[Festança 2026] Seção de programação não encontrada."
+672:        "programacao-filtros"
+676:        "programacao-filtros";
+690:        "programacao-status"
+694:        "programacao-status";
+713:        "programacao-contador"
+717:        "programacao-contador";
+731:        "programacao-lista"
+735:        "programacao-lista";
+760:     FILTROS DA PROGRAMAÇÃO
+770:      <div class="programacao-filtros__grid">
+798:            <option value="programacao-integrada">
+799:              Programação Integrada
+847:      <div class="programacao-acoes">
+851:          class="btn-programacao"
+854:          Programação de hoje
+859:          class="btn-programacao"
+867:          class="btn-programacao btn-programacao--secondary"
+875:          class="btn-programacao btn-programacao--secondary"
+878:          Compartilhar programação
+1229:     PROGRAMAÇÃO DE HOJE E PRÓXIMO EVENTO
+1245:      "Programação de hoje"
+1437:          "Visita oficial somente no horário e ato previstos na programação. Consulte a agenda e os contatos da organização."
+1462:     RENDERIZAÇÃO DA PROGRAMAÇÃO
+1504:          "programacao-vazia"
+1513:          Ajuste os filtros ou consulte a programação completa.
+1534:            "programacao-dia"
+1540:            "programacao-dia__titulo"
+1550:        const cards =
+1553:            "programacao-dia__cards"
+1559:          cards.appendChild(
+1561:            createActivityCard(activity)
+1568:        dayGroup.appendChild(cards);
+1605:  function createActivityCard(activity) {
+1610:        "atividade-card"
+1621:        "atividade-card--itinerante"
+1630:        "atividade-card--residencia"
+1673:      <header class="atividade-card__header">
+1675:        <div class="atividade-card__horario">
+1677:          <span class="atividade-card__hora">
+1688:                <span class="atividade-card__fim">
+1698:        <div class="atividade-card__cabecalho">
+1700:          <span class="atividade-card__celebracao">
+1706:          <h4 class="atividade-card__titulo">
+1718:            <p class="atividade-card__descricao">
+1726:      <div class="atividade-card__local">
+1729:          class="atividade-card__local-icone"
+1762:            <div class="atividade-card__participantes">
+1781:            <div class="atividade-card__tags">
+1789:      <footer class="atividade-card__footer">
+1795:          class="atividade-card__share"
+1801:      </footer>
+1805:    bindActivityCardEvents(article, activity);
+1817:        <span class="atividade-card__mapa-indisponivel">
+1831:        <span class="atividade-card__mapa-restrito">
+1841:        class="atividade-card__mapa"
+1877:      <div class="atividade-card__rota">
+1904:        <p class="atividade-card__rota-aviso">
+1914:  function bindActivityCardEvents(
+1952:        class="programacao-loading"
+1955:        <span class="programacao-loading__spinner"></span>
+1958:          Carregando a Programação Cultural Inteligente...
+1979:        class="programacao-erro"
+1983:          Não foi possível carregar a programação.
+2038:      <div class="programacao-aviso">
+2201:          A programação principal será realizada de 15 a 27 de julho de 2026.
+2211:      <article class="proximo-evento-card">
+2213:        <span class="proximo-evento-card__label">
+2231:          Ver na programação
+2300:        Ver programação de hoje
+2401:        "#programacao"
+2432:        `${getCurrentPageUrl()}#programacao`
+2954:    initializeMobileMenu();
+2958:    initializeActiveNavigation();
+
+=== 8. RENDERIZAÇÃO E REPETIÇÕES ===
+17: * - renderizar atividades dinamicamente;
+201:    for (const selector of selectorList) {
+222:    selectorList.forEach(selector => {
+226:        .forEach(element => elements.add(element));
+396:      .forEach(link => {
+456:      .forEach(link => {
+540:      .map(link => {
+580:          entries.forEach(entry => {
+588:            links.forEach(link => {
+636:    sections.forEach(item => {
+911:        state.activities.map(
+920:    dates.forEach(dateValue => {
+957:          state.activities.flatMap(
+969:    categories.forEach(category => {
+1092:      .forEach(button => {
+1168:    renderProgram(
+1203:    fields.forEach(selector => {
+1221:    renderProgram(
+1243:    renderProgram(
+1277:    renderProgram(
+1462:     RENDERIZAÇÃO DA PROGRAMAÇÃO
+1465:  function renderProgram(
+1529:      .forEach(([date, dateActivities]) => {
+1557:        dateActivities.forEach(activity => {
+1579:    return activities.reduce(
+1642:        .map(category => `
+1647:        .join("");
+1652:        .map(participant => `
+1661:        .join("");
+1868:        .map(destination => `
+1873:        .join("");
+2076:    renderProgram(
+2081:    renderFeaturedNextEvent();
+2083:    renderTodaySummary();
+2178:  function renderFeaturedNextEvent() {
+2253:  function renderTodaySummary() {
+2422:      .join(" — ");
+2443:    ).forEach(button => {
+2481:    ).forEach(button => {
+2562:    ).forEach(button => {
+2600:    ).forEach(button => {
+2625:    ).forEach(button => {
+2650:    ).forEach(button => {
+2876:      .forEach(link => {
+
+=== 9. DUPLICAÇÃO E CONTROLE DE ESTADO ===
+31: * ./js/data-loader.js
+53:    initialized: false,
+91:      "[data-menu-toggle]"
+109:      "[data-section='programacao']",
+117:      "[data-programacao-lista]"
+122:      "[data-programacao-filtros]"
+127:      "[data-programacao-status]"
+132:      "[data-programacao-contador]"
+137:      "[data-programacao-loading]"
+142:      "[data-programacao-error]"
+147:      "[data-proximo-evento]"
+152:      "[data-programacao-hoje]"
+158:      "[data-back-to-top]"
+162:      "[data-share]",
+167:      "[data-whatsapp]",
+173:      "[data-contrast-toggle]",
+178:      "[data-font-increase]",
+183:      "[data-font-decrease]",
+188:      "[data-font-reset]",
+852:          data-action="today"
+860:          data-action="next"
+868:          data-action="clear"
+876:          data-action="share"
+1090:        "[data-action]"
+1101:              button.dataset.action;
+1614:    article.dataset.activityId =
+1796:          data-share-activity="${escapeHtml(activity.id)}"
+1921:        "[data-share-activity]"
+1992:          data-reload-program
+2002:        "[data-reload-program]"
+2088:  function initializeDataIntegration() {
+2093:        "O módulo data-loader.js não foi encontrado."
+2122:      "festanca:data-ready",
+2133:        once: true
+2141:      "festanca:data-error",
+2155:        once: true
+2229:          data-open-next-event
+2240:        "[data-open-next-event]"
+2298:        data-open-today-program
+2307:        "[data-open-today-program]"
+2944:    if (state.initialized) {
+2951:    state.initialized = true;
+2970:    initializeDataIntegration();
+3026:        once: true
+
+=== 10. SELETORES DOM UTILIZADOS ===
+203:      const element = document.querySelector(selector);
+225:        .querySelectorAll(selector)
+395:      .querySelectorAll("a[href^='#']")
+455:      .querySelectorAll("a[href^='#']")
+477:              document.querySelector(targetId);
+555:          document.querySelector(href);
+897:      document.querySelector(
+942:      document.querySelector(
+990:      document.querySelector(
+995:      document.querySelector(
+1000:      document.querySelector(
+1005:      document.querySelector(
+1089:      .querySelectorAll(
+1206:        document.querySelector(selector);
+1920:      article.querySelector(
+2001:      .querySelector(
+2239:      .querySelector(
+2306:      .querySelector(
+2796:      document.querySelector(
+2873:      .querySelectorAll(
+
+=== 11. FUNÇÕES DECLARADAS ===
+199:  function findFirst(selectorList) {
+218:  function findAll(selectorList) {
+235:  function createElement(
+261:  function escapeHtml(value) {
+273:  function normalizeText(value) {
+284:  function formatLabel(value) {
+301:  function getCurrentPageUrl() {
+312:  function initializeMobileMenu() {
+326:    const closeMenu = () => {
+344:    const openMenu = () => {
+452:  function initializeSmoothScroll() {
+528:  function initializeActiveNavigation() {
+649:  function ensureProgramInterface() {
+763:  function createProgramFilters(interfaceElements) {
+894:  function populateDateFilter() {
+939:  function populateCategoryFilter() {
+987:  function bindProgramFilters() {
+1140:  function applyFilters() {
+1175:  function clearProgramFilters() {
+1232:  function showTodayProgram() {
+1254:  function showNextEvent() {
+1288:  function scrollToProgram() {
+1308:  function isPrivateResidence(activity) {
+1323:  function isItinerantActivity(activity) {
+1341:  function isExactMapAuthorized(activity) {
+1405:  function getLocationDisplay(activity) {
+1465:  function renderProgram(
+1577:  function groupActivitiesByDate(activities) {
+1605:  function createActivityCard(activity) {
+1812:  function createMapsButtonMarkup(activity) {
+1853:  function createRouteMarkup(activity) {
+1914:  function bindActivityCardEvents(
+1939:  function showProgramLoading() {
+1966:  function showProgramError(message) {
+2026:  function showProgramMessage(message) {
+2050:  function handleDataReady(snapshot) {
+2088:  function initializeDataIntegration() {
+2178:  function renderFeaturedNextEvent() {
+2253:  function renderTodaySummary() {
+2324:  async function shareContent({
+2392:  function shareProgram() {
+2408:  function shareActivity(activity) {
+2439:  function initializeShareButtons() {
+2462:  function buildWhatsAppUrl(
+2477:  function initializeWhatsAppButtons() {
+2531:  function initializeAccessibility() {
+2671:  function applyFontScale(scale) {
+2701:  function initializeBackToTop() {
+2739:    const updateVisibility = () => {
+2793:  function showTemporaryNotice(message) {
+2870:  function initializeExternalLinks() {
+2907:  function inspectHorizontalOverflow() {
+2942:  function initialize() {
+
+=== 12. TRECHO INICIAL DO SCRIPT ===
+"use strict";
+
+/**
+ * ============================================================
+ * FESTANÇA DE VILA BELA 2026
+ * LANDING PAGE — CONTROLADOR PRINCIPAL
+ * ============================================================
+ *
+ * Arquivo:
+ * apps/festanca-2026/js/script.js
+ *
+ * Responsabilidades:
+ * - controlar menu mobile;
+ * - executar navegação suave;
+ * - destacar item ativo do menu;
+ * - integrar a Programação Cultural Inteligente;
+ * - renderizar atividades dinamicamente;
+ * - aplicar filtros por celebração, data e categoria;
+ * - executar pesquisa textual;
+ * - mostrar programação de hoje;
+ * - mostrar próximo evento;
+ * - controlar links seguros do Google Maps;
+ * - proteger endereços residenciais;
+ * - tratar cortejos e atividades itinerantes;
+ * - integrar compartilhamento e WhatsApp;
+ * - oferecer recursos básicos de acessibilidade;
+ * - controlar botão de retorno ao topo;
+ * - preservar compatibilidade com GitHub Pages.
+ *
+ * Dependência:
+ * ./js/data-loader.js
+ *
+ * Coordenação-Geral:
+ * Nazário Frazão de Almeida
+ */
+
+
+/* ============================================================
+   EXECUÇÃO ISOLADA
+============================================================ */
+
+(() => {
+
+  const APP_NAME = "Festança de Vila Bela 2026";
+
+  const WHATSAPP_NUMBER = "5565984091524";
+
+  const DEFAULT_SHARE_TEXT =
+    "Confira a Programação Oficial da Festança de Vila Bela 2026.";
+
+  const state = {
+
+    initialized: false,
+
+    dataReady: false,
+
+    activities: [],
+
+    filteredActivities: [],
+
+    activeFilters: {
+
+      celebration: "",
+
+      category: "",
+
+      date: "",
+
+      search: ""
+
+    }
+
+  };
+
+
+  /* ==========================================================
+     SELETORES FLEXÍVEIS
+  ========================================================== */
+
+  const selectors = {
+
+    header: [
+      ".site-header",
+      ".header",
+      "header"
+    ],
+
+    menuButton: [
+      "#menu-toggle",
+      ".menu-toggle",
+      "[data-menu-toggle]"
+    ],
+
+    navigation: [
+      "#main-nav",
+      ".main-nav",
+      ".site-nav",
+      "nav"
+    ],
+
+    navigationLinks: [
+      ".main-nav a[href^='#']",
+      ".site-nav a[href^='#']",
+      "nav a[href^='#']"
+    ],
+
+    programSection: [
+      "#programacao",
+      "[data-section='programacao']",
+      ".programacao"
+    ],
+
+    programContainer: [
+      "#programacao-lista",
+      "#programacao-container",
+      "#agenda-lista",
+      "[data-programacao-lista]"
+    ],
+
+    filtersContainer: [
+      "#programacao-filtros",
+      "[data-programacao-filtros]"
+    ],
+
+    statusContainer: [
+      "#programacao-status",
+      "[data-programacao-status]"
+    ],
+
+    resultCounter: [
+      "#programacao-contador",
+      "[data-programacao-contador]"
+    ],
+
+    loadingContainer: [
+      "#programacao-loading",
+      "[data-programacao-loading]"
+    ],
+
+    errorContainer: [
+      "#programacao-error",
+      "[data-programacao-error]"
+    ],
+
+    nextEventContainer: [
+      "#proximo-evento",
+      "[data-proximo-evento]"
+    ],
+
+    todayContainer: [
+      "#programacao-hoje",
+      "[data-programacao-hoje]"
+    ],
+
+    backToTop: [
+      "#back-to-top",
+      ".back-to-top",
+      "[data-back-to-top]"
+    ],
+
+    shareButtons: [
+      "[data-share]",
+      ".btn-share"
+    ],
+
+    whatsappButtons: [
+      "[data-whatsapp]",
+      ".btn-whatsapp",
+      ".whatsapp-float"
+    ],
+
+    contrastButtons: [
+      "[data-contrast-toggle]",
+      "#contrast-toggle"
+    ],
+
+    fontIncreaseButtons: [
+      "[data-font-increase]",
+      "#font-increase"
+    ],
+
+    fontDecreaseButtons: [
+      "[data-font-decrease]",
+      "#font-decrease"
+    ],
+
+    fontResetButtons: [
+      "[data-font-reset]",
+      "#font-reset"
+    ]
+
+  };
+
+
+  /* ==========================================================
+     UTILITÁRIOS DE DOM
+  ========================================================== */
+
+  function findFirst(selectorList) {
+
+    for (const selector of selectorList) {
+
+      const element = document.querySelector(selector);
+
+      if (element) {
+
+        return element;
+
+      }
+
+    }
+
+    return null;
+
+  }
+
+
+  function findAll(selectorList) {
+
+    const elements = new Set();
+
+=== 13. TRECHO FINAL DO SCRIPT ===
+
+      }
+
+    );
+
+
+    updateVisibility();
+
+  }
+
+
+  /* ==========================================================
+     AVISOS TEMPORÁRIOS
+  ========================================================== */
+
+  function showTemporaryNotice(message) {
+
+    let notice =
+      document.querySelector(
+        "#festanca-notice"
+      );
+
+
+    if (!notice) {
+
+      notice = createElement(
+
+        "div",
+
+        "festanca-notice"
+
+      );
+
+      notice.id =
+        "festanca-notice";
+
+      notice.setAttribute(
+
+        "role",
+
+        "status"
+
+      );
+
+      notice.setAttribute(
+
+        "aria-live",
+
+        "polite"
+
+      );
+
+      document.body.appendChild(notice);
+
+    }
+
+
+    notice.textContent =
+      message;
+
+    notice.classList.add(
+      "is-visible"
+    );
+
+
+    clearTimeout(
+      notice.hideTimer
+    );
+
+
+    notice.hideTimer =
+      setTimeout(
+
+        () => {
+
+          notice.classList.remove(
+            "is-visible"
+          );
+
+        },
+
+        3500
+
+      );
+
+  }
+
+
+  /* ==========================================================
+     TRATAMENTO DE LINKS EXTERNOS
+  ========================================================== */
+
+  function initializeExternalLinks() {
+
+    document
+      .querySelectorAll(
+        "a[href^='http']"
+      )
+      .forEach(link => {
+
+        const url =
+          new URL(
+            link.href,
+            window.location.href
+          );
+
+
+        if (
+          url.origin !==
+          window.location.origin
+        ) {
+
+          link.target =
+            "_blank";
+
+          link.rel =
+            "noopener noreferrer";
+
+        }
+
+      });
+
+  }
+
+
+  /* ==========================================================
+     PREVENÇÃO DE OVERFLOW INVISÍVEL
+  ========================================================== */
+
+  function inspectHorizontalOverflow() {
+
+    const width =
+      document.documentElement
+        .scrollWidth;
+
+    const viewport =
+      window.innerWidth;
+
+
+    if (width > viewport + 4) {
+
+      console.warn(
+
+        "[Festança 2026] Possível overflow horizontal detectado.",
+
+        {
+
+          documentWidth: width,
+
+          viewportWidth: viewport
+
+        }
+
+      );
+
+    }
+
+  }
+
+
+  /* ==========================================================
+     INICIALIZAÇÃO PRINCIPAL
+  ========================================================== */
+
+  function initialize() {
+
+    if (state.initialized) {
+
+      return;
+
+    }
+
+
+    state.initialized = true;
+
+
+    initializeMobileMenu();
+
+    initializeSmoothScroll();
+
+    initializeActiveNavigation();
+
+    initializeShareButtons();
+
+    initializeWhatsAppButtons();
+
+    initializeAccessibility();
+
+    initializeBackToTop();
+
+    initializeExternalLinks();
+
+    initializeDataIntegration();
+
+
+    requestAnimationFrame(
+
+      inspectHorizontalOverflow
+
+    );
+
+
+    window.addEventListener(
+
+      "resize",
+
+      () => {
+
+        requestAnimationFrame(
+
+          inspectHorizontalOverflow
+
+        );
+
+      },
+
+      {
+        passive: true
+      }
+
+    );
+
+
+    console.info(
+
+      "[Festança 2026] Landing Page inicializada."
+
+    );
+
+  }
+
+
+  /* ==========================================================
+     START
+  ========================================================== */
+
+  if (
+    document.readyState ===
+    "loading"
+  ) {
+
+    document.addEventListener(
+
+      "DOMContentLoaded",
+
+      initialize,
+
+      {
+        once: true
+      }
+
+    );
+
+  } else {
+
+    initialize();
+
+  }
+
+})();
+
+=== FIM D51-C ===

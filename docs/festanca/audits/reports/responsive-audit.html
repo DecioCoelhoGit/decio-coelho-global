@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D47-B — Auditoria Responsiva</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:20px;
+  background:#06120f;
+  color:#eafff6;
+  font-family:Arial,sans-serif
+}
+h1{color:#38f59b}
+p{line-height:1.5}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+  align-items:start
+}
+.test{
+  padding:14px;
+  border:1px solid #286c55;
+  border-radius:14px;
+  background:#0b201a
+}
+.viewport{
+  max-width:100%;
+  overflow:auto;
+  padding-bottom:8px
+}
+iframe{
+  display:block;
+  height:720px;
+  border:2px solid #38f59b;
+  background:#fff
+}
+.result{
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  font-weight:bold;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere
+}
+.wait{background:#413700;color:#fff2a8}
+.pass{background:#073f29;color:#82ffba}
+.fail{background:#541515;color:#ffb0b0}
+</style>
+</head>
+
+<body>
+<h1>🚀 D47-B — Teste Real de Responsividade</h1>
+
+<p>
+A página será renderizada em quatro larguras móveis.
+O teste compara a largura visível com a largura total do documento
+e identifica elementos que ultrapassam a tela.
+</p>
+
+<div class="grid" id="tests"></div>
+
+<script>
+const widths=[320,360,390,430];
+const target="apps/festanca-2026/index.html";
+
+function describeElement(el){
+  let text=el.tagName.toLowerCase();
+
+  if(el.id) text+="#"+el.id;
+
+  if(el.classList && el.classList.length){
+    text+="."+Array.from(el.classList).slice(0,3).join(".");
+  }
+
+  return text;
+}
+
+function createTest(width){
+  const card=document.createElement("section");
+  card.className="test";
+
+  card.innerHTML=`
+    <h2>📱 ${width}px</h2>
+    <div class="viewport">
+      <iframe
+        src="${target}?audit=${Date.now()}-${width}"
+        width="${width}"
+        data-width="${width}">
+      </iframe>
+    </div>
+    <div class="result wait">Executando teste...</div>
+  `;
+
+  document.querySelector("#tests").appendChild(card);
+
+  const frame=card.querySelector("iframe");
+  const result=card.querySelector(".result");
+
+  frame.addEventListener("load",()=>{
+    setTimeout(()=>{
+      try{
+        const doc=frame.contentDocument;
+        const html=doc.documentElement;
+        const body=doc.body;
+
+        const visible=Math.min(
+          html.clientWidth || width,
+          width
+        );
+
+        const total=Math.max(
+          html.scrollWidth,
+          body ? body.scrollWidth : 0
+        );
+
+        const overflow=Math.max(0,total-visible);
+
+        const suspects=[];
+
+        doc.querySelectorAll("body *").forEach(el=>{
+          const style=frame.contentWindow.getComputedStyle(el);
+          const rect=el.getBoundingClientRect();
+
+          if(
+            style.display!=="none" &&
+            style.visibility!=="hidden" &&
+            rect.width>0 &&
+            (
+              rect.right>visible+2 ||
+              rect.left<-2 ||
+              rect.width>visible+2
+            )
+          ){
+            suspects.push({
+              element:describeElement(el),
+              left:Math.round(rect.left),
+              right:Math.round(rect.right),
+              width:Math.round(rect.width)
+            });
+          }
+        });
+
+        const unique=[];
+        const seen=new Set();
+
+        suspects.forEach(item=>{
+          const key=item.element+"|"+item.left+"|"+item.right;
+          if(!seen.has(key)){
+            seen.add(key);
+            unique.push(item);
+          }
+        });
+
+        if(overflow<=2 && unique.length===0){
+          result.className="result pass";
+          result.textContent=
+            "✅ APROVADO\n"+
+            "Viewport: "+visible+"px\n"+
+            "Documento: "+total+"px\n"+
+            "Rolagem horizontal: não detectada.";
+        }else{
+          result.className="result fail";
+
+          let message=
+            "❌ ATENÇÃO\n"+
+            "Viewport: "+visible+"px\n"+
+            "Documento: "+total+"px\n"+
+            "Excesso horizontal: "+overflow+"px";
+
+          if(unique.length){
+            message+="\n\nElementos suspeitos:\n";
+
+            unique.slice(0,12).forEach(item=>{
+              message+=
+                "\n• "+item.element+
+                " | largura: "+item.width+"px"+
+                " | esquerda: "+item.left+
+                " | direita: "+item.right;
+            });
+          }
+
+          result.textContent=message;
+        }
+      }catch(error){
+        result.className="result fail";
+        result.textContent=
+          "❌ Não foi possível executar a auditoria:\n"+
+          error.message;
+      }
+    },1800);
+  });
+}
+
+widths.forEach(createTest);
+</script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+=== D51-B | INSPEÇÃO DO STYLE.CSS ===
+Arquivo: apps/festanca-2026/css/style.css
+
+=== 1. TAMANHO E TOTAL DE LINHAS ===
+-rw-------. 1 u0_a27 u0_a27 31K Jul 25 14:42 apps/festanca-2026/css/style.css
+1824 apps/festanca-2026/css/style.css
+
+=== 2. MARCOS, PATCHES E MEDIA QUERIES ===
+136:  min-width: 320px;
+634:  width: 390px;
+635:  height: 390px;
+1200:  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+1216:  min-height: 390px;
+1381:   D49 — CORREÇÃO INTELIGENTE POR COMPONENTES
+1688:/* ---------- 8. TELAS ATÉ 768PX ---------- */
+1690:@media (max-width: 768px) {
+1725:/* ---------- 9. TELAS ATÉ 480PX ---------- */
+1727:@media (max-width: 480px) {
+1797:/* ---------- 10. TELA CRÍTICA DE 320PX ---------- */
+1799:@media (max-width: 340px) {
+1824:/* ===================== FIM D49 ===================== */
+
+=== 3. HEADER E MENU ===
+284:.header-container,
+425:.site-header {
+443:.site-header.is-scrolled {
+448:.header-container {
+508:.main-navigation {
+514:.main-navigation a {
+530:.main-navigation a:hover,
+531:.main-navigation a.active {
+536:.main-navigation a.active::after {
+1436:.site-header,
+1438:.header-container,
+1439:.header-inner {
+1444:#menu-principal,
+1445:.main-navigation {
+1457:#menu-principal ul,
+1458:.main-navigation ul {
+1471:#menu-principal li,
+1472:.main-navigation li {
+1477:#menu-principal a,
+1478:.main-navigation a {
+1654:.footer-navigation,
+1668:.footer-navigation,
+1674:.footer-navigation ul {
+1680:.footer-navigation a,
+1693:  .header-container,
+1730:  .header-container,
+1738:  #menu-principal,
+1739:  .main-navigation {
+1743:  #menu-principal a,
+1744:  .main-navigation a {
+1783:  .footer-navigation,
+1801:  #menu-principal a,
+1802:  .main-navigation a {
+1815:  .header-container,
+
+=== 4. HERO ===
+409:.button-whatsapp {
+417:.button-whatsapp:hover {
+589:   7. HERO
+592:.hero {
+622:.hero::before,
+623:.hero::after {
+630:.hero::before {
+642:.hero::after {
+652:.hero-overlay {
+674:.hero-content {
+681:.hero-eyebrow {
+692:.hero h1 {
+707:.hero h1 span {
+716:.hero-description {
+761:.hero-actions {
+767:.hero-scroll {
+785:  animation: hero-scroll 1.8s infinite;
+788:@keyframes hero-scroll {
+1488:/* ---------- 3. HERO ---------- */
+1490:.hero,
+1491:.section-hero,
+1492:.hero-container,
+1493:.hero-content,
+1494:.hero-copy,
+1495:.hero-actions,
+1496:.hero-buttons {
+1502:.hero {
+1506:.hero-content {
+1510:.hero-actions,
+1511:.hero-buttons {
+1517:.hero-actions a,
+1518:.hero-actions button,
+1519:.hero-buttons a,
+1520:.hero-buttons button,
+1521:.button-whatsapp,
+1522:.btn-whatsapp {
+1695:  .hero-container,
+1703:  .hero-content,
+1704:  .hero-copy {
+1708:  .hero-actions,
+1709:  .hero-buttons {
+1713:  .hero-actions a,
+1714:  .hero-actions button,
+1715:  .hero-buttons a,
+1716:  .hero-buttons button {
+1732:  .hero-container,
+1750:  .hero-actions,
+1751:  .hero-buttons {
+1756:  .hero-actions a,
+1757:  .hero-actions button,
+1758:  .hero-buttons a,
+1759:  .hero-buttons button,
+1760:  .button-whatsapp,
+1761:  .btn-whatsapp {
+1817:  .hero-container,
+
+=== 5. SOBRE E HIGHLIGHT CARD ===
+800:   8. SOBRE
+803:.section-about {
+812:.about-grid {
+819:.about-content {
+823:.about-content p {
+827:.highlight-card {
+845:.highlight-card::after {
+874:.highlight-card h3 {
+884:.highlight-card p {
+1619:.highlight-card {
+1632:.highlight-card * {
+1720:  .highlight-card {
+
+=== 6. PILARES ===
+891:   9. PILARES
+894:.section-pillars {
+1527:/* ---------- 4. PILARES ---------- */
+1529:.section-pillars,
+1530:.section-pilars,
+1531:.pillars,
+1532:.pillars-grid,
+1533:.pillars-list,
+1534:.pillars-container {
+1540:.pillars-grid,
+1541:.pillars-list {
+1547:.pillar-card,
+1548:.pillars-card,
+1549:.card-pillar {
+1697:  .pillars-container {
+1734:  .pillars-container {
+1765:  .pillars-grid,
+1766:  .pillars-list {
+1819:  .pillars-container {
+
+=== 7. PROGRAMAÇÃO, FILTROS E CARDS ===
+13:   - identidade inspirada na programação oficial.
+401:  backdrop-filter: blur(10px);
+440:  backdrop-filter: blur(18px);
+627:  filter: blur(4px);
+743:  backdrop-filter: blur(12px);
+970:   10. PROGRAMAÇÃO
+973:.section-schedule {
+982:.schedule-status {
+1011:.schedule-status strong {
+1015:.schedule-status p {
+1021:.schedule-grid {
+1026:.schedule-card {
+1048:.schedule-card:hover {
+1053:.schedule-card time,
+1054:.schedule-date {
+1069:.schedule-card-pending .schedule-date {
+1077:.schedule-category {
+1089:.schedule-card h3 {
+1097:.schedule-card p {
+1150:    filter 700ms ease;
+1154:  filter: saturate(1.12) contrast(1.04);
+1293:  backdrop-filter: blur(12px);
+1556:/* ---------- 5. AGENDA / PROGRAMAÇÃO ---------- */
+1558:.section-programacao,
+1560:.programacao,
+1561:.programacao-container,
+1562:.programacao-grid,
+1563:.programacao-list,
+1564:.programacao-results,
+1565:.programacao-controles,
+1566:.programacao-filtros,
+1567:.programacao-filters,
+1568:.schedule,
+1569:.schedule-grid,
+1570:.schedule-list {
+1576:.programacao-grid,
+1577:.programacao-list,
+1578:.programacao-results,
+1579:.schedule-grid,
+1580:.schedule-list {
+1586:.programacao-controles,
+1587:.programacao-filtros,
+1588:.programacao-filters,
+1589:.filters,
+1590:.filter-grid {
+1596:.programacao select,
+1597:.programacao input,
+1598:.programacao button,
+1599:.programacao textarea,
+1600:.programacao-filtros select,
+1601:.programacao-filtros input,
+1602:.programacao-filters select,
+1603:.programacao-filters input,
+1604:.filters select,
+1605:.filters input {
+1613:.programacao-card,
+1614:.program-card,
+1615:.schedule-card,
+1616:.event-card,
+1617:.activity-card,
+1627:.programacao-card *,
+1628:.program-card *,
+1629:.schedule-card *,
+1630:.event-card *,
+1631:.activity-card *,
+1637:.share-button,
+1638:.button-share,
+1639:.btn-share,
+1640:[data-action="share"],
+1641:button[aria-label*="Compartilhar"] {
+1696:  .programacao-container,
+1733:  .programacao-container,
+1770:  .programacao-controles,
+1771:  .programacao-filtros,
+1772:  .programacao-filters,
+1773:  .filters,
+1774:  .filter-grid {
+1788:  .share-button,
+1789:  .button-share,
+1790:  .btn-share,
+1791:  [data-action="share"],
+1792:  button[aria-label*="Compartilhar"] {
+1818:  .programacao-container,
+
+=== 8. GALERIA E LOCALIZAÇÃO ===
+1104:   11. GALERIA
+1107:.section-gallery {
+1111:.gallery-grid {
+1118:.gallery-item {
+1137:.gallery-item-featured {
+1142:.gallery-item img {
+1153:.gallery-item:hover img {
+1158:.gallery-item figcaption {
+1179:.gallery-item img:not([src]),
+1180:.gallery-item img[src=""] {
+1185:   12. LOCALIZAÇÃO
+1188:.section-location {
+1198:.location-grid {
+1205:.location-content {
+1209:.location-content p {
+1213:.location-map {
+1240:.location-map::before,
+1241:.location-map::after {
+1251:.location-map::after {
+1257:.map-marker {
+1268:  animation: map-marker 2s infinite;
+1271:@keyframes map-marker {
+1282:.map-label {
+1296:.map-label strong,
+1297:.map-label span {
+1301:.map-label strong {
+1305:.map-label span {
+
+=== 9. FOOTER ===
+285:.footer-container,
+286:.footer-bottom {
+1365:.site-footer {
+1372:.footer-container {
+1649:.site-footer,
+1651:.footer-container,
+1652:.footer-content,
+1653:.footer-grid,
+1654:.footer-navigation,
+1655:.footer-institutional {
+1661:.footer-grid,
+1662:.footer-content {
+1668:.footer-navigation,
+1669:.footer-institutional {
+1674:.footer-navigation ul {
+1680:.footer-navigation a,
+1681:.footer-institutional a,
+1682:.footer-institutional p,
+1683:.footer-institutional strong {
+1694:  .footer-container,
+1731:  .footer-container,
+1778:  .footer-grid,
+1779:  .footer-content {
+1783:  .footer-navigation,
+1784:  .footer-institutional {
+1816:  .footer-container,
+
+=== 10. LARGURAS E DESLOCAMENTOS SUSPEITOS ===
+105:  --container-width: 1180px;
+136:  min-width: 320px;
+171:  max-width: 100%;
+213:  padding-left: 1.2rem;
+226:  position: fixed;
+228:  left: 10px;
+253:  position: absolute;
+254:  width: 1px;
+258:  white-space: nowrap;
+292:  max-width: 760px;
+317:  width: 34px;
+337:  max-width: 720px;
+426:  position: fixed;
+468:  width: 42px;
+537:  position: absolute;
+538:  right: 24%;
+540:  left: 24%;
+551:  width: 48px;
+565:  width: 22px;
+624:  position: absolute;
+632:  right: -10%;
+634:  width: 390px;
+644:  left: -120px;
+646:  width: 460px;
+653:  position: absolute;
+693:  max-width: 900px;
+717:  max-width: 730px;
+768:  position: absolute;
+769:  right: 50%;
+774:  width: 44px;
+784:  transform: translateX(50%);
+814:  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+820:  padding-right: 2rem;
+846:  position: absolute;
+847:  right: -70px;
+850:  width: 220px;
+860:  width: 54px;
+906:  grid-template-columns: repeat(4, minmax(0, 1fr));
+987:  max-width: 820px;
+999:  width: 13px;
+1028:  grid-template-columns: 120px minmax(0, 1fr);
+1050:  transform: translateX(5px);
+1113:  grid-template-columns: repeat(4, minmax(0, 1fr));
+1159:  position: absolute;
+1160:  right: 0;
+1162:  left: 0;
+1200:  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+1242:  position: absolute;
+1283:  position: absolute;
+1285:  left: 1.4rem;
+1355:  max-width: 680px;
+1374:  grid-template-columns:
+1390:  max-width: 100%;
+1404:  min-width: 0;
+1413:  max-width: 100%;
+1441:  max-width: 100%;
+1447:  max-width: 100%;
+1448:  min-width: 0;
+1460:  max-width: 100%;
+1461:  min-width: 0;
+1473:  min-width: 0;
+1474:  max-width: 100%;
+1482:  max-width: 100%;
+1498:  max-width: 100%;
+1499:  min-width: 0;
+1523:  min-width: 0;
+1524:  max-width: 100%;
+1536:  max-width: 100%;
+1537:  min-width: 0;
+1543:  grid-template-columns: repeat(2, minmax(0, 1fr));
+1551:  max-width: 100%;
+1552:  min-width: 0;
+1572:  max-width: 100%;
+1573:  min-width: 0;
+1582:  grid-template-columns: minmax(0, 1fr);
+1592:  grid-template-columns: repeat(2, minmax(0, 1fr));
+1607:  max-width: 100%;
+1608:  min-width: 0;
+1621:  max-width: 100%;
+1622:  min-width: 0;
+1633:  min-width: 0;
+1634:  max-width: 100%;
+1643:  max-width: 100%;
+1657:  max-width: 100%;
+1658:  min-width: 0;
+1664:  grid-template-columns: repeat(2, minmax(0, 1fr));
+1684:  max-width: 100%;
+1690:@media (max-width: 768px) {
+1699:    max-width: 100%;
+1727:@media (max-width: 480px) {
+1753:    grid-template-columns: minmax(0, 1fr);
+1767:    grid-template-columns: minmax(0, 1fr);
+1775:    grid-template-columns: minmax(0, 1fr);
+1780:    grid-template-columns: minmax(0, 1fr);
+1799:@media (max-width: 340px) {
+1810:    min-width: 0;
+1811:    max-width: 100%;
+
+=== 11. OVERFLOW ===
+137:  overflow-x: hidden;
+162:  overflow: hidden;
+256:  overflow: hidden;
+598:  overflow: hidden;
+829:  overflow: hidden;
+913:  overflow: hidden;
+1120:  overflow: hidden;
+1218:  overflow: hidden;
+1392:  overflow-x: clip;
+1454:  overflow: hidden;
+1503:  overflow: hidden;
+
+=== 12. IMPORTANT E REGRAS UNIVERSAIS ===
+1387:html,
+1395:body,
+
+=== 13. TRECHO FINAL DO CSS ===
+.programacao-controles,
+.programacao-filtros,
+.programacao-filters,
+.schedule,
+.schedule-grid,
+.schedule-list {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.programacao-grid,
+.programacao-list,
+.programacao-results,
+.schedule-grid,
+.schedule-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.programacao-controles,
+.programacao-filtros,
+.programacao-filters,
+.filters,
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.programacao select,
+.programacao input,
+.programacao button,
+.programacao textarea,
+.programacao-filtros select,
+.programacao-filtros input,
+.programacao-filters select,
+.programacao-filters input,
+.filters select,
+.filters input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ---------- 6. CARDS ---------- */
+
+.programacao-card,
+.program-card,
+.schedule-card,
+.event-card,
+.activity-card,
+.card,
+.highlight-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  transform: none;
+}
+
+.programacao-card *,
+.program-card *,
+.schedule-card *,
+.event-card *,
+.activity-card *,
+.highlight-card * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.share-button,
+.button-share,
+.btn-share,
+[data-action="share"],
+button[aria-label*="Compartilhar"] {
+  width: auto;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* ---------- 7. FOOTER ---------- */
+
+.site-footer,
+.footer,
+.footer-container,
+.footer-content,
+.footer-grid,
+.footer-navigation,
+.footer-institutional {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.footer-grid,
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.footer-navigation,
+.footer-institutional {
+  margin: 0;
+  transform: none;
+}
+
+.footer-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-navigation a,
+.footer-institutional a,
+.footer-institutional p,
+.footer-institutional strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 8. TELAS ATÉ 768PX ---------- */
+
+@media (max-width: 768px) {
+
+  .section-container,
+  .header-container,
+  .footer-container,
+  .hero-container,
+  .programacao-container,
+  .pillars-container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 16px;
+  }
+
+  .hero-content,
+  .hero-copy {
+    text-align: left;
+  }
+
+  .hero-actions,
+  .hero-buttons {
+    justify-content: stretch;
+  }
+
+  .hero-actions a,
+  .hero-actions button,
+  .hero-buttons a,
+  .hero-buttons button {
+    flex: 1 1 220px;
+  }
+
+  .highlight-card {
+    margin-inline: auto;
+  }
+}
+
+/* ---------- 9. TELAS ATÉ 480PX ---------- */
+
+@media (max-width: 480px) {
+
+  .section-container,
+  .header-container,
+  .footer-container,
+  .hero-container,
+  .programacao-container,
+  .pillars-container {
+    padding-inline: 12px;
+  }
+
+  #menu-principal,
+  .main-navigation {
+    gap: 4px;
+  }
+
+  #menu-principal a,
+  .main-navigation a {
+    padding: 7px 6px;
+    font-size: 0.78rem;
+    line-height: 1.2;
+  }
+
+  .hero-actions,
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-actions a,
+  .hero-actions button,
+  .hero-buttons a,
+  .hero-buttons button,
+  .button-whatsapp,
+  .btn-whatsapp {
+    width: 100%;
+  }
+
+  .pillars-grid,
+  .pillars-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .programacao-controles,
+  .programacao-filtros,
+  .programacao-filters,
+  .filters,
+  .filter-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-grid,
+  .footer-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer-navigation,
+  .footer-institutional {
+    width: 100%;
+  }
+
+  .share-button,
+  .button-share,
+  .btn-share,
+  [data-action="share"],
+  button[aria-label*="Compartilhar"] {
+    width: 100%;
+  }
+}
+
+/* ---------- 10. TELA CRÍTICA DE 320PX ---------- */
+
+@media (max-width: 340px) {
+
+  #menu-principal a,
+  .main-navigation a {
+    padding: 6px 4px;
+    font-size: 0.7rem;
+  }
+
+  .site-logo,
+  .brand,
+  .brand-name {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .section-container,
+  .header-container,
+  .footer-container,
+  .hero-container,
+  .programacao-container,
+  .pillars-container {
+    padding-inline: 8px;
+  }
+}
+
+/* ===================== FIM D49 ===================== */
+
+=== FIM D51-B ===

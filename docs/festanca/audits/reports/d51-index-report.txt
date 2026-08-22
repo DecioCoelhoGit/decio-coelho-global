@@ -1,0 +1,106 @@
+=== D51-A | INSPEÇÃO DO INDEX.HTML ===
+Arquivo: apps/festanca-2026/index.html
+
+=== 1. TAMANHO E LINHAS ===
+-rw-------. 1 u0_a27 u0_a27 18K Jul 25 15:36 apps/festanca-2026/index.html
+576 apps/festanca-2026/index.html
+
+=== 2. HEADER E MENU ===
+101:  <header class="site-header" id="inicio">
+102:    <div class="header-container">
+120:        aria-controls="menu-principal"
+128:      <nav
+129:        class="main-navigation"
+130:        id="menu-principal"
+139:      </nav>
+141:  </header>
+510:      <nav class="footer-navigation" aria-label="Navegação do rodapé">
+515:      </nav>
+
+=== 3. HERO ===
+101:  <header class="site-header" id="inicio">
+151:    <section class="hero" aria-labelledby="hero-title">
+152:      <div class="hero-overlay" aria-hidden="true"></div>
+154:      <div class="hero-content">
+155:        <p class="hero-eyebrow">
+159:        <h1 id="hero-title">
+164:        <p class="hero-description">
+175:        <div class="hero-actions">
+193:        class="hero-scroll"
+
+=== 4. SOBRE E PILARES ===
+203:    <section class="section section-about" id="sobre">
+230:            class="highlight-card"
+246:    <!-- PILARES -->
+248:    <section class="section section-pillars" aria-labelledby="pillars-title">
+252:          <h2 id="pillars-title">Os pilares da FESTANÇA</h2>
+
+=== 5. PROGRAMAÇÃO E FILTROS ===
+135:        <a href="#programacao">Programação</a>
+176:          <a class="button button-primary" href="#programacao">
+177:            Ver programação
+218:              A programação reunirá experiências culturais, manifestações
+295:    <!-- PROGRAMAÇÃO -->
+297:    <section class="section section-schedule" id="programacao">
+300:          <p class="section-kicker">Agenda oficial</p>
+301:          <h2>Programação</h2>
+303:            A programação completa será publicada nesta página após a
+312:            <strong>Programação em atualização</strong>
+335:              <p>Programação detalhada em preparação.</p>
+440:              oficiais da programação serão disponibilizadas nesta seção.
+445:              href="https://www.google.com/maps/search/?api=1&query=Vila+Bela+da+Sant%C3%ADssima+Trindade+MT"
+513:        <a href="#programacao">Programação</a>
+
+=== 6. GALERIA E LOCALIZAÇÃO ===
+136:        <a href="#galeria">Galeria</a>
+137:        <a href="#localizacao">Localização</a>
+351:    <!-- GALERIA -->
+353:    <section class="section section-gallery" id="galeria">
+357:          <h2>Galeria FESTANÇA 2026</h2>
+364:        <div class="gallery-grid">
+365:          <figure class="gallery-item gallery-item-featured">
+376:          <figure class="gallery-item">
+387:          <figure class="gallery-item">
+398:          <figure class="gallery-item">
+409:          <figure class="gallery-item">
+423:    <!-- LOCALIZAÇÃO -->
+425:    <section class="section section-location" id="localizacao">
+427:        <div class="location-grid">
+428:          <div class="location-content">
+431:              <h2>Localização</h2>
+445:              href="https://www.google.com/maps/search/?api=1&query=Vila+Bela+da+Sant%C3%ADssima+Trindade+MT"
+449:              Abrir localização
+454:            class="location-map"
+456:            aria-label="Representação da localização da FESTANÇA 2026 em Vila Bela da Santíssima Trindade"
+565:  <script src="./js/location-engine.js"></script>
+567:  <script src="./js/location-engine.js"></script>
+
+=== 7. FOOTER ===
+503:  <footer class="site-footer">
+504:    <div class="footer-container">
+505:      <div class="footer-brand">
+510:      <nav class="footer-navigation" aria-label="Navegação do rodapé">
+517:      <div class="footer-institutional">
+530:    <div class="footer-bottom">
+540:  </footer>
+
+=== 8. ESTILOS INLINE SUSPEITOS ===
+
+=== 9. ATRIBUTOS DE LARGURA ===
+370:              width="1200"
+381:              width="800"
+392:              width="800"
+403:              width="800"
+414:              width="800"
+
+=== 10. SCRIPTS E CSS CARREGADOS ===
+79:  <link rel="stylesheet" href="./css/style.css">
+82:  <script src="./js/script.js" defer></script>
+565:  <script src="./js/location-engine.js"></script>
+566:  <script src="./js/data-loader.js"></script>
+567:  <script src="./js/location-engine.js"></script>
+568:  <script src="./js/script.js"></script>
+570:  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+574:  <script src="js/d50-direct-audit.js"></script>
+
+=== FIM D51-A ===

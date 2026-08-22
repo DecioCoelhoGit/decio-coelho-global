@@ -79,7 +79,7 @@
   <link rel="stylesheet" href="./css/style.css">
 
   <!-- JavaScript progressivo -->
-
+  <script src="./js/script.js" defer></script>
 </head>
 
 <body>
@@ -562,14 +562,15 @@
     aria-atomic="true"
   ></div>
 
-
-
-
-
-
-  <!-- D52 — carregamento oficial único da aplicação -->
   <script src="./js/location-engine.js"></script>
   <script src="./js/data-loader.js"></script>
+  <script src="./js/location-engine.js"></script>
   <script src="./js/script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
+  <script src="js/d50-direct-audit.js"></script>
 </body>
   </html>
