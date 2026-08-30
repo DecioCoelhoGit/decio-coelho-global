@@ -691,7 +691,7 @@ Deverão ser identificados:
 for f in docs/festanca/data/*.md docs/festanca/data/implementation/*.md
 do
   [ -f "$f" ] || continue
-  n=$(grep -c '^# ' "$f")
+  n=$(awk 'BEGIN{code=0;n=0} /^```/{code=!code;next} !code&&/^# /&&$0!~/^# [0-9]+\\./{n++} END{print n}' "$f")
   printf '%s | títulos principais: %s\n' "$f" "$n"
 done
 ```
