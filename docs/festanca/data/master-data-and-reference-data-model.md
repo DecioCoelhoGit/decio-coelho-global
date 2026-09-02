@@ -4,6 +4,9 @@
 
 ---
 
+## Denominação oficial
+**Modelo Constitucional de Dados Mestres e Dados de Referência do Portal Permanente da FESTANÇA**
+
 ## 1. Identificação do documento
 
 | Campo | Conteúdo |

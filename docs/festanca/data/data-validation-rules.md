@@ -4,6 +4,9 @@
 
 ---
 
+## Denominação oficial
+**Regras Constitucionais de Validação de Dados do Portal Permanente da FESTANÇA**
+
 ## 1. Identificação do documento
 
 | Campo | Conteúdo |

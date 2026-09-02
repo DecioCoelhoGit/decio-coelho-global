@@ -79,6 +79,9 @@ Esta arquitetura deverá assegurar:
 
 # 5. Classificação constitucional dos dados
 
+## Denominação oficial
+**Arquitetura Constitucional de Dados do Portal Permanente da FESTANÇA**
+
 ## Permanentes
 
 - história;

@@ -1745,7 +1745,7 @@ Cada resultado deverá ser conferido antes do próximo comando.
 F3-P4 — docs/festanca/data/implementation/document-reference-integrity-validation.md
 ```
 
-## Denominação oficial
+## Denominação oficial do próximo ciclo
 
 **Validação Operacional de Referências, Dependências e Integridade Relacional dos Documentos de Dados do Portal Permanente da FESTANÇA**
 

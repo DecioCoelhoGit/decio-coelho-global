@@ -4,6 +4,9 @@
 
 ---
 
+## Denominação oficial
+**Modelo Constitucional de Linhagem, Proveniência e Rastreabilidade de Dados do Portal Permanente da FESTANÇA**
+
 ## 1. Identificação do documento
 
 | Campo | Conteúdo |

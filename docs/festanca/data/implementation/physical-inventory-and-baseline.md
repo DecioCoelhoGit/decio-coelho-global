@@ -1546,7 +1546,7 @@ Cada resultado deverá ser conferido antes da execução do bloco seguinte.
 F3-P3 — docs/festanca/data/implementation/repository-structure-validation.md
 ```
 
-## Denominação oficial
+## Denominação oficial do próximo ciclo
 
 **Modelo Executivo de Validação Estrutural do Repositório e dos Documentos Constitucionais de Dados do Portal Permanente da FESTANÇA**
 

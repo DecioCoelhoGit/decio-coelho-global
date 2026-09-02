@@ -10,6 +10,9 @@ docs/festanca/data/data-privacy-anonymization-and-minimization-model.md
 
 ---
 
+## Denominação oficial
+**Modelo Constitucional de Privacidade, Anonimização e Minimização de Dados do Portal Permanente da FESTANÇA**
+
 ## Apresentação
 
 O presente documento estabelece o conjunto de princípios, normas, critérios, procedimentos, responsabilidades e mecanismos destinados à proteção, à minimização, à anonimização, à pseudonimização e à preservação ética dos dados utilizados pelo Portal Permanente da FESTANÇA.

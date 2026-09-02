@@ -4,6 +4,9 @@
 
 ---
 
+## Denominação oficial
+**Modelo Constitucional de Auditoria, Reconciliação e Conferência de Dados do Portal Permanente da FESTANÇA**
+
 ## 1. Identificação do documento
 
 | Campo | Conteúdo |

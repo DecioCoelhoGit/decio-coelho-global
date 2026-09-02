@@ -1776,7 +1776,7 @@ EDIÇÃO FUNDADORA: TRANSVERSALMENTE PROTEGIDA
 F3-P2 — docs/festanca/data/implementation/physical-inventory-and-baseline.md
 ```
 
-## Denominação oficial
+## Denominação oficial do próximo ciclo
 
 **Inventário Físico e Linha de Base Operacional da Camada de Dados do Portal Permanente da FESTANÇA**
 
