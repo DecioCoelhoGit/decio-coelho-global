@@ -1,0 +1,16 @@
+{
+  "edition": 2026,
+  "events": [
+    {
+      "id": "largada-feminino-2026",
+      "date": "2026-09-06",
+      "time": "09:30",
+      "type": "competition_start",
+      "category": "feminino",
+      "title": "Largada Feminino",
+      "duration": "05:00",
+      "status": "realizado",
+      "source": "registro_em_campo"
+    }
+  ]
+}
