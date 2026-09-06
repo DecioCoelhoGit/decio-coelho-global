@@ -1,0 +1,95 @@
+:root {
+  color-scheme: dark;
+  --bg: #03141b;
+  --surface: #062733;
+  --text: #f4fbff;
+  --muted: #b9d6df;
+  --accent: #31e6a1;
+  --line: rgba(49, 230, 161, .35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% 0%, #0b5363 0%, var(--bg) 52%);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.hero__content {
+  width: min(100%, 720px);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 13vw, 6rem);
+  line-height: .95;
+}
+
+.hero__location {
+  margin: 18px 0 6px;
+  font-weight: 700;
+}
+
+.hero__status {
+  margin: 0;
+  color: var(--accent);
+}
+
+.hero__message {
+  margin: 34px auto;
+  padding: 22px 16px;
+  border-block: 1px solid var(--line);
+}
+
+.hero__message p {
+  margin: 7px 0;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.hero__note {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (min-width: 700px) {
+  .hero {
+    padding: 56px;
+  }
+
+  .hero__message {
+    padding: 28px;
+  }
+}
