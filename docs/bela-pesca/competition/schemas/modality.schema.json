@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bela Pesca Digital — Modality Contract",
+  "description": "Contrato canônico de uma modalidade do domínio COMPETITION.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "id",
+    "name",
+    "type",
+    "boatRequired"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "COMPETITION"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "location": {
+      "type": ["string", "null"]
+    },
+    "ageRules": {
+      "type": ["object", "null"]
+    },
+    "teamRules": {
+      "type": ["object", "null"]
+    },
+    "boatRequired": {
+      "type": "boolean"
+    },
+    "registrationRules": {
+      "type": ["object", "null"]
+    },
+    "scoringRules": {
+      "type": ["object", "null"]
+    },
+    "regulationReference": {
+      "type": ["string", "null"]
+    }
+  }
+}
