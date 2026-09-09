@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bela Pesca Digital — Result Contract",
+  "description": "Contrato canônico de resultado do domínio COMPETITION.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "resultId",
+    "competitionId",
+    "modalityId",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "COMPETITION"
+    },
+    "resultId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "competitionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modalityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scoringRuleId": {
+      "type": ["string", "null"]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "received",
+        "validated",
+        "provisional",
+        "homologated",
+        "official",
+        "archived"
+      ]
+    }
+  }
+}
