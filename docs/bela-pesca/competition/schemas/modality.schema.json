@@ -51,7 +51,7 @@
     "scoringRules": {
       "type": ["object", "null"]
     },
-    "regulationReference": {
+    "regulationId": {
       "type": ["string", "null"]
     }
   }
