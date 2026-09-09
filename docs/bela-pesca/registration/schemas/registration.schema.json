@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bela Pesca Digital — Registration Root Contract",
+  "description": "Contrato canônico raiz do domínio REGISTRATION.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "registrationId",
+    "editionId",
+    "modalityId",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "REGISTRATION"
+    },
+    "registrationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modalityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "SUBMITTED",
+        "UNDER_REVIEW",
+        "APPROVED",
+        "CONFIRMED",
+        "REJECTED",
+        "CANCELLED",
+        "WITHDRAWN"
+      ]
+    }
+  }
+}
