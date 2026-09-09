@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bela Pesca Digital — Scoring Rule Contract",
+  "description": "Contrato canônico de uma regra de pontuação versionável do domínio COMPETITION.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "scoringRuleId",
+    "regulationId",
+    "modalityId",
+    "version"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "COMPETITION"
+    },
+    "scoringRuleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regulationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modalityId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
