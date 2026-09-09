@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bela Pesca Digital — Competition Root Contract",
+  "description": "Contrato canônico raiz do domínio COMPETITION.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "competitionId",
+    "editionId",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "COMPETITION"
+    },
+    "competitionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "received",
+        "validated",
+        "provisional",
+        "homologated",
+        "official",
+        "archived"
+      ]
+    }
+  }
+}
