@@ -55,7 +55,7 @@ legibilidade histórica das edições anteriores.
 O schema definitivo deverá representar, no mínimo:
 
 1. identidade da edição;
-2. ciclo e status;
+2. status;
 3. datas;
 4. organização;
 5. programação;
@@ -123,7 +123,6 @@ Responsável por representar:
 - número da edição;
 - nome oficial;
 - ano;
-- ciclo;
 - status;
 - datas gerais;
 - versão do schema;
