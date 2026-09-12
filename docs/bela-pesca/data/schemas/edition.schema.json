@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dcglobal.ai/bela-pesca/data/schemas/edition.schema.json",
+  "title": "Bela Pesca Digital - Edition Contract",
+  "description": "Contrato canônico raiz de uma edição do Bela Pesca Digital.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "editionId",
+    "editionNumber",
+    "officialName",
+    "year",
+    "status",
+    "dates"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "EDITION"
+    },
+    "editionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editionNumber": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "officialName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 2000
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "CLOSED",
+        "ARCHIVED"
+      ]
+    },
+    "dates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "startsAt",
+        "endsAt"
+      ],
+      "properties": {
+        "startsAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endsAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
