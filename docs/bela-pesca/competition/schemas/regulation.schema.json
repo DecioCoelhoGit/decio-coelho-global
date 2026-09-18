@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dcglobal.ai/bela-pesca/schemas/regulation.schema.json",
+  "title": "Bela Pesca Digital - Regulation Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "regulationId",
+    "version",
+    "title"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "COMPETITION"
+    },
+    "regulationId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "publication": {
+      "type": ["string", "null"]
+    },
+    "effectiveFrom": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "effectiveTo": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "authority": {
+      "type": ["string", "null"]
+    },
+    "documentReference": {
+      "type": ["string", "null"]
+    }
+  }
+}
