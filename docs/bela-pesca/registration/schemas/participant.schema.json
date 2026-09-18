@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dcglobal.ai/bela-pesca/registration/participant.schema.json",
+  "title": "Bela Pesca Digital — Participant Contract",
+  "description": "Canonical minimum contract for participant identity in Bela Pesca Digital.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "domain",
+    "participantId",
+    "editionId"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "domain": {
+      "type": "string",
+      "const": "PARTICIPANT"
+    },
+    "participantId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "editionId": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
